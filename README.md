@@ -1,8 +1,6 @@
 <div align="center">
 
-# Robotics Skills Suite
-
-**76 installable Claude skills covering industrial robot, cobot, AMR, ROS2, V&V, AI/ML governance, and IEC 62443 cybersecurity lifecycles**
+<img src="assets/hero.svg" alt="Robotics Skills Suite — 76 audit-ready Claude skills" width="100%"/>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/Skills-76-blue)](skills/)
@@ -12,8 +10,32 @@
 
 Every artifact-producing skill is paired with a confirmation reviewer. Reviewer outputs include a visual dashboard with KPI tiles, charts, and findings tables.
 
-[Quickstart](#quickstart) · [The Chain](#the-chain) · [Skills](#skills) · [Standards](#standards-covered) · [Why](#why)
+[About](#about) · [Quickstart](#quickstart) · [The Chain](#the-chain) · [Skills](#skills) · [Standards](#standards-covered) · [Why](#why)
 
+</div>
+
+---
+
+## About
+
+The Robotics Skills Suite is a curated set of 38 builder + 38 matching reviewer skills that automate every structured xlsx deliverable in the modern industrial-robotics lifecycle — from ISO 12100 risk assessment through ISO 13849-1 PLr / IEC 62061 SIL determination, ISO 10218-2:2025 / ANSI R15.06 compliance matrices, ISO/TS 15066 cobot biomechanics, ISO 3691-4 AMR risk, OSHA 1910.147 LOTO, ROS2 architecture artifacts, ISO 9283 performance verification, FAT/SAT acceptance protocols, AI/ML governance (datasheets, model cards), and IEC 62443 industrial cybersecurity.
+
+Every builder produces a multi-tab audit-ready xlsx workbook. Every reviewer produces a confirmation-measures checklist over that workbook with a visual dashboard. Skills hand off via stable xlsx contracts — change a number in the upstream Risk Assessment and every downstream skill in the chain (PLr → Compliance Matrix → Declaration of Conformity) consumes the new value automatically.
+
+This is the natural counterpart to the [automotive-skills-suite](https://github.com/jherrodthomas/automotive-skills-suite) (152 skills, ISO 26262 / ISO/SAE 21434 / IATF 16949 / ASPICE / AUTOSAR / V&V). Together they cover the two largest standards-driven engineering verticals.
+
+### Who this is for
+
+- **Robot integrators** producing ISO 10218-2 / ANSI R15.06 compliance documentation for every cell delivery
+- **OEM machine builders** generating CE marking / ANSI safety files at scale
+- **Cobot deployers** running ISO/TS 15066 biomechanical validation, SSM, and PFL plans
+- **AMR / AGV operators** executing ISO 3691-4 risk assessments and fleet manager architectures
+- **ROS2 development teams** producing system architecture, URDF, behavior tree, Nav2, and TF spec documents
+- **OT cybersecurity teams** running IEC 62443-3-2 risk assessments and zone & conduit segmentation
+- **AI/ML in robotics teams** producing datasheets for datasets, model cards, and perception test catalogs
+
+<div align="center">
+<img src="assets/clusters.svg" alt="Ten skill clusters — 38 builder + reviewer pairs" width="100%"/>
 </div>
 
 ---
@@ -46,6 +68,10 @@ Example: install ISO 12100 risk assessment, then ask Claude
 ```
 
 ## The chain
+
+<div align="center">
+<img src="assets/lifecycle-chain.svg" alt="Robotics skills lifecycle chain" width="100%"/>
+</div>
 
 ```
 ISO 12100 Risk Assessment → Machinery Safety Lifecycle Plan → Robot Cell Scope

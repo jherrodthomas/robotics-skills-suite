@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-label="Ten skill clusters">
+  <defs>
+    <linearGradient id="card1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1F3864"/><stop offset="1" stop-color="#2A4980"/></linearGradient>
+    <linearGradient id="card2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A1628"/><stop offset="1" stop-color="#1F3864"/></linearGradient>
+    <linearGradient id="card3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB800"/><stop offset="1" stop-color="#FF8A00"/></linearGradient>
+  </defs>
+
+  <style><![CDATA[
+    .header  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:24px; font-weight:800; fill:#0A1628; }
+    .meta    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:12px; fill:#6B7280; }
+    .clabel  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:16px; font-weight:800; fill:#ffffff; }
+    .csub    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; font-weight:500; fill:rgba(255,255,255,0.78); }
+    .ccount  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:34px; font-weight:800; fill:#FFB800; }
+    .clabel-d{ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:16px; font-weight:800; fill:#0A1628; }
+    .csub-d  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; font-weight:500; fill:rgba(10,22,40,0.78); }
+    .ccount-d{ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:34px; font-weight:800; fill:#1F3864; }
+  ]]></style>
+
+  <rect width="1200" height="540" fill="#FAFAFA"/>
+
+  <text x="40" y="48" class="header">Ten clusters · 38 builder + reviewer pairs</text>
+  <text x="40" y="70" class="meta">Each cluster is a chain of structured xlsx deliverables anchored to a published standard.</text>
+
+  <!-- Card geometry: 5 columns x 2 rows, 220x180 with 12px gutter -->
+  <!-- Row 1 -->
+  <g transform="translate(40, 100)">
+    <rect width="220" height="180" rx="12" fill="url(#card1)"/>
+    <text x="20" y="36" class="clabel">Foundation</text>
+    <text x="20" y="56" class="csub">ISO 12100 / 13849 / 62061</text>
+    <text x="20" y="120" class="ccount">3</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">Risk · Lifecycle · Cell scope</text>
+  </g>
+  <g transform="translate(272, 100)">
+    <rect width="220" height="180" rx="12" fill="url(#card1)"/>
+    <text x="20" y="36" class="clabel">Compliance</text>
+    <text x="20" y="56" class="csub">ISO 10218 / R15.06 / DoC</text>
+    <text x="20" y="120" class="ccount">5</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">PLr · SIL · matrices · CE</text>
+  </g>
+  <g transform="translate(504, 100)">
+    <rect width="220" height="180" rx="12" fill="url(#card1)"/>
+    <text x="20" y="36" class="clabel">Cobot</text>
+    <text x="20" y="56" class="csub">ISO/TS 15066</text>
+    <text x="20" y="120" class="ccount">4</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">Bio limits · SSM · PFL · HG</text>
+  </g>
+  <g transform="translate(736, 100)">
+    <rect width="220" height="180" rx="12" fill="url(#card1)"/>
+    <text x="20" y="36" class="clabel">AMR / Mobile</text>
+    <text x="20" y="56" class="csub">ISO 3691-4 / R15.08</text>
+    <text x="20" y="120" class="ccount">4</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">Risk · Envelope · Fleet · RF</text>
+  </g>
+  <g transform="translate(968, 100)">
+    <rect width="220" height="180" rx="12" fill="url(#card1)"/>
+    <text x="20" y="36" class="clabel">Cell Design</text>
+    <text x="20" y="56" class="csub">Integrator practice</text>
+    <text x="20" y="120" class="ccount">4</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">Layout · EOAT · I/O · E-stop</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(40, 296)">
+    <rect width="220" height="180" rx="12" fill="url(#card2)"/>
+    <text x="20" y="36" class="clabel">Operational</text>
+    <text x="20" y="56" class="csub">OSHA 1910.147</text>
+    <text x="20" y="120" class="ccount">3</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">SOP · LOTO · Training</text>
+  </g>
+  <g transform="translate(272, 296)">
+    <rect width="220" height="180" rx="12" fill="url(#card2)"/>
+    <text x="20" y="36" class="clabel">ROS2</text>
+    <text x="20" y="56" class="csub">Humble / Iron / Jazzy</text>
+    <text x="20" y="120" class="ccount">5</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">Arch · URDF · BT · Nav2 · TF</text>
+  </g>
+  <g transform="translate(504, 296)">
+    <rect width="220" height="180" rx="12" fill="url(#card2)"/>
+    <text x="20" y="36" class="clabel">V&amp;V</text>
+    <text x="20" y="56" class="csub">ISO 9283 / IEC 61508</text>
+    <text x="20" y="120" class="ccount">4</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">Pose · FAT/SAT · HIL · Field</text>
+  </g>
+  <g transform="translate(736, 296)">
+    <rect width="220" height="180" rx="12" fill="url(#card3)"/>
+    <text x="20" y="36" class="clabel-d">AI/ML</text>
+    <text x="20" y="56" class="csub-d">Datasheets · Model cards</text>
+    <text x="20" y="120" class="ccount-d">3</text>
+    <text x="20" y="140" class="csub-d">pairs</text>
+    <text x="20" y="160" class="csub-d">Dataset · Model · Perception</text>
+  </g>
+  <g transform="translate(968, 296)">
+    <rect width="220" height="180" rx="12" fill="url(#card2)"/>
+    <text x="20" y="36" class="clabel">Cybersecurity</text>
+    <text x="20" y="56" class="csub">IEC 62443</text>
+    <text x="20" y="120" class="ccount">3</text>
+    <text x="20" y="140" class="csub">pairs</text>
+    <text x="20" y="160" class="csub">Risk · Inventory · Zoning</text>
+  </g>
+
+  <!-- footer -->
+  <text x="40" y="510" class="meta" font-weight="600" fill="#1F3864">76 installable Claude skills · MIT · github.com/jherrodthomas/robotics-skills-suite</text>
+</svg>

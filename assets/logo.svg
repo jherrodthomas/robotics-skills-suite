@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Robotics Skills Suite logo">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1F3864"/>
+      <stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="22" fill="url(#lg)"/>
+  <!-- Stylized robot arm + check -->
+  <g stroke="#FFB800" stroke-width="6" stroke-linecap="round" fill="none">
+    <!-- base -->
+    <rect x="38" y="92" width="52" height="10" rx="2" fill="#FFB800" stroke="none"/>
+    <!-- lower arm -->
+    <line x1="64" y1="92" x2="44" y2="62"/>
+    <!-- elbow -->
+    <circle cx="44" cy="62" r="5" fill="#FFB800" stroke="none"/>
+    <!-- upper arm -->
+    <line x1="44" y1="62" x2="84" y2="42"/>
+    <!-- shoulder -->
+    <circle cx="84" cy="42" r="5" fill="#FFB800" stroke="none"/>
+    <!-- end-effector check -->
+    <path d="M 76 38 L 84 46 L 100 30" stroke-width="7"/>
+  </g>
+</svg>

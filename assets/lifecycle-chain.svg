@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" role="img" aria-label="Robotics skills lifecycle chain">
+  <defs>
+    <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A4980"/>
+      <stop offset="1" stop-color="#1F3864"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFB800"/>
+      <stop offset="1" stop-color="#E89C00"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3864"/>
+    </marker>
+    <marker id="arrAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#E89C00"/>
+    </marker>
+  </defs>
+
+  <style><![CDATA[
+    .label   { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:14px; font-weight:700; fill:#ffffff; }
+    .sub     { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; fill:rgba(255,255,255,0.78); }
+    .lane    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:13px; font-weight:700; fill:#1F3864; letter-spacing:2px; }
+    .title   { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:24px; font-weight:800; fill:#0A1628; }
+    .meta    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:12px; fill:#6B7280; }
+  ]]></style>
+
+  <rect width="1200" height="760" fill="#FAFAFA"/>
+
+  <text x="40" y="48" class="title">Lifecycle chain</text>
+  <text x="40" y="70" class="meta">Each box is a builder + reviewer pair. Arrows show xlsx contract handoff.</text>
+
+  <!-- Lane labels -->
+  <text x="40"   y="120" class="lane">FOUNDATION</text>
+  <text x="40"   y="220" class="lane">COMPLIANCE &amp; INTEGRITY</text>
+  <text x="40"   y="320" class="lane">COBOT  ·  AMR</text>
+  <text x="40"   y="420" class="lane">CELL  ·  OPERATIONAL</text>
+  <text x="40"   y="520" class="lane">ROS2  ·  V&amp;V</text>
+  <text x="40"   y="640" class="lane">AI/ML  ·  CYBER</text>
+
+  <!-- ROW 1 — Foundation (3 boxes) -->
+  <g>
+    <rect x="40"  y="135" width="200" height="60" rx="8" fill="url(#navy)"/>
+    <text x="140" y="160" text-anchor="middle" class="label">ISO 12100 Risk</text>
+    <text x="140" y="180" text-anchor="middle" class="sub">Hazard ID · S/F/P · 3-step</text>
+
+    <rect x="280" y="135" width="200" height="60" rx="8" fill="url(#navy)"/>
+    <text x="380" y="160" text-anchor="middle" class="label">Lifecycle Plan</text>
+    <text x="380" y="180" text-anchor="middle" class="sub">Concept → Validation</text>
+
+    <rect x="520" y="135" width="200" height="60" rx="8" fill="url(#navy)"/>
+    <text x="620" y="160" text-anchor="middle" class="label">Cell Scope</text>
+    <text x="620" y="180" text-anchor="middle" class="sub">Boundary · Modes · KCP</text>
+
+    <line x1="240" y1="165" x2="280" y2="165" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="480" y1="165" x2="520" y2="165" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- Down to Compliance row -->
+  <line x1="380" y1="195" x2="380" y2="232" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ROW 2 — Compliance (5 boxes) -->
+  <g>
+    <rect x="40"  y="235" width="170" height="60" rx="8" fill="url(#navy)"/>
+    <text x="125" y="260" text-anchor="middle" class="label">ISO 13849 PLr</text>
+    <text x="125" y="280" text-anchor="middle" class="sub">S/F/P · Cat · MTTFD</text>
+
+    <rect x="230" y="235" width="170" height="60" rx="8" fill="url(#navy)"/>
+    <text x="315" y="260" text-anchor="middle" class="label">IEC 62061 SIL</text>
+    <text x="315" y="280" text-anchor="middle" class="sub">Se · Fr · Pr · Av</text>
+
+    <rect x="420" y="235" width="200" height="60" rx="8" fill="url(#navy)"/>
+    <text x="520" y="260" text-anchor="middle" class="label">ISO 10218 Matrix</text>
+    <text x="520" y="280" text-anchor="middle" class="sub">2025 ed · cobot folded</text>
+
+    <rect x="640" y="235" width="200" height="60" rx="8" fill="url(#navy)"/>
+    <text x="740" y="260" text-anchor="middle" class="label">ANSI R15.06 Matrix</text>
+    <text x="740" y="280" text-anchor="middle" class="sub">US · OSHA 1910 link</text>
+
+    <rect x="860" y="235" width="200" height="60" rx="8" fill="url(#amber)"/>
+    <text x="960" y="260" text-anchor="middle" class="label" fill="#0A1628">Declaration of Conformity</text>
+    <text x="960" y="280" text-anchor="middle" class="sub" fill="rgba(10,22,40,0.78)">CE marking · MR 2023/1230</text>
+
+    <line x1="210" y1="265" x2="230" y2="265" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="400" y1="265" x2="420" y2="265" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="620" y1="265" x2="640" y2="265" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="840" y1="265" x2="860" y2="265" stroke="#1F3864" stroke-width="2" marker-end="url(#arrAmber)"/>
+  </g>
+
+  <!-- Down to Cobot/AMR -->
+  <line x1="520" y1="295" x2="520" y2="332" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ROW 3 — Cobot (left) & AMR (right) -->
+  <g>
+    <text x="160" y="350" text-anchor="middle" class="meta" font-weight="700" fill="#1F3864">COBOT (4)</text>
+    <rect x="40"  y="358" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="100" y="386" text-anchor="middle" class="label">15066 limits</text>
+    <rect x="170" y="358" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="230" y="386" text-anchor="middle" class="label">SSM plan</text>
+    <rect x="40"  y="416" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="100" y="444" text-anchor="middle" class="label">PFL plan</text>
+    <rect x="170" y="416" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="230" y="444" text-anchor="middle" class="label">Hand-guiding</text>
+
+    <text x="600" y="350" text-anchor="middle" class="meta" font-weight="700" fill="#1F3864">AMR / MOBILE (4)</text>
+    <rect x="480" y="358" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="540" y="386" text-anchor="middle" class="label">3691-4 risk</text>
+    <rect x="610" y="358" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="670" y="386" text-anchor="middle" class="label">Op envelope</text>
+    <rect x="480" y="416" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="540" y="444" text-anchor="middle" class="label">Fleet mgr</text>
+    <rect x="610" y="416" width="120" height="48" rx="6" fill="url(#navy)"/>
+    <text x="670" y="444" text-anchor="middle" class="label">RF coexist</text>
+  </g>
+
+  <!-- ROW 4 — Cell + Operational (right side) -->
+  <g>
+    <text x="990" y="350" text-anchor="middle" class="meta" font-weight="700" fill="#1F3864">CELL · OPS (7)</text>
+    <rect x="870"  y="358" width="115" height="48" rx="6" fill="url(#navy)"/>
+    <text x="927"  y="386" text-anchor="middle" class="label">Layout</text>
+    <rect x="995"  y="358" width="115" height="48" rx="6" fill="url(#navy)"/>
+    <text x="1052" y="386" text-anchor="middle" class="label">EOAT</text>
+    <rect x="870"  y="416" width="115" height="48" rx="6" fill="url(#navy)"/>
+    <text x="927"  y="444" text-anchor="middle" class="label">Safety I/O</text>
+    <rect x="995"  y="416" width="115" height="48" rx="6" fill="url(#navy)"/>
+    <text x="1052" y="444" text-anchor="middle" class="label">E-stop arch</text>
+  </g>
+
+  <!-- ROW 5 — ROS2 + V&V -->
+  <g>
+    <text x="190" y="544" text-anchor="middle" class="meta" font-weight="700" fill="#1F3864">ROS2 (5)</text>
+    <rect x="40"  y="552" width="100" height="40" rx="6" fill="url(#navy)"/>
+    <text x="90"  y="577" text-anchor="middle" class="label">Architecture</text>
+    <rect x="150" y="552" width="100" height="40" rx="6" fill="url(#navy)"/>
+    <text x="200" y="577" text-anchor="middle" class="label">URDF</text>
+    <rect x="260" y="552" width="100" height="40" rx="6" fill="url(#navy)"/>
+    <text x="310" y="577" text-anchor="middle" class="label">BT.CPP</text>
+    <rect x="40"  y="600" width="100" height="40" rx="6" fill="url(#navy)"/>
+    <text x="90"  y="625" text-anchor="middle" class="label">Nav2</text>
+    <rect x="150" y="600" width="100" height="40" rx="6" fill="url(#navy)"/>
+    <text x="200" y="625" text-anchor="middle" class="label">TF tree</text>
+
+    <text x="600" y="544" text-anchor="middle" class="meta" font-weight="700" fill="#1F3864">V&amp;V (4)</text>
+    <rect x="480" y="552" width="120" height="40" rx="6" fill="url(#navy)"/>
+    <text x="540" y="577" text-anchor="middle" class="label">ISO 9283</text>
+    <rect x="610" y="552" width="120" height="40" rx="6" fill="url(#navy)"/>
+    <text x="670" y="577" text-anchor="middle" class="label">FAT / SAT</text>
+    <rect x="480" y="600" width="120" height="40" rx="6" fill="url(#navy)"/>
+    <text x="540" y="625" text-anchor="middle" class="label">HIL catalog</text>
+    <rect x="610" y="600" width="120" height="40" rx="6" fill="url(#navy)"/>
+    <text x="670" y="625" text-anchor="middle" class="label">Field accept</text>
+  </g>
+
+  <!-- ROW 6 — AI/ML + Cyber -->
+  <g>
+    <text x="190" y="664" text-anchor="middle" class="meta" font-weight="700" fill="#1F3864">AI/ML GOVERNANCE (3)</text>
+    <rect x="40"  y="672" width="115" height="40" rx="6" fill="url(#amber)"/>
+    <text x="97"  y="697" text-anchor="middle" class="label" fill="#0A1628">Dataset doc</text>
+    <rect x="165" y="672" width="115" height="40" rx="6" fill="url(#amber)"/>
+    <text x="222" y="697" text-anchor="middle" class="label" fill="#0A1628">Model card</text>
+    <rect x="290" y="672" width="115" height="40" rx="6" fill="url(#amber)"/>
+    <text x="347" y="697" text-anchor="middle" class="label" fill="#0A1628">Perception tests</text>
+
+    <text x="600" y="664" text-anchor="middle" class="meta" font-weight="700" fill="#1F3864">IEC 62443 CYBER (3)</text>
+    <rect x="480" y="672" width="115" height="40" rx="6" fill="url(#navy)"/>
+    <text x="537" y="697" text-anchor="middle" class="label">62443 risk</text>
+    <rect x="605" y="672" width="115" height="40" rx="6" fill="url(#navy)"/>
+    <text x="662" y="697" text-anchor="middle" class="label">Asset inv.</text>
+    <rect x="730" y="672" width="115" height="40" rx="6" fill="url(#navy)"/>
+    <text x="787" y="697" text-anchor="middle" class="label">Zone/conduit</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(880, 540)">
+    <rect width="280" height="200" rx="10" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="30" class="title" font-size="14">Legend</text>
+
+    <rect x="20" y="50" width="20" height="14" rx="3" fill="url(#navy)"/>
+    <text x="50" y="62" class="meta" fill="#1F3864" font-weight="600">Builder + reviewer pair</text>
+
+    <rect x="20" y="78" width="20" height="14" rx="3" fill="url(#amber)"/>
+    <text x="50" y="90" class="meta" fill="#1F3864" font-weight="600">Compliance / governance gate</text>
+
+    <line x1="20" y1="116" x2="50" y2="116" stroke="#1F3864" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="60" y="120" class="meta" fill="#1F3864" font-weight="600">xlsx contract handoff</text>
+
+    <text x="20" y="160" class="meta">76 skills · 38 pairs · 10 clusters</text>
+    <text x="20" y="178" class="meta">MIT licensed · Claude-installable</text>
+  </g>
+</svg>

@@ -1,0 +1,415 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720" role="img" aria-label="Safety mechanisms covered by the suite">
+  <defs>
+    <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A4980"/>
+      <stop offset="1" stop-color="#1F3864"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFB800"/>
+      <stop offset="1" stop-color="#E89C00"/>
+    </linearGradient>
+    <radialGradient id="redzone" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#EF4444" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#EF4444" stop-opacity="0.15"/>
+    </radialGradient>
+    <radialGradient id="ylwzone" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#F59E0B" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </radialGradient>
+    <radialGradient id="grnzone" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#10B981" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity="0.06"/>
+    </radialGradient>
+  </defs>
+
+  <style><![CDATA[
+    .header  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:24px; font-weight:800; fill:#0A1628; }
+    .meta    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:12px; fill:#6B7280; }
+    .name    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:16px; font-weight:800; fill:#0A1628; }
+    .standard{ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; font-weight:600; fill:#1F3864; letter-spacing:1px; }
+    .desc    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; fill:#4B5563; }
+    .skill   { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:10px; font-weight:600; fill:#1F3864; }
+    .tinyl   { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:9px; fill:#4B5563; }
+    .bigval  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:18px; font-weight:800; fill:#0A1628; }
+    .zonelabel { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:10px; font-weight:700; }
+  ]]></style>
+
+  <rect width="1400" height="720" fill="#FAFAFA"/>
+
+  <text x="40" y="48" class="header">Safety mechanisms covered by the suite</text>
+  <text x="40" y="70" class="meta">Six core safeguarding patterns. Each is the subject of a builder + reviewer pair.</text>
+
+  <!-- =========================================================== -->
+  <!-- Panel 1 — SSM (top-left)                                    -->
+  <!-- =========================================================== -->
+  <g transform="translate(40, 100)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">ISO 10218-1 · ISO/TS 15066</text>
+    <text x="20" y="56" class="name">Speed &amp; Separation Monitoring</text>
+    <text x="20" y="76" class="desc">Sp = Sh + Sr + Ss + C + Zd + Zr</text>
+
+    <!-- Top-down view: concentric zones -->
+    <g transform="translate(160, 175)">
+      <!-- Outer green / monitoring -->
+      <circle cx="0" cy="0" r="92" fill="url(#grnzone)" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <!-- Mid yellow / slowdown -->
+      <circle cx="0" cy="0" r="62" fill="url(#ylwzone)" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <!-- Inner red / stop -->
+      <circle cx="0" cy="0" r="34" fill="url(#redzone)" stroke="#EF4444" stroke-width="1.5"/>
+      <!-- Robot dot -->
+      <circle cx="0" cy="0" r="10" fill="#1F3864"/>
+      <line x1="0" y1="0" x2="14" y2="-14" stroke="#1F3864" stroke-width="3" stroke-linecap="round"/>
+      <!-- zone labels -->
+      <text x="0" y="-78" text-anchor="middle" class="zonelabel" fill="#10B981">MONITORING</text>
+      <text x="0" y="-49" text-anchor="middle" class="zonelabel" fill="#F59E0B">SLOWDOWN</text>
+      <text x="0" y="-22" text-anchor="middle" class="zonelabel" fill="#EF4444">STOP</text>
+      <!-- Operator silhouette approaching from right -->
+      <g transform="translate(115, 0)" fill="#0A1628">
+        <circle cx="0" cy="-22" r="7"/>
+        <path d="M -8 -14 L 8 -14 L 12 16 L -12 16 Z"/>
+        <line x1="-8" y1="0" x2="-16" y2="14" stroke="#0A1628" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <!-- Approach arrow -->
+      <line x1="115" y1="0" x2="78" y2="0" stroke="#0A1628" stroke-width="2" marker-end="url(#arrSafety)"/>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="80" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="40" y="15" text-anchor="middle" class="skill">SSM plan</text>
+      <rect x="90" width="120" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="150" y="15" text-anchor="middle" class="skill">Sensor inventory</text>
+    </g>
+    <text x="20" y="266" class="meta">Lidar / vision detect intrusion; robot slows or stops before contact.</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Panel 2 — PFL (top-center)                                   -->
+  <!-- =========================================================== -->
+  <g transform="translate(485, 100)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">ISO/TS 15066 · ISO 10218-1:2025</text>
+    <text x="20" y="56" class="name">Power &amp; Force Limiting</text>
+    <text x="20" y="76" class="desc">Force / pressure under biomechanical limit</text>
+
+    <!-- Side view: cobot tool touching human hand -->
+    <g transform="translate(60, 110)">
+      <!-- Cobot mini-arm -->
+      <rect x="-10" y="80" width="46" height="14" rx="3" fill="#0A1628"/>
+      <rect x="0" y="50" width="20" height="36" rx="6" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <circle cx="10" cy="50" r="10" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <rect x="10" y="32" width="60" height="14" rx="6" fill="#ffffff" stroke="#1F3864" stroke-width="3"
+            transform="rotate(15 10 39)"/>
+      <circle cx="68" cy="49" r="9" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <rect x="68" y="42" width="34" height="12" rx="3" fill="url(#amber)"/>
+      <!-- Tool tip touching hand -->
+      <circle cx="105" cy="48" r="3" fill="#0A1628"/>
+
+      <!-- Human hand from right -->
+      <g transform="translate(155, 50)" stroke="#FFB800" stroke-width="2.5" fill="none" stroke-linecap="round">
+        <path d="M 50 0 C 35 -2, 25 -10, 12 -8 L 12 8 L 6 -4 C 2 -8, -4 -2, 0 4 L 8 14"/>
+      </g>
+      <!-- Contact zone marker -->
+      <circle cx="110" cy="48" r="14" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="3 3"/>
+    </g>
+
+    <!-- Force gauge -->
+    <g transform="translate(280, 110)">
+      <rect x="0" y="0" width="130" height="80" rx="6" fill="#0A1628"/>
+      <text x="65" y="20" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFB800" letter-spacing="2">FORCE · BACK OF HAND</text>
+      <!-- Bar -->
+      <rect x="14" y="32" width="102" height="14" rx="2" fill="#1F3864"/>
+      <rect x="14" y="32" width="62"  height="14" rx="2" fill="#10B981"/>
+      <line x1="92" y1="28" x2="92" y2="50" stroke="#EF4444" stroke-width="2"/>
+      <text x="92" y="60" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" fill="#EF4444" font-weight="700">LIMIT</text>
+      <!-- Reading -->
+      <text x="14" y="76" font-family="-apple-system,sans-serif" font-size="14" font-weight="800" fill="#10B981">85 N</text>
+      <text x="116" y="76" text-anchor="end" font-family="-apple-system,sans-serif" font-size="11" fill="#9CA3AF">/ 140 N</text>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="75" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="38" y="15" text-anchor="middle" class="skill">PFL plan</text>
+      <rect x="85" width="135" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="152" y="15" text-anchor="middle" class="skill">15066 bio limits</text>
+      <rect x="230" width="135" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="297" y="15" text-anchor="middle" class="skill">Biofidelic test</text>
+    </g>
+    <text x="20" y="266" class="meta">CoboSafe / Pilz PRMS / KUKA force test rigs validate per body region.</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Panel 3 — E-stop / Cat 3 architecture (top-right)           -->
+  <!-- =========================================================== -->
+  <g transform="translate(930, 100)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">ISO 13849-1 · IEC 60204-1</text>
+    <text x="20" y="56" class="name">E-stop &amp; safety interlocks</text>
+    <text x="20" y="76" class="desc">Cat 3 / PLd dual-channel architecture</text>
+
+    <!-- Mushroom button + Cat3 wiring -->
+    <g transform="translate(70, 105)">
+      <!-- Yellow body -->
+      <rect x="-30" y="20" width="80" height="60" rx="6" fill="url(#amber)" stroke="#0A1628" stroke-width="2"/>
+      <!-- Mushroom -->
+      <ellipse cx="10" cy="20" rx="32" ry="8" fill="#EF4444" stroke="#0A1628" stroke-width="2"/>
+      <ellipse cx="10" cy="14" rx="28" ry="14" fill="#EF4444" stroke="#0A1628" stroke-width="2"/>
+      <!-- Label band -->
+      <rect x="-30" y="60" width="80" height="14" rx="2" fill="#0A1628"/>
+      <text x="10" y="71" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" font-weight="800" fill="#FFB800" letter-spacing="2">EMERGENCY STOP</text>
+    </g>
+
+    <!-- Dual-channel wiring -->
+    <g transform="translate(180, 130)" fill="none" stroke-width="2.5">
+      <!-- Channel A (top) -->
+      <path d="M 0 0 L 50 0 L 50 -10 L 130 -10" stroke="#EF4444"/>
+      <text x="65" y="-18" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#EF4444">CH A</text>
+      <!-- Channel B (bottom) -->
+      <path d="M 0 20 L 50 20 L 50 30 L 130 30" stroke="#1F3864"/>
+      <text x="65" y="48" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#1F3864">CH B</text>
+      <!-- Safety relay -->
+      <rect x="130" y="-25" width="80" height="60" rx="4" fill="#ffffff" stroke="#0A1628" stroke-width="2"/>
+      <text x="170" y="0" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" font-weight="800" fill="#0A1628">SAFETY</text>
+      <text x="170" y="13" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" font-weight="800" fill="#0A1628">RELAY</text>
+      <text x="170" y="28" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" fill="#1F3864">Cat 3 / PLd</text>
+      <!-- Output to contactor -->
+      <path d="M 210 5 L 230 5" stroke="#0A1628" stroke-width="2" marker-end="url(#arrSafety)"/>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="50" y="15" text-anchor="middle" class="skill">E-stop arch</text>
+      <rect x="110" width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="160" y="15" text-anchor="middle" class="skill">Safety I/O</text>
+      <rect x="220" width="115" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="277" y="15" text-anchor="middle" class="skill">ISO 13849 PLr</text>
+    </g>
+    <text x="20" y="266" class="meta">Two diverse channels with cross-monitoring achieve Cat 3 / PL d.</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Panel 4 — Light curtain (bottom-left)                       -->
+  <!-- =========================================================== -->
+  <g transform="translate(40, 400)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">IEC 61496 · ISO 13855</text>
+    <text x="20" y="56" class="name">Light curtain &amp; presence sensing</text>
+    <text x="20" y="76" class="desc">Type 4 ESPE on cell entrance</text>
+
+    <!-- Two posts with horizontal beams -->
+    <g transform="translate(60, 100)">
+      <!-- Post left -->
+      <rect x="0" y="0" width="14" height="130" rx="3" fill="url(#navy)"/>
+      <rect x="2" y="6" width="10" height="118" rx="2" fill="#0A1628"/>
+      <!-- Post right -->
+      <rect x="220" y="0" width="14" height="130" rx="3" fill="url(#navy)"/>
+      <rect x="222" y="6" width="10" height="118" rx="2" fill="#0A1628"/>
+      <!-- Beams -->
+      <g stroke="#FFB800" stroke-width="2" stroke-dasharray="6 3">
+        <line x1="14" y1="20"  x2="220" y2="20"/>
+        <line x1="14" y1="40"  x2="220" y2="40"/>
+        <line x1="14" y1="60"  x2="220" y2="60"/>
+        <line x1="14" y1="80"  x2="220" y2="80"/>
+        <line x1="14" y1="100" x2="220" y2="100"/>
+        <line x1="14" y1="120" x2="220" y2="120"/>
+      </g>
+      <!-- Floor -->
+      <rect x="-30" y="130" width="294" height="10" rx="1" fill="#E5E7EB"/>
+
+      <!-- Operator silhouette breaking the beam -->
+      <g transform="translate(110, 30)" fill="#0A1628">
+        <circle cx="0" cy="0" r="10"/>
+        <path d="M -12 8 L 12 8 L 16 60 C 16 70, -16 70, -16 60 Z"/>
+        <line x1="-10" y1="30" x2="-22" y2="60" stroke="#0A1628" stroke-width="4" stroke-linecap="round"/>
+        <line x1="10"  y1="30" x2="22"  y2="60" stroke="#0A1628" stroke-width="4" stroke-linecap="round"/>
+      </g>
+
+      <!-- "BEAM BROKEN" warning -->
+      <g transform="translate(85, 108)">
+        <rect x="0" y="0" width="80" height="18" rx="3" fill="#EF4444"/>
+        <text x="40" y="13" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" font-weight="800" fill="#ffffff" letter-spacing="1">BEAM BROKEN</text>
+      </g>
+    </g>
+
+    <!-- Robot stopping behind the curtain -->
+    <g transform="translate(330, 175)" opacity="0.8">
+      <rect x="-15" y="40" width="30" height="20" rx="2" fill="#0A1628"/>
+      <rect x="-10" y="20" width="20" height="22" rx="3" fill="url(#amber)"/>
+      <circle cx="0" cy="20" r="7" fill="#0A1628"/>
+      <rect x="-3" y="-5" width="6" height="22" fill="url(#amber)"/>
+      <text x="0" y="78" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" fill="#1F3864" font-weight="700">STOPPED</text>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="50" y="15" text-anchor="middle" class="skill">Cell layout</text>
+      <rect x="110" width="105" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="162" y="15" text-anchor="middle" class="skill">Safety I/O</text>
+      <rect x="225" width="120" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="285" y="15" text-anchor="middle" class="skill">ISO 13849 PLr</text>
+    </g>
+    <text x="20" y="266" class="meta">Sp = K · (T1 + T2) + C ; minimum distance per ISO 13855 stopping perf.</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Panel 5 — LOTO (bottom-center)                              -->
+  <!-- =========================================================== -->
+  <g transform="translate(485, 400)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">OSHA 1910.147 · CFR 1910</text>
+    <text x="20" y="56" class="name">Lockout / Tagout</text>
+    <text x="20" y="76" class="desc">Energy isolation for service &amp; maintenance</text>
+
+    <!-- Disconnect switch box with hasp -->
+    <g transform="translate(120, 105)">
+      <!-- Disconnect box -->
+      <rect x="0" y="0" width="120" height="120" rx="6" fill="url(#metal)"/>
+      <rect x="6" y="6" width="108" height="108" rx="3" fill="#1F3864" stroke="#0A1628" stroke-width="1"/>
+      <!-- Disconnect handle -->
+      <rect x="46" y="20" width="28" height="60" rx="4" fill="#EF4444" stroke="#0A1628" stroke-width="1.5"/>
+      <text x="60" y="55" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" font-weight="800" fill="#ffffff">OFF</text>
+      <!-- Hasp -->
+      <rect x="40" y="84" width="40" height="14" rx="2" fill="#0A1628"/>
+      <circle cx="48" cy="91" r="3" fill="none" stroke="#FFB800" stroke-width="1.5"/>
+      <circle cx="60" cy="91" r="3" fill="none" stroke="#FFB800" stroke-width="1.5"/>
+      <circle cx="72" cy="91" r="3" fill="none" stroke="#FFB800" stroke-width="1.5"/>
+
+      <!-- Three padlocks hanging -->
+      <g transform="translate(38, 105)">
+        <!-- Lock 1 -->
+        <path d="M 4 0 L 4 -6 C 4 -10, 10 -10, 10 -6 L 10 0" stroke="#FFB800" stroke-width="2" fill="none"/>
+        <rect x="0" y="0" width="14" height="14" rx="2" fill="#FFB800"/>
+        <circle cx="7" cy="7" r="2" fill="#0A1628"/>
+        <!-- Lock 2 -->
+        <g transform="translate(18, 0)">
+          <path d="M 4 0 L 4 -6 C 4 -10, 10 -10, 10 -6 L 10 0" stroke="#1F3864" stroke-width="2" fill="none"/>
+          <rect x="0" y="0" width="14" height="14" rx="2" fill="#1F3864"/>
+          <circle cx="7" cy="7" r="2" fill="#FFB800"/>
+        </g>
+        <!-- Lock 3 -->
+        <g transform="translate(36, 0)">
+          <path d="M 4 0 L 4 -6 C 4 -10, 10 -10, 10 -6 L 10 0" stroke="#EF4444" stroke-width="2" fill="none"/>
+          <rect x="0" y="0" width="14" height="14" rx="2" fill="#EF4444"/>
+          <circle cx="7" cy="7" r="2" fill="#FFB800"/>
+        </g>
+      </g>
+
+      <!-- Tag hanging -->
+      <g transform="translate(140, 60)">
+        <line x1="-20" y1="0" x2="0" y2="0" stroke="#0A1628" stroke-width="1.5"/>
+        <path d="M 0 -16 L 60 -16 L 70 0 L 60 16 L 0 16 Z" fill="#FFB800" stroke="#0A1628" stroke-width="1.5"/>
+        <circle cx="6" cy="0" r="3" fill="#0A1628"/>
+        <text x="36" y="-2" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" font-weight="800" fill="#0A1628">DO NOT</text>
+        <text x="36" y="8" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" font-weight="800" fill="#0A1628">OPERATE</text>
+      </g>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="105" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="52" y="15" text-anchor="middle" class="skill">LOTO procedure</text>
+      <rect x="115" width="65" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="147" y="15" text-anchor="middle" class="skill">SOP</text>
+      <rect x="190" width="115" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="247" y="15" text-anchor="middle" class="skill">Operator training</text>
+    </g>
+    <text x="20" y="266" class="meta">One lock per authorized employee · group lockout for shared isolation.</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Panel 6 — IEC 62443 zones & conduits (bottom-right)         -->
+  <!-- =========================================================== -->
+  <g transform="translate(930, 400)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">IEC 62443-3-2 / 3-3</text>
+    <text x="20" y="56" class="name">Zones &amp; conduits</text>
+    <text x="20" y="76" class="desc">SL-T per Foundational Requirement</text>
+
+    <!-- Three zones with conduits -->
+    <g transform="translate(20, 100)">
+      <!-- Enterprise zone (left, low SL) -->
+      <rect x="0" y="0" width="115" height="100" rx="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-dasharray="4 3"/>
+      <text x="57" y="18" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#1F3864" letter-spacing="1">ENTERPRISE</text>
+      <text x="57" y="30" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" fill="#6B7280">SL-T 1</text>
+      <!-- workstation icon -->
+      <rect x="22" y="44" width="30" height="22" rx="2" fill="#1F3864"/>
+      <rect x="20" y="68" width="34" height="3" fill="#1F3864"/>
+      <rect x="62" y="44" width="30" height="22" rx="2" fill="#1F3864"/>
+      <rect x="60" y="68" width="34" height="3" fill="#1F3864"/>
+
+      <!-- Conduit 1 (firewall) -->
+      <line x1="115" y1="50" x2="146" y2="50" stroke="#0A1628" stroke-width="2"/>
+      <g transform="translate(122, 38)">
+        <rect x="0" y="0" width="20" height="24" rx="2" fill="#EF4444"/>
+        <line x1="0"  y1="6"  x2="20" y2="6"  stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="10" y1="0"  x2="10" y2="6"  stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="6"  y1="6"  x2="6"  y2="14" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="14" y1="6"  x2="14" y2="14" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="0"  y1="14" x2="20" y2="14" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="3"  y1="14" x2="3"  y2="24" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="11" y1="14" x2="11" y2="24" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="18" y1="14" x2="18" y2="24" stroke="#FFFFFF" stroke-width="1"/>
+      </g>
+
+      <!-- Cell zone (center, mid SL) -->
+      <rect x="146" y="0" width="115" height="100" rx="8" fill="#FFF7E0" stroke="#FFB800" stroke-dasharray="4 3"/>
+      <text x="203" y="18" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#1F3864" letter-spacing="1">SUPERVISORY</text>
+      <text x="203" y="30" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" fill="#6B7280">SL-T 2</text>
+      <!-- HMI icon -->
+      <rect x="160" y="44" width="36" height="22" rx="2" fill="#1F3864"/>
+      <rect x="164" y="48" width="28" height="14" rx="1" fill="#FFB800"/>
+      <text x="178" y="76" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" fill="#1F3864">HMI</text>
+      <!-- PLC icon -->
+      <rect x="208" y="44" width="36" height="22" rx="2" fill="#1F3864"/>
+      <rect x="212" y="48" width="6" height="14" rx="1" fill="#10B981"/>
+      <rect x="220" y="48" width="6" height="14" rx="1" fill="#10B981"/>
+      <rect x="228" y="48" width="6" height="14" rx="1" fill="#FFB800"/>
+      <text x="226" y="76" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" fill="#1F3864">PLC</text>
+
+      <!-- Conduit 2 (firewall) -->
+      <line x1="261" y1="50" x2="292" y2="50" stroke="#0A1628" stroke-width="2"/>
+      <g transform="translate(268, 38)">
+        <rect x="0" y="0" width="20" height="24" rx="2" fill="#EF4444"/>
+        <line x1="0"  y1="6"  x2="20" y2="6"  stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="10" y1="0"  x2="10" y2="6"  stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="6"  y1="6"  x2="6"  y2="14" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="14" y1="6"  x2="14" y2="14" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="0"  y1="14" x2="20" y2="14" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="3"  y1="14" x2="3"  y2="24" stroke="#FFFFFF" stroke-width="1"/>
+        <line x1="11" y1="14" x2="11" y2="24" stroke="#FFFFFF" stroke-width="1"/>
+      </g>
+
+      <!-- Safety zone (right, high SL) -->
+      <rect x="292" y="0" width="98" height="100" rx="8" fill="#FFE0E0" stroke="#EF4444" stroke-dasharray="4 3"/>
+      <text x="341" y="18" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#1F3864" letter-spacing="1">SAFETY</text>
+      <text x="341" y="30" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="9" fill="#6B7280">SL-T 3</text>
+      <!-- Robot/safety controller icons -->
+      <g transform="translate(304, 42)">
+        <!-- Mini robot -->
+        <rect x="0" y="14" width="22" height="10" rx="2" fill="url(#amber)"/>
+        <circle cx="11" cy="14" r="5" fill="#0A1628"/>
+        <rect x="6" y="-2" width="3" height="16" fill="url(#amber)"/>
+        <rect x="13" y="2" width="14" height="3" fill="url(#amber)"/>
+      </g>
+      <rect x="338" y="44" width="36" height="22" rx="2" fill="#1F3864"/>
+      <text x="356" y="58" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFB800">SAFETY</text>
+      <text x="356" y="68" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFB800">CTRL</text>
+      <text x="316" y="88" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="8" fill="#1F3864">ROBOT</text>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="115" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="57" y="15" text-anchor="middle" class="skill">62443 risk</text>
+      <rect x="125" width="105" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="178" y="15" text-anchor="middle" class="skill">Asset inv.</text>
+      <rect x="240" width="125" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="302" y="15" text-anchor="middle" class="skill">Zone &amp; conduit</text>
+    </g>
+    <text x="20" y="266" class="meta">FR 1-7 mapped to per-zone SL-T; conduits enforce protocol allowlists.</text>
+  </g>
+
+  <!-- arrow marker for SSM panel -->
+  <defs>
+    <marker id="arrSafety" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0A1628"/>
+    </marker>
+  </defs>
+</svg>

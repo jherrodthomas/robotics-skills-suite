@@ -1,0 +1,335 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720" role="img" aria-label="Robot types covered by the suite">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A4A65"/>
+      <stop offset="1" stop-color="#1F3864"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFB800"/>
+      <stop offset="1" stop-color="#E89C00"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E5E7EB"/>
+      <stop offset="1" stop-color="#D1D5DB"/>
+    </linearGradient>
+  </defs>
+
+  <style><![CDATA[
+    .header  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:24px; font-weight:800; fill:#0A1628; }
+    .meta    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:12px; fill:#6B7280; }
+    .name    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:16px; font-weight:800; fill:#0A1628; }
+    .standard{ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; font-weight:600; fill:#1F3864; letter-spacing:1px; }
+    .desc    { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; fill:#4B5563; }
+    .skill   { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:10px; font-weight:600; fill:#1F3864; }
+    .floor-l { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:10px; fill:#9CA3AF; }
+  ]]></style>
+
+  <rect width="1400" height="720" fill="#FAFAFA"/>
+
+  <text x="40" y="48" class="header">Robot types covered by the suite</text>
+  <text x="40" y="70" class="meta">Six classes across industrial, collaborative, and mobile families. Each maps to a specific cluster of skills.</text>
+
+  <!-- =========================================================== -->
+  <!-- Card 1 — 6-AXIS INDUSTRIAL ROBOT (top-left)                  -->
+  <!-- =========================================================== -->
+  <g transform="translate(40, 100)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">CLUSTER · INDUSTRIAL</text>
+    <text x="20" y="56" class="name">6-axis industrial robot</text>
+    <text x="20" y="76" class="desc">Welding · palletizing · machine tending · spray</text>
+
+    <!-- Robot illustration -->
+    <g transform="translate(180, 90)">
+      <!-- floor -->
+      <rect x="-90" y="155" width="270" height="20" rx="2" fill="url(#floor)"/>
+      <!-- pedestal base -->
+      <rect x="-30" y="120" width="60" height="40" rx="4" fill="url(#amber)"/>
+      <rect x="-36" y="115" width="72" height="10" rx="2" fill="#0A1628"/>
+      <!-- J1 housing -->
+      <rect x="-22" y="92" width="44" height="28" rx="4" fill="url(#amber)"/>
+      <!-- J2 shoulder -->
+      <circle cx="0" cy="92" r="14" fill="url(#metal)"/>
+      <!-- upper arm (J2-J3) -->
+      <rect x="-10" y="34" width="20" height="62" rx="6" fill="url(#amber)"
+            transform="rotate(-25 0 92)"/>
+      <!-- J3 elbow -->
+      <circle cx="32" cy="50" r="11" fill="url(#metal)"/>
+      <!-- forearm (J3-J5) -->
+      <rect x="32" y="42" width="60" height="16" rx="6" fill="url(#amber)"
+            transform="rotate(20 32 50)"/>
+      <!-- J4 wrist roll -->
+      <circle cx="84" cy="68" r="8" fill="url(#metal)"/>
+      <!-- J5 wrist pitch + J6 -->
+      <rect x="84" y="62" width="22" height="12" rx="3" fill="url(#metal)"/>
+      <!-- end-effector mount + tool -->
+      <rect x="106" y="64" width="6" height="8" fill="#0A1628"/>
+      <path d="M 112 60 L 122 60 L 124 76 L 110 76 Z" fill="url(#amber)"/>
+      <!-- J labels -->
+      <g class="floor-l" fill="#1F3864" font-weight="700">
+        <text x="0"  y="89" text-anchor="middle">J2</text>
+        <text x="32" y="48" text-anchor="middle">J3</text>
+      </g>
+    </g>
+
+    <!-- skill chips -->
+    <g transform="translate(20, 230)">
+      <rect width="105" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="52" y="15" text-anchor="middle" class="skill">ISO 10218-1/-2</text>
+      <rect x="115" width="80" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="155" y="15" text-anchor="middle" class="skill">ISO 9283</text>
+      <rect x="205" width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="255" y="15" text-anchor="middle" class="skill">FAT/SAT/HIL</text>
+    </g>
+    <text x="20" y="266" class="meta">Reach 1.5–3.5 m · payload 5–700 kg · Cat 3 PLd safeguarding</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Card 2 — COLLABORATIVE ROBOT (top-center)                    -->
+  <!-- =========================================================== -->
+  <g transform="translate(485, 100)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">CLUSTER · COBOT</text>
+    <text x="20" y="56" class="name">Collaborative robot</text>
+    <text x="20" y="76" class="desc">Hand-guiding · SSM · PFL · monitored stop</text>
+
+    <!-- Cobot illustration: rounded, smaller, blue/white -->
+    <g transform="translate(180, 110)">
+      <rect x="-90" y="135" width="270" height="20" rx="2" fill="url(#floor)"/>
+      <!-- base -->
+      <ellipse cx="0" cy="125" rx="32" ry="10" fill="#0A1628"/>
+      <rect x="-25" y="105" width="50" height="22" rx="6" fill="url(#metal)"/>
+      <!-- joint 1 -->
+      <circle cx="0" cy="100" r="14" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <!-- segment 1 -->
+      <rect x="-9" y="60" width="18" height="44" rx="9" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <!-- joint 2 -->
+      <circle cx="0" cy="60" r="13" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <!-- upper segment -->
+      <rect x="0" y="38" width="60" height="18" rx="9" fill="#ffffff" stroke="#1F3864" stroke-width="3"
+            transform="rotate(-10 0 47)"/>
+      <!-- joint 3 -->
+      <circle cx="56" cy="34" r="12" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <!-- forearm -->
+      <rect x="56" y="28" width="46" height="14" rx="7" fill="#ffffff" stroke="#1F3864" stroke-width="3"
+            transform="rotate(15 56 35)"/>
+      <!-- wrist + tool -->
+      <circle cx="100" cy="46" r="9" fill="#ffffff" stroke="#1F3864" stroke-width="3"/>
+      <rect x="106" y="42" width="14" height="8" rx="2" fill="url(#amber)"/>
+      <!-- two-finger gripper -->
+      <rect x="120" y="34" width="3" height="10" fill="#0A1628"/>
+      <rect x="120" y="48" width="3" height="10" fill="#0A1628"/>
+
+      <!-- "human hand" near tool to suggest collaboration -->
+      <g transform="translate(135, 60)" stroke="#FFB800" stroke-width="2.5" fill="none">
+        <path d="M 0 0 C -2 -8, 4 -14, 8 -8 L 8 6 L 12 -6 C 14 -10, 20 -8, 18 -2 L 14 8"/>
+      </g>
+    </g>
+
+    <!-- skill chips -->
+    <g transform="translate(20, 230)">
+      <rect width="120" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="60" y="15" text-anchor="middle" class="skill">ISO/TS 15066</text>
+      <rect x="130" width="65" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="162" y="15" text-anchor="middle" class="skill">SSM</text>
+      <rect x="205" width="65" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="237" y="15" text-anchor="middle" class="skill">PFL</text>
+      <rect x="280" width="105" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="332" y="15" text-anchor="middle" class="skill">Hand-guiding</text>
+    </g>
+    <text x="20" y="266" class="meta">Reach 0.5–1.7 m · payload 3–25 kg · biofidelic force/pressure limits</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Card 3 — SCARA (top-right)                                   -->
+  <!-- =========================================================== -->
+  <g transform="translate(930, 100)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">CLUSTER · INDUSTRIAL</text>
+    <text x="20" y="56" class="name">SCARA robot</text>
+    <text x="20" y="76" class="desc">High-speed assembly · pick &amp; place</text>
+
+    <!-- SCARA illustration: vertical column with two horizontal arms -->
+    <g transform="translate(180, 105)">
+      <rect x="-90" y="140" width="270" height="20" rx="2" fill="url(#floor)"/>
+      <!-- base -->
+      <rect x="-22" y="120" width="44" height="22" rx="4" fill="#0A1628"/>
+      <!-- column -->
+      <rect x="-12" y="40" width="24" height="80" rx="4" fill="url(#metal)"/>
+      <!-- shoulder pivot -->
+      <circle cx="0" cy="40" r="10" fill="url(#amber)"/>
+      <!-- arm 1 (link 1) -->
+      <rect x="-3" y="40" width="80" height="14" rx="6" fill="url(#metal)"/>
+      <!-- elbow pivot -->
+      <circle cx="77" cy="47" r="9" fill="url(#amber)"/>
+      <!-- arm 2 (link 2) -->
+      <rect x="74" y="47" width="62" height="12" rx="5" fill="url(#metal)"/>
+      <!-- z-axis tool spindle (vertical) -->
+      <rect x="132" y="35" width="6" height="40" fill="#0A1628"/>
+      <!-- tool -->
+      <rect x="128" y="75" width="14" height="8" rx="2" fill="url(#amber)"/>
+      <!-- top-down work envelope arc hint -->
+      <path d="M -50 130 A 100 30 0 0 1 165 130" fill="none" stroke="#FFB800" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7"/>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="105" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="52" y="15" text-anchor="middle" class="skill">ISO 10218-1/-2</text>
+      <rect x="115" width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="165" y="15" text-anchor="middle" class="skill">ISO 13849 PLr</text>
+      <rect x="225" width="80" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="265" y="15" text-anchor="middle" class="skill">Cell layout</text>
+    </g>
+    <text x="20" y="266" class="meta">Cycle &lt; 0.5 s · X-Y reach 200–1200 mm · Z stroke 100–500 mm</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Card 4 — AGV / Driverless forklift (bottom-left)             -->
+  <!-- =========================================================== -->
+  <g transform="translate(40, 400)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">CLUSTER · AMR</text>
+    <text x="20" y="56" class="name">Driverless industrial truck</text>
+    <text x="20" y="76" class="desc">Automated forklift · pallet handler · tow tractor</text>
+
+    <!-- AGV forklift illustration -->
+    <g transform="translate(120, 110)">
+      <rect x="-90" y="135" width="320" height="20" rx="2" fill="url(#floor)"/>
+      <!-- chassis body -->
+      <rect x="0" y="80" width="120" height="50" rx="6" fill="url(#amber)"/>
+      <rect x="100" y="60" width="40" height="20" rx="4" fill="url(#metal)"/>
+      <!-- wheels -->
+      <circle cx="20"  cy="135" r="14" fill="#0A1628"/>
+      <circle cx="20"  cy="135" r="6"  fill="#6B7280"/>
+      <circle cx="100" cy="135" r="14" fill="#0A1628"/>
+      <circle cx="100" cy="135" r="6"  fill="#6B7280"/>
+      <!-- mast -->
+      <rect x="140" y="20" width="12" height="115" fill="url(#metal)"/>
+      <rect x="156" y="30" width="6"  height="100" fill="url(#metal)"/>
+      <!-- carriage / forks -->
+      <rect x="138" y="100" width="22" height="10" fill="#0A1628"/>
+      <rect x="160" y="105" width="40" height="6" fill="#0A1628"/>
+      <rect x="160" y="120" width="40" height="6" fill="#0A1628"/>
+      <!-- safety scanner cone (front) -->
+      <path d="M -10 110 L 30 130 L 30 90 Z" fill="#10B981" opacity="0.25"/>
+      <circle cx="-2" cy="100" r="6" fill="#10B981"/>
+      <!-- pallet (faded suggestion) -->
+      <g opacity="0.6">
+        <rect x="200" y="100" width="44" height="12" fill="#A0522D"/>
+        <rect x="204" y="115" width="6"  height="14" fill="#A0522D"/>
+        <rect x="219" y="115" width="6"  height="14" fill="#A0522D"/>
+        <rect x="234" y="115" width="6"  height="14" fill="#A0522D"/>
+      </g>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="50" y="15" text-anchor="middle" class="skill">ISO 3691-4</text>
+      <rect x="110" width="115" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="167" y="15" text-anchor="middle" class="skill">Operating env.</text>
+      <rect x="235" width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="285" y="15" text-anchor="middle" class="skill">Fleet manager</text>
+    </g>
+    <text x="20" y="266" class="meta">Lift 1–5 t · speed up to 2 m/s · LiDAR + camera safety stops</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Card 5 — AMR / autonomous mobile robot (bottom-center)       -->
+  <!-- =========================================================== -->
+  <g transform="translate(485, 400)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">CLUSTER · AMR</text>
+    <text x="20" y="56" class="name">Autonomous mobile robot</text>
+    <text x="20" y="76" class="desc">Intralogistics · payload transport · VDA 5050 fleets</text>
+
+    <!-- AMR illustration: low platform with payload -->
+    <g transform="translate(120, 105)">
+      <rect x="-90" y="140" width="320" height="20" rx="2" fill="url(#floor)"/>
+      <!-- payload box -->
+      <rect x="36" y="40" width="120" height="50" rx="3" fill="#A0522D" stroke="#0A1628" stroke-width="2"/>
+      <line x1="46" y1="55" x2="146" y2="55" stroke="#0A1628" stroke-width="1" opacity="0.4"/>
+      <line x1="46" y1="75" x2="146" y2="75" stroke="#0A1628" stroke-width="1" opacity="0.4"/>
+      <!-- platform -->
+      <rect x="20" y="90" width="160" height="35" rx="6" fill="url(#amber)"/>
+      <rect x="20" y="92" width="160" height="6" fill="#0A1628"/>
+      <!-- corner lidar pucks -->
+      <circle cx="28"  cy="92" r="6" fill="#1F3864" stroke="#FFB800" stroke-width="1.5"/>
+      <circle cx="172" cy="92" r="6" fill="#1F3864" stroke="#FFB800" stroke-width="1.5"/>
+      <!-- wheels -->
+      <circle cx="40"  cy="135" r="13" fill="#0A1628"/>
+      <circle cx="40"  cy="135" r="6"  fill="#6B7280"/>
+      <circle cx="160" cy="135" r="13" fill="#0A1628"/>
+      <circle cx="160" cy="135" r="6"  fill="#6B7280"/>
+      <!-- safety scan field (front + sides) -->
+      <path d="M -10 120 L 28 125 L 28 100 Z" fill="#10B981" opacity="0.25"/>
+      <path d="M 210 120 L 172 125 L 172 100 Z" fill="#10B981" opacity="0.25"/>
+      <!-- direction arrow -->
+      <path d="M 100 105 L 110 110 L 100 115 Z" fill="#0A1628"/>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="115" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="57" y="15" text-anchor="middle" class="skill">ANSI R15.08</text>
+      <rect x="125" width="105" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="178" y="15" text-anchor="middle" class="skill">VDA 5050</text>
+      <rect x="240" width="100" height="22" rx="11" fill="#FFF7E0" stroke="#FFB800"/>
+      <text x="290" y="15" text-anchor="middle" class="skill">RF coexist.</text>
+    </g>
+    <text x="20" y="266" class="meta">Payload 100–1500 kg · 360° lidar safety · SLAM nav</text>
+  </g>
+
+  <!-- =========================================================== -->
+  <!-- Card 6 — DRONE / UAS (bottom-right)                          -->
+  <!-- =========================================================== -->
+  <g transform="translate(930, 400)">
+    <rect width="430" height="280" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+    <text x="20" y="32" class="standard">CLUSTER · CARTESIAN/DELTA · &amp; UAS</text>
+    <text x="20" y="56" class="name">Cartesian gantry · delta · drone</text>
+    <text x="20" y="76" class="desc">Packaging · sortation · inspection</text>
+
+    <!-- Two illustrations side by side: gantry + drone -->
+    <g transform="translate(40, 100)">
+      <!-- Gantry frame -->
+      <rect x="-10" y="0" width="170" height="120" fill="none" stroke="#1F3864" stroke-width="3" rx="4"/>
+      <!-- X rail (top) -->
+      <rect x="-10" y="-2" width="170" height="6" fill="url(#metal)"/>
+      <!-- Y carriage -->
+      <rect x="50" y="-4" width="30" height="14" rx="2" fill="url(#amber)"/>
+      <!-- Z spindle hanging -->
+      <rect x="62" y="10" width="6" height="40" fill="#0A1628"/>
+      <rect x="58" y="50" width="14" height="10" rx="2" fill="url(#amber)"/>
+      <!-- floor -->
+      <rect x="-20" y="120" width="190" height="8" fill="url(#floor)"/>
+      <!-- label inside -->
+      <text x="75" y="92" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" fill="#1F3864" font-weight="700">GANTRY</text>
+    </g>
+
+    <g transform="translate(250, 110)">
+      <!-- Drone -->
+      <!-- Central hub -->
+      <rect x="-12" y="-8" width="24" height="14" rx="3" fill="url(#metal)"/>
+      <!-- 4 arms -->
+      <line x1="0" y1="-1" x2="-44" y2="-22" stroke="#1F3864" stroke-width="3"/>
+      <line x1="0" y1="-1" x2="44"  y2="-22" stroke="#1F3864" stroke-width="3"/>
+      <line x1="0" y1="-1" x2="-44" y2="20"  stroke="#1F3864" stroke-width="3"/>
+      <line x1="0" y1="-1" x2="44"  y2="20"  stroke="#1F3864" stroke-width="3"/>
+      <!-- 4 rotors -->
+      <circle cx="-44" cy="-22" r="14" fill="none" stroke="#FFB800" stroke-width="2"/>
+      <circle cx="44"  cy="-22" r="14" fill="none" stroke="#FFB800" stroke-width="2"/>
+      <circle cx="-44" cy="20"  r="14" fill="none" stroke="#FFB800" stroke-width="2"/>
+      <circle cx="44"  cy="20"  r="14" fill="none" stroke="#FFB800" stroke-width="2"/>
+      <!-- Camera underneath -->
+      <rect x="-6" y="6" width="12" height="8" rx="2" fill="#0A1628"/>
+      <circle cx="0" cy="10" r="3" fill="#FFB800"/>
+      <text x="0" y="58" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="10" fill="#1F3864" font-weight="700">UAS</text>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <rect width="105" height="22" rx="11" fill="#F3F4F6" stroke="#9CA3AF"/>
+      <text x="52" y="15" text-anchor="middle" class="skill" fill="#6B7280">v2 cluster</text>
+      <rect x="115" width="155" height="22" rx="11" fill="#F3F4F6" stroke="#9CA3AF"/>
+      <text x="192" y="15" text-anchor="middle" class="skill" fill="#6B7280">SORA / FAA Part 107+</text>
+    </g>
+    <text x="20" y="266" class="meta">Listed for taxonomy. UAS regulated artifacts ship in v2 release.</text>
+  </g>
+
+</svg>

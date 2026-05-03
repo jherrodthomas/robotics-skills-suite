@@ -38,6 +38,22 @@ This is the natural counterpart to the [automotive-skills-suite](https://github.
 <img src="assets/clusters.svg" alt="Ten skill clusters — 38 builder + reviewer pairs" width="100%"/>
 </div>
 
+## Robot types covered
+
+<div align="center">
+<img src="assets/robot-types.svg" alt="Robot types covered by the suite" width="100%"/>
+</div>
+
+The suite covers six classes of robots — 6-axis industrial arms, collaborative robots, SCARA, driverless industrial trucks, autonomous mobile robots, plus Cartesian gantries and a placeholder lane for UAS that ships in v2. Each class maps to a specific cluster of skills.
+
+## Safety mechanisms covered
+
+<div align="center">
+<img src="assets/safety-mechanisms.svg" alt="Safety mechanisms covered by the suite" width="100%"/>
+</div>
+
+The six core safeguarding patterns every integrator needs to document — Speed and Separation Monitoring, Power and Force Limiting, E-stop and dual-channel safety architecture, light curtains and presence sensing, lockout/tagout, and IEC 62443 zone & conduit segmentation. Each is the subject of a builder + reviewer pair (most have several).
+
 ---
 
 ## What this is

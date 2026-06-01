@@ -30,3 +30,12 @@
 - When polishing iso10218, double-check whether ISO 10218-1:2025 + 10218-2:2025 are both finalized — if -2 is still in DIS/FDIS the description should say so explicitly rather than claiming the published edition.
 - Saturday RELEASE will have material this week (this PLAN commit + at least one POLISH commit expected by then), so a `v2026.06.W1` tag is on the table.
 - EU Machinery Regulation 2023/1230 applies from 14 Jan 2027 — schedule a `declaration-of-conformity-*` polish into W24 or W25 to align language ahead of time.
+
+
+## 2026-06-01 (autonomous run, MONTHLY-KPI)
+
+**Action:** Generated docs/monthly/2026-05.md
+**Velocity:** 5 commits, 76 skills touched (all in one seeding commit 27fa0da), 0 releases
+**Coverage:** paired 100% (38/38), examples 0% (0/38 — no examples/ tree yet)
+**Standards-edition findings:** 3 (iso13849-plr-builder no :2023, iso3691-4-risk-assessment-builder no :2020, iec62443-risk-assessment-builder no :2020)
+**Notes:** May was the founding month — the entire inventory landed on 2026-05-03 then went quiet until the Sunday triage on 5-31, so most per-skill metrics are degenerate ties this cycle. The standards-edition watch surfaced three real gaps; one (iec62443) is already covered by W23 issue #9, the other two (iso13849, iso3691-4 builder) are recommended for next month's POLISH plan.

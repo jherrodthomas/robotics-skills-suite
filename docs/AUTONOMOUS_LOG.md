@@ -39,3 +39,17 @@
 **Coverage:** paired 100% (38/38), examples 0% (0/38 — no examples/ tree yet)
 **Standards-edition findings:** 3 (iso13849-plr-builder no :2023, iso3691-4-risk-assessment-builder no :2020, iec62443-risk-assessment-builder no :2020)
 **Notes:** May was the founding month — the entire inventory landed on 2026-05-03 then went quiet until the Sunday triage on 5-31, so most per-skill metrics are degenerate ties this cycle. The standards-edition watch surfaced three real gaps; one (iec62443) is already covered by W23 issue #9, the other two (iso13849, iso3691-4 builder) are recommended for next month's POLISH plan.
+
+## 2026-06-02 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished `iso10218-compliance-matrix-builder.skill` — fixed 3 casing typos in SKILL.md ("Iso10218" → "ISO 10218"); verified ISO 10218-1/-2:2025 edition in description; logged content-gap follow-ups (missing references/ folder, thin "When to use" and "Output structure" sections).
+**Files touched:** STATUS.md, skills/iso10218-compliance-matrix-builder.skill, docs/skill-polish-log/iso10218-compliance-matrix-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (W23 weekly targets #5–#9; all labeled weekly-target + domain)
+**Notes:** No open issues labeled skill-bug or reviewer-finding, no orphans, all 38 builders tied at 2026-05-03 last-touched. Resolved priority-4 random-pick by aligning with this week's planned target #5 (compliance domain, safety-critical → mandatory edition check applied). Edition verification confirmed ISO 10218-1:2025 and ISO 10218-2:2025 are correctly named in the frontmatter description, including the ISO/TS 15066:2016 fold-in note. Applied only typo-class capitalization fixes per the "SMALL obvious fix" rule; descoped the missing references/ directory and the thin When-to-use / Output-structure sections to follow-ups.
+**Follow-ups:**
+- Decide on the missing references/ folder for iso10218-compliance-matrix-builder: either add methodology.md + iso10218_conventions.md or remove the claim from SKILL.md.
+- Flesh out "## When to use this skill" and "## Output structure" sections (likely a pattern across multiple builders — worth a sweep on a future POLISH day).
+- W23 target #5 (this skill) now has a polish log entry — issue #5 can be closed once a human reviews and signs off, but per hard rules autonomous run does not close issues.

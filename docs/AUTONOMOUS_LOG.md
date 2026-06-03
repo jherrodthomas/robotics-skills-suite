@@ -53,3 +53,17 @@
 - Decide on the missing references/ folder for iso10218-compliance-matrix-builder: either add methodology.md + iso10218_conventions.md or remove the claim from SKILL.md.
 - Flesh out "## When to use this skill" and "## Output structure" sections (likely a pattern across multiple builders — worth a sweep on a future POLISH day).
 - W23 target #5 (this skill) now has a polish log entry — issue #5 can be closed once a human reviews and signs off, but per hard rules autonomous run does not close issues.
+
+## 2026-06-03 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished operating-envelope builder + reviewer pair; anchored both on ISO 3691-4:2020.
+**Files touched:** `skills/operating-envelope-builder.skill`, `skills/operating-envelope-checklist-reviewer.skill`, `docs/skill-polish-log/operating-envelope-builder.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W23 weekly targets; #5 closed-out by yesterday's polish, today addresses #7)
+**Notes:** Picked issue #7 (operating-envelope) per the priority rules — least-recently-updated open weekly target and a safety-critical AMR pick. Pre-edit, neither builder nor reviewer SKILL.md named a standard at all; both now anchor on ISO 3691-4:2020 (driverless industrial trucks) and gained one trigger keyword. Edits were strictly description- and lead-paragraph-class — no script changes. Two deeper gaps logged but descoped: (a) generator does not emit distinct warning_zone / hazard_zone columns nor a protective-stop / restart-after-reset tab, both of which ISO 3691-4 §§4.4 and 5.1 would expect, and (b) the `## Files in this skill` block on both .skill files lists `examples/` and `references/` content that the archive does not ship — same pattern previously flagged on iso10218-compliance-matrix-builder. Recommend handling (b) as a single repo-wide sweep rather than per-skill. Also refined the STATUS.md domain-prefix matcher so it correctly tags stems that equal a bare prefix (`robot-sop`, `ssm-plan`, `loto-procedure`, etc.); previously these came up `unknown`. Suite now resolves cleanly across all 10 domains.
+**Follow-ups:**
+- Pick remaining W23 targets #6 (iso15066), #8 (nav2-config), #9 (iec62443) for Thursday's run and any spillover.
+- Open a tracking issue for the repo-wide `## Files in this skill` sweep (examples/ and references/ either ship or strike).
+- Consider a targeted generator-script update on operating-envelope to emit ISO 3691-4 warning/hazard zone columns and a protective-stop tab — bigger than a polish pass but worth a dedicated issue.

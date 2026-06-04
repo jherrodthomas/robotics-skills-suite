@@ -1,6 +1,6 @@
 # Robotics Skills Suite — STATUS
 
-_Generated: 2026-06-03 (autonomous run, POLISH)_
+_Generated: 2026-06-04 (autonomous run, POLISH)_
 
 Total builders: **38** · Paired reviewers: **38** (100.0%) · Orphan builders: **0**
 
@@ -13,7 +13,7 @@ Flag legend: 🟢 paired & touched ≤30 days · 🟡 paired & stale (30+ days) 
 | `perception-test-catalog-builder.skill` | ai-ml | `perception-test-catalog-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `fleet-manager-architecture-builder.skill` | amr | `fleet-manager-architecture-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `iso3691-4-risk-assessment-builder.skill` | amr | `iso3691-4-risk-assessment-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
-| `operating-envelope-builder.skill` | amr | `operating-envelope-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
+| `operating-envelope-builder.skill` | amr | `operating-envelope-checklist-reviewer.skill` | 2026-06-03 | 🟢 |
 | `wireless-coexistence-plan-builder.skill` | amr | `wireless-coexistence-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `eoat-spec-builder.skill` | cell-design | `eoat-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `interlock-estop-architecture-builder.skill` | cell-design | `interlock-estop-architecture-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
@@ -26,6 +26,7 @@ Flag legend: 🟢 paired & touched ≤30 days · 🟡 paired & stale (30+ days) 
 | `ansi-r1506-compliance-matrix-builder.skill` | compliance | `ansi-r1506-compliance-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `declaration-of-conformity-builder.skill` | compliance | `declaration-of-conformity-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `iec62061-sil-builder.skill` | compliance | `iec62061-sil-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
+| `iso10218-compliance-matrix-builder.skill` | compliance | `iso10218-compliance-matrix-checklist-reviewer.skill` | 2026-06-02 | 🟢 |
 | `iso13849-plr-builder.skill` | compliance | `iso13849-plr-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `iec62443-risk-assessment-builder.skill` | cybersecurity | `iec62443-risk-assessment-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `ot-asset-inventory-builder.skill` | cybersecurity | `ot-asset-inventory-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
@@ -45,12 +46,11 @@ Flag legend: 🟢 paired & touched ≤30 days · 🟡 paired & stale (30+ days) 
 | `robot-acceptance-protocol-builder.skill` | v&v | `robot-acceptance-protocol-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `robot-field-acceptance-builder.skill` | v&v | `robot-field-acceptance-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `robot-hil-test-catalog-builder.skill` | v&v | `robot-hil-test-catalog-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
-| `iso10218-compliance-matrix-builder.skill` | compliance | `iso10218-compliance-matrix-checklist-reviewer.skill` | 2026-06-02 | 🟢 |
 
 ## Summary
 
-- 🟢 Paired & fresh (≤30 days): **1**
-- 🟡 Paired & stale (30+ days): **37**
+- 🟢 Paired & fresh (≤30 days): **2**
+- 🟡 Paired & stale (30+ days): **36**
 - 🔴 Orphan builders (no paired reviewer): **0**
 - Total reviewer files in suite: **38**
 - Domain spread (builders): ai-ml=3, amr=4, cell-design=4, cobot=4, compliance=5, cybersecurity=3, foundation=3, operational=3, ros2=5, v&v=4

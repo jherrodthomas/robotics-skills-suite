@@ -82,3 +82,18 @@
 - Friday DOCS run should append an examples/iso15066-biomechanical-limits-builder/README.md stub since this skill was touched this week.
 - Remaining W23 targets: #8 (nav2-config) and #9 (iec62443-risk-assessment) — pick one for tomorrow if it remains POLISH spillover, save the other for Sun TRIAGE attention.
 - Future iso15066 micro-edit: name Annex A.3 (quasi-static) and Annex A.4 (transient) clause sources in the Output structure tab descriptions.
+
+## 2026-06-05 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Bootstrapped `CHANGELOG.md` with the W23 entry; created 5 `examples/<skill>/README.md` stubs (one per skill touched this week); regenerated STATUS.md.
+**Files touched:** `CHANGELOG.md`, `examples/iso10218-compliance-matrix-builder/README.md`, `examples/iso15066-biomechanical-limits-builder/README.md`, `examples/iso15066-biomechanical-limits-checklist-reviewer/README.md`, `examples/operating-envelope-builder/README.md`, `examples/operating-envelope-checklist-reviewer/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (W23 weekly targets #5–#9; #5/#6/#7 effectively resolved by Tue/Wed/Thu polishes but per hard rules autonomous run does not close issues; #8 nav2-config and #9 iec62443 remain genuinely open)
+**Notes:** First DOCS run since the suite was seeded — there was no `CHANGELOG.md` and no `examples/` tree, so both got bootstrapped in one pass. The changelog format groups by ISO week and by conventional-commit type to match the journal style; week 2026-W23 is the founding entry. Per the spec, every skill touched this week without an examples stub got one — that covered all five (`iso10218-compliance-matrix-builder`, `iso15066-biomechanical-limits` pair, `operating-envelope` pair). Stubs are deliberately thin (five-line template noting produces / input / output / sample I/O) and self-mark as placeholders to be filled with real worked examples. README skill-table update was a no-op this week — `git log --name-status` confirmed zero new skill files added (all five touched files were modifications of pre-existing skills). STATUS.md fresh-count now correctly shows three 🟢 builders (iso10218, operating-envelope, iso15066), up from two yesterday. Did not bump the README "Skills: 76" badge — inventory is unchanged. Did not author RELEASES.md today; that's Saturday's RELEASE-mode concern.
+**Follow-ups:**
+- Tomorrow (Sat) is RELEASE mode. With 6 commits expected to land in W23 (5 prior + this DOCS commit), Saturday will compute tag `v2026.06.W1` and append release notes to a fresh `RELEASES.md`.
+- The five examples stubs claim `sample_input.json` and `sample_output.xlsx` paths that don't exist yet. Recommend a follow-up issue per pair to attach a real worked example before next month's monthly KPI run flags zero-example coverage again.
+- The repo-wide `## Files in this skill` sweep (examples/ + references/ ship-vs-claim drift) flagged on three pairs is still outstanding — should be opened as a tracking issue this weekend.
+- Spillover targets #8 (nav2-config) and #9 (iec62443) carry into W24 unless touched on Sat — note that POLISH is not a Saturday mode, so they will land in W24's Mon plan.

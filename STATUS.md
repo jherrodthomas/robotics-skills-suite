@@ -1,6 +1,6 @@
 # Robotics Skills Suite — STATUS
 
-_Generated: 2026-06-04 (autonomous run, POLISH)_
+_Generated: 2026-06-05 (autonomous run, DOCS)_
 
 Total builders: **38** · Paired reviewers: **38** (100.0%) · Orphan builders: **0**
 
@@ -20,7 +20,7 @@ Flag legend: 🟢 paired & touched ≤30 days · 🟡 paired & stale (30+ days) 
 | `robot-cell-layout-builder.skill` | cell-design | `robot-cell-layout-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `safety-io-matrix-builder.skill` | cell-design | `safety-io-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `cobot-hand-guiding-builder.skill` | cobot | `cobot-hand-guiding-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
-| `iso15066-biomechanical-limits-builder.skill` | cobot | `iso15066-biomechanical-limits-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
+| `iso15066-biomechanical-limits-builder.skill` | cobot | `iso15066-biomechanical-limits-checklist-reviewer.skill` | 2026-06-04 | 🟢 |
 | `pfl-plan-builder.skill` | cobot | `pfl-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `ssm-plan-builder.skill` | cobot | `ssm-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
 | `ansi-r1506-compliance-matrix-builder.skill` | compliance | `ansi-r1506-compliance-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
@@ -49,8 +49,8 @@ Flag legend: 🟢 paired & touched ≤30 days · 🟡 paired & stale (30+ days) 
 
 ## Summary
 
-- 🟢 Paired & fresh (≤30 days): **2**
-- 🟡 Paired & stale (30+ days): **36**
+- 🟢 Paired & fresh (≤30 days): **3**
+- 🟡 Paired & stale (30+ days): **35**
 - 🔴 Orphan builders (no paired reviewer): **0**
 - Total reviewer files in suite: **38**
 - Domain spread (builders): ai-ml=3, amr=4, cell-design=4, cobot=4, compliance=5, cybersecurity=3, foundation=3, operational=3, ros2=5, v&v=4

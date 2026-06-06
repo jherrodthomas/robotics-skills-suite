@@ -97,3 +97,17 @@
 - The five examples stubs claim `sample_input.json` and `sample_output.xlsx` paths that don't exist yet. Recommend a follow-up issue per pair to attach a real worked example before next month's monthly KPI run flags zero-example coverage again.
 - The repo-wide `## Files in this skill` sweep (examples/ + references/ ship-vs-claim drift) flagged on three pairs is still outstanding — should be opened as a tracking issue this weekend.
 - Spillover targets #8 (nav2-config) and #9 (iec62443) carry into W24 unless touched on Sat — note that POLISH is not a Saturday mode, so they will land in W24's Mon plan.
+
+## 2026-06-06 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Created first weekly snapshot tag v2026.06.W1 with RELEASES.md notes; regenerated STATUS.md.
+**Files touched:** STATUS.md, RELEASES.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5
+**Notes:** Six commits this week (plan, 3x polish, docs, monthly KPI) qualified the week for a release. Tag computed as v2026.06.W1 — first ISO week within June; no prior tags exist, so the compare link points at full commit history instead of a diff. STATUS shows 35/38 builders 🟡 stale (untouched since the 2026-05-03 initial import) vs 3 🟢 refreshed by this week's polish passes — expected at the current 1-pair/day polish rate. Per policy, no GitHub Release object was published; human should review RELEASES.md and click Publish if desired.
+**Follow-ups:**
+- Sun TRIAGE: 5 open W23 POLISH issues (#5–#9) need labels verified; #8 (nav2-config Jazzy) and #9 (iec62443 SL-T) untouched this week.
+- Next polish targets per W23 plan: nav2-config (#8), iec62443-risk-assessment (#9).
+- Consider raising polish throughput or batching same-domain pairs to burn down the 35 🟡 stale entries.

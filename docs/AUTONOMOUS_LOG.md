@@ -125,3 +125,17 @@
 - Mon (PLAN) W24: carry over untouched targets #8 (nav2-config Jazzy) and #9 (iec62443 SL-T); #5/#6/#7 were polished in W23 and are candidates for the human to close.
 - 35/38 builders remain 🟡 stale (untouched since 2026-05-03) — W24 plan should consider batching same-domain pairs to raise burn-down rate.
 - Open the tracking issue for the repo-wide `## Files in this skill` ship-vs-claim sweep flagged in the 2026-06-05 DOCS journal.
+
+## 2026-06-08 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W24 plan — 5 targets across 5 domains (foundation, cell-design, operational, v&v, ai-ml), one tracking issue each (#13–#17).
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W24.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (the W24 targets just created; W23 issues all closed before this run)
+**Notes:** Came in with 0 open issues, no orphan builders, so prioritization fell to least-recently-touched. 35 of 38 builders crossed the 30-day line to 🟡 (last touched 2026-05-03); only the three W23 polish picks are 🟢. Picked exactly the five domains the W23 plan parked for "next week," which also gives a clean spread with no domain repeated week-over-week. Two picks are safety-critical (foundation ISO 12100:2010, cell-design ISO 14119/13850 + IEC 60204-1) and carry explicit edition-string verification notes for the Tue–Thu POLISH runs. GitHub auto-created the five domain labels on first apply.
+**Follow-ups:**
+- Tue–Thu POLISH: work issues #13–#17 in order; verify the edition strings in the WEEK file's refresh table before editing any safety-critical skill.
+- Sat RELEASE: this is the 2nd ISO-week of June → next tag would be v2026.06.W2 if commits land this week (they have).
+- Next Monday: with W24 done, all 10 domains will be ≤14 days fresh; future PLAN runs can shift from staleness-driven to issue/quality-driven target selection.

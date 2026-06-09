@@ -139,3 +139,17 @@
 - Tue–Thu POLISH: work issues #13–#17 in order; verify the edition strings in the WEEK file's refresh table before editing any safety-critical skill.
 - Sat RELEASE: this is the 2nd ISO-week of June → next tag would be v2026.06.W2 if commits land this week (they have).
 - Next Monday: with W24 done, all 10 domains will be ≤14 days fresh; future PLAN runs can shift from staleness-driven to issue/quality-driven target selection.
+
+## 2026-06-09 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished iso12100-risk-assessment-builder (issue #13, foundation) — anchored description on ISO 12100:2010 with a Clause 5–6 reference; wrote polish log; refreshed STATUS.md.
+**Files touched:** skills/iso12100-risk-assessment-builder.skill, docs/skill-polish-log/iso12100-risk-assessment-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5
+**Notes:** Followed the W24 plan's instruction to work issues #13–#17 in order — #13 (iso12100, foundation) is first and was the lowest-numbered W24 target plus a tied least-recently-touched builder (2026-05-03), giving a clean domain spread vs. last week (compliance/cobot/amr). As a safety-critical domain, verified the edition: ISO 12100:2010 is current (consolidated ISO 12100-1/-2:2003 + ISO 14121-1:2007, not superseded), so :2010 is the correct anchor. Applied only the small, machine-verifiable fix (edition string in description, 431→485 chars, well under 1024). Two larger issues were found and deliberately descoped into follow-ups: (a) the SKILL.md body is generic boilerplate with a mis-cased "Iso12100 Builder" heading, and (b) the "Files in this skill" tree advertises a references/ directory that is not actually packaged. Operational note: a stale /tmp/gen_status.py from a prior session (owned by another user, not overwritable) executed instead of my generator and clobbered STATUS.md with a different project's content (title "automotive-skills-suite", all domains "other"); caught via head-check, reverted with git checkout, and regenerated using a unique-named script. Future runs must use unique temp script names, never fixed /tmp paths.
+**Follow-ups:**
+- Wed/Thu POLISH: continue W24 in order — #14 interlock-estop (cell-design, verify ISO 14119:2013 / ISO 13850:2015 / IEC 60204-1), then #15 loto, #16 iso9283, #17 model-card.
+- Open a tracking issue for the repo-wide "references/ directory claimed but not shipped" mismatch (also flagged 2026-06-05 DOCS) and the SKILL.md boilerplate-body sweep — both recur across skills.
+- Sat RELEASE: commits have landed this week → tag v2026.06.W2 is due.

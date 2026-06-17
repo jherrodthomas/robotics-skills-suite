@@ -153,3 +153,17 @@
 - Wed/Thu POLISH: continue W24 in order — #14 interlock-estop (cell-design, verify ISO 14119:2013 / ISO 13850:2015 / IEC 60204-1), then #15 loto, #16 iso9283, #17 model-card.
 - Open a tracking issue for the repo-wide "references/ directory claimed but not shipped" mismatch (also flagged 2026-06-05 DOCS) and the SKILL.md boilerplate-body sweep — both recur across skills.
 - Sat RELEASE: commits have landed this week → tag v2026.06.W2 is due.
+
+## 2026-06-17 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished interlock-estop-architecture-builder (cell-design) — anchored standard editions and added three essential missing standards.
+**Files touched:** skills/interlock-estop-architecture-builder.skill, docs/skill-polish-log/interlock-estop-architecture-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W24 weekly-target: #13 done, #14–#17 pending)
+**Notes:** No skill-bug/reviewer-finding issues open and no orphans, so picked by LRU among the W24 weekly targets; chose #14's builder (cell-design) because the safety-critical domain triggers the edition-verification gate. The skill referenced ISO 13849-1 and ISO 10218-1 with no edition years and — more substantively — omitted the three standards most central to an E-stop/interlock builder: ISO 13850 (E-stop function), IEC 60204-1 (stop categories 0/1/2), and ISO 14119 (guard interlocking). Anchored editions per the repo's established pattern (13849-1:2023, 10218-1:2025) and added the three missing standards plus a Category-vs-stop-category clarification note. Re-zipped the .skill preserving recalc.py and office scripts; verified roundtrip. Human should glance at the polish-log follow-ups, especially whether the paired reviewer checks stop-category assignment.
+**Follow-ups:**
+- Tomorrow (Thu/POLISH): pick another W24 target — model-card (#17), iso9283-performance-test (#16), or loto-procedure (#15).
+- Confirm interlock-estop reviewer validates stop-category (0/1/2) and ISO 14119 defeat-resistance; file reviewer-finding if gaps.
+- Consider whether stop-category selection guidance belongs in the generated workbook (needs recalc.py review — not a POLISH-scope change).

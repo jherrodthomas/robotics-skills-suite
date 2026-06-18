@@ -167,3 +167,17 @@
 - Tomorrow (Thu/POLISH): pick another W24 target — model-card (#17), iso9283-performance-test (#16), or loto-procedure (#15).
 - Confirm interlock-estop reviewer validates stop-category (0/1/2) and ISO 14119 defeat-resistance; file reviewer-finding if gaps.
 - Consider whether stop-category selection guidance belongs in the generated workbook (needs recalc.py review — not a POLISH-scope change).
+
+## 2026-06-18 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished iso9283-performance-test-builder — anchored standard to ISO 9283:1998 in description + Standard section; logged review.
+**Files touched:** skills/iso9283-performance-test-builder.skill, docs/skill-polish-log/iso9283-performance-test-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all weekly-target: #13-#17; #13 & #14 already polished in prior runs)
+**Notes:** No open issue carried skill-bug/reviewer-finding, and no orphan builders exist, so I fell to the least-recently-touched tier. Most builders are tied at 2026-05-03, so I broke the tie toward iso9283-performance-test-builder because it is also open weekly-target #16 — progressing a planned target while satisfying the recency rule. The fix was a small, obvious edition anchor: description said "ISO 9283 1998" (no colon) and the Standard section gave an imprecise title with no year. Verified via iso.org/BSI/ANSI that ISO 9283:1998 (2nd ed., 1998-04-01) was reviewed and confirmed in 2021 and remains current — no supersession. v&v is not on the mandatory edition-check list, but I corrected the anchor for suite consistency. Repacked the .skill zip updating only SKILL.md; scripts (recalc.py, office/*) preserved untouched. STATUS still shows iso9283 last-touched 2026-05-03 because the commit hadn't landed when STATUS was generated; it will flip to 🟢 next run.
+**Follow-ups:**
+- Comment/close W24 target #16 once a human reviews the polish (do not auto-close).
+- Apply the same ISO 9283:1998 edition string to the paired reviewer skill on its next pass.
+- 33 builders remain 🟡 (30+ days untouched) — bulk of the 2026-05-03 cohort; prioritize compliance/cobot/cybersecurity editions in upcoming POLISH days.

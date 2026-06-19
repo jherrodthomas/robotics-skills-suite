@@ -181,3 +181,18 @@
 - Comment/close W24 target #16 once a human reviews the polish (do not auto-close).
 - Apply the same ISO 9283:1998 edition string to the paired reviewer skill on its next pass.
 - 33 builders remain 🟡 (30+ days untouched) — bulk of the 2026-05-03 cohort; prioritize compliance/cobot/cybersecurity editions in upcoming POLISH days.
+
+## 2026-06-19 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Added W24+W25 CHANGELOG sections, created 3 missing example-README stubs, regenerated STATUS.md.
+**Files touched:** CHANGELOG.md, STATUS.md, docs/AUTONOMOUS_LOG.md, examples/interlock-estop-architecture-builder/README.md, examples/iso9283-performance-test-builder/README.md, examples/iso12100-risk-assessment-builder/README.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 1 (#18 — junk/spam, see notes)
+**Notes:** Friday DOCS pass. The CHANGELOG's [Unreleased] still ended at W23, so W24 was never recorded — I added both a W24 section (iso12100-risk-assessment polish `93b51a1`, plan `032175f`) and a W25 section (interlock-estop `70d9030`, iso9283 `5442dcf`), all `polish:`. Per the DOCS rule, every skill touched in those weeks lacked an `examples/<skill>/README.md`, so I created three stubs (interlock-estop-architecture-builder, iso9283-performance-test-builder, iso12100-risk-assessment-builder) matching the existing stub template, with domain-accurate "produces / input / output" copy and correct edition anchors (ISO 14119:2013 / ISO 13850:2015 / IEC 60204-1:2016; ISO 9283:1998; ISO 12100:2010). No new skills were added, so the README skill table was untouched. STATUS.md now reports 38/38 paired (100%), 0 missing reviewers, 6 fresh and 32 stale (30+ days). The W24 weekly-target issues (#13–#17) referenced in the last two journal entries are now all closed — only #18 remains open: a no-label, no-body issue titled in Chinese ("I thought I misread it, checked three times to confirm") that reads as spam. Did not label or close it (DOCS mode doesn't triage; confidence on classification is below the 80% bar anyway).
+**Follow-ups:**
+- Sunday TRIAGE: assess issue #18 — likely spam; if confirmed junk, add a comment asking for a clear repro/scope rather than closing, and flag for human if still ambiguous.
+- Sat RELEASE: W25 has 2 polish commits + this docs run, so a release is warranted — compute tag v2026.06.W<n> and write RELEASES.md.
+- Replace the three new example stubs with real worked sample_input.json / sample_output.xlsx pairs when available (still pending for the W23 stubs too).
+- 32 builders remain 🟡 stale — keep prioritizing compliance/cobot/cybersecurity edition checks on POLISH days.

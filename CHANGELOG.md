@@ -6,6 +6,30 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W25 (2026-06-15 → 2026-06-21)
+
+#### polish
+
+- **interlock-estop-architecture-builder** (cell-design) — anchor descriptions on `ISO 14119:2013`, `ISO 13850:2015`, and `IEC 60204-1:2016`; add interlocking-device / E-stop / electrical-equipment edition references; log polish review (`70d9030`)
+- **iso9283-performance-test-builder** (v&v) — anchor builder on `ISO 9283:1998` (manipulating industrial robots — performance criteria and related test methods) edition string; log polish review (`5442dcf`)
+
+#### docs
+
+- **CHANGELOG.md** — add W24 + W25 weekly sections (W24 was never recorded; closing the gap)
+- **examples/** — stub READMEs for skills touched in W24/W25 lacking one: `interlock-estop-architecture-builder`, `iso9283-performance-test-builder`, `iso12100-risk-assessment-builder`
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers, 6 fresh / 32 stale (30+ days)
+- **docs/AUTONOMOUS_LOG.md** — daily journal entry for 2026-06-19 DOCS
+
+### Week 2026-W24 (2026-06-08 → 2026-06-14)
+
+#### polish
+
+- **iso12100-risk-assessment-builder** (foundation) — anchor builder on `ISO 12100:2010` (safety of machinery — general principles for design, risk assessment and risk reduction) edition string; log polish review (`93b51a1`)
+
+#### chore
+
+- **plan** — seeded W24 targets: 5 issues across 5 deferred domains (`032175f`)
+
 ### Week 2026-W23 (2026-06-01 → 2026-06-07)
 
 #### polish

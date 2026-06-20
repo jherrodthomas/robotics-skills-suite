@@ -1,6 +1,6 @@
 # STATUS — robotics-skills-suite
 
-_Auto-generated 2026-06-19 by robotics-skills-daily-standup (DOCS mode)._
+_Auto-generated 2026-06-20 by robotics-skills-daily-standup (RELEASE mode)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -49,4 +49,3 @@ _Auto-generated 2026-06-19 by robotics-skills-daily-standup (DOCS mode)._
 - 🔴 Missing paired reviewer: 0
 - 🟡 Stale (not touched in 30+ days): 32
 - 🟢 Paired & touched within 30 days: 6
-

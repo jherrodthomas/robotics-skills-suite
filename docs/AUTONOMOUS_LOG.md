@@ -196,3 +196,18 @@
 - Sat RELEASE: W25 has 2 polish commits + this docs run, so a release is warranted — compute tag v2026.06.W<n> and write RELEASES.md.
 - Replace the three new example stubs with real worked sample_input.json / sample_output.xlsx pairs when available (still pending for the W23 stubs too).
 - 32 builders remain 🟡 stale — keep prioritizing compliance/cobot/cybersecurity edition checks on POLISH days.
+
+## 2026-06-20 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Tagged weekly snapshot v2026.06.W3, appended its release notes to RELEASES.md, regenerated STATUS.md.
+**Files touched:** RELEASES.md, STATUS.md, docs/AUTONOMOUS_LOG.md (+ tag v2026.06.W3)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 1 (#18 — suspected spam, no label/body)
+**Notes:** Saturday RELEASE pass. Three commits landed this week (Mon 06-15 → now): two polish (interlock-estop editions 70d9030, iso9283 anchor 5442dcf) and one docs (changelog + stubs bc0c74a), so a release is warranted. Tag computed as v2026.06.W3 using the established convention W = ISO-week(today) − ISO-week(first-of-month) + 1 = 25 − 23 + 1 = 3; confirmed against `git tag -l` that only v2026.06.W1 pre-existed. Important gap to flag for the human: no v2026.06.W2 was ever tagged for the June 8–14 window (the Sat 06-13 standup evidently did not run or was quiet), so the W3 compare link spans v2026.06.W1...v2026.06.W3 to capture everything since the last release rather than only this week. Pushed the lightweight tag; did NOT create a GitHub Release object — per task rules the human clicks Publish after reviewing RELEASES.md. STATUS.md unchanged in substance from yesterday (38/38 paired, 32 stale, 6 current) but regenerated and re-dated for this run.
+**Follow-ups:**
+- Human: review RELEASES.md v2026.06.W3 and publish the GitHub Release manually if desired.
+- Decide whether to backfill a v2026.06.W2 tag for the June 8–14 commits or leave the W1→W3 span as the record (left as-is for now).
+- Sunday TRIAGE: handle issue #18 (suspected spam) — comment requesting scope rather than closing; flag for human if still ambiguous (classification confidence below 80%).
+- 32 builders remain 🟡 stale (30+ days); keep prioritizing compliance/cobot/cybersecurity edition checks on POLISH days.

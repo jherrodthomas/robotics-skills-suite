@@ -211,3 +211,17 @@
 - Decide whether to backfill a v2026.06.W2 tag for the June 8–14 commits or leave the W1→W3 span as the record (left as-is for now).
 - Sunday TRIAGE: handle issue #18 (suspected spam) — comment requesting scope rather than closing; flag for human if still ambiguous (classification confidence below 80%).
 - 32 builders remain 🟡 stale (30+ days); keep prioritizing compliance/cobot/cybersecurity edition checks on POLISH days.
+
+## 2026-06-21 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Triaged the single open issue (#18); applied no label (below 80% confidence on any valid label) and flagged it for human review as suspected spam. Regenerated STATUS.md.
+**Files touched:** STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 1 (#18)
+**Notes:** Sunday TRIAGE pass. Read the body of #18 (carried over from yesterday's follow-up). It is not a legitimate skill/repo issue: it is a Chinese-language scare-tactic/extortion post alleging fabricated GitHub stars ("4318 stars in a week", "accounts that each starred ≤3 related repos") and closing with threats ("zero tolerance, already reported to GitHub, illegal traffic cleanup, project access closed"). It maps to none of the defined content labels {skill-bug, reviewer-finding, description-quality, new-skill, docs, ci, chain-break} and carries no domain, so per the rules I did NOT apply a label (classification confidence below 80% for any valid label). The issue was updated today (created 06-18), so the 30-day stale-comment rule does not apply — no auto-comment added. Yesterday's follow-up suggested commenting to request scope, but now that the body is visible it is plainly spam, so requesting scope would only engage the spammer; left untouched instead. Did NOT close (autonomous close is prohibited). STATUS.md unchanged in substance (38/38 paired, 6 current, 32 stale) — regenerated and re-dated for this run.
+**Follow-ups:**
+- Human: review issue #18 and close as spam / report the author to GitHub if warranted — autonomous runs cannot close it.
+- Carryover from RELEASE run: decide whether to backfill a v2026.06.W2 tag for the June 8–14 commits or leave the W1→W3 compare span as-is.
+- 32 builders remain 🟡 stale (30+ days); keep prioritizing compliance/cobot/cybersecurity edition checks on POLISH days (Tue–Thu).

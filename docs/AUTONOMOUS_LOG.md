@@ -225,3 +225,17 @@
 - Human: review issue #18 and close as spam / report the author to GitHub if warranted — autonomous runs cannot close it.
 - Carryover from RELEASE run: decide whether to backfill a v2026.06.W2 tag for the June 8–14 commits or leave the W1→W3 compare span as-is.
 - 32 builders remain 🟡 stale (30+ days); keep prioritizing compliance/cobot/cybersecurity edition checks on POLISH days (Tue–Thu).
+
+## 2026-06-22 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded 2026-W26 plan — 5 POLISH targets across 5 domains (compliance, cobot, amr, ros2, cybersecurity), one GitHub issue each (#24–#28), refreshed STATUS.md.
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W26.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 2 before run (both spam) + 5 created this run = 7 open
+**Notes:** No skills referenced by open issues and no orphan builders, so targets were chosen by least-recently-touched with deliberate domain spread — the five domains NOT refreshed in W24. The two pre-existing open issues (#21, #22) are Chinese-language "fake star" spam with no skill reference; left untouched for Sunday TRIAGE (consistent with how #18 was handled). All target editions stated (ISO 13849-1:2023, ISO/TS 15066:2016 + ISO 10218-2:2025, ISO 3691-4:2020, IEC 62443-3-2:2020, BehaviorTree.CPP v4) match editions already in use elsewhere in the repo. Working clone was created under a fresh /tmp dir because the prior run's /tmp/robotics-work tree was left root-owned and unremovable — harmless, but worth a human glance if disk fills.
+**Follow-ups:**
+- Tue–Thu: POLISH issues #24–#28 in priority order; verify each edition string in the .skill description and update reviewer pair in lockstep.
+- Sun TRIAGE: assess spam issues #21/#22 (and prior #18) — likely comment, do not label (<80% confidence on a clean label).
+- Housekeeping: stale root-owned /tmp/robotics-work dir from earlier run cannot be auto-removed.

@@ -239,3 +239,17 @@
 - Tue–Thu: POLISH issues #24–#28 in priority order; verify each edition string in the .skill description and update reviewer pair in lockstep.
 - Sun TRIAGE: assess spam issues #21/#22 (and prior #18) — likely comment, do not label (<80% confidence on a clean label).
 - Housekeeping: stale root-owned /tmp/robotics-work dir from earlier run cannot be auto-removed.
+
+## 2026-06-23 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Anchored iso13849-plr-builder description on ISO 13849-1:2023 (issue #24 DoD), wrote polish log, refreshed STATUS.
+**Files touched:** skills/iso13849-plr-builder.skill, docs/skill-polish-log/iso13849-plr-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 7 (5 W26 weekly-target POLISH issues #24–28; 2 non-English spam issues #21, #22 — no labels applied, consistent with prior triage of #18)
+**Notes:** Picked issue #24 from the W26 target set — all five targets were tied at last-touched 2026-05-03, none labeled skill-bug/reviewer-finding, and there are zero orphan builders, so I went with the lowest-numbered safety-critical compliance target. Verified the current edition is ISO 13849-1:2023 (superseded 2015) and anchored it in both the opening clause and trigger list; also expanded SRP/CS. Surgical description edit only, .skill re-zipped with structure intact. Flagged but did NOT fix a real doc/file mismatch: SKILL.md lists a references/ folder (methodology.md, iso13849_conventions.md) that is absent from the archive — needs a human decision (restore files vs trim list). Spam issues #21/#22 left untouched (POLISH mode does not label).
+**Follow-ups:**
+- Restore or remove the references/ folder listed in iso13849-plr-builder/SKILL.md (med).
+- Remaining W26 POLISH targets for Wed/Thu: #25 cobot-hand-guiding (ISO/TS 15066:2016 + ISO 10218-2:2025), #26 iso3691-4 (ISO 3691-4:2020), #27 behavior-tree-spec (BT.CPP v4/Nav2), #28 iec62443 (IEC 62443-3-2:2020).
+- Sunday TRIAGE should formally label/age the spam issues #21/#22.

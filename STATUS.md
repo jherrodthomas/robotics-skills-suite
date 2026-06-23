@@ -1,6 +1,6 @@
 # STATUS — robotics-skills-suite
 
-_Auto-generated 2026-06-22 by robotics-skills-daily-standup (PLAN mode)._
+_Auto-generated 2026-06-23 by robotics-skills-daily-standup (POLISH mode)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -47,8 +47,8 @@ _Auto-generated 2026-06-22 by robotics-skills-daily-standup (PLAN mode)._
 
 ## Summary
 
-- **Total builders:** 38
-- **Paired reviewers present:** 38/38 (100% paired)
-- **🔴 Missing paired reviewer:** 0
-- **🟡 Stale (30+ days):** 32
-- **🟢 Healthy (paired, ≤30 days):** 6
+- Total builders: **38** · Total reviewers: **38**
+- Paired builders: **38 / 38 (100%)**
+- 🔴 missing paired reviewer: **0**
+- 🟡 stale (30+ days): **32**
+- 🟢 fresh (≤30 days): **6**

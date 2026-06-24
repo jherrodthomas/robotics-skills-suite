@@ -253,3 +253,17 @@
 - Restore or remove the references/ folder listed in iso13849-plr-builder/SKILL.md (med).
 - Remaining W26 POLISH targets for Wed/Thu: #25 cobot-hand-guiding (ISO/TS 15066:2016 + ISO 10218-2:2025), #26 iso3691-4 (ISO 3691-4:2020), #27 behavior-tree-spec (BT.CPP v4/Nav2), #28 iec62443 (IEC 62443-3-2:2020).
 - Sunday TRIAGE should formally label/age the spam issues #21/#22.
+
+## 2026-06-24 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Anchored iec62443-risk-assessment-builder description + body on IEC 62443-3-2:2020 (issue #28 DoD); wrote polish log; refreshed STATUS.
+**Files touched:** skills/iec62443-risk-assessment-builder.skill, docs/skill-polish-log/iec62443-risk-assessment-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 6 (4 remaining W26 weekly-target POLISH issues #25–28; 1 non-English fake-star spam issue #21 — no label, consistent with prior triage of #18; #24 already polished 2026-06-23)
+**Notes:** Picked issue #28 (cybersecurity) from the W26 target set. All four remaining targets tied at last-touched 2026-05-03 with zero orphan builders and none labeled skill-bug/reviewer-finding, so I prioritized for domain spread (recent polish logs covered foundation/compliance/cobot/cell-design/v&v/amr — cybersecurity and ros2 had none) and edition-criticality. Verified IEC 62443-3-2:2020 is the current edition and anchored it in the description, the opening body clause, and as a trigger token; added a note that SL-T/FR1–FR7 trace to IEC 62443-3-3. Surgical edits only; .skill re-zipped with scripts/ tree intact (description 577 chars, under 1024). Flagged but did NOT fix the same references/+examples/ doc-vs-archive mismatch previously seen on iso13849 — this now looks suite-wide and warrants a dedicated PLAN target. Spam issue #21 left untouched (POLISH mode does not label). Housekeeping: prior root-owned /tmp/robotics-work dir still unremovable; used a fresh timestamped clone dir this run.
+**Follow-ups:**
+- Remaining W26 POLISH targets for Thu: #25 cobot-hand-guiding (ISO/TS 15066:2016 + ISO 10218-2:2025), #26 iso3691-4 (ISO 3691-4:2020), #27 behavior-tree-spec (BT.CPP v4 / Nav2).
+- Open a PLAN target to resolve the suite-wide references/+examples/ packaging mismatch (restore files vs trim "Files in this skill" lists).
+- Sun TRIAGE: assess spam issue #21 (fake-star phishing) — likely comment, no label (<80% confidence on a clean label).

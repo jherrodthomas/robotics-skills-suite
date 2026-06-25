@@ -267,3 +267,18 @@
 - Remaining W26 POLISH targets for Thu: #25 cobot-hand-guiding (ISO/TS 15066:2016 + ISO 10218-2:2025), #26 iso3691-4 (ISO 3691-4:2020), #27 behavior-tree-spec (BT.CPP v4 / Nav2).
 - Open a PLAN target to resolve the suite-wide references/+examples/ packaging mismatch (restore files vs trim "Files in this skill" lists).
 - Sun TRIAGE: assess spam issue #21 (fake-star phishing) — likely comment, no label (<80% confidence on a clean label).
+
+
+## 2026-06-25 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished cobot-hand-guiding-builder (issue #25) — anchored editions ISO 10218-1:2025, ISO 10218-2:2025, ISO/TS 15066:2016 and fixed "ISO TS"→"ISO/TS" notation; wrote polish log; regenerated STATUS.md (fixed the domain-mapping bug that had left 10 builders "uncategorized").
+**Files touched:** skills/cobot-hand-guiding-builder.skill, docs/skill-polish-log/cobot-hand-guiding-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet); verified .skill archive integrity with `unzip -t` (clean, 5 payload files preserved).
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 6 (5 weekly-target #24–#28, of which #24 and #28 are already polished; 1 suspected-spam #21 left untouched)
+**Notes:** Picked cobot-hand-guiding-builder because it satisfies multiple priority lanes at once — it is an open weekly-target (#25), it is safety-critical (cobot domain, so edition verification is mandatory), and it was least-recently-touched (2026-05-03). Edition check: ISO 10218 Parts 1 and 2 were both revised to 2025 (superseding 2011); collaborative/integration requirements including hand guiding now sit primarily in Part 2:2025 while robot-level enabling-device and reduced-speed requirements stay in Part 1:2025; ISO/TS 15066:2016 remains current. Applied only the surgical description/when-to-use edit (1822→1876 bytes) and re-zipped the single SKILL.md entry — no script refactor. Also fixed a latent STATUS.md generator bug: the previous generator left 10 builders in an "uncategorized" bucket (declaration-of-conformity, loto-procedure, robot-sop, robot-cell-layout, robot-cell-scope, dataset-documentation, model-card, operating-envelope, ssm-plan, pfl-plan) because its domain rules were incomplete; today's regeneration maps all 38 to a real domain (uncategorized now 0). NOTE for human: STATUS still shows cobot-hand-guiding last-touched 2026-05-03 because git history is read before this commit lands; it flips to 🟢 next run.
+**Follow-ups:**
+- Doc/file mismatch in cobot-hand-guiding-builder: SKILL.md lists examples/ + references/ files that are NOT in the archive (5 payload files only). Same pattern flagged earlier on iso13849-plr-builder. Worth a dedicated DOCS-pass decision: restore the packaged reference/example files suite-wide, or trim the file lists to match reality.
+- Remaining open weekly targets for Fri/Sat: #26 iso3691-4-risk-assessment (ISO 3691-4:2020) and #27 behavior-tree-spec (BehaviorTree.CPP v4 / Nav2). #26 is the next safety-critical edition anchor.
+- Friday DOCS run should fold this week's polish commits (iso13849, iec62443, cobot-hand-guiding) into CHANGELOG and add an examples/ stub for cobot-hand-guiding-builder if missing.

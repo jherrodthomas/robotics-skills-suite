@@ -6,6 +6,25 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W26 (2026-06-22 → 2026-06-28)
+
+#### polish
+
+- **iso13849-plr-builder** (compliance) — anchor builder on `ISO 13849-1:2023` edition; verify PLr / Category / MTTFD / DC / CCF terminology and S/F/P risk-graph references; log polish review (`f1071c2`)
+- **iec62443-risk-assessment-builder** (cybersecurity) — anchor builder on `IEC 62443-3-2:2020` edition; verify SL-T per FR1–FR7 and IEC 62443-3-3 cross-reference; log polish review (`1724070`)
+- **cobot-hand-guiding-builder** (cobot) — anchor builder on `ISO 10218-1:2025`, `ISO 10218-2:2025`, and `ISO/TS 15066:2016`; verify enabling-switch / reduced-speed / supervisor-approval coverage; log polish review (`bcc5c2e`)
+
+#### docs
+
+- **CHANGELOG.md** — add W26 weekly section
+- **examples/** — stub READMEs for skills touched in W26 lacking one: `cobot-hand-guiding-builder`, `iec62443-risk-assessment-builder`, `iso13849-plr-builder`
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers, 9 fresh / 29 stale (30+ days)
+- **docs/AUTONOMOUS_LOG.md** — daily journal entry for 2026-06-26 DOCS
+
+#### chore
+
+- **plan** — W26 targets seeded Monday: 5 issues across 5 deferred domains (`64c0fb5`); see [docs/weekly/WEEK-2026-W26.md](docs/weekly/WEEK-2026-W26.md)
+
 ### Week 2026-W25 (2026-06-15 → 2026-06-21)
 
 #### polish

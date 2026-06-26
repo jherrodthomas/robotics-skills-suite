@@ -282,3 +282,18 @@
 - Doc/file mismatch in cobot-hand-guiding-builder: SKILL.md lists examples/ + references/ files that are NOT in the archive (5 payload files only). Same pattern flagged earlier on iso13849-plr-builder. Worth a dedicated DOCS-pass decision: restore the packaged reference/example files suite-wide, or trim the file lists to match reality.
 - Remaining open weekly targets for Fri/Sat: #26 iso3691-4-risk-assessment (ISO 3691-4:2020) and #27 behavior-tree-spec (BehaviorTree.CPP v4 / Nav2). #26 is the next safety-critical edition anchor.
 - Friday DOCS run should fold this week's polish commits (iso13849, iec62443, cobot-hand-guiding) into CHANGELOG and add an examples/ stub for cobot-hand-guiding-builder if missing.
+
+
+## 2026-06-26 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Folded this week's three POLISH commits into CHANGELOG.md under a new Week 2026-W26 section; added examples/ stub READMEs for the three skills touched this week that lacked one; regenerated STATUS.md.
+**Files touched:** CHANGELOG.md, examples/cobot-hand-guiding-builder/README.md, examples/iec62443-risk-assessment-builder/README.md, examples/iso13849-plr-builder/README.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0 (down from 6 yesterday — all W26 weekly-target issues #24–#28 and the spam issue #21 are now closed)
+**Notes:** Standard Friday DOCS pass. Grouped W26 commits by conventional-commit type (3× polish: iso13849-plr / iec62443-risk-assessment / cobot-hand-guiding; 1× chore: Monday plan). No skills were newly added this week, so the README skill table needed no new row. All three W26-polished builders lacked an examples/ stub, so I created all three (cobot-hand-guiding, iec62443-risk-assessment, iso13849-plr) from their current SKILL.md descriptions. HUMAN HEADS-UP: the issue queue went from 6 open to 0 since yesterday's run — that means W26 targets #26 (iso3691-4-risk-assessment) and #27 (behavior-tree-spec) were closed WITHOUT a polish edit landing this week (only #24/#25/#28 were actually polished). If #26/#27 were closed as "done", they still carry their 2026-05-03 last-touched date and remain 🟡 stale in STATUS — confirm whether they were intentionally deferred or need re-opening. STATUS now shows 9 fresh / 29 stale; the three skills polished this week (iso13849 on 06-23, iec62443 on 06-24, cobot-hand-guiding on 06-25) are now correctly 🟢.
+**Follow-ups:**
+- Re-open or re-plan W26 targets #26 (iso3691-4 / ISO 3691-4:2020) and #27 (behavior-tree-spec / BT.CPP v4 + Nav2) if their closures were premature — neither received an edition anchor this week.
+- Still outstanding (carried from prior runs): the suite-wide SKILL.md-vs-archive packaging mismatch (SKILL.md "Files in this skill" lists reference/example files absent from the .skill zip). Needs a dedicated PLAN target — out of scope for a DOCS pass.
+- Saturday RELEASE: W26 has commits, so a release tag (v2026.06.W4) is due; fold the three polish commits + this DOCS commit into RELEASES.md.

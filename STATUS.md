@@ -1,6 +1,6 @@
 # Skill Suite Status
 
-_Auto-generated 2026-06-25 by robotics-skills-daily-standup (POLISH run)._
+_Auto-generated 2026-06-26 by robotics-skills-daily-standup (DOCS run)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@ _Auto-generated 2026-06-25 by robotics-skills-daily-standup (POLISH run)._
 | interlock-estop-architecture-builder.skill | cell-design | interlock-estop-architecture-checklist-reviewer.skill | 2026-06-17 | 🟢 |
 | robot-cell-layout-builder.skill | cell-design | robot-cell-layout-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | safety-io-matrix-builder.skill | cell-design | safety-io-matrix-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-06-25 | 🟢 |
 | iso15066-biomechanical-limits-builder.skill | cobot | iso15066-biomechanical-limits-checklist-reviewer.skill | 2026-06-04 | 🟢 |
 | pfl-plan-builder.skill | cobot | pfl-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | ssm-plan-builder.skill | cobot | ssm-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
@@ -47,6 +47,6 @@ _Auto-generated 2026-06-25 by robotics-skills-daily-standup (POLISH run)._
 
 - **Builders:** 38  |  **Reviewers:** 38  |  **Total skills:** 76
 - **Paired builders:** 38/38 (100%)  |  **Orphans (🔴):** 0
-- **Fresh (🟢 ≤30d):** 8  |  **Stale (🟡 30d+):** 30
+- **Fresh (🟢 ≤30d):** 9  |  **Stale (🟡 30d+):** 29
 - **Uncategorized domains:** 0 (target: 0)
-- **Today's mode:** POLISH — anchored cobot-hand-guiding-builder on ISO 10218-1/-2:2025 + ISO/TS 15066:2016 (issue #25)
+- **Today's mode:** DOCS — refresh CHANGELOG for W26, add example stubs for skills touched this week

@@ -1,5 +1,28 @@
 # Releases
 
+## v2026.06.W4 — 2026-06-27
+
+**Highlights:** Fourth tagged weekly snapshot. W26 was a steady maintenance week — three safety-critical builders edition-anchored (ISO 13849-1:2023, IEC 62443-3-2:2020, ISO 10218-1/-2:2025 + ISO/TS 15066:2016), plus changelog and example-stub upkeep. Suite holds at 76 .skill files, 100% paired, zero orphans.
+
+**Changes this week (2026-06-22 → 2026-06-27):**
+
+*polish:*
+- anchor iso13849-plr-builder on ISO 13849-1:2023 edition (f1071c2)
+- anchor iec62443-risk-assessment-builder on IEC 62443-3-2:2020 (1724070)
+- anchor cobot-hand-guiding-builder on ISO 10218-1/-2:2025 + ISO/TS 15066:2016 (bcc5c2e)
+
+*docs:*
+- W26 changelog, three example stubs, refresh STATUS and journal (e54433e)
+
+*plan:*
+- seed W26 targets — 5 issues across 5 deferred domains (64c0fb5)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Domain health: 9 builders touched within 30 days, 29 stale (30+ days), 0 orphans.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.06.W3...v2026.06.W4
+
+---
+
 ## v2026.06.W3 — 2026-06-20
 
 **Highlights:** Third tagged weekly snapshot. W25 was a steady maintenance week focused on edition-anchoring two more safety-critical builders and bringing the changelog and example stubs current. Suite holds at 76 .skill files, 100% paired. Note: no W2 (v2026.06.W2) snapshot was tagged for the June 8–14 window, so the compare link below spans from W1 to capture everything since the last release.

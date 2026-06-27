@@ -297,3 +297,18 @@
 - Re-open or re-plan W26 targets #26 (iso3691-4 / ISO 3691-4:2020) and #27 (behavior-tree-spec / BT.CPP v4 + Nav2) if their closures were premature — neither received an edition anchor this week.
 - Still outstanding (carried from prior runs): the suite-wide SKILL.md-vs-archive packaging mismatch (SKILL.md "Files in this skill" lists reference/example files absent from the .skill zip). Needs a dedicated PLAN target — out of scope for a DOCS pass.
 - Saturday RELEASE: W26 has commits, so a release tag (v2026.06.W4) is due; fold the three polish commits + this DOCS commit into RELEASES.md.
+
+## 2026-06-27 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Cut weekly snapshot v2026.06.W4 (ISO week 26 = month-week 4); appended W4 release notes to RELEASES.md grouping this week's 5 commits, regenerated STATUS.md, and pushed a lightweight tag on the release commit. No GitHub Release object published (left for human Publish).
+**Files touched:** RELEASES.md, STATUS.md, docs/AUTONOMOUS_LOG.md (+ tag v2026.06.W4)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Week was non-empty (5 commits Mon–Fri: 1 plan, 3 polish, 1 docs), so a release was due. Tag scheme confirmed against history — June 2026 starts in ISO week 23, so W23=W1, W25=W3 (W2/W24 was a quiet untagged week), and this week W26=W4; v2026.06.W4 did not previously exist. Compare link spans v2026.06.W3...v2026.06.W4. Committed the release-note + STATUS changes to main FIRST, then placed the tag on that commit so the snapshot captures the notes (the task lists tag-creation before the journal/commit steps, but tagging an empty-of-notes commit would be wrong; descoped to the sensible order). Two infra notes for the human: (1) a prior run left a root-owned /tmp/robotics-work clone and a stale /tmp/gen_status.py that briefly clobbered STATUS.md with the wrong (automotive) template — I reverted it and ran my generator from a unique path; the leftover dirs should be cleaned on the host. (2) CHANGELOG still has W26 under [Unreleased]; RELEASE mode per the task spec does not roll [Unreleased] into a released heading, so I left it — worth deciding whether tagging should also promote the CHANGELOG section.
+**Follow-ups:**
+- Human action: review RELEASES.md v2026.06.W4 and click Publish on the tag if a GitHub Release object is wanted (task intentionally does not auto-publish).
+- Decide whether RELEASE should promote CHANGELOG [Unreleased] → a dated/released heading at tag time (currently only DOCS touches CHANGELOG).
+- Carried: suite-wide SKILL.md "Files in this skill" vs .skill archive mismatch still needs a dedicated PLAN target.
+- Carried: W26 targets #26 (iso3691-4 / ISO 3691-4:2020) and #27 (behavior-tree-spec) were closed without an edition anchor landing — confirm intent or re-plan for W27.

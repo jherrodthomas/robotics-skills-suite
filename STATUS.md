@@ -1,6 +1,6 @@
 # Skill Suite Status
 
-_Auto-generated 2026-06-26 by robotics-skills-daily-standup (DOCS run)._
+_Auto-generated 2026-06-27 by robotics-skills-daily-standup (RELEASE run)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -49,4 +49,4 @@ _Auto-generated 2026-06-26 by robotics-skills-daily-standup (DOCS run)._
 - **Paired builders:** 38/38 (100%)  |  **Orphans (🔴):** 0
 - **Fresh (🟢 ≤30d):** 9  |  **Stale (🟡 30d+):** 29
 - **Uncategorized domains:** 0 (target: 0)
-- **Today's mode:** DOCS — refresh CHANGELOG for W26, add example stubs for skills touched this week
+- **Today's mode:** RELEASE — tag v2026.06.W4 weekly snapshot, append RELEASES.md notes, refresh STATUS

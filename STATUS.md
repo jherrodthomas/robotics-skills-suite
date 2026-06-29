@@ -1,54 +1,51 @@
-# Repository Status
+# STATUS — robotics-skills-suite
 
-_Auto-generated 2026-06-28 by the robotics-skills-daily-standup task (TRIAGE mode)._
-
-Flag legend: 🔴 missing paired reviewer · 🟡 not touched in 30+ days · 🟢 paired & touched ≤30 days.
+_Auto-generated 2026-06-29 by robotics-skills-daily-standup (PLAN run)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
-|---|---|---|---|---|
-| iso12100-risk-assessment-builder.skill | foundation | iso12100-risk-assessment-checklist-reviewer.skill | 2026-06-09 | 🟢 |
-| machinery-safety-lifecycle-plan-builder.skill | foundation | machinery-safety-lifecycle-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| robot-cell-scope-builder.skill | foundation | robot-cell-scope-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| ansi-r1506-compliance-matrix-builder.skill | compliance | ansi-r1506-compliance-matrix-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| declaration-of-conformity-builder.skill | compliance | declaration-of-conformity-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| iec62061-sil-builder.skill | compliance | iec62061-sil-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| iso10218-compliance-matrix-builder.skill | compliance | iso10218-compliance-matrix-checklist-reviewer.skill | 2026-06-02 | 🟢 |
-| iso13849-plr-builder.skill | compliance | iso13849-plr-checklist-reviewer.skill | 2026-06-23 | 🟢 |
-| cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-06-25 | 🟢 |
-| iso15066-biomechanical-limits-builder.skill | cobot | iso15066-biomechanical-limits-checklist-reviewer.skill | 2026-06-04 | 🟢 |
-| pfl-plan-builder.skill | cobot | pfl-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| ssm-plan-builder.skill | cobot | ssm-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| fleet-manager-architecture-builder.skill | amr | fleet-manager-architecture-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| iso3691-4-risk-assessment-builder.skill | amr | iso3691-4-risk-assessment-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| operating-envelope-builder.skill | amr | operating-envelope-checklist-reviewer.skill | 2026-06-03 | 🟢 |
-| wireless-coexistence-plan-builder.skill | amr | wireless-coexistence-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| eoat-spec-builder.skill | cell-design | eoat-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| interlock-estop-architecture-builder.skill | cell-design | interlock-estop-architecture-checklist-reviewer.skill | 2026-06-17 | 🟢 |
-| robot-cell-layout-builder.skill | cell-design | robot-cell-layout-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| safety-io-matrix-builder.skill | cell-design | safety-io-matrix-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| loto-procedure-builder.skill | operational | loto-procedure-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| operator-training-matrix-builder.skill | operational | operator-training-matrix-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| robot-sop-builder.skill | operational | robot-sop-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| behavior-tree-spec-builder.skill | ros2 | behavior-tree-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| nav2-config-builder.skill | ros2 | nav2-config-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| ros2-system-architecture-builder.skill | ros2 | ros2-system-architecture-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| tf-tree-spec-builder.skill | ros2 | tf-tree-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| urdf-model-spec-builder.skill | ros2 | urdf-model-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| iso9283-performance-test-builder.skill | v&v | iso9283-performance-test-checklist-reviewer.skill | 2026-06-18 | 🟢 |
-| robot-acceptance-protocol-builder.skill | v&v | robot-acceptance-protocol-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| robot-field-acceptance-builder.skill | v&v | robot-field-acceptance-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| robot-hil-test-catalog-builder.skill | v&v | robot-hil-test-catalog-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| dataset-documentation-builder.skill | ai-ml | dataset-documentation-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| model-card-builder.skill | ai-ml | model-card-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| perception-test-catalog-builder.skill | ai-ml | perception-test-catalog-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| iec62443-risk-assessment-builder.skill | cybersecurity | iec62443-risk-assessment-checklist-reviewer.skill | 2026-06-24 | 🟢 |
-| ot-asset-inventory-builder.skill | cybersecurity | ot-asset-inventory-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| zone-conduit-plan-builder.skill | cybersecurity | zone-conduit-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| --- | --- | --- | --- | --- |
+| `ansi-r1506-compliance-matrix-builder.skill` | compliance | `ansi-r1506-compliance-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `behavior-tree-spec-builder.skill` | ros2 | `behavior-tree-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `cobot-hand-guiding-builder.skill` | cobot | `cobot-hand-guiding-checklist-reviewer.skill` | 2026-06-25 | 🟢 paired & current |
+| `dataset-documentation-builder.skill` | ai-ml | `dataset-documentation-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `declaration-of-conformity-builder.skill` | compliance | `declaration-of-conformity-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `eoat-spec-builder.skill` | cell-design | `eoat-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `fleet-manager-architecture-builder.skill` | amr | `fleet-manager-architecture-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `iec62061-sil-builder.skill` | compliance | `iec62061-sil-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `iec62443-risk-assessment-builder.skill` | cybersecurity | `iec62443-risk-assessment-checklist-reviewer.skill` | 2026-06-24 | 🟢 paired & current |
+| `interlock-estop-architecture-builder.skill` | cell-design | `interlock-estop-architecture-checklist-reviewer.skill` | 2026-06-17 | 🟢 paired & current |
+| `iso10218-compliance-matrix-builder.skill` | compliance | `iso10218-compliance-matrix-checklist-reviewer.skill` | 2026-06-02 | 🟢 paired & current |
+| `iso12100-risk-assessment-builder.skill` | foundation | `iso12100-risk-assessment-checklist-reviewer.skill` | 2026-06-09 | 🟢 paired & current |
+| `iso13849-plr-builder.skill` | compliance | `iso13849-plr-checklist-reviewer.skill` | 2026-06-23 | 🟢 paired & current |
+| `iso15066-biomechanical-limits-builder.skill` | cobot | `iso15066-biomechanical-limits-checklist-reviewer.skill` | 2026-06-04 | 🟢 paired & current |
+| `iso3691-4-risk-assessment-builder.skill` | amr | `iso3691-4-risk-assessment-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `iso9283-performance-test-builder.skill` | v&v | `iso9283-performance-test-checklist-reviewer.skill` | 2026-06-18 | 🟢 paired & current |
+| `loto-procedure-builder.skill` | operational | `loto-procedure-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `machinery-safety-lifecycle-plan-builder.skill` | foundation | `machinery-safety-lifecycle-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `model-card-builder.skill` | ai-ml | `model-card-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `nav2-config-builder.skill` | ros2 | `nav2-config-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `operating-envelope-builder.skill` | amr | `operating-envelope-checklist-reviewer.skill` | 2026-06-03 | 🟢 paired & current |
+| `operator-training-matrix-builder.skill` | operational | `operator-training-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `ot-asset-inventory-builder.skill` | cybersecurity | `ot-asset-inventory-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `perception-test-catalog-builder.skill` | ai-ml | `perception-test-catalog-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `pfl-plan-builder.skill` | cobot | `pfl-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `robot-acceptance-protocol-builder.skill` | v&v | `robot-acceptance-protocol-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `robot-cell-layout-builder.skill` | cell-design | `robot-cell-layout-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `robot-cell-scope-builder.skill` | foundation | `robot-cell-scope-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `robot-field-acceptance-builder.skill` | v&v | `robot-field-acceptance-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `robot-hil-test-catalog-builder.skill` | v&v | `robot-hil-test-catalog-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `robot-sop-builder.skill` | operational | `robot-sop-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `ros2-system-architecture-builder.skill` | ros2 | `ros2-system-architecture-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `safety-io-matrix-builder.skill` | cell-design | `safety-io-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `ssm-plan-builder.skill` | cobot | `ssm-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `tf-tree-spec-builder.skill` | ros2 | `tf-tree-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `urdf-model-spec-builder.skill` | ros2 | `urdf-model-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `wireless-coexistence-plan-builder.skill` | amr | `wireless-coexistence-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| `zone-conduit-plan-builder.skill` | cybersecurity | `zone-conduit-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
 
 ## Summary
 
-- Builders: 38 · Reviewers: 38 · Paired ratio: 100%
-- Flags: 🟢 9 paired & fresh · 🟡 29 stale (30+ days) · 🔴 0 orphan builders
-- Domain spread: ai-ml 3, amr 4, cell-design 4, cobot 4, compliance 5, cybersecurity 3, foundation 3, operational 3, ros2 5, v&v 4
-- Most builders last touched 2026-05-03 (initial import); June activity concentrated in compliance, cobot, cybersecurity, cell-design, foundation, v&v.
-- No orphan builders detected — every builder has a paired reviewer.
+- **Builders:** 38 · **Paired reviewers:** 38 · **Paired ratio:** 100%
+- **🔴 Missing reviewer:** 0 · **🟡 Stale (30+ days):** 29 · **🟢 Current:** 9
+- **Domains covered:** 10 — ai-ml (3), amr (4), cell-design (4), cobot (4), compliance (5), cybersecurity (3), foundation (3), operational (3), ros2 (5), v&v (4)
+- **Oldest touch:** 2026-05-03 · **Newest touch:** 2026-06-25 · **Total skill files:** 76

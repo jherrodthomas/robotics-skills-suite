@@ -326,3 +326,17 @@
 - Monday PLAN run should seed W27 targets; prioritize the 29 🟡 stale builders since there are no open-issue-referenced skills to pull from.
 - Consider spreading next week's targets across stale domains (ros2, ai-ml, operational, amr cluster all sit at the 2026-05-03 import date).
 - If the /tmp permission-denied recurs, add a cleanup guard to the task's STEP 2 (clone into a unique dir by default).
+
+## 2026-06-29 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W27 plan — 5 targets across 5 domains (issues #29–#33), regenerated STATUS.md.
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W27.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0 at start; 5 weekly-target issues opened this run (#29–#33)
+**Notes:** Zero open issues and zero orphans, so targets were chosen by least-recently-touched with domain spread. Fixed a domain-inference bug in the STATUS generator (builder names had `-builder` stripped before matching trailing-dash prefixes, leaving 10 builders "uncategorized" and miscounting operational/ai-ml); now matching the full filename yields all 10 domains, 38/38 categorized, 100% paired, 29 stale (🟡, all at 2026-05-03), 9 current (🟢). Three domains got no June polish at all — operational, ai-ml, ros2 — so all three are targeted this week. The amr pick (iso3691-4, #29) is the W26 carryover that POLISH never reached; behavior-tree-spec (the other unreached W26 ros2 target) was deliberately swapped for ros2-system-architecture to refresh the ros2 anchor skill instead. Two safety-critical picks (amr, cell-design) carry edition-verification notes for the Tue–Thu runs.
+**Follow-ups:**
+- Tue/Wed/Thu POLISH should work issues #29–#33 in order; only 3 of 5 will be reached this week — expect amr + cell-design + operational, leaving ai-ml/ros2 as next carryover.
+- behavior-tree-spec (#27, W26) is now fully deferred; reconsider in W28 if ros2 still lags.
+- 29 builders remain 🟡 stale at 2026-05-03; the weekly cadence clears ~3/week, so a backlog persists — flag for human if a faster refresh is desired.

@@ -340,3 +340,18 @@
 - Tue/Wed/Thu POLISH should work issues #29–#33 in order; only 3 of 5 will be reached this week — expect amr + cell-design + operational, leaving ai-ml/ros2 as next carryover.
 - behavior-tree-spec (#27, W26) is now fully deferred; reconsider in W28 if ros2 still lags.
 - 29 builders remain 🟡 stale at 2026-05-03; the weekly cadence clears ~3/week, so a backlog persists — flag for human if a faster refresh is desired.
+
+## 2026-06-30 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished iso3691-4-risk-assessment-builder — anchored description on ISO 3691-4:2023 (current edition) and corrected an inaccurate "Files in this skill" tree.
+**Files touched:** STATUS.md, skills/iso3691-4-risk-assessment-builder.skill, docs/skill-polish-log/iso3691-4-risk-assessment-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all this week's weekly-target items, #29–#33)
+**Notes:** No open issue is labeled skill-bug/reviewer-finding and there are no orphan builders, so POLISH fell to priority-3 (least-recently-touched builder). Picked iso3691-4-risk-assessment-builder, which is least-recently-touched (2026-05-03), in the safety-critical amr domain, and the subject of open weekly-target #29 — so this run also advances the plan. Edition check is the headline: verified against ISO that the current edition is ISO 3691-4:**2023** (supersedes 2020); the description had no edition anchor and issue #29 references the superseded :2020. Anchored on :2023 and flagged the mismatch. Also found and corrected a doc-accuracy bug: the SKILL.md file tree advertised examples/ and references/ directories that are not present in the packaged archive (only SKILL.md + scripts/ ship). Both fixes are doc-only; scripts untouched and the rezipped .skill re-extracts cleanly.
+**Follow-ups:**
+- Correct weekly-target issue #29 wording from ISO 3691-4:2020 → :2023 (TRIAGE/PLAN can relabel/comment).
+- Review hazard catalog + risk-estimation tabs against the ISO 3691-4:2023 "restricted zones" higher-speed provisions (builder-level work).
+- Decide whether examples/sample_input.json + references/ should be authored and re-bundled, or stay removed from the documented tree.
+- 29 builders are 🟡 (30+ days stale) — domain spread is even; keep chipping via weekly targets.

@@ -369,3 +369,11 @@
 - Correct `iso3691-4-risk-assessment-builder` edition from 2023 → 2020 (re-open/continue #29).
 - Continue remaining W27 targets on upcoming POLISH days: #31 loto-procedure (OSHA 1910.147 + ISO 14118), #32 model-card, #33 ros2-system-architecture.
 - Optionally add a worked ISO 13855:2024 separation-distance example to the cell-layout Light Curtains tab.
+
+## 2026-07-01 (autonomous run, MONTHLY-KPI)
+
+**Action:** Generated docs/monthly/2026-06.md
+**Velocity:** 24 commits, 12 skills touched, 3 releases (v2026.06.W1/W3/W4)
+**Coverage:** 100% paired, 24% examples (9/38 builders)
+**Standards-edition findings:** 1 incorrect edition (iso3691-4-risk-assessment-builder cites :2023, should be :2020) + 8 builders referencing standards without a pinned current edition
+**Notes:** First full operating month — 15 issues closed, 5 open (W27, mean age 1 day), and examples/ coverage moved 0% → 24%. Two things need a human: the ISO 3691-4 edition regressed to :2023 in commit e76a175 (conflicts with issue #29 and the KPI rule set, should be :2020), and 63 skills cross the 60-day stale threshold on 2026-07-03 while POLISH clears only ~3/week.

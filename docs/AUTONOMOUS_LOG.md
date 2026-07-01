@@ -355,3 +355,17 @@
 - Review hazard catalog + risk-estimation tabs against the ISO 3691-4:2023 "restricted zones" higher-speed provisions (builder-level work).
 - Decide whether examples/sample_input.json + references/ should be authored and re-bundled, or stay removed from the documented tree.
 - 29 builders are 🟡 (30+ days stale) — domain spread is even; keep chipping via weekly targets.
+
+## 2026-07-01 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Anchored `robot-cell-layout-builder` on ISO 10218-2:2025 and added the missing minimum-distance standards (ISO 13855:2024, ISO 13857:2019); satisfies W27 target #30.
+**Files touched:** STATUS.md, skills/robot-cell-layout-builder.skill (SKILL.md + generate_cell_layout.py inside), docs/skill-polish-log/robot-cell-layout-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet) — scripts py_compile-verified; archive re-zipped clean (no __pycache__).
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W27 weekly-target: #29–#33)
+**Notes:** No orphan builders, so POLISH used the least-recently-touched tier (large tie at 2026-05-03); picked the cell-design W27 target for domain spread and edition-verification value. Web-verified all three editions before editing (ISO 10218-2:2025, ISO 13855:2024 with new S=(K×T)+DDS+Z formula, ISO 13857:2019). **Human should look at:** yesterday's commit e76a175 anchored `iso3691-4-risk-assessment-builder` on "ISO 3691-4:**2023**", but issue #29 and the task spec both state the current edition is **ISO 3691-4:2020** — this looks like an incorrect edition string introduced in the Tue run and should be corrected.
+**Follow-ups:**
+- Correct `iso3691-4-risk-assessment-builder` edition from 2023 → 2020 (re-open/continue #29).
+- Continue remaining W27 targets on upcoming POLISH days: #31 loto-procedure (OSHA 1910.147 + ISO 14118), #32 model-card, #33 ros2-system-architecture.
+- Optionally add a worked ISO 13855:2024 separation-distance example to the cell-layout Light Curtains tab.

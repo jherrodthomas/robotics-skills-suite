@@ -377,3 +377,16 @@
 **Coverage:** 100% paired, 24% examples (9/38 builders)
 **Standards-edition findings:** 1 incorrect edition (iso3691-4-risk-assessment-builder cites :2023, should be :2020) + 8 builders referencing standards without a pinned current edition
 **Notes:** First full operating month — 15 issues closed, 5 open (W27, mean age 1 day), and examples/ coverage moved 0% → 24%. Two things need a human: the ISO 3691-4 edition regressed to :2023 in commit e76a175 (conflicts with issue #29 and the KPI rule set, should be :2020), and 63 skills cross the 60-day stale threshold on 2026-07-03 while POLISH clears only ~3/week.
+## 2026-07-02 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished model-card-builder — fixed inaccurate file tree and refreshed AI-governance terminology (issue #32); regenerated STATUS.md.
+**Files touched:** skills/model-card-builder.skill, docs/skill-polish-log/model-card-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W27 weekly-target; #29 and #30 already delivered earlier this week)
+**Notes:** No skill-bug/reviewer-finding or orphan builders, so POLISH fell to least-recently-touched. model-card-builder (last touched 2026-05-03, tied oldest) also had open target #32, so picking it closed the loop on both axes. Two edits: (1) the "Files in this skill" tree advertised a references/ dir and examples/ JSON that are not in the package — corrected to actual contents; (2) added governance-framework mapping (ISO/IEC 42001:2023, NIST AI RMF + July-2024 GenAI Profile, EU AI Act), editions verified against current web sources. Scripts left byte-identical; no refactor. Issue #32 left open for human confirmation.
+**Follow-ups:**
+- Human: confirm #32 satisfied, then close; same for #29/#30 which appear delivered.
+- Ship references/methodology.md + examples/*.json so model-card-builder's advertised assets exist (also unblocks a Fri DOCS example stub).
+- 28 builders remain 🟡 stale at 60 days (all 2026-05-03) — POLISH backlog is deep; prioritize remaining W27 targets #31 (loto) and #33 (ros2) on next POLISH days.

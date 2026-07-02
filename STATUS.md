@@ -1,52 +1,52 @@
 # STATUS — robotics-skills-suite
 
-_Auto-generated 2026-07-01 by robotics-skills-daily-standup (POLISH run)._
+_Auto-generated 2026-07-02 by robotics-skills-daily-standup (POLISH run)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
-| `dataset-documentation-builder.skill` | ai-ml | `dataset-documentation-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `model-card-builder.skill` | ai-ml | `model-card-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `perception-test-catalog-builder.skill` | ai-ml | `perception-test-catalog-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `fleet-manager-architecture-builder.skill` | amr | `fleet-manager-architecture-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `iso3691-4-risk-assessment-builder.skill` | amr | `iso3691-4-risk-assessment-checklist-reviewer.skill` | 2026-06-30 | 🟢 paired & fresh |
-| `operating-envelope-builder.skill` | amr | `operating-envelope-checklist-reviewer.skill` | 2026-06-03 | 🟢 paired & fresh |
-| `wireless-coexistence-plan-builder.skill` | amr | `wireless-coexistence-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `eoat-spec-builder.skill` | cell-design | `eoat-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `interlock-estop-architecture-builder.skill` | cell-design | `interlock-estop-architecture-checklist-reviewer.skill` | 2026-06-17 | 🟢 paired & fresh |
-| `robot-cell-layout-builder.skill` | cell-design | `robot-cell-layout-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `safety-io-matrix-builder.skill` | cell-design | `safety-io-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `cobot-hand-guiding-builder.skill` | cobot | `cobot-hand-guiding-checklist-reviewer.skill` | 2026-06-25 | 🟢 paired & fresh |
-| `iso15066-biomechanical-limits-builder.skill` | cobot | `iso15066-biomechanical-limits-checklist-reviewer.skill` | 2026-06-04 | 🟢 paired & fresh |
-| `pfl-plan-builder.skill` | cobot | `pfl-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `ssm-plan-builder.skill` | cobot | `ssm-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `ansi-r1506-compliance-matrix-builder.skill` | compliance | `ansi-r1506-compliance-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `declaration-of-conformity-builder.skill` | compliance | `declaration-of-conformity-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `iec62061-sil-builder.skill` | compliance | `iec62061-sil-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `iso10218-compliance-matrix-builder.skill` | compliance | `iso10218-compliance-matrix-checklist-reviewer.skill` | 2026-06-02 | 🟢 paired & fresh |
-| `iso13849-plr-builder.skill` | compliance | `iso13849-plr-checklist-reviewer.skill` | 2026-06-23 | 🟢 paired & fresh |
-| `iec62443-risk-assessment-builder.skill` | cybersecurity | `iec62443-risk-assessment-checklist-reviewer.skill` | 2026-06-24 | 🟢 paired & fresh |
-| `ot-asset-inventory-builder.skill` | cybersecurity | `ot-asset-inventory-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `zone-conduit-plan-builder.skill` | cybersecurity | `zone-conduit-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `iso12100-risk-assessment-builder.skill` | foundation | `iso12100-risk-assessment-checklist-reviewer.skill` | 2026-06-09 | 🟢 paired & fresh |
-| `machinery-safety-lifecycle-plan-builder.skill` | foundation | `machinery-safety-lifecycle-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `robot-cell-scope-builder.skill` | foundation | `robot-cell-scope-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `loto-procedure-builder.skill` | operational | `loto-procedure-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `operator-training-matrix-builder.skill` | operational | `operator-training-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `robot-sop-builder.skill` | operational | `robot-sop-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `behavior-tree-spec-builder.skill` | ros2 | `behavior-tree-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `nav2-config-builder.skill` | ros2 | `nav2-config-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `ros2-system-architecture-builder.skill` | ros2 | `ros2-system-architecture-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `tf-tree-spec-builder.skill` | ros2 | `tf-tree-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `urdf-model-spec-builder.skill` | ros2 | `urdf-model-spec-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `iso9283-performance-test-builder.skill` | v&v | `iso9283-performance-test-checklist-reviewer.skill` | 2026-06-18 | 🟢 paired & fresh |
-| `robot-acceptance-protocol-builder.skill` | v&v | `robot-acceptance-protocol-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `robot-field-acceptance-builder.skill` | v&v | `robot-field-acceptance-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
-| `robot-hil-test-catalog-builder.skill` | v&v | `robot-hil-test-catalog-checklist-reviewer.skill` | 2026-05-03 | 🟡 stale (30+ days) |
+| dataset-documentation-builder | ai-ml | dataset-documentation-checklist-reviewer | 2026-05-03 | 🟡 |
+| model-card-builder | ai-ml | model-card-checklist-reviewer | 2026-05-03 | 🟡 |
+| perception-test-catalog-builder | ai-ml | perception-test-catalog-checklist-reviewer | 2026-05-03 | 🟡 |
+| fleet-manager-architecture-builder | amr | fleet-manager-architecture-checklist-reviewer | 2026-05-03 | 🟡 |
+| iso3691-4-risk-assessment-builder | amr | iso3691-4-risk-assessment-checklist-reviewer | 2026-06-30 | 🟢 |
+| operating-envelope-builder | amr | operating-envelope-checklist-reviewer | 2026-06-03 | 🟢 |
+| wireless-coexistence-plan-builder | amr | wireless-coexistence-plan-checklist-reviewer | 2026-05-03 | 🟡 |
+| eoat-spec-builder | cell-design | eoat-spec-checklist-reviewer | 2026-05-03 | 🟡 |
+| interlock-estop-architecture-builder | cell-design | interlock-estop-architecture-checklist-reviewer | 2026-06-17 | 🟢 |
+| robot-cell-layout-builder | cell-design | robot-cell-layout-checklist-reviewer | 2026-07-01 | 🟢 |
+| safety-io-matrix-builder | cell-design | safety-io-matrix-checklist-reviewer | 2026-05-03 | 🟡 |
+| cobot-hand-guiding-builder | cobot | cobot-hand-guiding-checklist-reviewer | 2026-06-25 | 🟢 |
+| iso15066-biomechanical-limits-builder | cobot | iso15066-biomechanical-limits-checklist-reviewer | 2026-06-04 | 🟢 |
+| pfl-plan-builder | cobot | pfl-plan-checklist-reviewer | 2026-05-03 | 🟡 |
+| ssm-plan-builder | cobot | ssm-plan-checklist-reviewer | 2026-05-03 | 🟡 |
+| ansi-r1506-compliance-matrix-builder | compliance | ansi-r1506-compliance-matrix-checklist-reviewer | 2026-05-03 | 🟡 |
+| declaration-of-conformity-builder | compliance | declaration-of-conformity-checklist-reviewer | 2026-05-03 | 🟡 |
+| iec62061-sil-builder | compliance | iec62061-sil-checklist-reviewer | 2026-05-03 | 🟡 |
+| iso10218-compliance-matrix-builder | compliance | iso10218-compliance-matrix-checklist-reviewer | 2026-06-02 | 🟡 |
+| iso13849-plr-builder | compliance | iso13849-plr-checklist-reviewer | 2026-06-23 | 🟢 |
+| iec62443-risk-assessment-builder | cybersecurity | iec62443-risk-assessment-checklist-reviewer | 2026-06-24 | 🟢 |
+| ot-asset-inventory-builder | cybersecurity | ot-asset-inventory-checklist-reviewer | 2026-05-03 | 🟡 |
+| zone-conduit-plan-builder | cybersecurity | zone-conduit-plan-checklist-reviewer | 2026-05-03 | 🟡 |
+| iso12100-risk-assessment-builder | foundation | iso12100-risk-assessment-checklist-reviewer | 2026-06-09 | 🟢 |
+| machinery-safety-lifecycle-plan-builder | foundation | machinery-safety-lifecycle-plan-checklist-reviewer | 2026-05-03 | 🟡 |
+| robot-cell-scope-builder | foundation | robot-cell-scope-checklist-reviewer | 2026-05-03 | 🟡 |
+| loto-procedure-builder | operational | loto-procedure-checklist-reviewer | 2026-05-03 | 🟡 |
+| operator-training-matrix-builder | operational | operator-training-matrix-checklist-reviewer | 2026-05-03 | 🟡 |
+| robot-sop-builder | operational | robot-sop-checklist-reviewer | 2026-05-03 | 🟡 |
+| behavior-tree-spec-builder | ros2 | behavior-tree-spec-checklist-reviewer | 2026-05-03 | 🟡 |
+| nav2-config-builder | ros2 | nav2-config-checklist-reviewer | 2026-05-03 | 🟡 |
+| ros2-system-architecture-builder | ros2 | ros2-system-architecture-checklist-reviewer | 2026-05-03 | 🟡 |
+| tf-tree-spec-builder | ros2 | tf-tree-spec-checklist-reviewer | 2026-05-03 | 🟡 |
+| urdf-model-spec-builder | ros2 | urdf-model-spec-checklist-reviewer | 2026-05-03 | 🟡 |
+| iso9283-performance-test-builder | v&v | iso9283-performance-test-checklist-reviewer | 2026-06-18 | 🟢 |
+| robot-acceptance-protocol-builder | v&v | robot-acceptance-protocol-checklist-reviewer | 2026-05-03 | 🟡 |
+| robot-field-acceptance-builder | v&v | robot-field-acceptance-checklist-reviewer | 2026-05-03 | 🟡 |
+| robot-hil-test-catalog-builder | v&v | robot-hil-test-catalog-checklist-reviewer | 2026-05-03 | 🟡 |
 
 ## Summary
 
-- Total builders: 38
-- Total reviewers: 38
-- Paired builders: 38/38 (100%)
-- Flags: 🟢 10 paired & fresh · 🟡 28 stale (30+ days) · 🔴 0 orphan
-- Orphan builders: none — every builder is paired
+- **Total skills:** 76 (38 builders / 38 reviewers)
+- **Paired ratio:** 38/38 builders paired (100%)
+- **🔴 Orphan builders (missing reviewer):** 0 — none
+- **🟡 Stale (30+ days):** 28 — ansi-r1506-compliance-matrix-builder (60d), behavior-tree-spec-builder (60d), dataset-documentation-builder (60d), declaration-of-conformity-builder (60d), eoat-spec-builder (60d), fleet-manager-architecture-builder (60d), iec62061-sil-builder (60d), loto-procedure-builder (60d), machinery-safety-lifecycle-plan-builder (60d), model-card-builder (60d), nav2-config-builder (60d), operator-training-matrix-builder (60d), ot-asset-inventory-builder (60d), perception-test-catalog-builder (60d), pfl-plan-builder (60d), robot-acceptance-protocol-builder (60d), robot-cell-scope-builder (60d), robot-field-acceptance-builder (60d), robot-hil-test-catalog-builder (60d), robot-sop-builder (60d), ros2-system-architecture-builder (60d), safety-io-matrix-builder (60d), ssm-plan-builder (60d), tf-tree-spec-builder (60d), urdf-model-spec-builder (60d), wireless-coexistence-plan-builder (60d), zone-conduit-plan-builder (60d), iso10218-compliance-matrix-builder (30d)
+- **🟢 Healthy (paired & ≤30d):** 10

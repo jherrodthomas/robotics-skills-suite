@@ -6,6 +6,26 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W27 (2026-06-29 → 2026-07-05)
+
+#### polish
+
+- **model-card-builder** (ai-ml) — refresh AI-governance terminology; align on `ISO/IEC 42001:2023`, NIST AI RMF, and EU AI Act references; verify fairness / slice-analysis / ethical-considerations coverage; fix file tree; log polish review (`55bfd6e`)
+- **robot-cell-layout-builder** (cell-design) — anchor builder on `ISO 10218-2:2025` with safeguard positioning per `ISO 13855:2024` and minimum safety distances per `ISO 13857:2019`; log polish review (`1df457d`)
+- **iso3691-4-risk-assessment-builder** (amr) — anchor builder on `ISO 3691-4:2023` (driverless industrial trucks / AMR); verify S/F/P risk-estimation and pedestrian-interaction coverage; fix file tree; log polish review (`e76a175`)
+
+#### docs
+
+- **CHANGELOG.md** — add W27 weekly section
+- **examples/** — stub READMEs for skills touched in W27 lacking one: `model-card-builder`, `robot-cell-layout-builder`, `iso3691-4-risk-assessment-builder`
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers, 11 fresh / 27 stale (30+ days)
+- **docs/AUTONOMOUS_LOG.md** — daily journal entry for 2026-07-03 DOCS
+
+#### chore
+
+- **monthly** — June 2026 KPI report generated (`21ae46e`)
+- **plan** — W27 targets seeded Monday: 5 issues across 5 deferred domains (`4a6719c`); see [docs/weekly/WEEK-2026-W27.md](docs/weekly/WEEK-2026-W27.md)
+
 ### Week 2026-W26 (2026-06-22 → 2026-06-28)
 
 #### polish

@@ -1,11 +1,11 @@
 # STATUS — robotics-skills-suite
 
-_Auto-generated 2026-07-02 by robotics-skills-daily-standup (POLISH run)._
+_Auto-generated 2026-07-03 by robotics-skills-daily-standup (DOCS run)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
 | dataset-documentation-builder | ai-ml | dataset-documentation-checklist-reviewer | 2026-05-03 | 🟡 |
-| model-card-builder | ai-ml | model-card-checklist-reviewer | 2026-05-03 | 🟡 |
+| model-card-builder | ai-ml | model-card-checklist-reviewer | 2026-07-02 | 🟢 |
 | perception-test-catalog-builder | ai-ml | perception-test-catalog-checklist-reviewer | 2026-05-03 | 🟡 |
 | fleet-manager-architecture-builder | amr | fleet-manager-architecture-checklist-reviewer | 2026-05-03 | 🟡 |
 | iso3691-4-risk-assessment-builder | amr | iso3691-4-risk-assessment-checklist-reviewer | 2026-06-30 | 🟢 |
@@ -48,5 +48,5 @@ _Auto-generated 2026-07-02 by robotics-skills-daily-standup (POLISH run)._
 - **Total skills:** 76 (38 builders / 38 reviewers)
 - **Paired ratio:** 38/38 builders paired (100%)
 - **🔴 Orphan builders (missing reviewer):** 0 — none
-- **🟡 Stale (30+ days):** 28 — ansi-r1506-compliance-matrix-builder (60d), behavior-tree-spec-builder (60d), dataset-documentation-builder (60d), declaration-of-conformity-builder (60d), eoat-spec-builder (60d), fleet-manager-architecture-builder (60d), iec62061-sil-builder (60d), loto-procedure-builder (60d), machinery-safety-lifecycle-plan-builder (60d), model-card-builder (60d), nav2-config-builder (60d), operator-training-matrix-builder (60d), ot-asset-inventory-builder (60d), perception-test-catalog-builder (60d), pfl-plan-builder (60d), robot-acceptance-protocol-builder (60d), robot-cell-scope-builder (60d), robot-field-acceptance-builder (60d), robot-hil-test-catalog-builder (60d), robot-sop-builder (60d), ros2-system-architecture-builder (60d), safety-io-matrix-builder (60d), ssm-plan-builder (60d), tf-tree-spec-builder (60d), urdf-model-spec-builder (60d), wireless-coexistence-plan-builder (60d), zone-conduit-plan-builder (60d), iso10218-compliance-matrix-builder (30d)
-- **🟢 Healthy (paired & ≤30d):** 10
+- **🟡 Stale (30+ days):** 27 — dataset-documentation-builder (61d), perception-test-catalog-builder (61d), fleet-manager-architecture-builder (61d), wireless-coexistence-plan-builder (61d), eoat-spec-builder (61d), safety-io-matrix-builder (61d), pfl-plan-builder (61d), ssm-plan-builder (61d), ansi-r1506-compliance-matrix-builder (61d), declaration-of-conformity-builder (61d), iec62061-sil-builder (61d), ot-asset-inventory-builder (61d), zone-conduit-plan-builder (61d), machinery-safety-lifecycle-plan-builder (61d), robot-cell-scope-builder (61d), loto-procedure-builder (61d), operator-training-matrix-builder (61d), robot-sop-builder (61d), behavior-tree-spec-builder (61d), nav2-config-builder (61d), ros2-system-architecture-builder (61d), tf-tree-spec-builder (61d), urdf-model-spec-builder (61d), robot-acceptance-protocol-builder (61d), robot-field-acceptance-builder (61d), robot-hil-test-catalog-builder (61d), iso10218-compliance-matrix-builder (31d)
+- **🟢 Healthy (paired & ≤30d):** 11

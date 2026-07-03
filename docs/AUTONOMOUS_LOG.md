@@ -390,3 +390,17 @@
 - Human: confirm #32 satisfied, then close; same for #29/#30 which appear delivered.
 - Ship references/methodology.md + examples/*.json so model-card-builder's advertised assets exist (also unblocks a Fri DOCS example stub).
 - 28 builders remain 🟡 stale at 60 days (all 2026-05-03) — POLISH backlog is deep; prioritize remaining W27 targets #31 (loto) and #33 (ros2) on next POLISH days.
+
+## 2026-07-03 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Added W27 CHANGELOG section, created 3 example README stubs for skills touched this week, and regenerated STATUS.md.
+**Files touched:** CHANGELOG.md, examples/model-card-builder/README.md, examples/robot-cell-layout-builder/README.md, examples/iso3691-4-risk-assessment-builder/README.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W27 weekly-target)
+**Notes:** Three skills were touched this week (model-card-builder, robot-cell-layout-builder, iso3691-4-risk-assessment-builder) — all three lacked an examples/ README, so I stubbed all three, moving examples coverage from 9/38 to 12/38 builders (~32%). No new skills were added this week, so the README skill table was left unchanged. STATUS regeneration: model-card-builder flipped 🟡→🟢 (touched this week) while iso10218-compliance-matrix-builder aged past 30 days into 🟡; net 11 healthy / 27 stale, still 100% paired with zero orphans. Heads-up for the human: the iso3691-4 stub and CHANGELOG line reflect the skill's current `ISO 3691-4:2023` edition string, which the 2026-07-01 KPI report and issue #29 flag as incorrect (should be :2020). I deliberately kept the docs consistent with the artifact as it stands rather than pre-empting the fix — once POLISH corrects the skill, the stub and changelog line should be updated to :2020 in the same pass.
+**Follow-ups:**
+- POLISH/human: correct iso3691-4-risk-assessment-builder edition :2023 → :2020 (issue #29), then update examples/iso3691-4-risk-assessment-builder/README.md and the W27 CHANGELOG line to match.
+- Backfill sample_input.json + sample_output.xlsx for the 12 example stubs so they become real worked examples rather than placeholders.
+- 27 builders remain 🟡 stale (mostly 60+ days at 2026-05-03) — POLISH backlog still deep; keep clearing W27 targets (#31 loto, #33 ros2).

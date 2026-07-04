@@ -1,5 +1,27 @@
 # Releases
 
+## v2026.07.W1 — 2026-07-04
+
+**Highlights:** Fifth tagged weekly snapshot. W27 delivered 3 of 5 weekly targets via polish passes — iso3691-4-risk-assessment edition-anchored (ISO 3691-4:2023), robot-cell-layout anchored on ISO 10218-2:2025 + ISO 13855:2024/13857:2019, and model-card-builder governance terminology refreshed — plus the June 2026 monthly KPI report. Suite holds at 76 .skill files, 100% paired, zero orphans.
+
+**Changes this week (2026-06-29 → 2026-07-04):**
+
+*plan:*
+- seed W27 targets — 5 issues across 5 deferred domains (4a6719c)
+
+*polish:*
+- anchor iso3691-4-risk-assessment-builder on ISO 3691-4:2023, fix file tree (e76a175)
+- anchor robot-cell-layout-builder on ISO 10218-2:2025 + ISO 13855:2024/13857:2019 (1df457d)
+- refresh model-card-builder governance terms, fix file tree (55bfd6e)
+
+*docs:*
+- W27 changelog, three example stubs, refresh STATUS and journal (4f4aba4)
+- KPI report for June 2026 (21ae46e)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Domain health: 10 builders touched within 30 days, 28 stale (30+ days), 0 orphans.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.06.W4...v2026.07.W1
+
 ## v2026.06.W4 — 2026-06-27
 
 **Highlights:** Fourth tagged weekly snapshot. W26 was a steady maintenance week — three safety-critical builders edition-anchored (ISO 13849-1:2023, IEC 62443-3-2:2020, ISO 10218-1/-2:2025 + ISO/TS 15066:2016), plus changelog and example-stub upkeep. Suite holds at 76 .skill files, 100% paired, zero orphans.

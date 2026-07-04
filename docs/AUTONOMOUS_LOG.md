@@ -404,3 +404,17 @@
 - POLISH/human: correct iso3691-4-risk-assessment-builder edition :2023 → :2020 (issue #29), then update examples/iso3691-4-risk-assessment-builder/README.md and the W27 CHANGELOG line to match.
 - Backfill sample_input.json + sample_output.xlsx for the 12 example stubs so they become real worked examples rather than placeholders.
 - 27 builders remain 🟡 stale (mostly 60+ days at 2026-05-03) — POLISH backlog still deep; keep clearing W27 targets (#31 loto, #33 ros2).
+
+## 2026-07-04 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Tagged v2026.07.W1 weekly snapshot, wrote release notes to RELEASES.md, regenerated STATUS.md.
+**Files touched:** STATUS.md, RELEASES.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5
+**Notes:** Six commits this week qualified for a release. Tag computed as v2026.07.W1 (first ISO week within July); confirmed absent from git tag -l before creating. W27 closed 3 of 5 planned targets via polish (iso3691-4, robot-cell-layout, model-card); the loto-procedure (#31) and ros2-system-architecture (#33) targets were not reached and remain open. Note: issue #29 title says ISO 3691-4:2020 but the polish commit anchored on ISO 3691-4:2023 — the human may want to confirm which edition is authoritative and close #29 accordingly. GitHub Release object NOT published per policy; user reviews RELEASES.md and publishes manually.
+**Follow-ups:** 
+- Carry #31 (loto-procedure) and #33 (ros2-system-architecture) into next week's PLAN or pick them for Tue POLISH.
+- Reconcile ISO 3691-4 edition claim between issue #29 (2020) and commit e76a175 (2023).
+- 28 builders stale 30+ days — stale ratio creeping up; consider weighting POLISH picks toward stale compliance/cobot builders.

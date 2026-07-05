@@ -1,6 +1,6 @@
-# Skill Suite Status
+# STATUS
 
-_Regenerated 2026-07-04 by autonomous daily run (RELEASE mode)._
+_Regenerated 2026-07-05 by autonomous daily run._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -17,7 +17,7 @@ _Regenerated 2026-07-04 by autonomous daily run (RELEASE mode)._
 | iso10218-compliance-matrix-builder.skill | compliance | iso10218-compliance-matrix-checklist-reviewer.skill | 2026-06-02 | 🟡 |
 | iso12100-risk-assessment-builder.skill | foundation | iso12100-risk-assessment-checklist-reviewer.skill | 2026-06-09 | 🟢 |
 | iso13849-plr-builder.skill | compliance | iso13849-plr-checklist-reviewer.skill | 2026-06-23 | 🟢 |
-| iso15066-biomechanical-limits-builder.skill | cobot | iso15066-biomechanical-limits-checklist-reviewer.skill | 2026-06-04 | 🟢 |
+| iso15066-biomechanical-limits-builder.skill | cobot | iso15066-biomechanical-limits-checklist-reviewer.skill | 2026-06-04 | 🟡 |
 | iso3691-4-risk-assessment-builder.skill | amr | iso3691-4-risk-assessment-checklist-reviewer.skill | 2026-06-30 | 🟢 |
 | iso9283-performance-test-builder.skill | v&v | iso9283-performance-test-checklist-reviewer.skill | 2026-06-18 | 🟢 |
 | loto-procedure-builder.skill | operational | loto-procedure-checklist-reviewer.skill | 2026-05-03 | 🟡 |
@@ -45,8 +45,8 @@ _Regenerated 2026-07-04 by autonomous daily run (RELEASE mode)._
 
 ## Summary
 
-- **Builders:** 38 · **Reviewers:** 38 · **Paired:** 38/38 (100%)
-- 🟢 Paired & fresh (≤30 days): 10
-- 🟡 Stale (30+ days untouched): 28
-- 🔴 Missing paired reviewer: 0
-- Total .skill files: 76
+- Builders: 38 / Reviewers: 38 / Paired: 38 (100%)
+- 🟢 paired & fresh: 9
+- 🟡 not touched in 30+ days: 29
+- 🔴 missing paired reviewer: 0
+- Flags computed against 2026-07-05 (30-day staleness window)

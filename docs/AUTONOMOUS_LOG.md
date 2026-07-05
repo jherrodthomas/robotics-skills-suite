@@ -418,3 +418,17 @@
 - Carry #31 (loto-procedure) and #33 (ros2-system-architecture) into next week's PLAN or pick them for Tue POLISH.
 - Reconcile ISO 3691-4 edition claim between issue #29 (2020) and commit e76a175 (2023).
 - 28 builders stale 30+ days — stale ratio creeping up; consider weighting POLISH picks toward stale compliance/cobot builders.
+
+## 2026-07-05 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Sunday triage pass — reviewed 5 open issues, no label changes needed; refreshed STATUS.md
+**Files touched:** STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5
+**Notes:** All 5 open issues (#29-#33) are W27 weekly-target planning issues, each already carrying `weekly-target` plus a correct domain label. None of the seven triage categories (skill-bug, reviewer-finding, description-quality, new-skill, docs, ci, chain-break) applies with >=80% confidence to planning targets, so no triage labels were applied. No issue is 30+ days quiet (all updated 2026-06-29), so no stale-warning comments were posted. Per commit history, targets #29 (iso3691-4), #30 (robot-cell-layout), and #32 (model-card) appear completed by last week's POLISH runs — human may want to close them. Note: previous run's /tmp clone was permission-locked; this run used a dated work dir instead.
+**Follow-ups:**
+- Human: consider closing issues #29, #30, #32 (work appears done per commits e76a175, 1df457d, 55bfd6e).
+- Tue POLISH: issues #31 (loto-procedure) and #33 (ros2-system-architecture) remain open W27 targets — good next picks.
+- 29 builders now 30+ days untouched; staleness backlog growing.

@@ -1,6 +1,6 @@
 # STATUS
 
-_Regenerated 2026-07-05 by autonomous daily run._
+_Regenerated 2026-07-06 by autonomous daily run._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -49,4 +49,4 @@ _Regenerated 2026-07-05 by autonomous daily run._
 - 🟢 paired & fresh: 9
 - 🟡 not touched in 30+ days: 29
 - 🔴 missing paired reviewer: 0
-- Flags computed against 2026-07-05 (30-day staleness window)
+- Flags computed against 2026-07-06 (30-day staleness window)

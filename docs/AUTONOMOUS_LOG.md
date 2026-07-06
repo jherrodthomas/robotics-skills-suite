@@ -432,3 +432,18 @@
 - Human: consider closing issues #29, #30, #32 (work appears done per commits e76a175, 1df457d, 55bfd6e).
 - Tue POLISH: issues #31 (loto-procedure) and #33 (ros2-system-architecture) remain open W27 targets — good next picks.
 - 29 builders now 30+ days untouched; staleness backlog growing.
+
+## 2026-07-06 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W28 plan — 5 targets (2 W27 carryovers + 3 new), created issues #34–#36, wrote docs/weekly/WEEK-2026-W28.md, regenerated STATUS.md.
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W28.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 8
+**Notes:** Judgement call: reused open issues #31 (loto-procedure) and #33 (ros2-system-architecture) for the two W27 carryover targets instead of creating duplicates; created new issues only for the three fresh picks (#34 iec62061-sil, #35 ssm-plan, #36 fleet-manager-architecture). Domain spread is 5 distinct domains (operational, ros2, compliance, cobot, amr). Discovered that all 38 reviewers still sit at the 2026-05-03 baseline — past POLISH runs touched builders only, so the "reviewer updated in lockstep" definition-of-done has never been honored; flagged in the W28 plan. Also carried forward the ISO 3691-4 edition discrepancy (:2020 in issue #29 vs :2023 in commit e76a175) into the fleet-manager target. Infra note: the previous /tmp/robotics-work clone is permission-locked from an earlier run; this run cloned into /tmp/robotics-work-20260706.
+**Follow-ups:**
+- Tue POLISH: pick #31 (loto-procedure) first; update its paired reviewer too.
+- Human: issues #29, #30, #32 appear done (commits e76a175, 1df457d, 55bfd6e) — consider closing.
+- Human: reconcile ISO 3691-4 edition (:2020 vs :2023) — fleet-manager polish (#36) will surface it again.
+- Consider a one-off pass to bulk-touch stale reviewers, or amend POLISH procedure to always include the paired reviewer.

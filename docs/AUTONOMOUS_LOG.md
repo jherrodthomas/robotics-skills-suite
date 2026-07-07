@@ -447,3 +447,17 @@
 - Human: issues #29, #30, #32 appear done (commits e76a175, 1df457d, 55bfd6e) — consider closing.
 - Human: reconcile ISO 3691-4 edition (:2020 vs :2023) — fleet-manager polish (#36) will surface it again.
 - Consider a one-off pass to bulk-touch stale reviewers, or amend POLISH procedure to always include the paired reviewer.
+
+## 2026-07-07 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished ssm-plan-builder — anchored ISO 10218-1:2025 / ISO/TS 15066:2016 / ISO 13855:2024 in description, fixed inaccurate file tree.
+**Files touched:** skills/ssm-plan-builder.skill, docs/skill-polish-log/ssm-plan-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 8
+**Notes:** Picked ssm-plan-builder from the 2026-05-03 stale cohort because it doubles as W28 target #35, so the polish advances the weekly plan. Edition check (cobot domain) found bare standard references; fixed in description and body. File tree claimed examples/ and references/ dirs that aren't in the archive — same pattern seen in earlier polish runs; worth checking whether other 05-03-era skills share it. Note: a prior run's clone at /tmp/robotics-work was owned by another uid and unremovable; this run used /tmp/rw-20260707 instead. Issue #35 left open for a human to confirm the deferred items (ISO 10218-2:2025 relationship note, missing example/reference files) before closing.
+**Follow-ups:**
+- Consider adding examples/sample_input.json + reference notes to ssm-plan-builder (deferred as too large for polish).
+- Audit other 2026-05-03 skills for phantom file-tree entries.
+- 28 builders flagged 🟡 stale; W28 targets #34/#36 are natural next POLISH picks (Wed/Thu).

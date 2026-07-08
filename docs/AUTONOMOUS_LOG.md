@@ -461,3 +461,17 @@
 - Consider adding examples/sample_input.json + reference notes to ssm-plan-builder (deferred as too large for polish).
 - Audit other 2026-05-03 skills for phantom file-tree entries.
 - 28 builders flagged 🟡 stale; W28 targets #34/#36 are natural next POLISH picks (Wed/Thu).
+
+## 2026-07-08 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished iec62061-sil-builder — anchored IEC 62061:2021 edition, added SCS terminology, fixed phantom references/ file tree, fixed H1; logged high-severity finding that the generator script is a placeholder stub.
+**Files touched:** skills/iec62061-sil-builder.skill, docs/skill-polish-log/iec62061-sil-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 8
+**Notes:** No skill-bug/reviewer-finding issues and no orphan builders, so pick fell to least-recently-touched; among the 2026-05-03 cohort I chose iec62061-sil-builder because it is also open W28 target #34 (compliance). Edition verification (safety-critical domain): anchored IEC 62061:2021 and noted the 2021 edition replaced "SRECS" with "safety-related control systems (SCS)" — kept SRECS as legacy trigger. Key finding: generate_iec62061.py is a 19-line placeholder that only prints a message — the skill cannot produce a workbook. Implementing the full SIL builder is a large change and was deliberately descoped from this polish pass; it belongs to issue #34. A stale working clone at /tmp/robotics-work could not be removed (permission denied, different sandbox user); switched to dated work dir /tmp/robotics-work-20260708.
+**Follow-ups:**
+- Implement generate_iec62061.py per issue #34 (SIL matrix Se×Cl, HFT/SFF constraints, PFHd aggregation) — likely a dedicated build session, not a polish pass.
+- Audit other builders for placeholder generator stubs; if widespread, open a chain-break issue.
+- 28 builders are 🟡 stale (30+ days) — keep rotating polish picks through the 2026-05-03 cohort.

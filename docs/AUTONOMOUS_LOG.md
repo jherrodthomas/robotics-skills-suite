@@ -475,3 +475,18 @@
 - Implement generate_iec62061.py per issue #34 (SIL matrix Se×Cl, HFT/SFF constraints, PFHd aggregation) — likely a dedicated build session, not a polish pass.
 - Audit other builders for placeholder generator stubs; if widespread, open a chain-break issue.
 - 28 builders are 🟡 stale (30+ days) — keep rotating polish picks through the 2026-05-03 cohort.
+
+## 2026-07-15 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished loto-procedure-builder + reviewer in lockstep — anchored on OSHA 29 CFR 1910.147 + ISO 14118:2017, fixed terminology and file trees.
+**Files touched:** skills/loto-procedure-builder.skill, skills/loto-procedure-checklist-reviewer.skill, docs/skill-polish-log/loto-procedure-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Six-day gap since the last run (2026-07-08 → today); Thu–Sat W28 runs and Sun TRIAGE plus Mon W29 PLAN and Tue POLISH all missed, so there is no WEEK-2026-W29 plan file. All W28 tracking issues (#31–#36) are now closed on GitHub with 0 open issues total — proceeded on W28 carryover priority order, taking #31 (loto-procedure) first. This is the first run to actually honor "reviewer updated in lockstep." Substantive gap found: the builder ships no generator script (only recalc.py + office helpers) despite promising a 10-tab XLSX — logged at medium severity, descoped as too large for a polish run. Also spotted robot-sop-builder citing bare "OSHA 1910"; left for its own polish pass.
+**Follow-ups:**
+- Next POLISH (Thu): take ros2-system-architecture-builder (#33 carryover, W28 priority 2), reviewer in lockstep.
+- Next PLAN (Mon Jul 20): W29 was never planned — write WEEK-2026-W30 fresh; consider a new-skill/ci issue for the missing loto generator script.
+- Fri DOCS: create examples/loto-procedure-builder/README.md stub (skill touched this week, no stub exists).
+- Human: confirm whether closing all W28 issues (#31–#36) was intentional; #31 and #33 DoDs were only partially delivered when closed.

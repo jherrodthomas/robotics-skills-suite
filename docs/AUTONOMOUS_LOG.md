@@ -490,3 +490,17 @@
 - Next PLAN (Mon Jul 20): W29 was never planned — write WEEK-2026-W30 fresh; consider a new-skill/ci issue for the missing loto generator script.
 - Fri DOCS: create examples/loto-procedure-builder/README.md stub (skill touched this week, no stub exists).
 - Human: confirm whether closing all W28 issues (#31–#36) was intentional; #31 and #33 DoDs were only partially delivered when closed.
+
+## 2026-07-15 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished ansi-r1506-compliance-matrix-builder — re-anchored description on ANSI/A3 R15.06-2025 (U.S. adoption of ISO 10218-1/-2:2025), fixed file tree and title.
+**Files touched:** skills/ansi-r1506-compliance-matrix-builder.skill, docs/skill-polish-log/ansi-r1506-compliance-matrix-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** No open issues and no orphans, so target fell to the least-recently-touched cohort (23 builders tied at 2026-05-03); picked alphabetically first. Compliance domain, so edition was verified via web: ANSI/A3 R15.06-2025 published Sept 2025, superseding the R15.06-2012 (R2017) edition the skill cited — a genuine mismatch, severity high. Description-level fixes applied; the generator's clause list likely still mirrors the 2012 structure and needs a full remap (too large for a polish pass). Deviation: /tmp/robotics-work was left over from a prior run under a different sandbox uid and could not be removed, so this run used /tmp/rw-20260715 instead; future runs should tolerate either path. Monday's W28 issues appear to have all been closed — open-issue count is 0.
+**Follow-ups:**
+- Remap generate_ansi-r1506.py clause structure to the 2025 edition (candidate W29 PLAN target, compliance domain).
+- Consider R15.06-3-2025 (end-user requirements) coverage — new-skill candidate.
+- 22 builders remain in the stale 2026-05-03 cohort; next POLISH runs continue alphabetically.

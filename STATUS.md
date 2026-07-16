@@ -1,9 +1,9 @@
 # Skills Suite Status
 
-_Generated 2026-07-15 by the autonomous daily run._
+_Generated: 2026-07-16 (autonomous daily run)_
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | ansi-r1506-compliance-matrix-builder.skill | compliance | ansi-r1506-compliance-matrix-checklist-reviewer.skill | 2026-07-15 | 🟢 |
 | behavior-tree-spec-builder.skill | ros2 | behavior-tree-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-06-25 | 🟢 |
@@ -35,7 +35,7 @@ _Generated 2026-07-15 by the autonomous daily run._
 | robot-field-acceptance-builder.skill | v&v | robot-field-acceptance-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | robot-hil-test-catalog-builder.skill | v&v | robot-hil-test-catalog-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | robot-sop-builder.skill | operational | robot-sop-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| ros2-system-architecture-builder.skill | ros2 | ros2-system-architecture-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| ros2-system-architecture-builder.skill | ros2 | ros2-system-architecture-checklist-reviewer.skill | 2026-07-16 | 🟢 |
 | safety-io-matrix-builder.skill | cell-design | safety-io-matrix-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | ssm-plan-builder.skill | cobot | ssm-plan-checklist-reviewer.skill | 2026-07-07 | 🟢 |
 | tf-tree-spec-builder.skill | ros2 | tf-tree-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
@@ -43,10 +43,10 @@ _Generated 2026-07-15 by the autonomous daily run._
 | wireless-coexistence-plan-builder.skill | amr | wireless-coexistence-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | zone-conduit-plan-builder.skill | cybersecurity | zone-conduit-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 
----
+## Summary
 
-- **Builders:** 38 / **Reviewers:** 38 / **Paired:** 38/38 (100%)
-- GREEN paired & fresh (<=30 days): 12
-- YELLOW stale (>30 days untouched): 26
-- RED missing paired reviewer: 0
-- Today polish target: ansi-r1506-compliance-matrix-builder (edition re-anchor to ANSI/A3 R15.06-2025)
+- Builders: 38 · Reviewers: 38 · Paired: 38/38 (100%)
+- 🔴 missing reviewer: 0
+- 🟡 stale (30+ days): 25
+- 🟢 paired & fresh (≤30 days): 13
+- Total .skill files: 76

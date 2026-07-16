@@ -504,3 +504,18 @@
 - Remap generate_ansi-r1506.py clause structure to the 2025 edition (candidate W29 PLAN target, compliance domain).
 - Consider R15.06-3-2025 (end-user requirements) coverage — new-skill candidate.
 - 22 builders remain in the stale 2026-05-03 cohort; next POLISH runs continue alphabetically.
+
+## 2026-07-16 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished ros2-system-architecture-builder — corrected false "Iron LTS" claim to current LTS set (Humble/Jazzy/Lyrical), wrote polish log, refreshed STATUS.
+**Files touched:** skills/ros2-system-architecture-builder.skill, docs/skill-polish-log/ros2-system-architecture-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Zero open issues and no orphan builders, so selection fell to the least-recently-touched cohort (2026-05-03); picked ros2-system-architecture-builder since it was also W28 target #33 (carryover, issue now closed). The skill listed "ROS 2 Iron LTS" — Iron Irwini was never LTS and reached EOL 2024-12-04; verified current distro status via web (docs.ros.org, endoflife.date) before editing. Applied only the small factual version fix plus an explicit do-not-target-Iron note; larger body improvements (tab specs, QoS catalog defaults) were descoped to the polish log. Paired reviewer has no version claims, so no lockstep edit was needed. Note for the human: this week has no W29 plan file — Monday's PLAN run appears to have been skipped; this week's polish picks are running off the W28 list.
+**Follow-ups:**
+- Add a "target distro is a currently supported LTS" check to ros2-system-architecture-checklist-reviewer's probe script.
+- W28 target #36 (fleet-manager-architecture-builder, amr) remains untouched — good candidate for the next POLISH run.
+- Missing WEEK-2026-W29.md — next Monday's PLAN should confirm cadence is intact.
+- 25 builders still 🟡 stale at the 2026-05-03 baseline; reviewers have still never been polished as a class.

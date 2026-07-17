@@ -519,3 +519,18 @@
 - W28 target #36 (fleet-manager-architecture-builder, amr) remains untouched — good candidate for the next POLISH run.
 - Missing WEEK-2026-W29.md — next Monday's PLAN should confirm cadence is intact.
 - 25 builders still 🟡 stale at the 2026-05-03 baseline; reviewers have still never been polished as a class.
+
+## 2026-07-17 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Wrote the W29 changelog section, backfilled the missed W28 section, created 4 example stubs, refreshed STATUS.
+**Files touched:** CHANGELOG.md, examples/ansi-r1506-compliance-matrix-builder/README.md, examples/loto-procedure-builder/README.md, examples/loto-procedure-checklist-reviewer/README.md, examples/ros2-system-architecture-builder/README.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** The git log shows a six-day scheduler gap (no commits 2026-07-09 → 2026-07-14), which means last Friday's DOCS run never happened and W28 (ssm-plan and iec62061 polishes plus the Monday plan) was never changelogged. Judgement call: backfilled a clearly-marked W28 section from the git log rather than leaving the hole. All four skills touched in W29 lacked example stubs, including loto-procedure-checklist-reviewer — the first reviewer stub in examples/. No new skills were added this week, so the README skill table was left untouched. Open issues remain at 0 (all W28 issues were closed before this week).
+**Follow-ups:**
+- Tomorrow's RELEASE run has commits this week, so a weekly tag + RELEASES.md entry is expected.
+- Monday 2026-07-20 PLAN must produce WEEK-2026-W30.md — confirm the cadence gap (2026-07-09 → 2026-07-14) is resolved; W29 had no plan file at all.
+- Human: 18 example dirs are still stubs with no sample_input/sample_output files; consider generating one real worked example.
+- 25 builders remain 🟡 stale (2026-05-03 baseline); reviewers as a class have still never been polished.

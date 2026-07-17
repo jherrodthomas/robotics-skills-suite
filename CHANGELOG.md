@@ -6,6 +6,34 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W29 (2026-07-13 → 2026-07-19)
+
+#### polish
+
+- **loto-procedure-builder** + **loto-procedure-checklist-reviewer** (operational) — anchor the pair on `OSHA 29 CFR 1910.147` and `ISO 14118:2017` (energy isolation); log polish review (`51031df`)
+- **ansi-r1506-compliance-matrix-builder** (compliance) — re-anchor on `ANSI/A3 R15.06-2025` (U.S. adoption of `ISO 10218-1/-2:2025`, superseding R15.06-2012 (R2017)); fix file tree; log polish review (`35443f1`)
+- **ros2-system-architecture-builder** (ros2) — fix false "Iron LTS" claim; target current LTS set (Humble / Jazzy / Lyrical) with explicit do-not-target-Iron note; log polish review (`f283050`)
+
+#### docs
+
+- **CHANGELOG.md** — add W29 weekly section; backfill the missed W28 section (see below)
+- **examples/** — stub READMEs for skills touched in W29 lacking one: `ansi-r1506-compliance-matrix-builder`, `loto-procedure-builder`, `loto-procedure-checklist-reviewer`, `ros2-system-architecture-builder`
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers
+- **docs/AUTONOMOUS_LOG.md** — daily journal entry for 2026-07-17 DOCS
+
+### Week 2026-W28 (2026-07-06 → 2026-07-12) — backfilled 2026-07-17
+
+_The W28 Friday DOCS run did not execute (no commits 2026-07-09 → 2026-07-14); this section was reconstructed from the git log._
+
+#### polish
+
+- **ssm-plan-builder** (cobot) — anchor builder on `ISO 10218-1:2025` and `ISO/TS 15066:2016` (speed and separation monitoring); fix file tree; log polish review (`7bb3b4e`)
+- **iec62061-sil-builder** (compliance) — anchor builder on `IEC 62061:2021` edition; fix file tree; log polish review (`44c4fc6`)
+
+#### chore
+
+- **plan** — W28 targets seeded Monday: 2 carryovers plus 3 new across 5 domains (`df2670b`); see [docs/weekly/WEEK-2026-W28.md](docs/weekly/WEEK-2026-W28.md)
+
 ### Week 2026-W27 (2026-06-29 → 2026-07-05)
 
 #### polish

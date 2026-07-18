@@ -1,6 +1,6 @@
 # Skills Suite Status
 
-_Generated: 2026-07-17 (autonomous daily run)_
+_Generated: 2026-07-18 (autonomous daily run)_
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 | --- | --- | --- | --- | --- |
@@ -13,13 +13,13 @@ _Generated: 2026-07-17 (autonomous daily run)_
 | fleet-manager-architecture-builder.skill | amr | fleet-manager-architecture-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | iec62061-sil-builder.skill | compliance | iec62061-sil-checklist-reviewer.skill | 2026-07-08 | 🟢 |
 | iec62443-risk-assessment-builder.skill | cybersecurity | iec62443-risk-assessment-checklist-reviewer.skill | 2026-06-24 | 🟢 |
-| interlock-estop-architecture-builder.skill | cell-design | interlock-estop-architecture-checklist-reviewer.skill | 2026-06-17 | 🟢 |
+| interlock-estop-architecture-builder.skill | cell-design | interlock-estop-architecture-checklist-reviewer.skill | 2026-06-17 | 🟡 |
 | iso10218-compliance-matrix-builder.skill | compliance | iso10218-compliance-matrix-checklist-reviewer.skill | 2026-06-02 | 🟡 |
 | iso12100-risk-assessment-builder.skill | foundation | iso12100-risk-assessment-checklist-reviewer.skill | 2026-06-09 | 🟡 |
 | iso13849-plr-builder.skill | compliance | iso13849-plr-checklist-reviewer.skill | 2026-06-23 | 🟢 |
 | iso15066-biomechanical-limits-builder.skill | cobot | iso15066-biomechanical-limits-checklist-reviewer.skill | 2026-06-04 | 🟡 |
 | iso3691-4-risk-assessment-builder.skill | amr | iso3691-4-risk-assessment-checklist-reviewer.skill | 2026-06-30 | 🟢 |
-| iso9283-performance-test-builder.skill | v&v | iso9283-performance-test-checklist-reviewer.skill | 2026-06-18 | 🟢 |
+| iso9283-performance-test-builder.skill | v&v | iso9283-performance-test-checklist-reviewer.skill | 2026-06-18 | 🟡 |
 | loto-procedure-builder.skill | operational | loto-procedure-checklist-reviewer.skill | 2026-07-15 | 🟢 |
 | machinery-safety-lifecycle-plan-builder.skill | foundation | machinery-safety-lifecycle-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | model-card-builder.skill | ai-ml | model-card-checklist-reviewer.skill | 2026-07-02 | 🟢 |
@@ -47,6 +47,6 @@ _Generated: 2026-07-17 (autonomous daily run)_
 
 - Builders: 38 · Reviewers: 38 · Paired: 38/38 (100%)
 - 🔴 missing reviewer: 0
-- 🟡 stale (30+ days): 25
-- 🟢 paired & fresh (≤30 days): 13
+- 🟡 stale (30+ days): 27
+- 🟢 paired & fresh (≤30 days): 11
 - Total .skill files: 76

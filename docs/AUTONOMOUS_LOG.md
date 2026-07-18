@@ -534,3 +534,18 @@
 - Monday 2026-07-20 PLAN must produce WEEK-2026-W30.md — confirm the cadence gap (2026-07-09 → 2026-07-14) is resolved; W29 had no plan file at all.
 - Human: 18 example dirs are still stubs with no sample_input/sample_output files; consider generating one real worked example.
 - 25 builders remain 🟡 stale (2026-05-03 baseline); reviewers as a class have still never been polished.
+
+## 2026-07-18 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Tagged v2026.07.W3 weekly snapshot, wrote release notes in RELEASES.md, refreshed STATUS.
+**Files touched:** RELEASES.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Week had 4 commits (3 polish, 1 docs), so a release was due. Tag computed as v2026.07.W3 (ISO week 29 within July, first-of-month week 27). No v2026.07.W2 tag exists — last Saturday's RELEASE run fell inside the 2026-07-09 → 2026-07-14 scheduler gap — so, following the June W2/W3 precedent, the compare link spans v2026.07.W1...v2026.07.W3 and the notes call out that W28's ssm-plan and iec62061 polishes ride along in this snapshot. Deviation: the standard /tmp/robotics-work clone from a prior run was permission-locked and could not be removed, so this run used a fresh clone at /tmp/robotics-work-20260718; no functional impact. Release object deliberately NOT published — human clicks Publish after reviewing RELEASES.md.
+**Follow-ups:**
+- Human: review RELEASES.md v2026.07.W3 and publish the GitHub Release if desired.
+- Monday 2026-07-20 PLAN must produce WEEK-2026-W30.md (W29 had no plan file).
+- Stale-builder count crept from 25 to 27 as the 30-day window rolled; behavior-tree/nav2/urdf/tf-tree (ros2) and the v&v cohort remain at the 2026-05-03 baseline — good PLAN targets.
+- If the permission-locked /tmp/robotics-work persists next run, keep using dated work dirs.

@@ -1,5 +1,23 @@
 # Releases
 
+## v2026.07.W3 — 2026-07-18
+
+**Highlights:** Sixth tagged weekly snapshot. W29 delivered three safety/accuracy polish passes — the loto-procedure pair anchored on OSHA 29 CFR 1910.147 + ISO 14118:2017, ansi-r1506-compliance-matrix re-anchored on ANSI/A3 R15.06-2025, and a false "ROS 2 Iron LTS" claim corrected in ros2-system-architecture-builder — plus the W29 changelog with a W28 backfill. Note: no v2026.07.W2 snapshot was tagged for the July 6–12 window (scheduler gap 2026-07-09 → 2026-07-14), so the compare link below spans from W1 and also captures W28's ssm-plan and iec62061 polishes. Suite holds at 76 .skill files, 100% paired, zero orphans.
+
+**Changes this week (2026-07-13 → 2026-07-18):**
+
+*polish:*
+- anchor loto-procedure pair on OSHA 29 CFR 1910.147 + ISO 14118 (51031df)
+- anchor ansi-r1506 builder on ANSI/A3 R15.06-2025, fix file tree (35443f1)
+- fix false Iron LTS claim in ros2-system-architecture builder (f283050)
+
+*docs:*
+- W29 changelog plus W28 backfill, four example stubs, STATUS refresh (bfa31a2)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Domain health: 11 builders touched within 30 days, 27 stale (30+ days), 0 orphans.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.07.W1...v2026.07.W3
+
 ## v2026.07.W1 — 2026-07-04
 
 **Highlights:** Fifth tagged weekly snapshot. W27 delivered 3 of 5 weekly targets via polish passes — iso3691-4-risk-assessment edition-anchored (ISO 3691-4:2023), robot-cell-layout anchored on ISO 10218-2:2025 + ISO 13855:2024/13857:2019, and model-card-builder governance terminology refreshed — plus the June 2026 monthly KPI report. Suite holds at 76 .skill files, 100% paired, zero orphans.

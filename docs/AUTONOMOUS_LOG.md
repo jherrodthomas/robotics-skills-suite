@@ -563,3 +563,18 @@
 - Mon PLAN: with zero open issues, pick W30 targets from the 27 stale builders (oldest: 2026-05-03 cohort), keeping domain spread.
 - Consider prioritizing behavior-tree-spec, dataset-documentation, declaration-of-conformity, eoat-spec, fleet-manager-architecture — all untouched since May.
 - Sandbox note for future runs: if /tmp/robotics-work is undeletable, use a dated work dir.
+
+## 2026-07-20 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W30 plan — 5 targets across 5 domains, issues #37–#41; STATUS regenerated
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W30.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all created this run: #37–#41)
+**Notes:** Started from a fully quiet board (0 open issues). Picked the W28 carryover fleet-manager-architecture (#37, never reached, former #36) first, then four builders from the 2026-05-03 initial-import cohort chosen for domain spread (foundation, cobot, ros2, cybersecurity). Noticed WEEK-2026-W29.md was never written — last Monday's PLAN apparently didn't run or didn't commit the file, though W29 POLISH days executed fine off W28 leftovers; W30 restores the cadence. Structural gap worth human attention: 35 of 38 reviewers are untouched since import despite the lockstep-reviewer DoD; W30 targets all restate it and the loto run showed it fits in one day.
+**Follow-ups:**
+- Tue POLISH: take #37 fleet-manager-architecture first (carryover), touch reviewer in lockstep
+- Wed/Thu POLISH: continue list order (#38, #39)
+- Investigate why the W29 Monday PLAN produced no weekly file (check AUTONOMOUS_LOG for 2026-07-13 entry)
+- Reviewer staleness: consider a reviewer-only polish week once builder backlog thins

@@ -1,9 +1,9 @@
-# Skills Suite Status
+# Skill Suite Status
 
-_Auto-generated 2026-07-19 by the autonomous daily run._
+_Regenerated 2026-07-20 by autonomous daily run._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | ansi-r1506-compliance-matrix-builder.skill | compliance | ansi-r1506-compliance-matrix-checklist-reviewer.skill | 2026-07-15 | 🟢 |
 | behavior-tree-spec-builder.skill | ros2 | behavior-tree-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-06-25 | 🟢 |
@@ -43,10 +43,10 @@ _Auto-generated 2026-07-19 by the autonomous daily run._
 | wireless-coexistence-plan-builder.skill | amr | wireless-coexistence-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | zone-conduit-plan-builder.skill | cybersecurity | zone-conduit-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 
----
+## Summary
 
-- Builders: 38 · Reviewers: 38 · Total files: 76
-- Paired: 38/38 (100%)
-- 🟢 fresh & paired: 11
-- 🟡 stale (30+ days): 27
-- 🔴 missing reviewer: 0
+- Builders: 38 · Reviewers paired: 38 (100%)
+- 🔴 Missing reviewer: 0
+- 🟡 Stale (30+ days): 27
+- 🟢 Paired & fresh (≤30 days): 11
+- Oldest cohort: 2026-05-03 baseline (21 builders untouched since initial import)

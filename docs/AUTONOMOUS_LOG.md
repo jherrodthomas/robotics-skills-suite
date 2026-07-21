@@ -578,3 +578,18 @@
 - Wed/Thu POLISH: continue list order (#38, #39)
 - Investigate why the W29 Monday PLAN produced no weekly file (check AUTONOMOUS_LOG for 2026-07-13 entry)
 - Reviewer staleness: consider a reviewer-only polish week once builder backlog thins
+
+## 2026-07-21 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished fleet-manager-architecture-builder — fixed generator crash (illegal "/" in sheet title), placeholder "Worksheet" tab, tab count, and false file tree; logged remaining gaps.
+**Files touched:** skills/fleet-manager-architecture-builder.skill, docs/skill-polish-log/fleet-manager-architecture-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet) — but generator was executed end-to-end before and after edits; post-fix run produces a valid 12-tab xlsx.
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all weekly-target, W30 set from Monday's PLAN)
+**Notes:** Target chosen at intersection of least-recently-touched (2026-05-03) and issue #37 (W28 carryover). Verification surfaced a real crash: the shipped generator could never run because "VDA 5050 / MQTT / REST Interfaces" is an invalid Excel sheet name — fixed and verified. The generator remains a placeholder that ignores input JSON; that's a refactor, descoped per hard rules. Did not comment on issue #37 since POLISH mode doesn't include issue writes; Sunday TRIAGE or the human can close it out. A prior run's clone at /tmp/robotics-work was owned by another user and undeletable; switched to dated workdir /tmp/robotics-work-20260721 — future runs may want dated dirs by default.
+**Follow-ups:**
+- Implement real generate_fleet_arch.py (reads input JSON, populates 12 tabs) — high priority, ties to issue #37.
+- Pin VDA 5050 version and add ISO 3691-4:2020 reference to SKILL.md (verify current VDA 5050 release first).
+- Audit sibling builders for the same "/" -in-sheet-title crash pattern (any tab names with slashes).
+- Remaining W30 targets: #38 machinery-safety-lifecycle-plan, #39 pfl-plan, #40 behavior-tree-spec, #41 ot-asset-inventory.

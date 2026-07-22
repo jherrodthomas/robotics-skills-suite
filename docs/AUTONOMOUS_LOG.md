@@ -593,3 +593,18 @@
 - Pin VDA 5050 version and add ISO 3691-4:2020 reference to SKILL.md (verify current VDA 5050 release first).
 - Audit sibling builders for the same "/" -in-sheet-title crash pattern (any tab names with slashes).
 - Remaining W30 targets: #38 machinery-safety-lifecycle-plan, #39 pfl-plan, #40 behavior-tree-spec, #41 ot-asset-inventory.
+
+## 2026-07-22 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished pfl-plan pair (W30 target #39): anchored 2025/2016 standard editions, fixed file tree, removed spurious 12th tab; logged placeholder-generator gap as HIGH.
+**Files touched:** STATUS.md, skills/pfl-plan-builder.skill, skills/pfl-plan-checklist-reviewer.skill, docs/skill-polish-log/pfl-plan-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W30 weekly targets)
+**Notes:** No skill-bug/reviewer-finding issues and no orphan builders, so pick fell to least-recently-touched; 20 builders tie at 80 days stale, so I tie-broke toward one that is also a W30 target (pfl-plan, issue #39), treating the pair per precedent. Judgement call flagged for the human: PFL requirements largely migrated to ISO 10218-2:2025 in the 2025 revision while TS 15066:2016 stays as the biomechanical-limits source — I anchored editions in the descriptions but did not reword body-text clause references. Bigger finding: the builder's generator is a placeholder that ignores its JSON input and writes "Placeholder" into every tab — the skill can't yet deliver what it promises. That's a rebuild, not a polish, so it's descoped and logged as HIGH severity. STATUS shows 26 of 38 builders 🟡 stale (20 untouched since 2026-05-03).
+**Follow-ups:**
+- Rebuild generate_pfl_plan.py as a real generator (read input JSON, per-body-region limit table, pass/fail formulas) — candidate for a dedicated work session or new-skill-style effort.
+- Human: confirm ISO 10218-2:2025 vs -1 clause framing for PFL in SKILL.md body text.
+- Remaining W30 targets: #37 fleet-manager (done Tue), #38 machinery-safety-lifecycle, #40 behavior-tree-spec, #41 ot-asset-inventory — Thu pick should come from these.
+- Spot-check other 2026-05-03-vintage builders for the same placeholder-generator pattern.

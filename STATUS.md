@@ -1,6 +1,6 @@
-# Skills Suite Status
+# Skill Suite Status
 
-_Generated 2026-07-21 by autonomous daily run._
+_Auto-generated 2026-07-22 by the autonomous daily run. Do not edit by hand._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -10,7 +10,7 @@ _Generated 2026-07-21 by autonomous daily run._
 | dataset-documentation-builder.skill | ai-ml | dataset-documentation-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | declaration-of-conformity-builder.skill | compliance | declaration-of-conformity-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | eoat-spec-builder.skill | cell-design | eoat-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| fleet-manager-architecture-builder.skill | amr | fleet-manager-architecture-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| fleet-manager-architecture-builder.skill | amr | fleet-manager-architecture-checklist-reviewer.skill | 2026-07-21 | 🟢 |
 | iec62061-sil-builder.skill | compliance | iec62061-sil-checklist-reviewer.skill | 2026-07-08 | 🟢 |
 | iec62443-risk-assessment-builder.skill | cybersecurity | iec62443-risk-assessment-checklist-reviewer.skill | 2026-06-24 | 🟢 |
 | interlock-estop-architecture-builder.skill | cell-design | interlock-estop-architecture-checklist-reviewer.skill | 2026-06-17 | 🟡 |
@@ -43,12 +43,10 @@ _Generated 2026-07-21 by autonomous daily run._
 | wireless-coexistence-plan-builder.skill | amr | wireless-coexistence-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | zone-conduit-plan-builder.skill | cybersecurity | zone-conduit-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 
----
-
 ## Summary
 
-- Builders: 38 · Reviewers: 38 · Total skill files: 76
-- 🟢 Paired & fresh (≤30 days): 11
-- 🟡 Paired but stale (30+ days): 27
-- 🔴 Missing paired reviewer: 0
-- Paired ratio: 38/38 (100%)
+- Builders: 38 · Reviewers paired: 38 · Paired ratio: 100%
+- 🟢 healthy (paired, touched ≤30d): 12
+- 🟡 stale (not touched in 30+ days): 26
+- 🔴 missing paired reviewer: 0
+- Generated: 2026-07-22 (POLISH day)

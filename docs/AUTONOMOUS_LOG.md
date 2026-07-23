@@ -608,3 +608,17 @@
 - Human: confirm ISO 10218-2:2025 vs -1 clause framing for PFL in SKILL.md body text.
 - Remaining W30 targets: #37 fleet-manager (done Tue), #38 machinery-safety-lifecycle, #40 behavior-tree-spec, #41 ot-asset-inventory — Thu pick should come from these.
 - Spot-check other 2026-05-03-vintage builders for the same placeholder-generator pattern.
+
+## 2026-07-23 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished machinery-safety-lifecycle-plan pair (W30 target #38) — edition anchors, reviewer description rewrite, file trees, leaked-path removal; discovered pair is scaffold-only.
+**Files touched:** skills/machinery-safety-lifecycle-plan-builder.skill, skills/machinery-safety-lifecycle-plan-checklist-reviewer.skill, docs/skill-polish-log/machinery-safety-lifecycle-plan-builder.md, examples/machinery-safety-lifecycle-plan-builder/README.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all weekly-target)
+**Notes:** Picked #38 per W30 list order (no skill-bug/reviewer-finding issues, no orphans). Fixed four description-level defects, including a reviewer description that was a verbatim copy of the builder's and a leaked authoring-machine session path inside the generator. HIGH-severity finding: both generator scripts and all reviewer probe scripts are placeholders — the pair cannot actually produce a workbook. That implementation is larger than a polish slot, so it was descoped and logged. Sandbox note: previous run's /tmp/robotics-work clone was unremovable (permission denied), worked from /tmp/robotics-work-20260723 instead; harmless but recurring runs should expect stale dirs.
+**Follow-ups:**
+- Add "implement machinery-safety-lifecycle-plan generators" as a W31 PLAN target (new-skill/scaffold-gap — bigger than one POLISH day).
+- Audit other 2026-05-03 baseline pairs for the same placeholder-generator pattern before assuming they work (spot-check suggests initial import shipped scaffolds).
+- Remaining W30 targets for Fri+ or W31: behavior-tree-spec (#40), ot-asset-inventory (#41).

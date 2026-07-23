@@ -1,6 +1,6 @@
-# Skill Suite Status
+# Skills Suite Status
 
-_Auto-generated 2026-07-22 by the autonomous daily run. Do not edit by hand._
+_Auto-generated 2026-07-23 by the daily autonomous run._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -28,7 +28,7 @@ _Auto-generated 2026-07-22 by the autonomous daily run. Do not edit by hand._
 | operator-training-matrix-builder.skill | operational | operator-training-matrix-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | ot-asset-inventory-builder.skill | cybersecurity | ot-asset-inventory-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | perception-test-catalog-builder.skill | ai-ml | perception-test-catalog-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| pfl-plan-builder.skill | cobot | pfl-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| pfl-plan-builder.skill | cobot | pfl-plan-checklist-reviewer.skill | 2026-07-22 | 🟢 |
 | robot-acceptance-protocol-builder.skill | v&v | robot-acceptance-protocol-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | robot-cell-layout-builder.skill | cell-design | robot-cell-layout-checklist-reviewer.skill | 2026-07-01 | 🟢 |
 | robot-cell-scope-builder.skill | foundation | robot-cell-scope-checklist-reviewer.skill | 2026-05-03 | 🟡 |
@@ -45,8 +45,8 @@ _Auto-generated 2026-07-22 by the autonomous daily run. Do not edit by hand._
 
 ## Summary
 
-- Builders: 38 · Reviewers paired: 38 · Paired ratio: 100%
-- 🟢 healthy (paired, touched ≤30d): 12
-- 🟡 stale (not touched in 30+ days): 26
+- Builders: 38 · Reviewers: 38 · Total skill files: 76
+- Paired: 38/38 (100%)
+- 🟢 paired & fresh (≤30d): 13
+- 🟡 stale (>30d since touch): 25
 - 🔴 missing paired reviewer: 0
-- Generated: 2026-07-22 (POLISH day)

@@ -622,3 +622,17 @@
 - Add "implement machinery-safety-lifecycle-plan generators" as a W31 PLAN target (new-skill/scaffold-gap — bigger than one POLISH day).
 - Audit other 2026-05-03 baseline pairs for the same placeholder-generator pattern before assuming they work (spot-check suggests initial import shipped scaffolds).
 - Remaining W30 targets for Fri+ or W31: behavior-tree-spec (#40), ot-asset-inventory (#41).
+
+## 2026-07-24 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** W30 CHANGELOG section, four example README stubs for W30-touched skills, STATUS refresh.
+**Files touched:** CHANGELOG.md, examples/fleet-manager-architecture-builder/README.md, examples/pfl-plan-builder/README.md, examples/pfl-plan-checklist-reviewer/README.md, examples/machinery-safety-lifecycle-plan-checklist-reviewer/README.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W30 weekly targets: #37–#41)
+**Notes:** Week produced 4 commits (Mon PLAN + Tue/Wed/Thu POLISH on W30 targets #37, #39, #38). Grouped them into the W30 CHANGELOG section; no feat/fix-prefixed commits this week, so polish/docs/chore buckets only. No newly-added skills, so no README table rows appended. Example stubs for the three placeholder-generator skills carry an explicit "generator is a placeholder" note so nobody mistakes a stub for evidence the skill works. Sandbox note recurring: the 2026-07-23 run's /tmp/robotics-work clone is unremovable (permission denied); worked from /tmp/robotics-work-20260724. STATUS: 13 fresh / 25 stale, no orphans.
+**Follow-ups:**
+- Sat RELEASE: 4+ commits this week → tag v2026.07.W4 and write RELEASES.md notes.
+- W31 PLAN should include "implement machinery-safety-lifecycle-plan generators" and the placeholder-generator audit of 2026-05-03 baseline pairs (per Wed/Thu findings).
+- Remaining W30 targets not yet polished: behavior-tree-spec (#40), ot-asset-inventory (#41).

@@ -1,6 +1,6 @@
 # Skills Suite Status
 
-_Auto-generated 2026-07-23 by the daily autonomous run._
+_Auto-generated 2026-07-24 by the autonomous daily run. Do not edit by hand._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -16,12 +16,12 @@ _Auto-generated 2026-07-23 by the daily autonomous run._
 | interlock-estop-architecture-builder.skill | cell-design | interlock-estop-architecture-checklist-reviewer.skill | 2026-06-17 | 🟡 |
 | iso10218-compliance-matrix-builder.skill | compliance | iso10218-compliance-matrix-checklist-reviewer.skill | 2026-06-02 | 🟡 |
 | iso12100-risk-assessment-builder.skill | foundation | iso12100-risk-assessment-checklist-reviewer.skill | 2026-06-09 | 🟡 |
-| iso13849-plr-builder.skill | compliance | iso13849-plr-checklist-reviewer.skill | 2026-06-23 | 🟢 |
+| iso13849-plr-builder.skill | compliance | iso13849-plr-checklist-reviewer.skill | 2026-06-23 | 🟡 |
 | iso15066-biomechanical-limits-builder.skill | cobot | iso15066-biomechanical-limits-checklist-reviewer.skill | 2026-06-04 | 🟡 |
 | iso3691-4-risk-assessment-builder.skill | amr | iso3691-4-risk-assessment-checklist-reviewer.skill | 2026-06-30 | 🟢 |
 | iso9283-performance-test-builder.skill | v&v | iso9283-performance-test-checklist-reviewer.skill | 2026-06-18 | 🟡 |
 | loto-procedure-builder.skill | operational | loto-procedure-checklist-reviewer.skill | 2026-07-15 | 🟢 |
-| machinery-safety-lifecycle-plan-builder.skill | foundation | machinery-safety-lifecycle-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| machinery-safety-lifecycle-plan-builder.skill | foundation | machinery-safety-lifecycle-plan-checklist-reviewer.skill | 2026-07-23 | 🟢 |
 | model-card-builder.skill | ai-ml | model-card-checklist-reviewer.skill | 2026-07-02 | 🟢 |
 | nav2-config-builder.skill | ros2 | nav2-config-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | operating-envelope-builder.skill | amr | operating-envelope-checklist-reviewer.skill | 2026-06-03 | 🟡 |
@@ -45,8 +45,8 @@ _Auto-generated 2026-07-23 by the daily autonomous run._
 
 ## Summary
 
-- Builders: 38 · Reviewers: 38 · Total skill files: 76
-- Paired: 38/38 (100%)
-- 🟢 paired & fresh (≤30d): 13
-- 🟡 stale (>30d since touch): 25
-- 🔴 missing paired reviewer: 0
+- **Builders:** 38 · **Reviewers:** 38 · **Paired:** 38/38 (100%)
+- **Flags:** 🟢 13 paired & fresh · 🟡 25 stale (30+ days) · 🔴 0 missing reviewer
+- **Domains:** ai-ml (3), amr (4), cell-design (4), cobot (4), compliance (5), cybersecurity (3), foundation (3), operational (3), ros2 (5), v&v (4)
+- **Total skill files:** 76
+- **Freshest builders:** machinery-safety-lifecycle-plan-builder, pfl-plan-builder, fleet-manager-architecture-builder

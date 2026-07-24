@@ -6,6 +6,25 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W30 (2026-07-20 → 2026-07-26)
+
+#### polish
+
+- **fleet-manager-architecture-builder** (amr) — fix generator crash (illegal `/` in Excel tab name "VDA 5050 / MQTT / REST Interfaces"), rename placeholder "Worksheet" tab to "References", correct tab count to 12, fix file tree; placeholder-generator gap logged HIGH (`7f24c5d`)
+- **pfl-plan-builder** + **pfl-plan-checklist-reviewer** (cobot) — anchor the pair on `ISO 10218-1:2025/-2:2025` and `ISO/TS 15066:2016`, fix file tree, drop spurious 12th tab; placeholder-generator gap logged HIGH (`3003959`)
+- **machinery-safety-lifecycle-plan-builder** + **machinery-safety-lifecycle-plan-checklist-reviewer** (foundation) — anchor `ISO 12100:2010` / `ISO 13849-1:2023` / `IEC 62061:2021` / `EU Machinery Regulation 2023/1230` editions, rewrite reviewer description (was verbatim copy of builder's), fix file trees, remove leaked authoring-machine path from generator; scaffold-only pair flagged HIGH (`6234486`)
+
+#### docs
+
+- **CHANGELOG.md** — add W30 weekly section
+- **examples/** — stub READMEs for skills touched in W30 lacking one: `fleet-manager-architecture-builder`, `pfl-plan-builder`, `pfl-plan-checklist-reviewer`, `machinery-safety-lifecycle-plan-checklist-reviewer`
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers, 13 fresh / 25 stale (30+ days)
+- **docs/AUTONOMOUS_LOG.md** — daily journal entry for 2026-07-24 DOCS
+
+#### chore
+
+- **plan** — W30 targets seeded Monday: fleet-manager carryover (#37) plus four import-baseline polish targets #38–#41 (`d8f8daa`); see [docs/weekly/WEEK-2026-W30.md](docs/weekly/WEEK-2026-W30.md)
+
 ### Week 2026-W29 (2026-07-13 → 2026-07-19)
 
 #### polish

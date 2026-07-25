@@ -636,3 +636,17 @@
 - Sat RELEASE: 4+ commits this week → tag v2026.07.W4 and write RELEASES.md notes.
 - W31 PLAN should include "implement machinery-safety-lifecycle-plan generators" and the placeholder-generator audit of 2026-05-03 baseline pairs (per Wed/Thu findings).
 - Remaining W30 targets not yet polished: behavior-tree-spec (#40), ot-asset-inventory (#41).
+
+## 2026-07-25 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Tagged v2026.07.W4 weekly snapshot, appended release notes to RELEASES.md, refreshed STATUS.md.
+**Files touched:** RELEASES.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5 (all W30 weekly targets: #37–#41)
+**Notes:** Week had 5 commits (Mon PLAN + Tue/Wed/Thu POLISH + Fri DOCS), so the release proceeded. Tag computed as v2026.07.W4 (ISO week 30, fourth ISO week within July; consistent with last Saturday's W3) and confirmed absent from git tag -l before creation. Release notes lead with the fleet-manager-arch crash fix and the HIGH-severity scaffold-only finding on machinery-safety-lifecycle-plan so the human sees it before clicking Publish. Per policy, no GitHub Release object was published — tag pushed, RELEASES.md written, Publish is manual. STATUS drifted 13→12 fresh since yesterday as one builder crossed the 30-day line. Sandbox note: today's /tmp/robotics-work clone worked cleanly, no stale-dir workaround needed.
+**Follow-ups:**
+- Human: review RELEASES.md v2026.07.W4 section and click Publish on the tag if desired.
+- Mon W31 PLAN: include "implement machinery-safety-lifecycle-plan generators" and the placeholder-generator audit of 2026-05-03 baseline pairs.
+- W30 targets not polished, candidates for W31 carryover: behavior-tree-spec (#40), ot-asset-inventory (#41).

@@ -650,3 +650,17 @@
 - Human: review RELEASES.md v2026.07.W4 section and click Publish on the tag if desired.
 - Mon W31 PLAN: include "implement machinery-safety-lifecycle-plan generators" and the placeholder-generator audit of 2026-05-03 baseline pairs.
 - W30 targets not polished, candidates for W31 carryover: behavior-tree-spec (#40), ot-asset-inventory (#41).
+
+## 2026-07-26 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Quiet triage — 5 open issues reviewed, no label changes or stale comments needed; STATUS.md refreshed.
+**Files touched:** STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 5
+**Notes:** All 5 open issues (#37–#41) are W30 weekly-target planning issues created by Monday's PLAN run, each already carrying weekly-target + correct domain label. None fit the triage taxonomy (skill-bug / reviewer-finding / description-quality / new-skill / docs / ci / chain-break) at ≥80% confidence — they are polish targets, not defects — so labeling was intentionally skipped rather than forced. No issue is 30+ days quiet (all updated 2026-07-20), so no auto-stale comments. Judgement call: a stale clone at /tmp/robotics-work was locked with permission errors from a prior run; worked from /tmp/robotics-work-20260726 instead. STATUS shows 27/38 builders 🟡 (30+ days untouched) — the yellow count keeps climbing since POLISH only clears ~3 pairs/week.
+**Follow-ups:**
+- Mon PLAN: #37 fleet-manager-architecture (amr) is a W28 carryover still open — prioritize or explicitly re-carry.
+- Consider whether weekly-target issues should be exempt from triage taxonomy permanently (recurring skip).
+- Stale-clone lock at /tmp/robotics-work may recur; keep using dated work dirs.

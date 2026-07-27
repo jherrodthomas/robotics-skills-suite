@@ -1,9 +1,9 @@
 # Skills Suite Status
 
-_Regenerated 2026-07-26 by autonomous daily run._
+_Regenerated: 2026-07-27 (autonomous daily run)_
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | ansi-r1506-compliance-matrix-builder.skill | compliance | ansi-r1506-compliance-matrix-checklist-reviewer.skill | 2026-07-15 | 🟢 |
 | behavior-tree-spec-builder.skill | ros2 | behavior-tree-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-06-25 | 🟡 |
@@ -45,8 +45,8 @@ _Regenerated 2026-07-26 by autonomous daily run._
 
 ## Summary
 
-- Builders: 38 · Reviewers: 38 · Paired: 38/38 (100%)
-- 🟢 paired & fresh (≤30 days): 11
-- 🟡 stale (30+ days untouched): 27
-- 🔴 missing paired reviewer: 0
-- Domains covered: 10
+- Builders: 38 · Reviewers present: 38 · Paired: 38/38 (100%)
+- 🟢 Paired & fresh (≤30 days): 11
+- 🟡 Stale (builder untouched 30+ days): 27
+- 🔴 Missing paired reviewer: 0
+- Freshness cutoff date: 2026-06-27

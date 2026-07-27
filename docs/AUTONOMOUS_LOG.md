@@ -664,3 +664,17 @@
 - Mon PLAN: #37 fleet-manager-architecture (amr) is a W28 carryover still open — prioritize or explicitly re-carry.
 - Consider whether weekly-target issues should be exempt from triage taxonomy permanently (recurring skip).
 - Stale-clone lock at /tmp/robotics-work may recur; keep using dated work dirs.
+
+## 2026-07-27 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Wrote WEEK-2026-W31.md with 5 targets (2 carryovers reused #40/#41, 3 new issues #42–#44); regenerated STATUS.md.
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W31.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 8 (5 pre-existing W30 targets + 3 new W31 targets)
+**Notes:** Environment hiccup: the previous run's clone at /tmp/robotics-work was left behind with different file ownership and could not be removed (rm: Permission denied); this run worked from /tmp/robotics-work-20260727 instead — future runs should tolerate a stale /tmp/robotics-work. Judgement calls: (1) reused open issues #40/#41 for the two W30 carryovers rather than filing duplicates; (2) added a dedicated small target (#42) to close the fleet-manager-architecture reviewer lockstep gap left by 7f24c5d; (3) issues #38 and #39 appear done (pair-complete polish commits 3003959, 6234486) — left open for the human to review and close. STATUS shows 27/38 builders stale (🟡), 11 fresh, 0 orphans.
+**Follow-ups:**
+- Tue POLISH: start with #40 (behavior-tree-spec pair), or pair it with the small #42 reviewer task.
+- Human: review and close #38, #39 (and #37 once #42 lands).
+- Consider a future STATUS flag for reviewer-side staleness — current flag only tracks builder last-touched.

@@ -678,3 +678,18 @@
 - Tue POLISH: start with #40 (behavior-tree-spec pair), or pair it with the small #42 reviewer task.
 - Human: review and close #38, #39 (and #37 once #42 lands).
 - Consider a future STATUS flag for reviewer-side staleness — current flag only tracks builder last-touched.
+
+## 2026-07-28 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `behavior-tree-spec` pair (builder + reviewer, lockstep) — anchored on BehaviorTree.CPP v4.x / Groot2, corrected the Nav2-nodes-are-plugins framing, added accurate file trees; STATUS.md regenerated.
+**Files touched:** `skills/behavior-tree-spec-builder.skill`, `skills/behavior-tree-spec-checklist-reviewer.skill`, `docs/skill-polish-log/behavior-tree-spec-builder.md` (new), `examples/behavior-tree-spec-builder/README.md` (new), `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet) — verified both `.skill` archives repack and round-trip cleanly (7 and 10 entries), frontmatter parses, descriptions 595 and 532 chars (well under 1024).
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 8 (#37–#44)
+**Notes:** Target picked per W31 plan order — #40 was the top carryover and also tied for least-recently-touched at the 2026-05-03 import baseline (86 days). No `skill-bug` or `reviewer-finding` issues open and zero orphan builders, so the plan order stood. The substantive fix was factual, not cosmetic: the old text implied Nav2 BT nodes are BehaviorTree.CPP built-ins. They are project plugins, and Groot2 must be pointed at a Nav2 palette — verified against the Nav2 Groot2 docs, which also confirm Groot targets v3.x and Groot2 targets v4.x. Judgement call: I did **not** write generator or probe scripts. Both halves of this pair are hollow — the builder ships no generator, and the reviewer's probe, check-definitions, and dashboard scripts are each a single comment line. That is a build task, not a polish task, so it is logged HIGH and the SKILL.md files now state the limitation openly instead of implying a working tool. Worth the human's attention: this is the **third consecutive polish run** to find a placeholder generator (pfl-plan 07-22, machinery-safety-lifecycle 07-23, behavior-tree-spec today) — the import baseline looks structurally hollow, not incidentally so, and continuing to polish prose on non-functional skills has diminishing returns.
+**Follow-ups:**
+- Next POLISH run (Wed): `ot-asset-inventory` pair (#41, cybersecurity carryover), then `fleet-manager-architecture-checklist-reviewer` (#42, small lockstep-gap close).
+- Consider a Monday PLAN change: audit how many of the 38 builders actually ship a working generator, and make "implement generator" its own target class rather than a recurring polish finding.
+- Issues #38 and #39 (W30) still look done and ready for the human to close; #40 is now done pending human review.
+- `behavior-tree-spec` v4 node-name list (`SKIPPED`, `SequenceWithMemory`) deserves one confirming pass against the BT.CPP v4 API reference.

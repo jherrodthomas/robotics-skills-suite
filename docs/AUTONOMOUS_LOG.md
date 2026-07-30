@@ -693,3 +693,18 @@
 - Consider a Monday PLAN change: audit how many of the 38 builders actually ship a working generator, and make "implement generator" its own target class rather than a recurring polish finding.
 - Issues #38 and #39 (W30) still look done and ready for the human to close; #40 is now done pending human review.
 - `behavior-tree-spec` v4 node-name list (`SKIPPED`, `SequenceWithMemory`) deserves one confirming pass against the BT.CPP v4 API reference.
+
+## 2026-07-30 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `ot-asset-inventory` pair (builder + reviewer) pair-complete — anchored both on IEC 62443-2-1/-3-2 and SuC terminology, added zone/conduit capture and a downstream hand-off section, corrected the reviewer's tab count from 7 to the 5 actually generated, and fixed both file trees.
+**Files touched:** `skills/ot-asset-inventory-builder.skill`, `skills/ot-asset-inventory-checklist-reviewer.skill`, `docs/skill-polish-log/ot-asset-inventory-builder.md`, `examples/ot-asset-inventory-builder/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet) — ran a frontmatter validation sweep across all 76 `.skill` archives instead; all parse, all names match, all descriptions ≤1024 chars.
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 8
+**Notes:** Target #41 (W30 carryover, cybersecurity) — the last of the two carryovers, so W31 is now clear to move to #42–#44. The substantive find was a documentation/reality gap in the reviewer: SKILL.md walked the user through 7 checklist tabs but `generate_checklist.py` only creates 5, so two of the named tabs never existed. Also added zone assignment to the builder, which was a genuine functional gap — `zone-conduit-plan-builder` downstream needs that field and the inventory never captured it. Judgement call: I softened the reviewer's "Probes the source workbook" claim rather than implementing the probe, since auto-fill is a real implementation task and not a polish-slot item; it is logged as deferred/medium. Caught and fixed one self-inflicted error mid-run — my first rewritten builder description contained an unquoted `": "` which broke YAML frontmatter parsing; the validation sweep is what caught it, and it now runs on every polish pass. STATUS.md reports 34/38 stale reviewers because it is computed before this commit lands; it will read 33 tomorrow.
+**Follow-ups:**
+- Next POLISH target is #42 (`fleet-manager-architecture-checklist-reviewer`, amr) — small, bounded lockstep fix.
+- Reviewer auto-fill for ot-asset-inventory is deferred at medium severity; ~11 of the 24 checks are cheaply machine-verifiable. Candidate for a dedicated W32 implementation target.
+- Issues #37–#41 all now look done and are ready for the human to close (this task never closes issues).
+- "Engineering workstations" still has no home tab in the builder's 10-tab structure — needs a generator change.

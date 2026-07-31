@@ -708,3 +708,18 @@
 - Reviewer auto-fill for ot-asset-inventory is deferred at medium severity; ~11 of the 24 checks are cheaply machine-verifiable. Candidate for a dedicated W32 implementation target.
 - Issues #37–#41 all now look done and are ready for the human to close (this task never closes issues).
 - "Engineering workstations" still has no home tab in the builder's 10-tab structure — needs a generator change.
+
+## 2026-07-31 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Added the W31 CHANGELOG section, stubbed the two missing example READMEs for skills touched this week, and regenerated STATUS.md.
+**Files touched:** `CHANGELOG.md`, `examples/behavior-tree-spec-checklist-reviewer/README.md`, `examples/ot-asset-inventory-checklist-reviewer/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 8 (#37–#44)
+**Notes:** Three commits this week (Mon PLAN, Tue and Thu POLISH) — Wednesday produced no commit, which is a gap worth a human glance since the task is supposed to commit every run. Both W30 carryovers (#40 behavior-tree-spec, #41 ot-asset-inventory) landed pair-complete, so the lockstep convention held for a third and fourth pair. The four skills touched this week already had builder-side example stubs from the POLISH runs; only the two reviewer-side stubs were missing, and both are written from the reviewer SKILL.md audit scope rather than invented. README skill table needed no new rows — no skills were added this week, count stays at 38 pairs. STATUS drifted slightly: fresh dropped 12 → 11 and stale rose 26 → 27 as `cobot-hand-guiding-builder` crossed the 30-day line; reviewer debt improved 34 → 33.
+**Follow-ups:**
+- Issues #38, #39, #40, #41 all look done — ready for the human to close (this task never closes issues).
+- Remaining W31 targets not yet reached: #42 (fleet-manager reviewer lockstep), #43 (robot-sop pair), #44 (declaration-of-conformity pair). None of the three Tue/Wed/Thu slots remain, so all three carry to W32.
+- Placeholder checklist-generator scripts persist in `behavior-tree-spec-checklist-reviewer` (and several other reviewers). This is now the largest structural defect in the repo and is bigger than a POLISH-sized change — recommend the human scope it as a dedicated feat.
+- Tomorrow is Saturday: RELEASE mode, three commits this week, so a `v2026.07.W5` tag is expected.

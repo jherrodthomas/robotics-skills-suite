@@ -6,6 +6,24 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W31 (2026-07-27 → 2026-08-02)
+
+#### polish
+
+- **behavior-tree-spec-builder** + **behavior-tree-spec-checklist-reviewer** (ros2) — anchor the pair on `BehaviorTree.CPP v4.x` (`SKIPPED` status, precondition scripting, Groot2), reframe Nav2 node names as project plugins requiring registration rather than built-ins, fix file trees; placeholder checklist-generator scripts flagged in the polish log (`c6f1cf6`)
+- **ot-asset-inventory-builder** + **ot-asset-inventory-checklist-reviewer** (cybersecurity) — anchor the pair on `IEC 62443-2-1` / `IEC 62443-3-2` terminology (System under Consideration, zones and conduits, asset criticality), correct tab count and file trees (`83d2b18`)
+
+#### docs
+
+- **CHANGELOG.md** — add W31 weekly section
+- **examples/** — stub READMEs for skills touched in W31 lacking one: `behavior-tree-spec-checklist-reviewer`, `ot-asset-inventory-checklist-reviewer` (examples coverage now 27 dirs)
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers, 11 fresh / 27 stale (30+ days), reviewer debt 33/38
+- **docs/AUTONOMOUS_LOG.md** — daily journal entries for the W31 run
+
+#### chore
+
+- **plan** — W31 targets seeded Monday: carryovers #40 and #41 reused (not duplicated) plus three new targets #42–#44 (`719a954`); see [docs/weekly/WEEK-2026-W31.md](docs/weekly/WEEK-2026-W31.md)
+
 ### Week 2026-W30 (2026-07-20 → 2026-07-26)
 
 #### polish

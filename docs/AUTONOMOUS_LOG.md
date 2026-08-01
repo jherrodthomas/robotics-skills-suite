@@ -723,3 +723,18 @@
 - Remaining W31 targets not yet reached: #42 (fleet-manager reviewer lockstep), #43 (robot-sop pair), #44 (declaration-of-conformity pair). None of the three Tue/Wed/Thu slots remain, so all three carry to W32.
 - Placeholder checklist-generator scripts persist in `behavior-tree-spec-checklist-reviewer` (and several other reviewers). This is now the largest structural defect in the repo and is bigger than a POLISH-sized change — recommend the human scope it as a dedicated feat.
 - Tomorrow is Saturday: RELEASE mode, three commits this week, so a `v2026.07.W5` tag is expected.
+
+## 2026-08-01 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Cut weekly snapshot `v2026.08.W1` — release notes appended to RELEASES.md, lightweight tag pushed, STATUS.md regenerated.
+**Files touched:** STATUS.md, RELEASES.md, docs/AUTONOMOUS_LOG.md; tag v2026.08.W1
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (76 .skill files)
+**Open issues:** 8
+**Notes:** Four commits in the W31 window (Mon 2026-07-27 → today), so a release was warranted. Judgement call on the tag name: the spec derives `vYYYY.MM.W<n>` from the current month, but this week's work sits in ISO week 31 (late July) while the release date is 1 August — so the tag reads `v2026.08.W1` even though the changes are July's. This is the first time month and ISO week diverge; the naming is documented inline in the RELEASES.md entry so the human isn't surprised by the gap between `v2026.07.W4` and `v2026.08.W1`. Two of five W31 targets landed (both pair-complete); three carry over. Per the hard rules, no GitHub Release object was published — only the tag and RELEASES.md. Sandbox note: `/tmp/robotics-work` from a prior run is not writable by this run's user, so the clone went to a timestamped sibling directory instead; harmless but worth cleaning up if it accumulates.
+**Follow-ups:**
+- Issues #38, #39, #40, #41 all look complete — ready for the human to close (this task never closes issues).
+- W32 PLAN (Mon) should carry over #42 (fleet-manager-architecture reviewer lockstep), #43 (robot-sop), #44 (declaration-of-conformity) rather than opening duplicates.
+- Reviewer debt unchanged at 33/38 stale; stale builders ticked 27 → 28. Consider a W32 target dedicated purely to reviewer refresh.
+- Consider whether the tag scheme should key off ISO week rather than calendar month to avoid future month/week drift.

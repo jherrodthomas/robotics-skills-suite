@@ -1,5 +1,25 @@
 # Releases
 
+## v2026.08.W1 — 2026-08-01
+
+**Highlights:** Eighth tagged weekly snapshot, covering the 2026-W31 working week (Mon 2026-07-27 → Sat 2026-08-01). Two of five W31 targets landed, both **pair-complete**: `behavior-tree-spec` re-anchored on BehaviorTree.CPP v4 with its Nav2 plugin framing corrected, and `ot-asset-inventory` anchored on IEC 62443-2-1 / -3-2 with tab count and file trees fixed. The W31 changelog section and two reviewer example stubs closed out Friday. Not reached: the fleet-manager-architecture reviewer lockstep gap (#42), robot-sop (#43), and declaration-of-conformity (#44) — all three carry into W32. Suite holds at 76 .skill files, 100% paired, zero orphans. Naming note: the tag month follows the release date (August), not the ISO week (W31); this is the first snapshot where those diverge.
+
+**Changes this week (2026-07-27 → 2026-08-01):**
+
+*plan:*
+- seed W31 targets — two carryovers, reviewer gap, two baseline pairs (719a954)
+
+*polish:*
+- anchor behavior-tree-spec pair on BT.CPP v4, fix Nav2 plugin framing (c6f1cf6)
+- anchor ot-asset-inventory pair on IEC 62443-2-1/-3-2, fix tab count and trees (83d2b18)
+
+*docs:*
+- W31 changelog section, two reviewer example stubs, STATUS refresh (defe72e)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Domain health: 10 builders touched within 30 days, 28 stale (30+ days), 0 orphans. Reviewer debt: 33/38 reviewers still stale or at import baseline.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.07.W4...v2026.08.W1
+
 ## v2026.07.W4 — 2026-07-25
 
 **Highlights:** Seventh tagged weekly snapshot. W30 hit 3 of 5 weekly targets — fleet-manager-architecture's generator crash fixed (plus tab names and file tree), the pfl-plan pair anchored on ISO 10218:2025 + ISO/TS 15066:2016 editions, and the machinery-safety-lifecycle-plan pair edition-anchored — with a significant HIGH-severity discovery: the machinery-safety-lifecycle-plan pair's generator and probe scripts are placeholders (scaffold-only, cannot produce a workbook), flagged for a W31 implementation target alongside an audit of other 2026-05-03 import-baseline pairs. Suite holds at 76 .skill files, 100% paired, zero orphans.

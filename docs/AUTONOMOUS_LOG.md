@@ -738,3 +738,11 @@
 - W32 PLAN (Mon) should carry over #42 (fleet-manager-architecture reviewer lockstep), #43 (robot-sop), #44 (declaration-of-conformity) rather than opening duplicates.
 - Reviewer debt unchanged at 33/38 stale; stale builders ticked 27 → 28. Consider a W32 target dedicated purely to reviewer refresh.
 - Consider whether the tag scheme should key off ISO week rather than calendar month to avoid future month/week drift.
+
+## 2026-08-01 (autonomous run, MONTHLY-KPI)
+
+**Action:** Generated docs/monthly/2026-07.md
+**Velocity:** 26 commits, 16 skills touched (12 skill-touching commits), 3 releases (v2026.07.W1/W3/W4 — W2 missing again)
+**Coverage:** 38/38 paired (100%), 20/38 builders with examples/ (53%, up from 24%)
+**Standards-edition findings:** 14 (1 incorrect edition — iso3691-4 still reads :2023; 13 referencing a standard without a pinned edition)
+**Notes:** July was modestly better than June on volume and materially better on discipline — the pair-lockstep convention means reviewers finally got touched, and 7 skills/pairs had their editions correctly anchored. Two findings need a human: issue #29 was closed 2026-07-11 without any commit fixing the ISO 3691-4:2023 → :2020 defect, and the v2026.07.W2 tag is missing for the second consecutive month alongside a 6-day commit gap (07-09 → 07-14).

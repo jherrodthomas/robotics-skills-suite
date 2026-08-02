@@ -746,3 +746,18 @@
 **Coverage:** 38/38 paired (100%), 20/38 builders with examples/ (53%, up from 24%)
 **Standards-edition findings:** 14 (1 incorrect edition — iso3691-4 still reads :2023; 13 referencing a standard without a pinned edition)
 **Notes:** July was modestly better than June on volume and materially better on discipline — the pair-lockstep convention means reviewers finally got touched, and 7 skills/pairs had their editions correctly anchored. Two findings need a human: issue #29 was closed 2026-07-11 without any commit fixing the ISO 3691-4:2023 → :2020 defect, and the v2026.07.W2 tag is missing for the second consecutive month alongside a 6-day commit gap (07-09 → 07-14).
+
+## 2026-08-02 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Triaged all 8 open issues — created 6 missing type labels, applied a type label to 7 of 8 issues, cross-referenced 4 completed W30 targets to their fixing commits, and regenerated STATUS.md.
+**Files touched:** STATUS.md, docs/AUTONOMOUS_LOG.md (labels/comments applied via GitHub API, not in-repo)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (76 .skill files)
+**Open issues:** 8
+**Notes:** The type taxonomy from the task spec had never been created in the repo — only domain labels plus GitHub defaults existed. Created `skill-bug`, `reviewer-finding`, `new-skill`, `chain-break`, `docs`, and `ci`. Every open issue is a `weekly-target` polish item whose definition-of-done is explicitly about anchoring standard editions and validating descriptions/frontmatter, so `description-quality` was applied to #38, #39, #40, #41, #43, #44. Issue #42 got `chain-break` — it exists precisely because the fleet-manager builder was polished while its reviewer stayed at import baseline. Issue #37 was deliberately left untyped: the work spans a generator crash fix (`skill-bug`) and an edition reconcile (`description-quality`), which is under the 80% confidence bar; a comment on the issue says so. No issue was 30+ days quiet (oldest update 2026-07-20, 13 days), so no dormancy warnings were posted. Also added informational comments to #38–#41 naming the commit that satisfied each definition of done — the human can close them at a glance. Sandbox note: a stale `/tmp/gen_status.py` from a prior run is owned by another user and carries a hardcoded date of 2026-07-31; it silently produced a wrong-dated STATUS.md before being caught. This run used its own generator at `gen_status_today.py` in the work directory. Any future run that shells out to a bare `/tmp/*.py` path should assume it may be a foreign, stale file.
+**Follow-ups:**
+- #38, #39, #40, #41 are complete and commented — human close pending. #37 needs human triage on its type label.
+- W32 PLAN (Mon 2026-08-03) should carry #42, #43, #44 forward rather than opening duplicates; add at least one reviewer-only refresh target (reviewer debt still 33/38).
+- Stale builders ticked 27 → 28 this week; ai-ml and v&v domains are entirely at or near import baseline and have not been targeted since import.
+- The July KPI report flagged that issue #29 was closed without a fix (ISO 3691-4 still reads :2023). That defect is still live in `skills/iso3691-4-risk-assessment-*.skill` and no open issue tracks it — worth reopening or filing fresh.

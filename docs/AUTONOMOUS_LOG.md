@@ -761,3 +761,18 @@
 - W32 PLAN (Mon 2026-08-03) should carry #42, #43, #44 forward rather than opening duplicates; add at least one reviewer-only refresh target (reviewer debt still 33/38).
 - Stale builders ticked 27 → 28 this week; ai-ml and v&v domains are entirely at or near import baseline and have not been targeted since import.
 - The July KPI report flagged that issue #29 was closed without a fix (ISO 3691-4 still reads :2023). That defect is still live in `skills/iso3691-4-risk-assessment-*.skill` and no open issue tracks it — worth reopening or filing fresh.
+
+## 2026-08-03 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W32 targets — three W31 carryovers reused (#42, #43, #44) plus two import-baseline pairs with new issues (#45 safety-io-matrix, #46 robot-cell-scope); STATUS.md regenerated.
+**Files touched:** `STATUS.md`, `docs/weekly/WEEK-2026-W32.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 10 (8 carried in, 2 created this run)
+**Notes:** Second consecutive week where only the carryovers landed and all three *new* targets slipped — W31 cleared #40 and #41 but never reached #42–#44. Recorded that explicitly in the week file and set the expectation that targets 1–3 are the real commitment and 4–5 are stretch; capacity for a three-day POLISH window is realistically 2–3 pairs, not 5. Kept the five-target format for continuity rather than unilaterally changing the plan shape — worth a human decision. Two operational findings this run: (1) a stale `/tmp/robotics-work` directory from a prior run was owned by another uid and could not be removed, so the clone went to a timestamped path — future runs should not assume `rm -rf` of the fixed path will succeed; (2) `.skill` files are zip archives, not plain text, so POLISH runs must unzip to reach `SKILL.md` before editing. Both noted in the week file. #42 (`chain-break`, fleet-manager-architecture reviewer) is the smallest open item and has slipped twice — it is target 1 this week.
+**Follow-ups:**
+- Human: #40 and #41 are complete and can be closed.
+- Tue: take #42 first — bounded reviewer-only reconciliation.
+- If #42 is still open Thursday, escalate to top of W33 plan.
+- Consider dropping the weekly target count from 5 to 3 if W32 slips again (human call).

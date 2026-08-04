@@ -776,3 +776,20 @@
 - Tue: take #42 first — bounded reviewer-only reconciliation.
 - If #42 is still open Thursday, escalate to top of W33 plan.
 - Consider dropping the weekly target count from 5 to 3 if W32 slips again (human call).
+
+## 2026-08-04 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `robot-cell-scope` builder/reviewer pair (issue #46, foundation) — rewrote the reviewer's mis-copied description, re-anchored both on ISO 10218-2:2025 / ANSI/A3 R15.06-2025, and removed a leaked cross-project session path.
+**Files touched:** `skills/robot-cell-scope-builder.skill`, `skills/robot-cell-scope-checklist-reviewer.skill`, `docs/skill-polish-log/robot-cell-scope-builder.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet) — archives re-zipped and verified via `zipfile.testzip()` + SKILL.md re-read; both frontmatter descriptions 593 / 596 chars, well under the 1024 limit.
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 10
+**Notes:** The headline finding is a trigger bug, not a wording nit: the reviewer's description was a verbatim copy of the builder's, opening with "Generate an audit-ready … workbook" and a broken trigger clause ("Use this skill to review the user mentions robot cell scope"). As written, a *build* request could fire the reviewer and a *review* request had no matching language. Rewritten to house reviewer form. Second finding, and the more consequential one for the suite: standard-edition verification turned up that **ANSI/A3 R15.06-2025** was approved 21 Aug 2025 as the US national adoption of ISO 10218-1:2025 and -2:2025, superseding ANSI/RIA R15.06-2012 — including a *designation change from RIA to A3* that this repo has not absorbed anywhere. The 2025 editions also consolidate ISO/TS 15066:2016 collaborative content and rename "safety-rated monitored stop" to "monitored standstill". A suite-wide grep found 6 archives leaking a `/sessions/vigilant-ecstatic-maxwell/...` path from the unrelated automotive-skills-suite, 4 archives (2 pairs) still on bare/pre-2025 R15.06, 1 on ISO 10218:2011, and 5 builders carrying the same "or related requirements" placeholder line found here. Judgement calls: descoped implementing the stub generator/checklist logic, the `generate_robot-cell.py` → underscore rename, and deletion of two redundant empty probe stubs — all captured as follow-ups rather than attempted in a polish pass. Note STATUS.md last-touched dates are computed pre-commit, so today's two skills still read 2026-05-03 until tomorrow's run.
+**Follow-ups:**
+- Strip the leaked `/sessions/vigilant-ecstatic-maxwell/...` comment from the 6 affected builders: `ansi-r1506-compliance-matrix`, `declaration-of-conformity`, `iec62061-sil`, `iso10218-compliance-matrix`, `iso12100-risk-assessment`, `iso13849-plr`. Small, mechanical, safe to batch.
+- Re-anchor `ansi-r1506-compliance-matrix-*` and `operator-training-matrix-*` on ANSI/A3 R15.06-2025 (RIA → A3). The ansi-r1506 pair is the most exposed skill in the repo to this change and should be next week's top compliance target.
+- `robot-cell-layout-builder` still cites ISO 10218:2011 — edition bump needed.
+- Cobot domain re-frame: ISO/TS 15066:2016 is now folded into the 2025 editions. `iso15066-biomechanical-limits-*`, `pfl-plan-*`, `ssm-plan-*` treat it as governing; should be informative background. Warrants its own weekly target.
+- Terminology sweep: "safety-rated monitored stop" → "monitored standstill".
+- Replace the "Use this skill when the user mentions <slug>, or related requirements" placeholder in the 5 remaining builders.

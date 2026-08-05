@@ -1,6 +1,6 @@
 # STATUS — robotics-skills-suite
 
-_Auto-generated 2026-08-04 by the daily standup task. Do not edit by hand._
+_Auto-generated 2026-08-05 by the daily standup task. Do not edit by hand._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -29,7 +29,7 @@ _Auto-generated 2026-08-04 by the daily standup task. Do not edit by hand._
 | `zone-conduit-plan-builder.skill` | cybersecurity | `zone-conduit-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 not touched in 30+ days |
 | `iso12100-risk-assessment-builder.skill` | foundation | `iso12100-risk-assessment-checklist-reviewer.skill` | 2026-06-09 | 🟡 not touched in 30+ days |
 | `machinery-safety-lifecycle-plan-builder.skill` | foundation | `machinery-safety-lifecycle-plan-checklist-reviewer.skill` | 2026-07-23 | 🟢 paired & touched ≤30 days |
-| `robot-cell-scope-builder.skill` | foundation | `robot-cell-scope-checklist-reviewer.skill` | 2026-05-03 | 🟡 not touched in 30+ days |
+| `robot-cell-scope-builder.skill` | foundation | `robot-cell-scope-checklist-reviewer.skill` | 2026-08-04 | 🟢 paired & touched ≤30 days |
 | `loto-procedure-builder.skill` | operational | `loto-procedure-checklist-reviewer.skill` | 2026-07-15 | 🟢 paired & touched ≤30 days |
 | `operator-training-matrix-builder.skill` | operational | `operator-training-matrix-checklist-reviewer.skill` | 2026-05-03 | 🟡 not touched in 30+ days |
 | `robot-sop-builder.skill` | operational | `robot-sop-checklist-reviewer.skill` | 2026-05-03 | 🟡 not touched in 30+ days |
@@ -45,9 +45,8 @@ _Auto-generated 2026-08-04 by the daily standup task. Do not edit by hand._
 
 ## Summary
 
-- **Builders:** 38 · **Reviewers:** 38 · **Paired:** 38/38 (100%)
-- **🔴 Missing paired reviewer:** 0
-- **🟡 Stale (30+ days untouched):** 28
-- **🟢 Healthy (paired, touched ≤30 days):** 10
-- **Domains covered:** ai-ml (3), amr (4), cell-design (4), cobot (4), compliance (5), cybersecurity (3), foundation (3), operational (3), ros2 (5), v&v (4)
-- **Total skill files:** 76
+- **Builders:** 38
+- **Reviewers:** 38
+- **Paired:** 100% (38/38)
+- **Flags:** 🟢 11 · 🟡 27 · 🔴 0
+- **Domains covered:** 10

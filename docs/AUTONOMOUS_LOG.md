@@ -793,3 +793,18 @@
 - Cobot domain re-frame: ISO/TS 15066:2016 is now folded into the 2025 editions. `iso15066-biomechanical-limits-*`, `pfl-plan-*`, `ssm-plan-*` treat it as governing; should be informative background. Warrants its own weekly target.
 - Terminology sweep: "safety-rated monitored stop" → "monitored standstill".
 - Replace the "Use this skill when the user mentions <slug>, or related requirements" placeholder in the 5 remaining builders.
+
+## 2026-08-05 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Cleared W32 target 1 / issue #42 — the repo's only `chain-break` — by reconciling the fleet-manager-architecture reviewer with its builder and anchoring both on ISO 3691-4:2020 and VDA 5050 2.1.0.
+**Files touched:** `skills/fleet-manager-architecture-checklist-reviewer.skill`, `skills/fleet-manager-architecture-builder.skill`, `docs/skill-polish-log/fleet-manager-architecture-builder.md`, `examples/fleet-manager-architecture-builder/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet) — but the reviewer generator was smoke-run and now emits exactly the 8 sheets SKILL.md documents.
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 10
+**Notes:** Four defects fixed on the reviewer: a probe filename that mismatched the documented tree *and* was un-importable due to hyphens (renamed to `fleet_arch_probe.py`), a file tree promising `examples/` and `references/` that were never shipped, a 7-vs-8 tab-count mismatch with a stray "Worksheet" placeholder (renamed to "References", following the builder precedent from 2026-07-21), and the missing standard editions. VDA 5050 was verified live this run — **2.1.0, January 2025, English-only, backward compatible with 2.0.0** — which closes the "verify before pinning" follow-up that had been open since July. Judgement call worth flagging: the task's POLISH priority order looks for `skill-bug`/`reviewer-finding` labels first and no issue carries either, so I deferred to WEEK-2026-W32's explicit escalation of #42. The blocking truth about this pair is unchanged and unglamorous — both generators are placeholders that ignore their inputs, and the reviewer's probe, checks, and dashboard are all one-line stubs. Polish passes cannot fix that; it needs a real implementation session.
+**Follow-ups:**
+- Human: #42 is now addressed and can be closed, as can #40 and #41 (flagged 2026-08-03, still open).
+- Thursday: take #43 (`robot-sop`, operational) — it is the oldest untouched carryover at the 2026-05-03 import baseline.
+- Escalate to a dedicated implementation session (not a POLISH slot): `generate_fleet_arch.py` and `generate_checklist.py` both ignore their inputs. Recommend one issue labelled `skill-bug` so future POLISH runs pick it up under priority (1) rather than needing plan-file escalation.
+- Reviewer staleness is now 27 yellow / 11 green. The lockstep convention is working but slowly; consider whether one POLISH day per week should be reviewer-only.

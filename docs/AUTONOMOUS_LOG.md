@@ -808,3 +808,19 @@
 - Thursday: take #43 (`robot-sop`, operational) — it is the oldest untouched carryover at the 2026-05-03 import baseline.
 - Escalate to a dedicated implementation session (not a POLISH slot): `generate_fleet_arch.py` and `generate_checklist.py` both ignore their inputs. Recommend one issue labelled `skill-bug` so future POLISH runs pick it up under priority (1) rather than needing plan-file escalation.
 - Reviewer staleness is now 27 yellow / 11 green. The lockstep convention is working but slowly; consider whether one POLISH day per week should be reviewer-only.
+
+## 2026-08-06 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `robot-sop` pair (issue #43, W32 target 2) in lockstep — anchored both skills on ANSI/A3 R15.06-3-2025 and specific OSHA 29 CFR parts, rewrote both SKILL.md bodies to house structure, renamed the un-importable reviewer probe, seeded two example stubs.
+**Files touched:** `skills/robot-sop-builder.skill`, `skills/robot-sop-checklist-reviewer.skill`, `docs/skill-polish-log/robot-sop-builder.md`, `examples/robot-sop-builder/README.md`, `examples/robot-sop-checklist-reviewer/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 10
+**Notes:** Pick was governed by the W32 plan's strict ordering rather than by a label — no issue in the repo carries `skill-bug` or `reviewer-finding`, and there are no orphan builders, so #43 was next after #42 closed out yesterday. The standards work was the substantive part: verified this run that ANSI/A3 R15.06-2025 is a three-part national adoption of ISO 10218-1/-2:2025, with **Part 3 (use of industrial robot cells, approved 2025-10-07)** being the part that actually governs operating procedures and manual load/unload. Part 3 is now the primary anchor for this pair — a more precise citation than the generic ISO 10218-2 the skills carried before. Two defects worth the human's attention: the builder ships **no generator script at all** (only `recalc.py` and `office/`), which is a step worse than the placeholder generators tracked on fleet-manager and behavior-tree, and all three reviewer analysis scripts are one-line stubs. #43 should stay open on that basis — the documentation is now correct but the skill still cannot produce output. Also note the environment: `/tmp/robotics-work` was left root-owned by a prior run and could not be removed; used a timestamped work directory instead. Worth fixing in the task's STEP 2 if it recurs.
+**Follow-ups:**
+- #43 stays open — documentation polished but `robot-sop-builder` has no generator. Needs a dedicated implementation session, not a polish pass.
+- Next POLISH target per W32 order: #44 `declaration-of-conformity` (compliance) — EU Machinery Regulation 2023/1230, harmonised-standards listing convention.
+- Human: #40, #41, #42 look complete and can be closed. #42's `chain-break` was resolved 2026-08-05.
+- The "no generator / stub scripts" defect now spans at least four pairs. Consider a dedicated issue tracking it as a class rather than rediscovering it one polish run at a time.
+- STEP 2 of the task file should use a unique or writable work directory — `rm -rf /tmp/robotics-work` failed on permissions this run.

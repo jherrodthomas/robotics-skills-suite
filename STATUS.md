@@ -1,13 +1,13 @@
 # STATUS — robotics-skills-suite
 
-_Auto-generated 2026-08-05 by the daily standup task. Do not edit by hand._
+_Auto-generated 2026-08-06 by the daily standup task. Do not edit by hand._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
 | `dataset-documentation-builder.skill` | ai-ml | `dataset-documentation-checklist-reviewer.skill` | 2026-05-03 | 🟡 not touched in 30+ days |
 | `model-card-builder.skill` | ai-ml | `model-card-checklist-reviewer.skill` | 2026-07-02 | 🟡 not touched in 30+ days |
 | `perception-test-catalog-builder.skill` | ai-ml | `perception-test-catalog-checklist-reviewer.skill` | 2026-05-03 | 🟡 not touched in 30+ days |
-| `fleet-manager-architecture-builder.skill` | amr | `fleet-manager-architecture-checklist-reviewer.skill` | 2026-07-21 | 🟢 paired & touched ≤30 days |
+| `fleet-manager-architecture-builder.skill` | amr | `fleet-manager-architecture-checklist-reviewer.skill` | 2026-08-05 | 🟢 paired & touched ≤30 days |
 | `iso3691-4-risk-assessment-builder.skill` | amr | `iso3691-4-risk-assessment-checklist-reviewer.skill` | 2026-06-30 | 🟡 not touched in 30+ days |
 | `operating-envelope-builder.skill` | amr | `operating-envelope-checklist-reviewer.skill` | 2026-06-03 | 🟡 not touched in 30+ days |
 | `wireless-coexistence-plan-builder.skill` | amr | `wireless-coexistence-plan-checklist-reviewer.skill` | 2026-05-03 | 🟡 not touched in 30+ days |

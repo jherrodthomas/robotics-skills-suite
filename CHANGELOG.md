@@ -6,6 +6,25 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W32 (2026-08-03 → 2026-08-07)
+
+#### polish
+
+- **robot-cell-scope-builder** + **robot-cell-scope-checklist-reviewer** (foundation) — anchor the pair on `ISO 10218-2:2025` (Edition 2) and `ANSI/A3 R15.06-2025` (approved 21 Aug 2025, supersedes ANSI/RIA R15.06-2012), adopt *monitored standstill* in place of *safety-rated monitored stop*, reframe ISO/TS 15066:2016 as informative background now that collaborative content is consolidated into the 2025 editions; stub generator and two redundant empty probe files logged as follow-ups (`9d0c927`)
+- **fleet-manager-architecture-builder** + **fleet-manager-architecture-checklist-reviewer** (amr) — reconcile the reviewer with the builder (closes the lockstep gap tracked in #42), pin `ISO 3691-4:2020` and `VDA 5050 2.1.0` (Jan 2025, backward compatible with 2.0.0) (`a84987a`)
+- **robot-sop-builder** + **robot-sop-checklist-reviewer** (operational) — anchor the pair on `ANSI/A3 R15.06-3-2025` (use of industrial robot cells) and cite specific OSHA parts — 29 CFR 1910.147 (LOTO) and 1910.132 (PPE) — rather than a bare "OSHA" reference (`8c19840`)
+
+#### docs
+
+- **CHANGELOG.md** — add W32 weekly section
+- **examples/** — stub READMEs for skills touched in W32 lacking one: `robot-cell-scope-builder`, `robot-cell-scope-checklist-reviewer`, `fleet-manager-architecture-checklist-reviewer` (examples coverage now 32 dirs)
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers, 11 fresh / 27 stale (30+ days)
+- **docs/AUTONOMOUS_LOG.md** — daily journal entries for the W32 run
+
+#### chore
+
+- **plan** — W32 targets seeded Monday: three W30/W31 carryovers plus two import-baseline pairs, new issues #45–#46 (`d8e7059`); see [docs/weekly/WEEK-2026-W32.md](docs/weekly/WEEK-2026-W32.md)
+
 ### Week 2026-W31 (2026-07-27 → 2026-08-02)
 
 #### polish

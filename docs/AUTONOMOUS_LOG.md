@@ -824,3 +824,18 @@
 - Human: #40, #41, #42 look complete and can be closed. #42's `chain-break` was resolved 2026-08-05.
 - The "no generator / stub scripts" defect now spans at least four pairs. Consider a dedicated issue tracking it as a class rather than rediscovering it one polish run at a time.
 - STEP 2 of the task file should use a unique or writable work directory — `rm -rf /tmp/robotics-work` failed on permissions this run.
+
+## 2026-08-07 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Added the W32 CHANGELOG section, created three missing example stubs for skills touched this week, and regenerated STATUS.md.
+**Files touched:** STATUS.md, CHANGELOG.md, examples/robot-cell-scope-builder/README.md, examples/robot-cell-scope-checklist-reviewer/README.md, examples/fleet-manager-architecture-checklist-reviewer/README.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 10
+**Notes:** Four commits this week (one PLAN, three POLISH), touching three pairs: robot-cell-scope (foundation), fleet-manager-architecture (amr) and robot-sop (operational). All three POLISH runs were standards-edition anchoring work, which is where most of the value has been landing — the 2025 editions of ISO 10218-1/-2 and the ANSI/A3 R15.06-2025 adoption keep surfacing as stale citations across the suite. Examples coverage rose from 29 to 32 directories out of 76 skills (42%). Note the environment quirk this run: the previous run's `/tmp/robotics-work` clone was left root-owned and could not be removed, so the clone was made into a timestamped directory instead; the fixed-path `rm -rf` step in the task file will keep failing until the stale directory is cleared or the task switches to a unique work dir. No push conflicts. Six of the ten open issues are W30/W31 carryovers, which is a real backlog signal rather than noise — worth a human look at whether the weekly target count should drop from five to three.
+**Follow-ups:**
+- Stale `/tmp/robotics-work` from a prior run blocks the documented `rm -rf` setup step — consider switching STEP 2 to a timestamped work dir permanently.
+- Issues #37–#41 (W30) and #42–#44 (W31) are still open; #42 looks satisfied by a84987a and #43 by 8c19840 — human should verify and close.
+- Examples coverage at 32/76; 44 skills still lack a README stub.
+- Recurring theme across polish logs: many builders ship stub generators. Consider a dedicated week of generator work rather than more description polish.

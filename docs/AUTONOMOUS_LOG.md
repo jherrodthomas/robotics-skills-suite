@@ -839,3 +839,19 @@
 - Issues #37–#41 (W30) and #42–#44 (W31) are still open; #42 looks satisfied by a84987a and #43 by 8c19840 — human should verify and close.
 - Examples coverage at 32/76; 44 skills still lack a README stub.
 - Recurring theme across polish logs: many builders ship stub generators. Consider a dedicated week of generator work rather than more description polish.
+
+## 2026-08-08 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Cut weekly snapshot `v2026.08.W2` — wrote release notes to RELEASES.md, regenerated STATUS.md, tagged and pushed the tag (no GitHub Release object published).
+**Files touched:** `RELEASES.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 10
+**Notes:** Five commits this week (one PLAN, three POLISH, one DOCS) across three pairs — robot-cell-scope (foundation), fleet-manager-architecture (amr), robot-sop (operational). Tag naming continues the release-date convention (August) rather than the ISO week (W32), consistent with the v2026.08.W1 note. Green count slipped 11 → 10 as ansi-r1506 aged past the 30-day line; the yellow band is now 28 of 38 builders, which is the real long-run signal — polish is not keeping pace with staleness at three pairs a week. The release notes carry an explicit known-defect paragraph about the four pairs with placeholder or missing generator scripts, since that is the single most material thing a reader of this snapshot should know. Environment note repeated from the last two runs: `/tmp/gen_status.py` is owned by another session's user and could not be overwritten — the status generator now writes to a repo-local scratch path instead. Same class of collision as the `/tmp/robotics-work` issue; STEP 2 and any scratch script paths in the task file should be namespaced.
+**Follow-ups:**
+- Human: publish the GitHub Release for `v2026.08.W2` after reviewing RELEASES.md.
+- Issues #37–#43 look satisfied by landed commits and should be closed by a human; #44 and #45 carry into W33.
+- Backlog is 10 open issues against a 3-pairs-per-week landing rate. Recommend dropping the weekly target count from five to three in Monday's PLAN.
+- The placeholder-generator defect now spans four pairs and is still tracked only inside polish logs. Worth one umbrella issue.
+- Task-file hygiene: namespace all `/tmp` scratch paths (work dir and helper scripts) to avoid cross-session permission collisions.

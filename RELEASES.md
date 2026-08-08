@@ -1,5 +1,28 @@
 # Releases
 
+## v2026.08.W2 — 2026-08-08
+
+**Highlights:** Ninth tagged weekly snapshot, covering the 2026-W32 working week (Mon 2026-08-03 → Sat 2026-08-08). Three of five W32 targets landed, all **pair-complete** standards-edition anchoring: `robot-cell-scope` on ISO 10218-2:2025 + ANSI/A3 R15.06-2025, `fleet-manager-architecture` reviewer reconciled with its builder and pinned to ISO 3691-4:2020 + VDA 5050 2.1.0 (closing the W31 `chain-break`), and `robot-sop` re-anchored on **ANSI/A3 R15.06-3-2025** — the part that actually governs cell operating procedures — plus specific OSHA 29 CFR parts. Friday closed the W32 changelog and three example stubs, lifting examples coverage to 32/76 (42%). Not reached: #44 `declaration-of-conformity` and #45 `safety-io-matrix`, both carrying into W33. Suite holds at 76 .skill files, 100% paired, zero orphans.
+
+**Changes this week (2026-08-03 → 2026-08-08):**
+
+*plan:*
+- seed W32 targets — three carryovers plus two import-baseline pairs (d8e7059)
+
+*polish:*
+- anchor robot-cell-scope pair on ISO 10218-2:2025 and ANSI/A3 R15.06-2025 (9d0c927)
+- reconcile fleet-manager reviewer with builder, pin ISO 3691-4:2020 and VDA 5050 2.1.0 (a84987a)
+- anchor robot-sop pair on ANSI/A3 R15.06-3-2025 and specific OSHA parts (8c19840)
+
+*docs:*
+- W32 changelog section, three example stubs, STATUS refresh (18bb950)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Domain health: 10 builders touched within 30 days, 28 stale (30+ days), 0 orphans. Examples coverage: 32/76 skills (42%).
+
+**Known defect (human attention):** at least four pairs — `robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec` — ship placeholder or entirely absent generator scripts. Descriptions and standards citations on these are now correct, but the skills cannot produce a workbook. This snapshot documents that state rather than fixing it; it warrants a dedicated implementation week rather than further polish passes.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.08.W1...v2026.08.W2
+
 ## v2026.08.W1 — 2026-08-01
 
 **Highlights:** Eighth tagged weekly snapshot, covering the 2026-W31 working week (Mon 2026-07-27 → Sat 2026-08-01). Two of five W31 targets landed, both **pair-complete**: `behavior-tree-spec` re-anchored on BehaviorTree.CPP v4 with its Nav2 plugin framing corrected, and `ot-asset-inventory` anchored on IEC 62443-2-1 / -3-2 with tab count and file trees fixed. The W31 changelog section and two reviewer example stubs closed out Friday. Not reached: the fleet-manager-architecture reviewer lockstep gap (#42), robot-sop (#43), and declaration-of-conformity (#44) — all three carry into W32. Suite holds at 76 .skill files, 100% paired, zero orphans. Naming note: the tag month follows the release date (August), not the ISO week (W31); this is the first snapshot where those diverge.

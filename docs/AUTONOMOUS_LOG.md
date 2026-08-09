@@ -855,3 +855,17 @@
 - Backlog is 10 open issues against a 3-pairs-per-week landing rate. Recommend dropping the weekly target count from five to three in Monday's PLAN.
 - The placeholder-generator defect now spans four pairs and is still tracked only inside polish logs. Worth one umbrella issue.
 - Task-file hygiene: namespace all `/tmp` scratch paths (work dir and helper scripts) to avoid cross-session permission collisions.
+
+## 2026-08-09 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Typed the one remaining untyped open issue (#37 → `description-quality`), verified label coverage across all 10 open issues, refreshed STATUS.md.
+**Files touched:** STATUS.md, docs/AUTONOMOUS_LOG.md (GitHub-side: labels on issue #37)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 10 (#37–#46), all now carrying exactly one type label and one domain label
+**Notes:** Label backlog is now fully cleared — the "1 of 8 needs human triage" item carried from the 2026-08-02 triage run (#37) resolved cleanly. #37 asks to reconcile the ISO 3691-4 edition claim and reviewer lockstep on the fleet-manager pair, which is squarely `description-quality`; confidence well above the 80% bar, so it was applied rather than deferred. No issue has been quiet for 30+ days (oldest update is 6 days), so no auto-triage stale comments were posted. Flag distribution is unchanged from yesterday: 🟢 10 · 🟡 28 · 🔴 0 — the 🟡 count is dominated by the 2026-05-03 import baseline, which the weekly POLISH cadence is chipping away at roughly two pairs per week. Worth a human look: several targets appear satisfied by commits already on main but remain open, since this task never closes issues autonomously — #43 (robot-sop, commit 8c19840), #46 (robot-cell-scope, 9d0c927), #42 (fleet-manager reviewer lockstep, a84987a), and #37 (fleet-manager builder, 7f24c5d) all look done and are close candidates.
+**Follow-ups:**
+- Human: review and close #37, #42, #43, #46 — work appears complete on main.
+- Monday PLAN (W33): with four W31/W32 targets effectively done, seed fresh targets; #44 (declaration-of-conformity) and #45 (safety-io-matrix) are unstarted carryovers and should lead.
+- Consider a domain-spread nudge in PLAN: ai-ml (3 builders) and v&v (4 builders) are entirely at the 2026-05-03 baseline and have not been targeted since import.

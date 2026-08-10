@@ -869,3 +869,19 @@
 - Human: review and close #37, #42, #43, #46 — work appears complete on main.
 - Monday PLAN (W33): with four W31/W32 targets effectively done, seed fresh targets; #44 (declaration-of-conformity) and #45 (safety-io-matrix) are unstarted carryovers and should lead.
 - Consider a domain-spread nudge in PLAN: ai-ml (3 builders) and v&v (4 builders) are entirely at the 2026-05-03 baseline and have not been targeted since import.
+
+## 2026-08-10 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W33 with three targets — two carryovers reused (#44, #45) plus one new v&v beachhead issue (#47); regenerated STATUS.md.
+**Files touched:** `STATUS.md`, `docs/weekly/WEEK-2026-W33.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 11 (10 carried in, 1 created this run)
+**Notes:** W32 was the first week to clear three targets (#42, #43, #46), which is the throughput ceiling observed so far — so W33 plans exactly three rather than five. Overplanning has been generating fake carryover for three weeks running and inflating the open-issue count. Two judgement calls: (1) carryovers #44 and #45 reuse their existing issues instead of getting duplicates, so only one new issue was filed; (2) target 3 was picked to open the v&v cluster, which is the largest block still sitting untouched at the 2026-05-03 import baseline — all four v&v builders have never had a POLISH pass. Environment note: `/tmp/robotics-work` from a prior run was not removable (permission denied on every path), so this run cloned into a timestamped directory and symlinked `/tmp/rrepo` at it; a stale `/tmp/gen_status.py` from an earlier run also shadowed a scratch script and briefly wrote a wrong STATUS.md, which was reverted with `git checkout` before regenerating. Human should look at the open-issue count: at least three of the eleven open issues are finished work awaiting a manual close.
+**Follow-ups:**
+- Human: close #42, #43, #46 — W32 work is landed and verified in the log.
+- Tue: take #44 (declaration-of-conformity) first — oldest open target, and a wrong-Directive citation is a correctness bug, not cosmetics.
+- Wed: #45 safety-io-matrix. Thu: #47 robot-acceptance-protocol.
+- If #44 survives to Thursday, W34 should be a single-target week built around it.
+- Scratch-path collision: future runs should clone into a unique directory rather than a fixed `/tmp/robotics-work`.

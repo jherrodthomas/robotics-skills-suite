@@ -1,6 +1,6 @@
 # STATUS — robotics-skills-suite
 
-_Auto-generated 2026-08-10 by the daily autonomous run (PLAN mode). Do not edit by hand._
+_Auto-generated 2026-08-11 by the daily autonomous run (POLISH mode). Do not edit by hand._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 | --- | --- | --- | --- | --- |
@@ -20,7 +20,7 @@ _Auto-generated 2026-08-10 by the daily autonomous run (PLAN mode). Do not edit 
 | `pfl-plan-builder.skill` | cobot | `pfl-plan-checklist-reviewer.skill` | 2026-07-22 | 🟢 |
 | `ssm-plan-builder.skill` | cobot | `ssm-plan-checklist-reviewer.skill` | 2026-07-07 | 🟡 |
 | `ansi-r1506-compliance-matrix-builder.skill` | compliance | `ansi-r1506-compliance-matrix-checklist-reviewer.skill` | 2026-07-15 | 🟢 |
-| `declaration-of-conformity-builder.skill` | compliance | `declaration-of-conformity-checklist-reviewer.skill` | 2026-05-03 | 🟡 |
+| `declaration-of-conformity-builder.skill` | compliance | `declaration-of-conformity-checklist-reviewer.skill` | 2026-08-11 | 🟢 |
 | `iec62061-sil-builder.skill` | compliance | `iec62061-sil-checklist-reviewer.skill` | 2026-07-08 | 🟡 |
 | `iso10218-compliance-matrix-builder.skill` | compliance | `iso10218-compliance-matrix-checklist-reviewer.skill` | 2026-06-02 | 🟡 |
 | `iso13849-plr-builder.skill` | compliance | `iso13849-plr-checklist-reviewer.skill` | 2026-06-23 | 🟡 |
@@ -47,6 +47,6 @@ _Auto-generated 2026-08-10 by the daily autonomous run (PLAN mode). Do not edit 
 
 - **Builders:** 38 · **Reviewers:** 38 · **Paired:** 38/38 (100%)
 - **🔴 missing paired reviewer:** 0
-- **🟡 not touched in 30+ days:** 28
-- **🟢 paired & touched ≤30 days:** 10
-- **Oldest builders:** `dataset-documentation-builder.skill` (2026-05-03) · `declaration-of-conformity-builder.skill` (2026-05-03) · `eoat-spec-builder.skill` (2026-05-03)
+- **🟡 not touched in 30+ days:** 27
+- **🟢 paired & touched ≤30 days:** 11
+- **Oldest builders:** `dataset-documentation-builder.skill` (2026-05-03) · `eoat-spec-builder.skill` (2026-05-03) · `nav2-config-builder.skill` (2026-05-03)

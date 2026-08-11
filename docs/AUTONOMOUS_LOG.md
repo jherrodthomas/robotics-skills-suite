@@ -885,3 +885,18 @@
 - Wed: #45 safety-io-matrix. Thu: #47 robot-acceptance-protocol.
 - If #44 survives to Thursday, W34 should be a single-target week built around it.
 - Scratch-path collision: future runs should clone into a unique directory rather than a fixed `/tmp/robotics-work`.
+
+## 2026-08-11 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `declaration-of-conformity` pair (compliance) in lockstep — W33 target #1, issue #44, open since W31.
+**Files touched:** `skills/declaration-of-conformity-builder.skill`, `skills/declaration-of-conformity-checklist-reviewer.skill`, `docs/skill-polish-log/declaration-of-conformity-builder.md`, `examples/declaration-of-conformity-builder/README.md`, `examples/declaration-of-conformity-checklist-reviewer/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (🟢 11 · 🟡 27 · 🔴 0)
+**Open issues:** 11
+**Notes:** This was the worst import-baseline pair seen so far. Both bodies were placeholder text about a skill named "Doc" — `declaration-of-conformity` had been tokenised to `doc` at import, so the builder said *"use this skill when the user mentions doc"* and the reviewer's Technical Assessment tab read *"doc substantive checks"*. Worse, the reviewer's frontmatter description was a verbatim copy of the builder's, patched with an ungrammatical "Use this skill to review the user mentions…" — the reviewer was advertising itself as a generator. Both are now written from scratch. The substantive fix is the legal one: the old text named "Machinery Directive 2006 42 EC and the new Machinery Regulation 2023 1230" side by side, without slashes, without dates, and without saying which governs. Both files now fork on the applicable instrument up front — Directive 2006/42/EC for machinery placed on the market up to 19 Jan 2027, Regulation (EU) 2023/1230 from 20 Jan 2027 — and the reviewer flags citing the wrong one, or both, as a finding. Judgement call worth flagging: this run deliberately did **not** assert that ISO 13849-1:2023 or ISO 10218-1/-2:2025 are cited in the OJEU as harmonised standards. Presumption of conformity attaches only to the edition listed in the *Official Journal*, and the newest published edition frequently is not the cited one. Rather than guess, both skills now carry an OJEU-citation-status column and instruct the user to verify and record it — and the reviewer flags any workbook that lists a standard as harmonised without that check. The skill should not commit the error it exists to catch. Scope was held: no generator implementation, no probe-stub consolidation, both captured as follow-ups.
+**Follow-ups:**
+- Human: **#44 can be closed** — W33 target 1 is done. #42, #43, #46 have also been done since W32 and are still open; the open-issue count (11) is now roughly half stale.
+- Wednesday: take W33 target 2, `safety-io-matrix` (#45, cell-design) — reconcile columns with the `interlock-estop-architecture` pair.
+- Thursday: W33 target 3, `robot-acceptance-protocol` (#47, v&v beachhead).
+- Repo-wide pattern now confirmed on three separate pairs: reviewer archives carry two redundant near-empty probe stubs alongside `probe_workbook.py`, and several SKILL.md file trees document a `references/` directory that does not exist in the archive. Both are better fixed as one sweep across all 38 reviewers than one-at-a-time during POLISH. Worth a dedicated week.

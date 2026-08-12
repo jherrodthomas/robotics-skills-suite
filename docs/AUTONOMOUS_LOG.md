@@ -900,3 +900,18 @@
 - Wednesday: take W33 target 2, `safety-io-matrix` (#45, cell-design) — reconcile columns with the `interlock-estop-architecture` pair.
 - Thursday: W33 target 3, `robot-acceptance-protocol` (#47, v&v beachhead).
 - Repo-wide pattern now confirmed on three separate pairs: reviewer archives carry two redundant near-empty probe stubs alongside `probe_workbook.py`, and several SKILL.md file trees document a `references/` directory that does not exist in the archive. Both are better fixed as one sweep across all 38 reviewers than one-at-a-time during POLISH. Worth a dedicated week.
+
+## 2026-08-12 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `robot-acceptance-protocol` pair (v&v, issue #47) — anchored both halves on ISO 10218-2:2025 and added a standards baseline the reviewer lacked entirely; regenerated STATUS.md.
+**Files touched:** STATUS.md, skills/robot-acceptance-protocol-builder.skill, skills/robot-acceptance-protocol-checklist-reviewer.skill, docs/skill-polish-log/robot-acceptance-protocol-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet) — archives verified via `zipfile.testzip()` round-trip after rewrite; both descriptions re-measured under the 1024-char limit (515 / 451).
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 11
+**Notes:** Target selection was unambiguous this run — open W33 issue #47 and the least-recently-touched builder (2026-05-03, 101 days) were the same pair. The real finding is an edition mismatch: the builder cited bare "ISO 10218-2" using the 2011 title, while yesterday's declaration-of-conformity pass had already anchored ISO 10218-1/-2:2025 elsewhere in the suite, so the repo was internally inconsistent. Verified the 2025 revision and its retitle on iso.org before editing. Also expanded a one-line standards list that could not support the tabs it ships (performance acceptance, safety-function validation, electrical commissioning all cited nothing). Deliberately did NOT touch scripts: the builder has no generator at all and the reviewer's three scripts are 32–69 byte placeholders — that is a refactor and is captured as follow-up. Left #47 open with an explanatory comment rather than treating a description fix as done.
+**Follow-ups:**
+- Sweep `robot-field-acceptance` and `robot-hil-test-catalog` (both untouched since 2026-05-03) for the same ISO 10218-2:2011→:2025 mismatch — likely present.
+- Repo-wide grep for bare `ISO 10218-2` with no edition; mechanical fix, probably more instances.
+- Implement `generate_acceptance_protocol.py` (builder) and the reviewer's check/probe/dashboard stubs — human should decide whether stub-only pairs should be flagged in STATUS.md as a fourth flag state.
+- 27 of 38 builders are now 🟡 stale (30+ days); at one pair per POLISH day the backlog outpaces the cadence. Worth a human call on whether Fri/Sat should also polish.

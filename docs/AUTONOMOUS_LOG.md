@@ -915,3 +915,16 @@
 - Repo-wide grep for bare `ISO 10218-2` with no edition; mechanical fix, probably more instances.
 - Implement `generate_acceptance_protocol.py` (builder) and the reviewer's check/probe/dashboard stubs — human should decide whether stub-only pairs should be flagged in STATUS.md as a fourth flag state.
 - 27 of 38 builders are now 🟡 stale (30+ days); at one pair per POLISH day the backlog outpaces the cadence. Worth a human call on whether Fri/Sat should also polish.
+## 2026-08-13 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished safety-io-matrix pair (W33 target #45, W32 carryover) — pinned standard editions, reconciled OSSD/dual-channel and SIL CL cross-reference conventions with interlock-estop-architecture; reviewer updated in lockstep.
+**Files touched:** skills/safety-io-matrix-builder.skill, skills/safety-io-matrix-checklist-reviewer.skill, docs/skill-polish-log/safety-io-matrix-builder.md, examples/safety-io-matrix-builder/README.md, examples/safety-io-matrix-checklist-reviewer/README.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 11
+**Notes:** Standard-edition verification (safety-critical cell-design domain) found unpinned "ISO 13849-1" and "IEC 62061" references — pinned to :2023 and :2021 respectively, and added ISO 10218-2:2025 + IEC 60204-1:2016, matching the W33 plan's required reference strings. This closes out all three W33 targets (#44 Tue, #47 Wed, #45 today), so the W34 escalation contingency for #44 is moot. Environment note: previous run's clone at /tmp/robotics-work was owned by another sandbox user and undeletable; this run used /tmp/robotics-work-20260813 instead — future runs may need per-day work dirs. Reminder for the human: #42, #43, #44, #45, #46, #47 all appear complete; this task never closes issues, so the 11-open count overstates the real backlog by ~6.
+**Follow-ups:**
+- Fri DOCS: changelog W33 section; example stubs for declaration-of-conformity and robot-acceptance-protocol pairs if missing.
+- Next PLAN (Mon): W33 cleared 3/3 — keep capacity at 3; consider the themed v&v week (robot-hil-test-catalog, robot-field-acceptance, iso9283-performance-test all at import baseline).
+- Larger-than-polish items logged for safety-io-matrix-builder: JSON input schema doc; PFHd budget column (ISO 13849-1:2023 Annex K).

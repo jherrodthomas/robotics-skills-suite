@@ -6,6 +6,27 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W33 (2026-08-10 → 2026-08-14)
+
+**All three W33 targets landed — first fully cleared week in the repo's history.** Capacity was deliberately set to 3 on Monday to match observed throughput rather than exceed it; the plan held.
+
+#### polish
+
+- **declaration-of-conformity-builder** + **declaration-of-conformity-checklist-reviewer** (compliance) — full rewrite of both halves. Both bodies were import placeholder text about a skill called "Doc" (`declaration-of-conformity` had been tokenised to `doc` and never restored). Workflow now **forks on legal instrument first**: `Directive 2006/42/EC` governs placing on market through 19 Jan 2027, `Regulation (EU) 2023/1230` applies from 20 Jan 2027 and repeals it. Instrument numbers corrected to slashed form. Added standards-and-legal baseline (ISO 10218-1/-2:2025, ISO 13849-1:2023, IEC 62061:2021, ISO 12100:2010), an OJEU-citation-status column, Declaration of Incorporation (Annex II 1.B) coverage for integrators shipping partly completed machinery, and a GB/UKCA separation note. Reviewer gained an explicit list of 11 flaggable edition/legal conditions. Closes the oldest open target in the repo (#44, open since W31) (`aadcd83`)
+- **robot-acceptance-protocol-builder** + **robot-acceptance-protocol-checklist-reviewer** (v&v) — anchored on `ISO 10218-2:2025` (Edition 2, supersedes 2011, retitled *Robotics — Safety requirements — Part 2: Industrial robot applications and robot cells*); the file still carried the 2011 title with no edition. Standards section expanded to cover what the tabs actually assert (ISO 10218-1:2025, ISO 9283:1998, ISO 13849-1:2023 / -2:2012, IEC 60204-1:2016), with customer-specific criteria demoted to *on top of, never in place of*. Reviewer gained a standards baseline it previously lacked entirely — it could not flag superseded editions, a chain break against its own builder. Added a `## Related skills` pointer. **First POLISH pass on the v&v cluster** (#47) (`6244fd2`)
+- **safety-io-matrix-builder** + **safety-io-matrix-checklist-reviewer** (cell-design) — pinned unversioned `ISO 13849-1` / `IEC 62061` references to `ISO 13849-1:2023` and `IEC 62061:2021`, added `ISO 10218-2:2025` and `IEC 60204-1:2016`. Reconciled OSSD / dual-channel wiring language (including cross-circuit fault detection) with the `interlock-estop-architecture` pair polished 2026-06-17, and added a per-row PL/Category ↔ SIL CL cross-reference convention. Reviewer updated in lockstep with EDM/feedback-monitoring and SIL CL consistency checks (#45) (`d909fc2`)
+
+#### docs
+
+- **CHANGELOG.md** — add W33 weekly section
+- **examples/** — stub READMEs for skills touched in W33 lacking one: `robot-acceptance-protocol-builder`, `robot-acceptance-protocol-checklist-reviewer` (examples coverage now 38 dirs, 50% of the 76 skill files)
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 missing reviewers, 11 fresh / 27 stale (30+ days)
+- **docs/AUTONOMOUS_LOG.md** — daily journal entries for the W33 run
+
+#### chore
+
+- **plan** — W33 seeded Monday with three targets: two carryovers (#44, #45) reusing their existing issues plus one new v&v beachhead (#47) (`e246935`); see [docs/weekly/WEEK-2026-W33.md](docs/weekly/WEEK-2026-W33.md)
+
 ### Week 2026-W32 (2026-08-03 → 2026-08-07)
 
 #### polish

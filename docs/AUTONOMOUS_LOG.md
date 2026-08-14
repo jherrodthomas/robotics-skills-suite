@@ -928,3 +928,19 @@
 - Fri DOCS: changelog W33 section; example stubs for declaration-of-conformity and robot-acceptance-protocol pairs if missing.
 - Next PLAN (Mon): W33 cleared 3/3 — keep capacity at 3; consider the themed v&v week (robot-hil-test-catalog, robot-field-acceptance, iso9283-performance-test all at import baseline).
 - Larger-than-polish items logged for safety-io-matrix-builder: JSON input schema doc; PFHd budget column (ISO 13849-1:2023 Annex K).
+
+## 2026-08-14 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** W33 changelog section written (all three targets landed), two example stubs created for the robot-acceptance-protocol pair, STATUS.md regenerated.
+**Files touched:** `CHANGELOG.md`, `STATUS.md`, `examples/robot-acceptance-protocol-builder/README.md`, `examples/robot-acceptance-protocol-checklist-reviewer/README.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 11
+**Notes:** W33 is the first week every planned target landed — #44 (declaration-of-conformity, open since W31), #45 (safety-io-matrix), and #47 (robot-acceptance-protocol) all closed out pair-complete. Monday's decision to plan three rather than five is the readable cause: W30 and W31 cleared 2 of 5, W32 cleared 3 of 5, W33 cleared 3 of 3. Recommend W34 holds at three. The v&v beachhead worked as intended — polishing `robot-acceptance-protocol` surfaced a bare `ISO 10218-2` with the 2011 title, and the polish log flags that `robot-field-acceptance` and `robot-hil-test-catalog` almost certainly carry the same mismatch since all three sit at the 2026-05-03 import baseline. Examples coverage crossed 50% (38 of 76 skill files) this run. README skill table verified complete at 38/38 pairs; no new skills this week so no rows appended.
+**Follow-ups:**
+- **Human: all 11 open issues appear to be completed work.** #37–#47 all correspond to landed commits. This task never closes issues, and the open count is now a misleading planning signal — Monday's PLAN run has to read past it to find real work.
+- W34 PLAN: consider a themed v&v week (`robot-field-acceptance`, `robot-hil-test-catalog`, `iso9283-performance-test`) while the ISO 10218-2:2011→:2025 mismatch pattern is fresh.
+- Repo-wide mechanical sweep: grep every skill for bare `ISO 10218-2` / `ISO 13849-1` with no edition. Three separate polish passes have now found the same defect; a single sweep beats finding it one skill at a time.
+- Reviewer script stubs remain the structural debt — `check_definitions.py` / `dashboard.py` / `*_probe.py` are placeholders across most reviewers, and redundant probe stubs have now been logged on three separate pairs. Worth one dedicated pass rather than a line per polish log.
+- Tomorrow (Sat) is RELEASE: four commits this week, so a `v2026.08.W3` tag is expected.

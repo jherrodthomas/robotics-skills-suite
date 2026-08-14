@@ -1,10 +1,10 @@
 # Skill Suite Status
 
-_Regenerated: 2026-08-13 (autonomous daily run)_
+_Regenerated: 2026-08-14 (autonomous daily run)_
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
-| ansi-r1506-compliance-matrix-builder.skill | compliance | ansi-r1506-compliance-matrix-checklist-reviewer.skill | 2026-07-15 | 🟢 |
+| ansi-r1506-compliance-matrix-builder.skill | compliance | ansi-r1506-compliance-matrix-checklist-reviewer.skill | 2026-07-15 | 🟡 |
 | behavior-tree-spec-builder.skill | ros2 | behavior-tree-spec-checklist-reviewer.skill | 2026-07-28 | 🟢 |
 | cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-06-25 | 🟡 |
 | dataset-documentation-builder.skill | ai-ml | dataset-documentation-checklist-reviewer.skill | 2026-05-03 | 🟡 |
@@ -20,7 +20,7 @@ _Regenerated: 2026-08-13 (autonomous daily run)_
 | iso15066-biomechanical-limits-builder.skill | cobot | iso15066-biomechanical-limits-checklist-reviewer.skill | 2026-06-04 | 🟡 |
 | iso3691-4-risk-assessment-builder.skill | amr | iso3691-4-risk-assessment-checklist-reviewer.skill | 2026-06-30 | 🟡 |
 | iso9283-performance-test-builder.skill | v&v | iso9283-performance-test-checklist-reviewer.skill | 2026-06-18 | 🟡 |
-| loto-procedure-builder.skill | operational | loto-procedure-checklist-reviewer.skill | 2026-07-15 | 🟢 |
+| loto-procedure-builder.skill | operational | loto-procedure-checklist-reviewer.skill | 2026-07-15 | 🟡 |
 | machinery-safety-lifecycle-plan-builder.skill | foundation | machinery-safety-lifecycle-plan-checklist-reviewer.skill | 2026-07-23 | 🟢 |
 | model-card-builder.skill | ai-ml | model-card-checklist-reviewer.skill | 2026-07-02 | 🟡 |
 | nav2-config-builder.skill | ros2 | nav2-config-checklist-reviewer.skill | 2026-05-03 | 🟡 |
@@ -45,8 +45,9 @@ _Regenerated: 2026-08-13 (autonomous daily run)_
 
 ## Summary
 
-- Builders: 38 · Reviewers: 38 · Paired: 38/38 (100%)
-- 🟢 paired & touched ≤30 days: 13
-- 🟡 not touched in 30+ days: 25
-- 🔴 missing paired reviewer: 0
-- Flags computed against 2026-08-13; uncommitted changes in this run count as touched today.
+- **Inventory:** 38 builders / 38 reviewers / 76 total .skill files
+- **Pairing:** 38/38 builders paired (100%) · 0 missing a reviewer 🔴
+- **Freshness:** 11 touched within 30 days 🟢 · 27 stale at 30+ days 🟡
+- **Domain spread:** ai-ml 3 · amr 4 · cell-design 4 · cobot 4 · compliance 5 · cybersecurity 3 · foundation 3 · operational 3 · ros2 5 · v&v 4
+- **Examples coverage:** 36 of 76 skills have an examples/ README
+

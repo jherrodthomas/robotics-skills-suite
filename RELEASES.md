@@ -1,5 +1,30 @@
 # Releases
 
+## v2026.08.W3 — 2026-08-15
+
+**Highlights:** Tenth tagged weekly snapshot, covering the 2026-W33 working week (Mon 2026-08-10 → Sat 2026-08-15). **All three planned targets landed, pair-complete — the first clean sweep in the repo's history.** W33 was also the first week the plan set capacity to observed throughput (3) rather than aspiration (5), and the carryover queue did not grow. `declaration-of-conformity` (#44, open four weeks) finally cleared and now forks correctly on **EU Machinery Regulation 2023/1230** vs the superseding Directive 2006/42/EC; `safety-io-matrix` (#45) was reconciled with the `interlock-estop-architecture` pair and pinned to **ISO 13849-1:2023** + **IEC 62061:2021** with a SIL-CL cross-reference; `robot-acceptance-protocol` (#47) opened the v&v cluster — previously untouched since the 2026-05-03 import baseline — on **ISO 9283:1998** and **ISO 10218-2:2025**. Examples coverage crossed the halfway line at 38/76 (50%). Suite holds at 76 .skill files, 100% paired, zero orphans.
+
+**Changes this week (2026-08-10 → 2026-08-15):**
+
+*plan:*
+- seed W33 with three targets — two carryovers plus v&v beachhead (e246935)
+
+*polish:*
+- rewrite declaration-of-conformity pair, fork on Directive vs Regulation 2023/1230 (aadcd83)
+- anchor robot-acceptance-protocol pair on ISO 10218-2:2025, add reviewer standards baseline (6244fd2)
+- pin safety-io-matrix pair to ISO 13849-1:2023, IEC 62061:2021, add SIL CL cross-reference (d909fc2)
+
+*docs:*
+- W33 changelog, two v&v example stubs, STATUS refresh (a8ca532)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Domain health: 10 builders touched within 30 days, 28 stale (30+ days), 0 orphans. Examples coverage: 38/76 skills (50%).
+
+**Carried defects (human attention):**
+- The **placeholder-generator defect** first recorded in v2026.08.W2 is unchanged. At least four pairs — `robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec` — ship placeholder or absent generator scripts. Three consecutive snapshots have now documented this without fixing it. Polish passes cannot resolve it; it needs a dedicated implementation week.
+- **Open-issue count is a broken signal.** Eleven issues are open; at least six of them (#42, #43, #44, #45, #46, #47) describe work that has already shipped. This task never closes issues by design, so the backlog only shrinks when a human closes it. Recommended before W34 planning.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.08.W2...v2026.08.W3
+
 ## v2026.08.W2 — 2026-08-08
 
 **Highlights:** Ninth tagged weekly snapshot, covering the 2026-W32 working week (Mon 2026-08-03 → Sat 2026-08-08). Three of five W32 targets landed, all **pair-complete** standards-edition anchoring: `robot-cell-scope` on ISO 10218-2:2025 + ANSI/A3 R15.06-2025, `fleet-manager-architecture` reviewer reconciled with its builder and pinned to ISO 3691-4:2020 + VDA 5050 2.1.0 (closing the W31 `chain-break`), and `robot-sop` re-anchored on **ANSI/A3 R15.06-3-2025** — the part that actually governs cell operating procedures — plus specific OSHA 29 CFR parts. Friday closed the W32 changelog and three example stubs, lifting examples coverage to 32/76 (42%). Not reached: #44 `declaration-of-conformity` and #45 `safety-io-matrix`, both carrying into W33. Suite holds at 76 .skill files, 100% paired, zero orphans.

@@ -944,3 +944,18 @@
 - Repo-wide mechanical sweep: grep every skill for bare `ISO 10218-2` / `ISO 13849-1` with no edition. Three separate polish passes have now found the same defect; a single sweep beats finding it one skill at a time.
 - Reviewer script stubs remain the structural debt — `check_definitions.py` / `dashboard.py` / `*_probe.py` are placeholders across most reviewers, and redundant probe stubs have now been logged on three separate pairs. Worth one dedicated pass rather than a line per polish log.
 - Tomorrow (Sat) is RELEASE: four commits this week, so a `v2026.08.W3` tag is expected.
+
+## 2026-08-15 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Tagged `v2026.08.W3` weekly snapshot, wrote its RELEASES.md section, refreshed STATUS.md.
+**Files touched:** STATUS.md, RELEASES.md, docs/AUTONOMOUS_LOG.md, tag v2026.08.W3
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (76 .skill files)
+**Open issues:** 11
+**Notes:** W33 is the first week in this repo's history where every planned target landed — 3 planned, 3 cleared, all pair-complete (#44 declaration-of-conformity, #45 safety-io-matrix, #47 robot-acceptance-protocol). The variable that changed is capacity: W33's PLAN set three targets against an observed throughput of 2–3, instead of the five that W30–W32 planned. Weeks that plan five clear two or three and manufacture carryover; the week that planned three cleared three and generated none. That is one data point, not a law, but it is worth W34 keeping the same discipline before concluding anything. Examples coverage crossed 50% (38/76). Judgement calls this run: tag month follows the release date (August) rather than the ISO week (W33), consistent with the v2026.08.W1 precedent; no GitHub Release object published, per the task's hard rule — RELEASES.md is written and the tag pushed for a human to publish after review. Two defects carried forward unchanged and both now need a human: the placeholder-generator problem on at least four pairs has been documented in three consecutive snapshots without being fixed, and six of the eleven open issues describe shipped work, so the open count no longer means anything.
+**Follow-ups:**
+- Human: close #42, #43, #44, #45, #46, #47 — all six describe completed work. The open-issue count is the primary planning input and it is currently wrong by more than half.
+- W34 PLAN: hold capacity at 3. If W34 also clears 3/3, the capacity hypothesis is worth writing into the plan template.
+- Placeholder-generator defect (`robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec`) needs a dedicated implementation week; it is out of scope for POLISH mode and should stop being re-logged as a known defect.
+- v&v cluster after #47: `robot-hil-test-catalog`, `robot-field-acceptance`, `iso9283-performance-test` remain at import baseline — a themed v&v week is a candidate for W34 now that the compliance carryover has cleared.

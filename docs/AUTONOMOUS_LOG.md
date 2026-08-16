@@ -959,3 +959,19 @@
 - W34 PLAN: hold capacity at 3. If W34 also clears 3/3, the capacity hypothesis is worth writing into the plan template.
 - Placeholder-generator defect (`robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec`) needs a dedicated implementation week; it is out of scope for POLISH mode and should stop being re-logged as a known defect.
 - v&v cluster after #47: `robot-hil-test-catalog`, `robot-field-acceptance`, `iso9283-performance-test` remain at import baseline — a themed v&v week is a candidate for W34 now that the compliance carryover has cleared.
+
+## 2026-08-16 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Swept all 11 open issues — label coverage verified complete, five completion comments posted (#42–#46), triage report written, STATUS.md refreshed.
+**Files touched:** STATUS.md, docs/triage/TRIAGE-2026-08-16.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (76 .skill files)
+**Open issues:** 11
+**Notes:** Labelling had nothing to do — all 11 issues already carry exactly one type label and one domain label after the 2026-08-02 and 2026-08-09 runs, and no issue fell below the 80% confidence bar. The stale sweep also found nothing, and that result is misleading enough to be this run's main finding: the 30-day rule keys on GitHub `updated_at`, which the autonomous account bumps every time it labels or comments. Issues #38–#41 have had no human activity since they were opened on 2026-07-20 (27 days), but read as 14 days old because the 2026-08-02 run commented on them. This task resets its own staleness clock, so the quiet-issue rule can never fire on any issue triage keeps visiting. The fix is to measure from the last event not authored by the autonomous account, but changing the rule is a change to the task definition and belongs to the human, so it is written up in the triage report rather than applied. The other finding compounds it: after posting completion comments on #42–#46, ten of eleven open issues now carry an "appears satisfied" note. Three consecutive journal entries have asked for these to be closed. The backlog is not a work queue, it is a close-confirmation queue, and Monday's PLAN run has to route around it. Judgement call: posted the five completion comments despite knowing they bump `updated_at` and worsen the staleness defect, because the 2026-08-02 run set that precedent and silently dropping the practice mid-stream would be a worse signal than the redundant bump.
+**Follow-ups:**
+- **Human, third ask: close #37–#47.** Every one now has a comment naming the commit that satisfied it. Nothing else in this repo needs a human decision more.
+- **Human: pick a staleness metric.** Either exclude autonomous-account events from the quiet clock, or fall back to `created_at`. Until then the 30-day comment rule is dead code.
+- W34 PLAN (tomorrow): hold capacity at 3 per the W33 result. Candidate theme is the v&v cluster — `robot-hil-test-catalog`, `robot-field-acceptance`, `iso9283-performance-test`, all still at the 2026-05-03 import baseline (105 days).
+- Repo-wide edition sweep still unstarted: grep every skill for bare `ISO 10218-2` / `ISO 13849-1` with no edition year. Four polish passes have now hit this defect individually.
+- Placeholder generator scripts (`check_definitions.py` / `dashboard.py` / `*_probe.py`) remain stubs across most reviewers — logged in four consecutive entries, still out of scope for any single mode.

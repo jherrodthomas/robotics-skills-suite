@@ -975,3 +975,19 @@
 - W34 PLAN (tomorrow): hold capacity at 3 per the W33 result. Candidate theme is the v&v cluster — `robot-hil-test-catalog`, `robot-field-acceptance`, `iso9283-performance-test`, all still at the 2026-05-03 import baseline (105 days).
 - Repo-wide edition sweep still unstarted: grep every skill for bare `ISO 10218-2` / `ISO 13849-1` with no edition year. Four polish passes have now hit this defect individually.
 - Placeholder generator scripts (`check_definitions.py` / `dashboard.py` / `*_probe.py`) remain stubs across most reviewers — logged in four consecutive entries, still out of scope for any single mode.
+
+## 2026-08-17 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W34 with three targets (#48 robot-hil-test-catalog, #49 urdf-model-spec, #50 dataset-documentation) — all three at the 2026-05-03 import baseline, one each in v&v, ros2, ai-ml.
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W34.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (76 .skill files)
+**Open issues:** 14 (11 pre-existing, all describing completed work, plus the 3 created this run)
+**Notes:** W33 is the first week that cleared 3 of 3 with zero carryover, which settles the capacity question — three is the observed rate and W34 holds there rather than testing five again. The more consequential finding is that priority rule (a) selected nothing this run: all 11 pre-existing open issues describe work that has already landed, so the "skills referenced by open issues" input is now empty of real signal and every target had to come from rule (c), least-recently-touched. Creating three more issues on top of eleven done ones pushes the visible count to 14 against 3 actual outstanding items — the count is worse than useless as a planning input until the human closes #37–#47, and this is the fourth consecutive entry asking. Judgement call on domain spread: W33's follow-ups floated a themed v&v week, but that would have put 2–3 targets in one domain against the spread rule in the task definition, so v&v kept one slot (the pick with the strongest adjacency to last week's `robot-acceptance-protocol` work) and the other two slots went to opening ros2 and ai-ml, the two clusters that have never had a polish pass at all. Also fixed a domain-inference bug in the STATUS generator this run — the prefix patterns in the task definition end in a hyphen but builder stems do not, so a naive prefix match left 10 of 38 skills unclassified; matching against `stem + "-"` restores the correct 10-domain spread. None of this week's three targets is in the safety-critical set, so the mandatory edition-verification step does not fire, but all three carry version-dated references (ROS 2 distro, REP-103/105, ISO/IEC 42001:2023, EU AI Act 2024/1689) and the plan asks POLISH runs to check them anyway.
+**Follow-ups:**
+- **Human, fourth ask: close #37–#47.** Eleven done issues are now suppressing an entire priority rule in the weekly plan.
+- Tue → #48, Wed → #49, Thu → #50. Order is deliberate: HIL first while `robot-acceptance-protocol` is still fresh; URDF before `tf-tree-spec`/`nav2-config` because both inherit its frame vocabulary.
+- W35 candidates already implied: `tf-tree-spec` then `nav2-config` (ros2), `robot-field-acceptance` (v&v), `perception-test-catalog` (ai-ml).
+- Friday DOCS run: consider a batch pass for the 38 missing `examples/<reviewer>/README.md` stubs. At the current 2/week rate the gap closes in 2027.
+- Still unstarted, now five entries deep: repo-wide grep for bare `ISO 10218-2` / `ISO 13849-1` with no edition year, and the placeholder generator scripts across most reviewers. Neither fits any single mode; both need a dedicated human-scoped week.

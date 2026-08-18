@@ -991,3 +991,19 @@
 - W35 candidates already implied: `tf-tree-spec` then `nav2-config` (ros2), `robot-field-acceptance` (v&v), `perception-test-catalog` (ai-ml).
 - Friday DOCS run: consider a batch pass for the 38 missing `examples/<reviewer>/README.md` stubs. At the current 2/week rate the gap closes in 2027.
 - Still unstarted, now five entries deep: repo-wide grep for bare `ISO 10218-2` / `ISO 13849-1` with no edition year, and the placeholder generator scripts across most reviewers. Neither fits any single mode; both need a dedicated human-scoped week.
+
+## 2026-08-18 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `robot-hil-test-catalog` pair (W34 target #48) in lockstep — edition-anchored six standards, added the HIL-vs-FAT scope boundary, a test-case ID convention, and traceability rules tying fault-injection cases to the DC assumptions they defend.
+**Files touched:** `skills/robot-hil-test-catalog-builder.skill`, `skills/robot-hil-test-catalog-checklist-reviewer.skill`, `docs/skill-polish-log/robot-hil-test-catalog-builder.md` (new), `examples/robot-hil-test-catalog-builder/README.md` (new), `STATUS.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 14
+**Notes:** The predicted defect was an ISO 10218-2:2011→:2025 mismatch carried over from the sibling v&v pass; the actual primary defect was different and worse — PLr/SIL cited as bare `ISO 13849-1` / `IEC 62061` with no edition at all, contradicting `safety-io-matrix` which anchored the same two standards five days ago. **ISO 13849-2 was absent entirely, which matters more than the edition question:** a HIL catalog *is* validation evidence and -2 is the validation part, so the file anchored its targets but not the method by which it claimed to meet them. Verified IEC 61508-3:2010 (Ed 2.0) as a new citation to this suite — it covers plant-model validity, since a HIL result is bounded by the fidelity of the simulated plant and that model is software in the verification toolchain. Also found **ISO/DIS 13849-2 sitting in enquiry phase**; wrote explicit do-not-bump notes into both halves so a future pass does not cite a draft as if published. Two DoD items from the W34 plan landed as written (HIL/FAT split, shared test-case IDs); the third — full reconciliation with `robot-acceptance-protocol` — landed one-directionally only, since making both workbooks share an ID namespace is a two-file edit and was descoped rather than rushed.
+**Follow-ups:**
+- `robot-field-acceptance` closes the v&v cluster and will carry the same bare-`ISO 13849-1` defect — natural W35 pick.
+- Reciprocal edit on `robot-acceptance-protocol-builder` to reference the `HIL-*` ID namespace from the FAT side.
+- Repo-wide grep for bare `ISO 13849-1` / `IEC 62061` with no edition; two instances found in two weeks suggests more across cobot and cell-design.
+- Watch item: when ISO/DIS 13849-2 publishes, both halves of this pair need updating together plus a sweep of other -2 citations.
+- **Human, unchanged and now three weeks running:** #37–#47 are all complete but open. Priority rule (a) selected nothing again today; today's pick came from the W34 plan, not from the issue queue.

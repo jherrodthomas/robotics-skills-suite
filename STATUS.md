@@ -1,6 +1,6 @@
 # Skill Suite Status
 
-_Regenerated: 2026-08-17 (autonomous daily run)_
+_Regenerated: 2026-08-18 (autonomous daily run)_
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -33,7 +33,7 @@ _Regenerated: 2026-08-17 (autonomous daily run)_
 | robot-cell-layout-builder.skill | cell-design | robot-cell-layout-checklist-reviewer.skill | 2026-07-01 | 🟡 |
 | robot-cell-scope-builder.skill | foundation | robot-cell-scope-checklist-reviewer.skill | 2026-08-04 | 🟢 |
 | robot-field-acceptance-builder.skill | v&v | robot-field-acceptance-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| robot-hil-test-catalog-builder.skill | v&v | robot-hil-test-catalog-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| robot-hil-test-catalog-builder.skill | v&v | robot-hil-test-catalog-checklist-reviewer.skill | 2026-08-18 | 🟢 |
 | robot-sop-builder.skill | operational | robot-sop-checklist-reviewer.skill | 2026-08-06 | 🟢 |
 | ros2-system-architecture-builder.skill | ros2 | ros2-system-architecture-checklist-reviewer.skill | 2026-07-16 | 🟡 |
 | safety-io-matrix-builder.skill | cell-design | safety-io-matrix-checklist-reviewer.skill | 2026-08-13 | 🟢 |
@@ -47,6 +47,6 @@ _Regenerated: 2026-08-17 (autonomous daily run)_
 
 - **Inventory:** 38 builders / 38 reviewers / 76 total .skill files
 - **Pairing:** 38/38 builders paired (100%) · 0 missing a reviewer 🔴
-- **Freshness:** 10 touched within 30 days 🟢 · 28 stale at 30+ days 🟡
+- **Freshness:** 11 touched within 30 days 🟢 · 27 stale at 30+ days 🟡
 - **Domain spread:** ai-ml 3 · amr 4 · cell-design 4 · cobot 4 · compliance 5 · cybersecurity 3 · foundation 3 · operational 3 · ros2 5 · v&v 4
-- **Examples coverage:** 38 of 76 skills have an examples/ README
+- **Examples coverage:** 39 of 76 skills have an examples/ README

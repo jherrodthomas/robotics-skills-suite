@@ -1,9 +1,11 @@
-# Skill Suite Status
+# STATUS — robotics-skills-suite
 
-_Regenerated: 2026-08-18 (autonomous daily run)_
+_Regenerated 2026-08-19 by the autonomous daily run (POLISH mode). Overwritten every run — do not hand-edit._
+
+Flags: 🔴 missing paired reviewer · 🟡 builder not touched in 30+ days · 🟢 paired and touched within 30 days.
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | ansi-r1506-compliance-matrix-builder.skill | compliance | ansi-r1506-compliance-matrix-checklist-reviewer.skill | 2026-07-15 | 🟡 |
 | behavior-tree-spec-builder.skill | ros2 | behavior-tree-spec-checklist-reviewer.skill | 2026-07-28 | 🟢 |
 | cobot-hand-guiding-builder.skill | cobot | cobot-hand-guiding-checklist-reviewer.skill | 2026-06-25 | 🟡 |
@@ -39,14 +41,14 @@ _Regenerated: 2026-08-18 (autonomous daily run)_
 | safety-io-matrix-builder.skill | cell-design | safety-io-matrix-checklist-reviewer.skill | 2026-08-13 | 🟢 |
 | ssm-plan-builder.skill | cobot | ssm-plan-checklist-reviewer.skill | 2026-07-07 | 🟡 |
 | tf-tree-spec-builder.skill | ros2 | tf-tree-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
-| urdf-model-spec-builder.skill | ros2 | urdf-model-spec-checklist-reviewer.skill | 2026-05-03 | 🟡 |
+| urdf-model-spec-builder.skill | ros2 | urdf-model-spec-checklist-reviewer.skill | 2026-08-19 | 🟢 |
 | wireless-coexistence-plan-builder.skill | amr | wireless-coexistence-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 | zone-conduit-plan-builder.skill | cybersecurity | zone-conduit-plan-checklist-reviewer.skill | 2026-05-03 | 🟡 |
 
 ## Summary
 
 - **Inventory:** 38 builders / 38 reviewers / 76 total .skill files
-- **Pairing:** 38/38 builders paired (100%) · 0 missing a reviewer 🔴
-- **Freshness:** 11 touched within 30 days 🟢 · 27 stale at 30+ days 🟡
+- **Pairing:** 38/38 builders paired (100%) · 0 missing a reviewer 🔴 · 24/38 pairs last touched in lockstep
+- **Freshness:** 12 touched within 30 days 🟢 · 26 stale at 30+ days 🟡 · 9 builders and 23 reviewers still at the 2026-05-03 import baseline
 - **Domain spread:** ai-ml 3 · amr 4 · cell-design 4 · cobot 4 · compliance 5 · cybersecurity 3 · foundation 3 · operational 3 · ros2 5 · v&v 4
-- **Examples coverage:** 39 of 76 skills have an examples/ README
+- **Examples coverage:** 40 of 76 skills have an examples/ README

@@ -1007,3 +1007,26 @@
 - Repo-wide grep for bare `ISO 13849-1` / `IEC 62061` with no edition; two instances found in two weeks suggests more across cobot and cell-design.
 - Watch item: when ISO/DIS 13849-2 publishes, both halves of this pair need updating together plus a sweep of other -2 citations.
 - **Human, unchanged and now three weeks running:** #37–#47 are all complete but open. Priority rule (a) selected nothing again today; today's pick came from the W34 plan, not from the issue queue.
+
+## 2026-08-19 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `urdf-model-spec` pair (W34 target 2 of 3, issue #49) — added a ROS 2 distro baseline, a URDF/xacro-vs-SDFormat boundary, geometry/inertial/joint rules, `ros2_control` coverage, REP-103/105 conventions, and corrected stale Gazebo naming; reviewer rewritten in lockstep.
+**Files touched:** `skills/urdf-model-spec-builder.skill`, `skills/urdf-model-spec-checklist-reviewer.skill`, `docs/skill-polish-log/urdf-model-spec-builder.md`, `examples/urdf-model-spec-builder/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet). Both `.skill` archives re-zipped and verified with `unzip -t`; frontmatter round-tripped; descriptions 583 and 628 chars, under the 1024 limit.
+**Skill count:** 38 builders / 38 reviewers / 100% paired · 12 🟢 · 26 🟡 · 0 🔴
+**Open issues:** 14
+
+**Notes:** The version check was supposed to be optional here — ros2 is outside the mandatory safety-critical set — and it produced the two largest findings of the pass, which is worth recording as evidence the "verify anyway" habit is earning its cost. First: neither half named a ROS 2 distro, and since `ros2_control` interface names, Gazebo plugin names, and the `gz`/`ign` prefix split all move between releases, the reviewer had nothing to check currency *against*. That single absence explains why the reviewer also had no currency section — the defect was structural, not an oversight. Second: the builder said "Gazebo or Ignition", which is stale twice over. Ignition Gazebo was renamed Gazebo in 2022, and the other reading — Gazebo Classic 11 — reached end-of-life 2025-01-31. The file offered two wrong options and no right one. Both are now explicit findings on the reviewer side.
+
+Judgement calls. Chose **Jazzy Jalisco** as the documented default baseline rather than Lyrical Luth, despite Lyrical being the current LTS (released 2026-05-22, supported to May 2031). Reasoning: for a robot-description spec the binding constraint is vendor hardware-interface and `ros2_control` support breadth, not the length of the support window, and Jazzy runs to May 2029 regardless. Lyrical is documented as the correct pick where the deployment target is Ubuntu 26.04. Separately wrote **Kilted Kaiju in as a do-not-baseline** for shipping work — its support ends November 2026, roughly three months out, which makes it a live finding rather than a stylistic preference. Also added a caveat the original lacked entirely: URDF collision geometry is not a safety-rated envelope, and separation distances come from `ssm-plan-builder` / `operating-envelope-builder` rather than from these meshes. In a repo where most skills are safety documents, a geometry spec that stays silent on that invites the wrong inference.
+
+STATUS generator fixed. The domain classifier was matching skill stems against dash-terminated prefixes, so any skill whose stem *ends* at the prefix boundary — `pfl-plan`, `ssm-plan`, `robot-sop`, `eoat-spec`, and six others — fell through to unclassified. Ten of 38 builders were mis-bucketed. Now matched on `stem + "-"`, and all 38 classify. The generator also now treats working-tree-modified files as touched today, so the skill polished in a run shows 🟢 in the STATUS committed by that same run rather than lagging a day.
+
+**Follow-ups:**
+- **Check `ros2-system-architecture-builder` for a conflicting or absent distro baseline.** Polished 2026-07-16, before Lyrical's window mattered here. If it names a distro the two must agree; if it names none it carries the same primary defect just fixed.
+- **Repo-wide grep for `Ignition` and `Gazebo Classic`.** This file carried both. `nav2-config` and `ros2-system-architecture` are the likely other carriers, and their reviewer halves will not catch it because most reviewers still have no standards baseline.
+- W34 target 3 tomorrow (Thu): `dataset-documentation` pair, issue #50 — reconcile datasheet fields with the polished `model-card` pair, and date ISO/IEC 42001:2023, ISO/IEC 23894:2023, EU AI Act 2024/1689 Art. 10.
+- W35 ros2 continuation: `tf-tree-spec` then `nav2-config`, in that order — both inherit the link names and REP-105 boundary this pass declared, and both are still at import baseline.
+- **Time-boxed watch item: Kilted Kaiju leaves support November 2026.** Worth a sweep of any spec baselined on it around W44–W46.
+- **Still blocked on the human: close #37–#47.** Eleven open issues, all complete; #48 also landed yesterday and #49 lands with this commit. Real outstanding work is 1 (#50). Priority rule (a) has now selected nothing for three consecutive weeks because the queue cannot distinguish done from open.

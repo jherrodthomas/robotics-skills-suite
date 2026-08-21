@@ -229,7 +229,21 @@ The chain compounds because phases hand off via stable xlsx contracts. A change 
 ```
 robotics-skills-suite/
 ├── skills/                              # 76 .skill bundles, install individually
+├── examples/                            # One README per skill — input, output, sample I/O (76/76)
+├── docs/
+│   ├── AUTONOMOUS_LOG.md                # Daily maintenance journal
+│   ├── weekly/                          # Weekly plans and targets
+│   ├── monthly/                         # Monthly roll-ups
+│   ├── skill-polish-log/                # Per-skill review findings
+│   └── triage/                          # Issue triage records
+├── scripts/
+│   └── gen_status.py                    # Regenerates STATUS.md
+├── assets/                              # Diagrams used by this README
 ├── robotics-skills-suite-bundle-76.zip  # All 76 skills in one download
+├── STATUS.md                            # Pairing, domain and freshness per builder
+├── CHANGELOG.md                         # Weekly change log
+├── RELEASES.md                          # Tagged snapshot notes
+├── ABOUT.md
 ├── README.md
 └── LICENSE
 ```

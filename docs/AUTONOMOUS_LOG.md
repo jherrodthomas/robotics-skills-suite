@@ -1055,3 +1055,27 @@ Carried forward yesterday's STATUS generator improvement (working-tree-modified 
 - **Reviewer build job, not polish:** `dataset-documentation-checklist-reviewer` needs a real probe, externalised check definitions, and a dashboard tab. Same shape of gap previously logged for `robot-sop-checklist-reviewer` (2026-08-06) — worth a dedicated pass covering all reviewers with placeholder scripts rather than one at a time.
 - W35 ros2 continuation as planned: `tf-tree-spec` then `nav2-config`, in that order.
 - **Still blocked on the human: close #37–#50.** All fourteen open issues are now complete — #48, #49, and #50 landed Tue/Wed/Thu of this week. Real outstanding work is **zero**. Priority rule (a) has selected nothing for three consecutive weeks and will keep selecting nothing.
+
+## 2026-08-21 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** W34 changelog written; **examples coverage closed 42/76 → 76/76 in a single batch pass**; the STATUS generator committed as `scripts/gen_status.py` instead of being rebuilt in `/tmp` each run; README repo-structure block brought up to date.
+**Files touched:** `CHANGELOG.md`, `STATUS.md`, `README.md`, `scripts/gen_status.py` (new), 34 new `examples/<skill>/README.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet). `scripts/gen_status.py` was run end-to-end to produce the committed `STATUS.md`; it emits a warning on any builder that falls through to `unclassified` and produced none.
+**Skill count:** 38 builders / 38 reviewers / 100% paired · 13 🟢 · 25 🟡 · 0 🔴
+**Open issues:** 14
+
+**Notes:** Two standing follow-ups were retired this run, both of them things previous runs had flagged repeatedly without fixing.
+
+The first is the **examples gap**. The task rule creates a stub only for skills touched that week, which produced 2–3 per week against 34 missing — the W34 plan calculated that rate clears in 2027 and explicitly asked the Friday DOCS run to consider a batch. Done: all 34 remaining skills now have a `README.md`, generated from each skill's own frontmatter and body rather than invented, and each file says on its face that it is derived content not verified against a real run. The two stubs for skills polished this week were written by hand against the full skill bodies and name the specific headline finding each reviewer raises, since those were the two the weekly rule would have produced anyway and they should not be worse than the batch.
+
+The second is the **STATUS generator**. Yesterday's entry noted the generator is rebuilt from scratch every run so improvements to it are lost, and asked for it to be committed. That prediction was confirmed within a day: this run re-introduced the exact domain-inference bug that 4dc22b1 and df811d4 had each already fixed — the prefix patterns in the task definition end in a hyphen, builder stems do not, and 11 of 38 builders silently fell through to `unclassified` before it was caught. Third occurrence of one defect. It is now `scripts/gen_status.py` with both accumulated fixes (match the full filename; treat working-tree-modified skills as touched today), a docstring explaining why the file exists, and a stderr warning so the failure is loud rather than silent next time.
+
+**One new finding, not fixed here.** Reading every skill's frontmatter for the batch pass surfaced that **five reviewers carry their builder's `description:` verbatim** — `ansi-r1506-compliance-matrix`, `iec62061-sil`, `iso10218-compliance-matrix`, `iso12100-risk-assessment`, and `iso13849-plr` checklist reviewers all say "Generate an audit-ready … workbook" rather than describing a review. A reviewer advertised as a generator will mis-trigger, and all five are in the safety-critical compliance and foundation clusters — the ISO 13849 PLr and ISO 12100 risk-assessment reviewers are two of the most load-bearing skills in the repo. Rewriting frontmatter is POLISH work and needs its own issue, so this run only recorded it: each affected `examples/*/README.md` carries a warning banner, and it is written into the W34 changelog under a `known issues` heading. This is the most useful thing a batch pass over all 76 skills produced, and argues for making "read every description" a periodic job rather than an accident.
+
+**Follow-ups:**
+- **Monday PLAN should file one issue covering the five copy-pasted reviewer descriptions** (`description-quality` + the relevant domain label) and consider taking it as a single target — it is five small frontmatter rewrites, not five polish passes, so it may fit one slot rather than five.
+- **Extend the description audit to all 76 skills.** Five were caught among the 34 read this run; the other 42 have not been checked for the same defect. A cheap scripted check — reviewer descriptions that begin with "Generate", or that are byte-identical to their builder's — would catch the whole class.
+- `perception-test-catalog` remains the last ai-ml builder at import baseline, and `tf-tree-spec` → `nav2-config` remains the planned W35 ros2 order.
+- **Tomorrow is Saturday (RELEASE).** Four commits this week plus this one, so a release is due: tag `v2026.08.W4`, notes appended to `RELEASES.md`, no GitHub Release object published.
+- **Still blocked on the human: close #37–#50.** All fourteen open issues are complete; real outstanding work is zero. Priority rule (a) has now selected nothing for three consecutive weeks. This is the fifth consecutive entry raising it.

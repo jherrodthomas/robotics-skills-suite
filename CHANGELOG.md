@@ -6,6 +6,32 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W34 (2026-08-17 → 2026-08-21)
+
+**Second consecutive 3-of-3 week.** All three W34 targets (#48, #49, #50) landed on their scheduled days, and every one was an *import-baseline* pair — a skill that had never had a POLISH pass since the 2026-05-03 import. Three clusters (v&v, ros2, ai-ml) that were untouched a week ago now each have an anchored pair.
+
+#### polish
+
+- **robot-hil-test-catalog-builder** + **robot-hil-test-catalog-checklist-reviewer** (v&v) — edition-anchored six standards, adding `ISO 13849-2:2012` as the validation part the catalog actually rests on and `IEC 61508-3:2010` as the basis for arguing simulated-plant model validity; `ISO/DIS 13849-2` flagged do-not-bump until published. Introduced an explicit **HIL-versus-FAT scope boundary** (what is simulated, what is real, which evidence transfers), the `HIL-<function-id>-<class>-<nn>` case-ID convention resolving against the `safety-io-matrix` safety-function inventory, and traceability rules requiring every claimed DC figure to be defended by at least one injection case. Reviewer rewritten in lockstep and given the standards baseline it previously lacked entirely (#48) (`8ba1789`)
+- **urdf-model-spec-builder** + **urdf-model-spec-checklist-reviewer** (ros2) — replaced the generic "ROS 2" reference with a dated distro baseline table (Jazzy default, Lyrical for 24.04→26.04, **Kilted flagged do-not-ship** on an EOL of November 2026). Corrected stale simulator naming — Ignition was renamed to Gazebo in 2022, Gazebo Classic 11 reached EOL 2025-01-31. Added the URDF/xacro-versus-SDFormat boundary including the closed-kinematic-loop limitation URDF cannot express, and pinned units and frames to REP-103 / REP-105. ROS 1 transmission coverage replaced with `ros2_control` interfaces (#49) (`df811d4`)
+- **dataset-documentation-builder** + **dataset-documentation-checklist-reviewer** (ai-ml) — closed the known chain gap with the `model-card` pair: the builder now owns a dataset ID, semantic version, `<dataset-id>@<version>` citation string, and split fingerprint that `model-card-builder` consumes, with in-place version mutation prohibited. Governance baseline named and dated (ISO/IEC 42001:2023, 23894:2023, 5259 series, EU AI Act Regulation 2024/1689 Art. 10). Added robotics provenance fields — sensor part and shutter type, capture-rig geometry, calibration state and residual, time-sync skew, envelope coverage with named gaps. Reviewer's tab count corrected 7 → 5 and two phantom walkthrough tabs removed (#50) (`662de6b`)
+
+#### docs
+
+- **examples/** — **batch pass: examples coverage closed from 42/76 to 76/76 (100%).** Every one of the 34 remaining skills — 32 reviewer halves plus the `eoat-spec`, `iec62061-sil`, `nav2-config`, `operator-training-matrix`, `perception-test-catalog`, `robot-field-acceptance`, `ssm-plan`, `tf-tree-spec`, `wireless-coexistence-plan` and `zone-conduit-plan` builders — now has a `README.md`. Stub content is derived from each skill's own frontmatter and body, not invented, and each file says so. This retires the standing follow-up that the 2-per-week rate would not clear the gap until 2027. The two stubs for skills polished this week (`robot-hil-test-catalog-checklist-reviewer`, `urdf-model-spec-checklist-reviewer`) were written by hand against the full skill bodies and name the specific headline findings each reviewer raises
+- **scripts/gen_status.py** — the STATUS generator is now a committed script instead of being rebuilt in `/tmp` on every run. Two defects had been fixed in it three separate times and lost each time (domain prefixes matched against stems rather than filenames; working-tree-modified skills reported as stale in the STATUS committed by the run that touched them). Both fixes are now in the file, with a warning emitted if any builder falls through to `unclassified`. Retires a follow-up that had been carried since W33
+- **CHANGELOG.md** — add W34 weekly section
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 orphans, 13 fresh 🟢 / 25 stale 🟡
+- **docs/AUTONOMOUS_LOG.md** — daily journal entries for the W34 run
+
+#### chore
+
+- **plan** — W34 seeded Monday with three least-recently-touched targets spread across v&v, ros2 and ai-ml, capacity held at 3 after W33's zero-carryover week; new issues #48–#50 (`4dc22b1`); see [docs/weekly/WEEK-2026-W34.md](docs/weekly/WEEK-2026-W34.md)
+
+#### known issues
+
+- **Five reviewers carry their builder's `description:` verbatim** — `ansi-r1506-compliance-matrix`, `iec62061-sil`, `iso10218-compliance-matrix`, `iso12100-risk-assessment`, and `iso13849-plr` checklist reviewers all describe *generating* a workbook rather than reviewing one. Triggering will be unreliable for all five, and all five sit in the safety-critical compliance/foundation clusters. Surfaced by the W34 DOCS batch pass, which reads every skill's frontmatter; each affected `examples/*/README.md` carries a warning banner. Not fixed here — this is POLISH work and needs an issue
+
 ### Week 2026-W33 (2026-08-10 → 2026-08-14)
 
 **All three W33 targets landed — first fully cleared week in the repo's history.** Capacity was deliberately set to 3 on Monday to match observed throughput rather than exceed it; the plan held.

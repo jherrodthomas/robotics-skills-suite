@@ -1079,3 +1079,19 @@ The second is the **STATUS generator**. Yesterday's entry noted the generator is
 - `perception-test-catalog` remains the last ai-ml builder at import baseline, and `tf-tree-spec` → `nav2-config` remains the planned W35 ros2 order.
 - **Tomorrow is Saturday (RELEASE).** Four commits this week plus this one, so a release is due: tag `v2026.08.W4`, notes appended to `RELEASES.md`, no GitHub Release object published.
 - **Still blocked on the human: close #37–#50.** All fourteen open issues are complete; real outstanding work is zero. Priority rule (a) has now selected nothing for three consecutive weeks. This is the fifth consecutive entry raising it.
+
+## 2026-08-22 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Tagged `v2026.08.W4` (11th weekly snapshot), wrote its RELEASES.md entry, regenerated STATUS.md.
+**Files touched:** RELEASES.md, STATUS.md, docs/AUTONOMOUS_LOG.md; tag `v2026.08.W4`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (76 .skill files); 12 🟢 fresh, 26 🟡 stale, 0 🔴 orphans
+**Open issues:** 14
+**Notes:** Five commits this week, so the release proceeded. W34 was the second consecutive 3-of-3 zero-carryover week and the first where every target was an import-baseline pair — v&v, ros2 and ai-ml each went from never-polished to edition-anchored and lockstep-reviewed. Friday's DOCS run was the highest-leverage single commit in a while: examples coverage 42/76 → 76/76, and `scripts/gen_status.py` committed so the STATUS generator stops being rebuilt (and re-broken) in `/tmp`. Today's run used that committed generator for the first time — it ran clean, emitted no `unclassified` warnings, and its output matched the domain spread the plan expects, so the fix holds. Judgement call: the W34 changelog section stays under `## [Unreleased]` rather than being retitled to the tag — RELEASE mode's brief covers RELEASES.md and the tag only, and rewriting CHANGELOG headings is a scope the task doesn't authorise. Second judgement call: Friday surfaced a genuinely new defect (five compliance/foundation reviewers carrying their builder's `description:` verbatim) that the changelog says "needs an issue", but RELEASE runs are not authorised to create issues, so it is recorded in RELEASES.md under human attention and carried as a follow-up instead. Per the task brief, no GitHub Release object was published — the tag is pushed and RELEASES.md is written for manual review.
+**Follow-ups:**
+- **W35 PLAN should take the five verbatim-description reviewers as a single themed slot** — `ansi-r1506-compliance-matrix`, `iec62061-sil`, `iso10218-compliance-matrix`, `iso12100-risk-assessment`, `iso13849-plr`. Same edit five times, all safety-critical, and the domain-spread rule should be waived here because the defect is the theme, not the domain. Create the issue at plan time.
+- **Human: bulk-close #37–#50.** All fourteen describe shipped work. Priority rule (a) has selected nothing for two consecutive PLAN runs.
+- **Placeholder-generator defect is now four snapshots old and escalating.** `robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec`. It will not be fixed by the weekly polish cadence; it needs a dedicated implementation week that a human schedules.
+- Staleness clock: 26 builders 🟡 at 30+ days. At 3 pairs/week that clears around W43 — unchanged from last week's projection.
+- Human: publish the `v2026.08.W4` release on GitHub after reviewing RELEASES.md.

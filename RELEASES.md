@@ -1,5 +1,31 @@
 # Releases
 
+## v2026.08.W4 — 2026-08-22
+
+**Highlights:** Eleventh tagged weekly snapshot, covering the 2026-W34 working week (Mon 2026-08-17 → Sat 2026-08-22). **Second consecutive 3-of-3 week, zero carryover** — and the first week where all three targets were *import-baseline* pairs, skills untouched since the 2026-05-03 import. Three clusters that had never had a POLISH pass — v&v (`robot-hil-test-catalog`), ros2 (`urdf-model-spec`), ai-ml (`dataset-documentation`) — each now carry an edition-anchored, lockstep-reviewed pair. Friday's DOCS run cleared two long-standing structural debts in one pass: **examples coverage closed 42/76 → 76/76 (100%)**, retiring a follow-up that at the prior 2-per-week rate would not have cleared until 2027, and the STATUS generator became a committed script (`scripts/gen_status.py`) instead of being rebuilt in `/tmp` every run — the same two defects had been re-introduced and lost three separate times. Suite holds at 76 .skill files, 38/38 paired, zero orphans.
+
+**Changes this week (2026-08-17 → 2026-08-22):**
+
+*plan:*
+- seed W34 with three import-baseline targets across v&v, ros2, ai-ml; issues #48–#50 (4dc22b1)
+
+*polish:*
+- anchor robot-hil-test-catalog pair on ISO 13849-1:2023 / -2:2012, add HIL-vs-FAT scope boundary and `HIL-<function-id>-<class>-<nn>` case-ID convention; ISO/DIS 13849-2 flagged do-not-bump (#48) (8ba1789)
+- baseline urdf-model-spec pair on a dated ROS 2 distro table (Jazzy default, Kilted do-not-ship on Nov 2026 EOL), fix stale Ignition / Gazebo Classic naming, pin REP-103 / REP-105, replace ROS 1 transmissions with `ros2_control` (#49) (df811d4)
+- give dataset-documentation a citable `<dataset-id>@<version>` ID consumed by model-card, date the governance baseline (ISO/IEC 42001:2023, 23894:2023, 5259, EU AI Act 2024/1689 Art. 10), correct reviewer tab count 7 → 5 (#50) (662de6b)
+
+*docs:*
+- close examples coverage to 76/76, commit STATUS generator, W34 changelog (46166a8)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Freshness: 12 builders 🟢 touched ≤30d, 26 🟡 stale at 30+d, 0 orphans 🔴. Examples coverage: **76/76 (100%)**. Domain spread: ai-ml 3 · amr 4 · cell-design 4 · cobot 4 · compliance 5 · cybersecurity 3 · foundation 3 · operational 3 · ros2 5 · v&v 4.
+
+**Carried defects (human attention):**
+- **NEW — five reviewers carry their builder's `description:` verbatim.** `ansi-r1506-compliance-matrix`, `iec62061-sil`, `iso10218-compliance-matrix`, `iso12100-risk-assessment` and `iso13849-plr` checklist reviewers all describe *generating* a workbook rather than reviewing one, so triggering will be unreliable for all five. All five sit in the safety-critical compliance/foundation clusters. Surfaced by Friday's DOCS batch pass; each affected `examples/*/README.md` carries a warning banner. **No issue exists for this** — RELEASE runs do not create issues, so it needs either a human issue or a W35 PLAN slot. Strong candidate for a single themed polish week, since the fix is the same edit five times.
+- **Placeholder-generator defect — fourth consecutive snapshot, still unfixed.** `robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture` and `behavior-tree-spec` ship placeholder or absent generator scripts. Polish passes cannot resolve it; it needs a dedicated implementation week. Escalating: four snapshots of documentation without action means the standing process is not going to fix this.
+- **Open-issue count remains a broken signal.** Fourteen issues open; all fourteen (#37–#50) describe work that has shipped. This task never closes issues by design, so priority rule (a) — "skills referenced by open issues" — has now selected nothing for two consecutive PLAN runs and will keep selecting nothing. One human bulk-close before W35 planning restores the signal.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.08.W3...v2026.08.W4
+
 ## v2026.08.W3 — 2026-08-15
 
 **Highlights:** Tenth tagged weekly snapshot, covering the 2026-W33 working week (Mon 2026-08-10 → Sat 2026-08-15). **All three planned targets landed, pair-complete — the first clean sweep in the repo's history.** W33 was also the first week the plan set capacity to observed throughput (3) rather than aspiration (5), and the carryover queue did not grow. `declaration-of-conformity` (#44, open four weeks) finally cleared and now forks correctly on **EU Machinery Regulation 2023/1230** vs the superseding Directive 2006/42/EC; `safety-io-matrix` (#45) was reconciled with the `interlock-estop-architecture` pair and pinned to **ISO 13849-1:2023** + **IEC 62061:2021** with a SIL-CL cross-reference; `robot-acceptance-protocol` (#47) opened the v&v cluster — previously untouched since the 2026-05-03 import baseline — on **ISO 9283:1998** and **ISO 10218-2:2025**. Examples coverage crossed the halfway line at 38/76 (50%). Suite holds at 76 .skill files, 100% paired, zero orphans.

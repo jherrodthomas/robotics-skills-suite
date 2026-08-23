@@ -1095,3 +1095,32 @@ The second is the **STATUS generator**. Yesterday's entry noted the generator is
 - **Placeholder-generator defect is now four snapshots old and escalating.** `robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec`. It will not be fixed by the weekly polish cadence; it needs a dedicated implementation week that a human schedules.
 - Staleness clock: 26 builders 🟡 at 30+ days. At 3 pairs/week that clears around W43 — unchanged from last week's projection.
 - Human: publish the `v2026.08.W4` release on GitHub after reviewing RELEASES.md.
+
+## 2026-08-23 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Label sweep found nothing to change (14/14 issues fully labelled, zero issues 30+ days by `updated_at`), so the run's substance is the **scripted description audit across all 76 skills** that has been carried as a follow-up since Friday — it closes the question of how large the copy-pasted-reviewer-description defect is, and finds the five known cases are materially worse than "copy-pasted".
+**Files touched:** `docs/triage/TRIAGE-2026-08-23.md` (new), `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet). The audit script unzipped and parsed frontmatter on all 76 `.skill` files with zero parse failures; `scripts/gen_status.py` ran clean with no `unclassified` warnings for the second consecutive run.
+**Skill count:** 38 builders / 38 reviewers / 100% paired · 11 🟢 · 27 🟡 · 0 🔴
+**Open issues:** 14
+
+**Notes:** No GitHub writes this run, and both abstentions were deliberate. Labelling: all 14 open issues already carry exactly one type and one domain label, every label in the taxonomy exists on the repo, and nothing fell below the confidence bar — third consecutive fully-labelled backlog. Stale sweep: the oldest `updated_at` is 21 days, so the 30-day rule matched nothing.
+
+That stale-sweep result is now provably an artifact rather than a fact. #38–#41 were opened 2026-07-20, which is **34 days ago and past the threshold**, but they read as 21 days old because the 2026-08-02 triage run commented on them. The rule keys on `updated_at`, this task's own comments bump `updated_at`, so the clock resets every time triage visits. Measured from `created_at` four issues are stale today; measured as written, none ever will be. Flagged on 2026-08-16, restated here with the arithmetic.
+
+**The audit is the real output.** All 76 files parse, all have `name:` matching their filename stem, all have a description, none exceeds 1024 chars (longest 526), and **zero reviewer descriptions are byte-identical to their builder's**. The defect population is exactly the five Friday named — bounded, no sixth case, one themed pass closes it.
+
+Reading the five pairs side by side changed the diagnosis. These were not copy-pasted; they were generated from the builder by replacing the literal string `when` with `to review`, and the replacement broke the grammar in every one. `iso12100` reads "Use this skill **to reviewever** the user mentions" — the builder said "whenever", the replace hit the embedded `when`, and the output was never read. All five therefore open "Generate an audit-ready … workbook" *and* have a trigger clause that is not a sentence, so they both mis-advertise as builders and are unlikely to match a review request.
+
+**The edition drift underneath is the more serious half, and it is new.** Earlier polish passes anchored these builders to current editions; the reviewer descriptions were never brought along. `ansi-r1506-compliance-matrix-checklist-reviewer` cites **ANSI/RIA R15.06-2012 (R2017)** while its own builder — one file away — correctly cites **ANSI/A3 R15.06-2025** and explicitly notes the 2012 (R2017) edition is superseded. A reviewer advertised against a superseded safety standard will be selected for compliance work and implicitly vouch for the wrong edition. `iec62061-sil` is the same shape one notch quieter: its keywords say "safety-related **electrical** control systems / SRECS", the term IEC 62061:2021 retired in favour of SCS, which the builder uses. `iso13849-plr` and `iso12100` drop the year entirely; `iso10218` is edition-correct and has the grammar defect only. Ranked: ansi-r1506 high, iec62061 and iso13849 medium, iso12100 low, iso10218 cosmetic.
+
+Judgement call: TRIAGE is not authorised to create issues, so the recommended issue is written out in full in the triage doc — title, labels, scope, definition of done — for Monday's PLAN run to file verbatim rather than re-derive. Second judgement call: no completion comments were posted this run. Ten of fourteen issues already carry an "appears satisfied" comment from previous sweeps and no new commits satisfied the remaining four, so re-commenting would only have reset four more staleness clocks for no information gain.
+
+**Follow-ups:**
+- **Monday PLAN: file the five-reviewer description issue** using the block in `docs/triage/TRIAGE-2026-08-23.md`, and take it as one slot with the domain-spread rule waived. Sequence the fixes ansi-r1506 → iec62061 → iso13849 → iso12100 → iso10218; the first is the only one with a wrong-edition safety claim.
+- **Generalise the audit into a committed script.** It ran from a heredoc this time and will be re-derived next time — the same failure mode that cost three repeat fixes before `scripts/gen_status.py` was committed. It belongs next to it as `scripts/audit_descriptions.py`, checking generator-framing, builder/reviewer edition agreement, and the 1024-char limit.
+- **Edition agreement between a builder and its reviewer is a checkable invariant** and is worth more than the description framing check — this run found drift in four of five pairs that a human reading either file alone would not notice. Worth extending to all 38 pairs, not just the five.
+- Still open from last run: `perception-test-catalog` is the last ai-ml builder at import baseline; `tf-tree-spec` → `nav2-config` is the planned W35 ros2 order.
+- Placeholder-generator defect (`robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec`) is untouched and still needs a human-scheduled implementation week.
+- **Human: close #37–#50** (sixth consecutive request), decide the staleness metric, and publish `v2026.08.W4`.

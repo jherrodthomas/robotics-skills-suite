@@ -1152,3 +1152,32 @@ Judgement call: TRIAGE is not authorised to create issues, so the recommended is
 - W36 candidates from import baseline: `wireless-coexistence-plan` (amr) or `zone-conduit-plan` (cybersecurity) — neither domain touched since W30/W31 — plus `nav2-config` (ros2) following #52.
 - Placeholder-generator defect (`robot-sop`, `machinery-safety-lifecycle-plan`, `fleet-manager-architecture`, `behavior-tree-spec`) is beyond a single POLISH slot and needs a human-scheduled implementation week. This task should stop re-listing it as if it were plannable.
 - **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`.
+
+## 2026-08-25 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Cleared W35 target 1 (#51) — rewrote all five broken reviewer descriptions, correcting one superseded safety-standard citation and one wrong-scope terminology claim; committed `scripts/audit_reviewer_impl.py` after finding the placeholder-generator defect is 4x larger than recorded.
+**Files touched:** `skills/ansi-r1506-compliance-matrix-checklist-reviewer.skill` · `skills/iec62061-sil-checklist-reviewer.skill` · `skills/iso13849-plr-checklist-reviewer.skill` · `skills/iso12100-risk-assessment-checklist-reviewer.skill` · `skills/iso10218-compliance-matrix-checklist-reviewer.skill` · `scripts/audit_reviewer_impl.py` (new) · `docs/skill-polish-log/compliance-reviewer-descriptions.md` (new) · `STATUS.md`
+**Tests:** N/A (no test suite in this repo yet). Verified instead: all 76 archives pass `unzip -t`; repo-wide 0 generator-framed reviewers and 0 broken trigger clauses remain; all five descriptions 681–789 chars, under the 1024 limit.
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 17
+
+**Notes:**
+The plan sequenced #51 first because `ansi-r1506`'s reviewer advertised **ANSI/RIA R15.06-2012 (R2017)** while its own builder cited **ANSI/A3 R15.06-2025**. Verified externally rather than against the builder: the 2025 revision was approved 2025-08-21 and published 2025-10-29, and the 2012 edition is being withdrawn — so the reviewer was advertised against a superseded safety standard. The `iec62061` case turned out sharper than the plan recorded it. The reviewer said "safety-related **electrical** control systems / SRECS", which is not just stale naming: IEC 62061:2021 Ed. 2.0 replaced SRECS with **SCS** *because the scope widened* to pneumatic and hydraulic. The old wording understates what the standard now covers. SRECS was kept as a trigger keyword only.
+
+The larger finding is not the descriptions. Reading these five to write accurate copy showed their `generate_checklist.py` is a stub that prints `Placeholder: …`. Scanning all 38 reviewers: **6 implemented, 16 stub, 16 with no generator at all.** The suite has been carrying this as a four-skill defect. Two corrections to my own first pass, both caught before recording: a crude marker test misfiled two real generators as stubs (they contain "not placeholders" inside a legitimate check string), and tier C turned out *not* to be lying — those ship a leaner prose body that never claims a runnable script. The misleading tier is B, whose SKILL.md walks the reader through a generator and a 7-tab dashboard the stub does not produce.
+
+That reframes the POLISH programme, and it is the thing for the human to look at. `safety-io-matrix` (W32), `robot-hil-test-catalog` and `urdf-model-spec` (W34) are all tier C — those passes wrote descriptions promising detailed verification against dated standards for packages with no code to run. Good copy on an inert archive. Today's five were therefore written to describe what a reviewer *interrogates*, with no check counts, no dashboard and no auto-fill claims. Judgement call: tightening is safe, inflating is not.
+
+Scope held at the frontmatter. The five bodies are still generic boilerplate ("a ansi-r1506 workbook") and were left alone — out of scope for #51 and a body rewrite is not a description slot. No issue comment posted; completed-issue comments are TRIAGE's job on Sunday.
+
+Minor: STATUS.md shows no freshness movement because its staleness metric keys on *builders* and today changed only reviewers. A reviewer-only week is invisible to STATUS by construction.
+
+**Follow-ups:**
+- **Human, and it now gates the value of every future POLISH run: decide whether the reviewer suite is meant to be runnable.** If yes, 32 missing/stub generators is an implementation programme, not a weekly slot. If no, the 16 tier-B bodies should drop the Workflow section and `references/` tree they advertise. Until this is answered, POLISH can only improve copy on packages that may never execute.
+- W36 PLAN: record the reviewer tier beside the domain for every candidate; run `python3 scripts/audit_reviewer_impl.py` as the first step of target selection.
+- Wed target is #52 `tf-tree-spec` (ros2), Thu is #53 `eoat-spec` (cell-design), per plan. Both are **tier C** — expect the same copy-vs-package gap; keep descriptions to what is verifiable.
+- 17 archives cite `references/methodology.md` and `references/<name>_checks.md`; none ship them.
+- **Human, blocking rule (a): close #37–#50.** Eighth consecutive request. #51 can be closed with this run (landing commit below).
+- **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`. Still outstanding.
+- Unchanged from W35 plan: the builder↔reviewer edition-agreement check remains the highest-value unclaimed job; today extended it to five pairs and found drift in four. 33 pairs unchecked.

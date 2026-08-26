@@ -1181,3 +1181,33 @@ Minor: STATUS.md shows no freshness movement because its staleness metric keys o
 - **Human, blocking rule (a): close #37–#50.** Eighth consecutive request. #51 can be closed with this run (landing commit below).
 - **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`. Still outstanding.
 - Unchanged from W35 plan: the builder↔reviewer edition-agreement check remains the highest-value unclaimed job; today extended it to five pairs and found drift in four. 33 pairs unchecked.
+
+## 2026-08-26 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `eoat-spec` pair (cell-design, #53) — the thinnest pair in the suite and the only one found with *zero* standards references in either half; added payload/moment budget, grip retention on loss and restoration of energy, ISO 9409-1 interface designation, EU 2023/1230 regulatory status, ten edition-anchored standards, and mirrored pass-fail criteria on the reviewer.
+**Files touched:** `skills/eoat-spec-builder.skill`, `skills/eoat-spec-checklist-reviewer.skill`, `docs/skill-polish-log/eoat-spec-builder.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet). Archive integrity verified instead — `unzip -t` clean on both, payload file counts preserved (4 and 7), non-SKILL.md entries byte-identical, frontmatter `name` re-checked against filename and internal zip directory, both descriptions under 1024 chars (816 / 612).
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 17
+
+**Notes:**
+Swapped the W35 plan's day order: the plan put #52 `tf-tree-spec` on Wednesday and #53 `eoat-spec` on Thursday, and I took #53 first. Both are tied at the 2026-05-03 import baseline and both are tier C, so neither had priority on the standing selection rules; `eoat-spec` is in a safety-critical domain (cell-design) where the mandatory edition check applies, and `tf-tree-spec` (ros2) is not. Doing the one with the compulsory verification step on the day with more runway seemed better than doing it second. `tf-tree-spec` moves to Thursday; no target is dropped.
+
+What I found is worse than the "stale editions" defect this programme has been chasing since July. `eoat-spec` did not cite a superseded standard — it cited **no standard at all**, in either half, in a safety-critical domain, while its three cell-design siblings all carry edition anchors. Prior passes have swept for bare or outdated citations; nothing has been looking for the absence of a `## Standards` section entirely. Worth a mechanical check, and `scripts/audit_reviewer_impl.py` is the natural place — the eight remaining import-baseline skills are the obvious suspects.
+
+Substantively, the skill was also missing the two things that make an EOAT spec a safety document rather than a purchase order. First, payload was a scalar: a robot wrist is bounded by mass, CoG offset, allowable moments *and* mass moment of inertia, and inertia — the field that actually caps acceleration — is the one specs leave blank. Second, grip retention on loss of energy was absent, which is the ISO 10218-2 end-effector requirement the interlock tab exists to serve; the restore direction (no unexpected release or re-grip when power returns) was missing too, and that is the half more often forgotten in the field.
+
+Held the tier-C discipline established on 2026-08-24. `eoat-spec-checklist-reviewer` has no generator (0 bytes, 0 checks), so the new reviewer copy describes what a reviewer *interrogates* and makes no claim of check counts, a dashboard, auto-fill, or a `references/` tree. The existing "structured pass-fail criteria" phrase was already in the description and is now backed by actual prose criteria rather than four empty headings, which is a tightening, not an inflation.
+
+Two things I deliberately did not guess. The ISO 9409-1 designation grammar is written at the level I could source (pitch circle diameter, hole count, thread size, plate type) without reproducing the standard's exact syntax or size table, and the ISO 14539 characteristic set is cited as vocabulary rather than enumerated as required fields. Both need the purchased standard text; both are flagged for human review in the polish log rather than invented.
+
+**Follow-ups:**
+- Thu target is #52 `tf-tree-spec` (ros2, tier C, 2026-05-03 baseline). Six import-baseline builders remain after it: `nav2-config`, `operator-training-matrix`, `perception-test-catalog`, `robot-field-acceptance`, `wireless-coexistence-plan`, `zone-conduit-plan`.
+- **New, and worth a W36 target: detect pairs with no `## Standards` section at all.** Today's find is a defect class the existing sweeps miss. Extend `scripts/audit_reviewer_impl.py`.
+- **Human: the ISO 9409-1 designation grammar and ISO 14539 characteristic list in `eoat-spec-builder` need someone with the purchased standards.** Deliberately under-specified rather than guessed.
+- Reciprocal grip-retention edit into `safety-io-matrix-builder` / `iso13849-plr-builder` — declared one-directionally from the EOAT side today, same open loop `robot-hil-test-catalog` left on 2026-08-18.
+- **Human, blocking rule (a): close #37–#53.** Ninth consecutive request. #53 can be closed with this run's landing commit.
+- **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`. Still outstanding.
+- Unchanged: builder↔reviewer edition-agreement check remains the highest-value unclaimed job — 32 pairs unchecked after today.
+- Unchanged and still gating: decide whether the reviewer suite is meant to be runnable (6 implemented / 16 stub / 16 no generator).

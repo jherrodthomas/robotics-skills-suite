@@ -1211,3 +1211,21 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`. Still outstanding.
 - Unchanged: builder↔reviewer edition-agreement check remains the highest-value unclaimed job — 32 pairs unchecked after today.
 - Unchanged and still gating: decide whether the reviewer suite is meant to be runnable (6 implemented / 16 stub / 16 no generator).
+
+## 2026-08-27 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `tf-tree-spec` pair (#52, W35 target 2 of 3) — replaced the non-existent `world` frame with the real REP-105 chain, added the single-parent invariant and the `map`→`odom` publication rule, the `/tf_static` depth-1 trap, rate-plus-staleness columns, the camera optical-frame split, and a distro baseline inherited from `urdf-model-spec`.
+**Files touched:** `skills/tf-tree-spec-builder.skill` · `skills/tf-tree-spec-checklist-reviewer.skill` · `docs/skill-polish-log/tf-tree-spec-builder.md` (new) · `STATUS.md` · `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet). Archive integrity verified with `unzip -t` on both files; frontmatter `name` and `description` re-read from inside each archive after re-zip and checked against filename, internal directory, and the 1024-char limit (674 / 648). `scripts/audit_reviewer_impl.py` re-run — no new "cites a generator not in the archive" or "cites references/ not in the archive" findings introduced.
+**Skill count:** 38 builders / 38 reviewers / 100% paired (13 green, 25 yellow, 0 red)
+**Open issues:** 17
+**Notes:** This pass differs in kind from the last several. `eoat-spec` on Tuesday and the five reviewers on Monday were *thinness* and *staleness* defects — content missing or citations behind. Here the content was present, the citations were correct by number, and the pair was still wrong: both halves cited REP-105 and both described a `world` frame that REP-105 does not define. The audit tooling this task has been building (edition agreement between builder and reviewer halves) would have passed this pair cleanly, because both halves were consistently wrong together. That is worth a human decision before W36's themed slot is chosen — auditing citations by *number* is cheap and mechanical; auditing them by *content* is neither, and this is the second ros2 skill in two weeks where the content check is the one that mattered. Judgement calls: took the ROS 2 distro table verbatim from `urdf-model-spec` rather than re-deriving it, and named that workbook authoritative on disagreement, on the grounds that two independently-maintained distro tables in one repo is precisely the drift pattern this task keeps finding. Descoped the reciprocal edit into `nav2-config-builder` — the vocabulary contract is declared from the TF side only, which is now the third one-directional loop left open (after `eoat-spec` and `robot-hil-test-catalog`).
+**Follow-ups:**
+- `nav2-config-builder` is the natural next ros2 target and closes the urdf → tf → nav2 chain; it is also the last ros2 builder at import baseline.
+- W36 PLAN should take amr or cybersecurity — neither touched since W30/W31. Six import-baseline builders remain: `nav2-config`, `operator-training-matrix`, `perception-test-catalog`, `robot-field-acceptance`, `wireless-coexistence-plan`, `zone-conduit-plan`.
+- **Human decision wanted:** should the W36 themed slot audit citations by number (cheap, mechanical, misses this class) or by content (expensive, catches it)? This run is the evidence for the question.
+- **Three reciprocal-edit loops now open** (`eoat-spec`→safety-io/iso13849, `robot-hil-test-catalog`, `tf-tree-spec`→nav2). Batching them into one target is better than accumulating a fourth.
+- `scripts/audit_descriptions.py` still uncommitted — third consecutive run noting it.
+- **Human, blocking rule (a), eighth consecutive request: close #37–#50.** All fourteen are complete work. Rule (a) has now returned nothing five weeks running, and it is the highest-priority selection rule in this task.
+- **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`.

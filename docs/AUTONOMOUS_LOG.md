@@ -1229,3 +1229,20 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - `scripts/audit_descriptions.py` still uncommitted — third consecutive run noting it.
 - **Human, blocking rule (a), eighth consecutive request: close #37–#50.** All fourteen are complete work. Rule (a) has now returned nothing five weeks running, and it is the highest-priority selection rule in this task.
 - **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`.
+
+## 2026-08-31 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Seeded W36 with three inverted-pair targets (nav2-config, iso9283-performance-test, operator-training-matrix), filed #54–#56, and closed out W35's headline job by running the builder↔reviewer edition audit across all 38 pairs and committing it as a script.
+**Files touched:** `STATUS.md`, `docs/weekly/WEEK-2026-W36.md`, `scripts/audit_pair_editions.py`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 20 (17 pre-existing, all describing landed work, + #54–#56 filed this run)
+**Notes:** W35 cleared 3/3 — third consecutive zero-carryover week, so capacity holds at 3. The big result this run is that W35's "single highest-value unclaimed job" — extending the edition-agreement check from 5 compliance pairs to all 38 — is done, and the drift thesis that has driven three weeks of planning came back **smaller than assumed**: 1 mismatch, benign (`robot-cell-scope` carries 2011 *and* 2025 because it correctly documents the supersession), and 10 asymmetries where one half pins an edition and the other stays unpinned. An asymmetry is a missing claim, not a false one, so none of it was promoted to a target. Two apparent hits were cleared by hand rather than by the counter: `declaration-of-conformity`'s reviewer cites R15.06-2012 inside a *negative* check, which is correct; and `iso3691-4`'s builder cites ISO 3691-4:**2023**, which the standing reference table in the task file calls 2020 — I checked ISO directly and 2023 is a real published edition (cat. 83545) superseding 2020, so **the task file is the stale artifact, not the skill**. That is a first: every previous edition finding was a skill lagging reality. Judgement call worth flagging: I selected targets by **body thinness rather than staleness** this week. Ranking builders by non-blank body lines showed every builder under 10 lines is *inverted* — its reviewer is more substantive than the builder it reviews — which is a sharper defect than a stale date, since a reviewer that knows more than its builder will pass workbooks the builder never had the vocabulary to ask for. Also committed `scripts/audit_pair_editions.py` rather than leaving the check in /tmp: the first version I wrote read `.skill` files as plain text (they are zip archives), matched zero patterns, and cheerfully reported a clean repo. Committing the script with that trap documented at the top prevents re-deriving the *bug*, not just the logic — the `gen_status.py` lesson one layer deeper.
+**Follow-ups:**
+- **Human action, eighth consecutive request:** close #37–#53. Rule (a) has now selected nothing five weeks running; 20 open issues against 3 real outstanding items means the highest-priority selection rule in this task contributes nothing.
+- **Human edit to the task file:** the standing reference table says `ISO 3691-4:2020`; the current edition is 2023. As written it would cause a future run to "correct" a right answer into a wrong one.
+- W37 leading target: `iso10218-compliance-matrix` — worst builder/reviewer substance ratio in the repo (23 vs 36 lines), boilerplate body ("Use this skill when the user mentions ISO 10218, or related requirements") on the compliance keystone, and its body pins no edition while its reviewer argues the 2025 edition properly.
+- W37 themed-slot candidate: the 10 edition asymmetries, bounded to pinning the unpinned half — no body rewrites.
+- Remaining inverted pairs after this week: `ros2-system-architecture` (9 lines), `robot-field-acceptance` (9 lines).
+- Watch `ISO/CD 3691-4` (cat. 88615), a revision in development. No action yet.

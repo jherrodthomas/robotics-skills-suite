@@ -1,6 +1,6 @@
 # Example — `nav2-config-checklist-reviewer.skill`
 
-**What this skill produces:** A findings checklist over any Nav2 configuration workbook verifying costmap layer completeness, inflation parameter appropriateness, behavior tree navigation logic, planner and controller plugin parameter tuning, recovery behavior sequence robustness, AMCL/SLAM configuration consistency, and deployment readiness per ROS 2 Nav2 best practices. Does not modify the source workbook.
+**What this skill produces:** A findings checklist over any Nav2 configuration workbook verifying that the ROS 2 distro baseline agrees with the upstream urdf-model-spec, that the cmd_vel message type matches the distro and the base driver, that costmap frame IDs and the footprint are byte-identical to the tf-tree-spec they inherit, that inflation is last in every layer stack and its radius justified against the inscribed and circumscribed radii, that planner and controller choices match the drive type, that exactly one node publishes map to odom, and that the lifecycle manager ordering will actually activate every node. Does not modify the source workbook.
 
 **Typical input shape:** A path to a Nav2 Configuration xlsx (optimal on `nav2-config-builder` output, best-effort on others), plus optional reviewer metadata (reviewer name, review date, project ID).
 

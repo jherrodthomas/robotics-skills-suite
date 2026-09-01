@@ -1,6 +1,6 @@
 # Example — `nav2-config-builder.skill`
 
-**What this skill produces:** A 11-tab audit-ready xlsx workbook. Generate an audit-ready Nav2 configuration workbook for ROS 2 mobile robot navigation capturing global and local costmap configuration, behavior tree configuration, controller and planner plugin selection, recovery behaviors, AMCL or SLAM Toolbox setup, and inflation parameters per ROS 2 Humble or Iron Nav2.
+**What this skill produces:** A 11-tab audit-ready xlsx workbook. Generate an audit-ready Nav2 configuration workbook for ROS 2 mobile robot navigation, capturing the global and local costmap layer stacks, footprint and inflation derived from the robot's collision geometry, planner and controller plugin selection with the criteria for choosing between them, goal and progress checkers, the recovery sequence and collision monitor, AMCL versus SLAM Toolbox localization, and lifecycle bringup ordering — with frame IDs inherited byte-identically from the tf-tree-spec and urdf-model-spec workbooks and an explicit ROS 2 distro baseline (Jazzy, Kilted, or Lyrical).
 
 **Typical input shape:** Project and item data supplied in chat or as a JSON/xlsx handoff from the upstream skill in the chain (see the `## Related skills` section of the skill body).
 

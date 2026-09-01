@@ -1266,3 +1266,11 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - **Human, blocking rule (a), ninth consecutive request: close #37–#53.** Rule (a) has selected nothing six weeks running; 20 open issues against 2 real outstanding items.
 - **Human edit to the task file, second request:** the standing reference table says `ISO 3691-4:2020`; the current edition is 2023.
 - **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`.
+
+## 2026-09-01 (autonomous run, MONTHLY-KPI)
+
+**Action:** Generated `docs/monthly/2026-08.md`
+**Velocity:** 29 commits, 27 skills touched (12 of 29 commits touched `skills/`), 4 releases (`v2026.08.W1`–`W4`)
+**Coverage:** 100% paired (38/38), 100% examples (38/38 — all README-only stubs, 0 worked artifacts)
+**Standards-edition findings:** 4 wrong-edition pins (ISO 3691-4:2020, withdrawn) + 10 pair asymmetries + 2 bare IEC 62443
+**Notes:** August was the best month on velocity — the W2 tag gap that cost June and July their second week did not recur, the quiet gap shrank from 6–7 days to 3, all 27 touched skills moved as pairs, and 60+ day staleness fell 48→33 skills, the first month the curve bent. Against that, **zero issues were closed**: 15 of the 20 open issues describe work that already landed, so the quality KPI is measuring a close-permission gap rather than output. The headline finding is a reversal against this task's own reference table — ISO 3691-4:**2023** supersedes :2020 (verified at iso.org, cat. 83545), so the June/July "defect" in `iso3691-4-risk-assessment-builder` was a false positive, and commit `a84987a` reconciled the `fleet-manager-architecture` pair *onto the withdrawn edition* on 08-05. That is a self-inflicted regression caused by a stale reference table, and it will recur every month until the task file's `ISO 3691-4` row is corrected to `:2023`.

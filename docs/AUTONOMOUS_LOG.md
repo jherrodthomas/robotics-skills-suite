@@ -1274,3 +1274,23 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 **Coverage:** 100% paired (38/38), 100% examples (38/38 — all README-only stubs, 0 worked artifacts)
 **Standards-edition findings:** 4 wrong-edition pins (ISO 3691-4:2020, withdrawn) + 10 pair asymmetries + 2 bare IEC 62443
 **Notes:** August was the best month on velocity — the W2 tag gap that cost June and July their second week did not recur, the quiet gap shrank from 6–7 days to 3, all 27 touched skills moved as pairs, and 60+ day staleness fell 48→33 skills, the first month the curve bent. Against that, **zero issues were closed**: 15 of the 20 open issues describe work that already landed, so the quality KPI is measuring a close-permission gap rather than output. The headline finding is a reversal against this task's own reference table — ISO 3691-4:**2023** supersedes :2020 (verified at iso.org, cat. 83545), so the June/July "defect" in `iso3691-4-risk-assessment-builder` was a false positive, and commit `a84987a` reconciled the `fleet-manager-architecture` pair *onto the withdrawn edition* on 08-05. That is a self-inflicted regression caused by a stale reference table, and it will recur every month until the task file's `ISO 3691-4` row is corrected to `:2023`.
+
+## 2026-09-02 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `iso9283-performance-test` pair (#55) — the thinnest builder in the repo (6 body lines) now defines AP vs RP, vAP, the cube/poses/load/velocity/cycle conditions as numbers, an uncertainty-ratio rule, and the FAT/SAT and no-safety-claim boundaries; reviewer rewritten as findings in lockstep.
+**Files touched:** `skills/iso9283-performance-test-builder.skill`, `skills/iso9283-performance-test-checklist-reviewer.skill`, `docs/skill-polish-log/iso9283-performance-test-builder.md`, `examples/iso9283-performance-test-builder/README.md`, `examples/iso9283-performance-test-checklist-reviewer/README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 20
+**Notes:** Quiet on the edition front for once: ISO 9283:1998 was already pinned correctly in both halves, and iso.org confirms it current (Ed. 2, reviewed and confirmed 2021, stage 90.60 close of review, no revision in development). The defect was pure thinness — the skill every performance claim in the repo routes through had no definition of the two numbers it exists to produce, and no rule stopping a cube test from being read as an acceptance or safety result. The judgement call worth recording: I wrote the "uncertainty ≤ 25 % of the claim" rule as *common practice referenced to ISO/TR 13309*, not as an ISO 9283 requirement, because 9283 only requires uncertainty to be stated; the reviewer flags the ratio rather than failing on it. One process trap caught: writing `ISO 10218-1:2025 / 10218-2:2025` as shorthand produced a false asymmetry in `audit_pair_editions.py` (the -2 regex needs the full prefix). Fixed by writing it out; worth knowing before someone "fixes" the script instead. Final audit: 1 mismatch / 10 asymmetries, unchanged. The reviewer's probe scripts remain one-line placeholders — descoped, see follow-ups.
+**Follow-ups:**
+- W36 remaining: #56 `operator-training-matrix` (Thu, **operational — safety-critical domain, mandatory edition check fires**: OSHA 1910.147(c)(7), ISO 10218-2:2025, ANSI/A3 R15.06-2025).
+- `audit_pair_editions.py` regex trap: `ISO 10218-1:2025 / 10218-2:2025` shorthand is invisible to the -2 pattern. Either always write standards out in full, or extend the script — do not do both.
+- Themed W37+ candidate: reviewer `check_definitions.py` / `_probe.py` are placeholders across (at least) this pair; converting polished check lists into executable probes is a real slot, not a polish side-effect.
+- Re-check ISO 9283 stage at the next v&v PLAN; 90.60 is stable but is exactly where TC 299 would open a revision.
+- Remaining inverted pairs after Thursday: `ros2-system-architecture` (9), `robot-field-acceptance` (9).
+- Still carried: Lyrical directional-inflation parameter name (nav2, 09-01); `scripts/audit_descriptions.py` uncommitted (fifth run noting it); reciprocal loops `eoat-spec`→safety-io/iso13849, `robot-hil-test-catalog`.
+- **Human, tenth consecutive request: close #37–#54.** Rule (a) has selected nothing six weeks running.
+- **Human edit to the task file, third request:** `ISO 3691-4:2020` → `:2023`.
+- **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`.

@@ -1,6 +1,6 @@
 # Example — `iso9283-performance-test-checklist-reviewer.skill`
 
-**What this skill produces:** A findings checklist over any ISO 9283 Performance Test workbook verifying test procedure adherence, measurement equipment calibration, environmental condition control documentation, statistical analysis rigor for pose accuracy and repeatability, multi-directional test coverage, acceptance criterion appropriateness, and compliance with ISO 9283 1998 methodology. Does not modify the source workbook.
+**What this skill produces:** A findings checklist over any ISO 9283:1998 performance test workbook — checks each characteristic is named by ISO symbol with AP kept distinct from RP (l̄ + 3·Sl) and vAP present where multi-directional approach is claimed; that cube, poses, 100 % rated load, velocity conditions, cycle counts, warm-up and ambient are recorded as numbers; that AP/RP are formulas over raw data; that measurement uncertainty is stated as a ratio to the claim (flag > 25 %); that acceptance limits are sourced; and that no safety claim is hung on a performance standard. Does not modify the source workbook.
 
 **Typical input shape:** A path to a ISO 9283 Performance Test xlsx (optimal on `iso9283-performance-test-builder` output, best-effort on others), plus optional reviewer metadata (reviewer name, review date, project ID).
 

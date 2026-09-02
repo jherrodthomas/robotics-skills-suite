@@ -1,10 +1,10 @@
 # Example — `iso9283-performance-test-builder.skill`
 
-**What this skill produces:** An `ISO 9283:1998` industrial-robot performance-test protocol workbook — pose accuracy and repeatability (AP/RP), path accuracy, velocity accuracy, and the prescribed test poses/cube geometry, measurement runs, and acceptance thresholds.
+**What this skill produces:** An `ISO 9283:1998` industrial-robot performance-test workbook — each characteristic named by ISO symbol (AP vs RP, vAP, AD/RD, stabilization/overshoot/drift, AT/RT, CR/CO, AV/RV/FV), the test cube and five poses on the diagonal measurement plane, 100 % rated-load and 100/50/10 % velocity conditions, cycle counts (30 pose / 10 path / 3 cornering / 8 h drift), warm-up and 20 °C ambient record, formula-driven AP/RP reduction, a measurement-uncertainty ratio per claim (ISO/TR 13309), and sourced acceptance limits. Performance only — application acceptance is deferred to `robot-acceptance-protocol`.
 
 **Typical input shape:** JSON object naming the robot model, rated payload and test load fraction, working envelope / test-cube placement, the performance characteristics in scope, and the per-characteristic acceptance limits agreed with the customer.
 
-**Expected output:** Multi-tab xlsx: title page, test setup and cube definition, per-characteristic measurement worksheets (AP, RP, path), data-reduction formulas, pass/fail summary, signoff block.
+**Expected output:** 11-tab xlsx: planning/environment, cube and poses, AP/RP data sheets, vAP, AD/RD, stabilization/overshoot/drift, path and cornering, path velocity, uncertainty budget, acceptance and pass/fail, calibration records and compliance summary.
 
 **Sample I/O:** See `sample_input.json` and `sample_output.xlsx` (to be added).
 

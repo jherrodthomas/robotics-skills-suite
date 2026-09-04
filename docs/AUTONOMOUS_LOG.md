@@ -1313,3 +1313,21 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - **Human, eleventh consecutive request: close #37–#56.** W36 is now fully landed; all 20 open issues describe delivered work. Rule (a) has selected nothing seven weeks running.
 - **Human edit to the task file, fourth request:** `ISO 3691-4:2020` → `:2023`. (`ISO/TS 15066:2016` in the same table is **correct** — verified this run; do not change it.)
 - **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`; Saturday's RELEASE run will add `v2026.09.W1`.
+
+## 2026-09-04 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Added the W36 CHANGELOG section, backfilled the missing W35 section, and corrected three stale standards entries in README.md to match what the skills now pin.
+**Files touched:** `CHANGELOG.md`, `README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 20
+**Notes:** First thing the git log showed: **no commits exist for 2026-08-28, 08-29 or 08-30** — last week's DOCS, RELEASE and TRIAGE runs did not execute, so CHANGELOG had no W35 section and no `v2026.08.W5` tag was cut. I backfilled W35 from the commit messages and polish logs rather than leaving the gap, and marked the section as backfilled so nobody mistakes it for a contemporaneous record. The second finding is the reason DOCS mode exists: README.md was contradicting the skills. Its table still advertised `ANSI/RIA R15.06-2012 R2017` for `ansi-r1506-compliance-matrix` — the exact superseded edition #51 removed from the reviewer on 08-25 — and the "Standards covered" line carried `ISO 3691-4:2020` (the same stale year the task file has been asked four times to fix) and `ROS 2 Humble / Iron / Jazzy` (Iron retired from `nav2-config` on 09-01 as EOL). All three corrected; `ANSI/ASSP Z490.1-2024` added since 09-03 introduced it. These are documentation edits only — no skill body was touched, and each correction repeats a claim already verified in a prior run's journal, not a new one. Examples coverage checked for the six skills touched this week: all six READMEs exist and were refreshed by their polish runs, so no stubs were needed. No new skills, so no README table rows added.
+**Follow-ups:**
+- **Human: check the scheduler.** Three consecutive scheduled runs (Fri 08-28 DOCS, Sat 08-29 RELEASE, Sun 08-30 TRIAGE) left no commit. If tomorrow's RELEASE run also fails to fire, the task schedule itself is the defect, not the repo.
+- Tomorrow's RELEASE run should cut `v2026.09.W1`; W35's `v2026.08.W5` was never tagged. Do not retro-tag it — the W36 release notes can mention the gap.
+- README line 7 badge still lists standards without editions; left alone, it is a badge not a claim.
+- Carried from 09-03: W37 PLAN candidates in order — `iso10218-compliance-matrix`, the 10 edition asymmetries as one bounded slot (grep for `Z490.1-2016` first), `ros2-system-architecture` and `robot-field-acceptance`; `scripts/repack_skill.sh`; reciprocal loops `operator-training-matrix`↔`loto-procedure`, `eoat-spec`→safety-io/iso13849, `robot-hil-test-catalog`; Lyrical directional-inflation parameter name; `scripts/audit_descriptions.py` uncommitted (seventh run noting it).
+- **Human, twelfth consecutive request: close #37–#56.** All 20 open issues describe delivered work.
+- **Human edit to the task file, fifth request:** `ISO 3691-4:2020` → `:2023`. README now says 2023; the task file is the last place in this project still saying 2020.
+- **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`.

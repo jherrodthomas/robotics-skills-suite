@@ -6,6 +6,57 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W36 (2026-08-31 → 2026-09-04)
+
+**Fourth consecutive 3-of-3 week.** All three W36 targets (#54, #55, #56) landed on their scheduled days. This week's targets were chosen by *body thinness* rather than staleness — every builder under 10 body lines turned out to be an *inverted pair* (reviewer more substantive than the builder it reviews), and the three thinnest were taken. The `urdf → tf → nav2` sequence opened in W34 closed on Tuesday.
+
+#### fix
+
+- **nav2-config-builder** + **nav2-config-checklist-reviewer** (ros2) — the first *wrong-edition* (not missing-edition) defect found in this repo: the builder pinned "ROS 2 Humble or Iron Nav2" while **Iron Irwini has been end-of-life since November 2024**, and the reviewer pinned nothing, so the pair would have passed a configuration built on an unsupported distro. Both halves rebaselined on Jazzy / Kilted / Lyrical, inherited from `urdf-model-spec` (#49) rather than re-derived (#54) (`b52ef25`)
+
+#### polish
+
+- **nav2-config** pair (ros2) — added the cross-distro deltas that silently break bringup (`enable_stamped_cmd_vel` Twist→TwistStamped flip at Kilted, `nav2_ros_common` / `nav2::LifecycleNode` at Lyrical, `inscribed_obstacle_cost_value`), a frame-inheritance contract with `tf-tree-spec` (#52) requiring byte-identical frame strings and `odom` (not `map`) as the local-costmap global frame, footprint-derived inflation (inscribed + circumscribed radii, `cost_scaling_factor` sign trap), ordered layer stacks with inflation last, planner/controller selection keyed on drive type, single `map→odom` publisher, lifecycle ordering, and an explicit non-safety-rated boundary. The Lyrical directional-inflation parameter name is deliberately carried as a verify-first instruction, not asserted (#54) (`b52ef25`)
+- **iso9283-performance-test-builder** + **iso9283-performance-test-checklist-reviewer** (v&v) — the thinnest builder in the repo (6 body lines → 55) now defines pose accuracy (AP) vs pose repeatability (RP) and path accuracy, states the test cube, five poses, load, velocity and cycle conditions as numbers, requires measurement uncertainty to be stated relative to the claimed tolerance (≤ 25 % as common practice referenced to ISO/TR 13309, not as a 9283 requirement), and draws the boundary against `robot-acceptance-protocol` (FAT/SAT) and against any safety claim. ISO 9283:1998 confirmed current at iso.org (stage 90.60). Reviewer rewritten as findings in lockstep (#55) (`e9cdbaa`, log fix-up `159b5c5`)
+- **operator-training-matrix-builder** + **operator-training-matrix-checklist-reviewer** (operational) — the last operational builder at import baseline (7 body lines → 66). Roles kept distinct per ISO 10218-2:2025 / ANSI/A3 R15.06-2025; OSHA 1910.147(c)(7) authorized / affected / other status carried by name as an attribute separate from role; every row splits training *delivered* from competency *demonstrated* with an evidence type; retraining driven by the five (c)(7)(iii) conditions rather than a bare interval (the original builder had the interval and none of the conditions — the regulation is the reverse). Editions pinned: ISO 10218-2:2025, R15.06-2025 Parts 1–3, **ANSI/ASSP Z490.1-2024** (2016 superseded, new to the suite). Reviewer reserves top severity for three silent failures and adds a roster chain check against `loto-procedure` (#56) (`d88845e`)
+
+#### docs
+
+- **docs/monthly/2026-08.md** — August KPI report: 29 commits, 27 skills touched, 4 releases; first month the 60+-day staleness curve bent (48 → 33). Records that the June/July `iso3691-4` "defect" was a false positive caused by the task file's stale `ISO 3691-4:2020` row — the current edition is 2023 (`0fbfb0d`)
+- **README.md** — corrected three stale entries in the skill table and "Standards covered" line to match what the skills now pin: ANSI/RIA R15.06-2012 R2017 → ANSI/A3 R15.06-2025; ISO 3691-4:2020 → :2023; ROS 2 Humble / Iron / Jazzy → Jazzy / Lyrical; ANSI/ASSP Z490.1-2024 added
+- **CHANGELOG.md** — add W36 section; **backfill W35** (the 2026-08-28 DOCS run did not execute — see W35 section below)
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 orphans, 13 fresh 🟢 / 25 stale 🟡
+- **docs/AUTONOMOUS_LOG.md** — daily journal entries for the W36 run
+
+#### chore
+
+- **plan** — W36 seeded Monday with three inverted-pair targets across ros2, v&v and operational; new issues #54–#56 (`3ea30de`); see [docs/weekly/WEEK-2026-W36.md](docs/weekly/WEEK-2026-W36.md)
+- **scripts/audit_pair_editions.py** — the builder↔reviewer edition-agreement check, extended from 5 compliance pairs to all 38 and committed as a script. Result: 1 benign mismatch (`robot-cell-scope` documents the 2011→2025 supersession), 10 asymmetries (one half pins, the other does not), no false claims. Header documents the trap that `.skill` files are zip archives, not text (`3ea30de`)
+
+### Week 2026-W35 (2026-08-24 → 2026-08-28) — backfilled 2026-09-04
+
+**Third consecutive 3-of-3 week.** #51 (themed reviewer-description fix) landed Tuesday, #53 (`eoat-spec`) Wednesday, #52 (`tf-tree-spec`) Thursday — #53 was taken ahead of #52 because it sits in a safety-critical domain with a mandatory edition check. No DOCS, RELEASE or TRIAGE commit exists for 2026-08-28 → 08-30, so this section is written from the git log; no `v2026.08.W5` tag was cut.
+
+#### fix
+
+- **Five reviewer descriptions** — `ansi-r1506-compliance-matrix`, `iec62061-sil`, `iso10218-compliance-matrix`, `iso12100-risk-assessment`, `iso13849-plr` reviewers all carried generator framing, an ungrammatical trigger clause, or an edition out of step with their builder. The `ansi-r1506` reviewer advertised the superseded **ANSI/RIA R15.06-2012 (R2017)** — corrected to ANSI/A3 R15.06-2025 (verified externally). The `iec62061` reviewer said "SRECS" — IEC 62061:2021 Ed.2 uses **SCS** because scope widened to pneumatic/hydraulic. ISO 13849-1:2023 and ISO 12100:2010 dated. Defect class now zero repo-wide (#51) (`097d8b4`)
+- **tf-tree-spec-builder** + **tf-tree-spec-checklist-reviewer** (ros2) — replaced the non-existent `world` frame with the real REP-105 chain (`earth` / `map` / `odom` / `base_link`) in both halves (#52) (`c006688`)
+
+#### polish
+
+- **eoat-spec-builder** + **eoat-spec-checklist-reviewer** (cell-design) — was the only safety-critical pair in the suite with zero standards references in either half; anchored on ten (ISO 10218-1/-2:2025, ISO 9409-1:2004, ISO 14539:2000, ISO 4414:2010, ISO 13849-1:2023 / -2:2012, IEC 60204-1:2016, ISO 12100:2010, ISO/TS 15066:2016, EU 2023/1230), each with a reason. Payload treated as four wrist limits (mass, CoG offset, moments, inertia); grip retention on loss *and* restoration of energy; ISO 9409-1 flange designation both sides; interchangeable-equipment decision routed to `declaration-of-conformity-builder`. Reviewer's four empty focus headings replaced with mirrored pass/fail criteria naming the withdrawn ISO 9409-1:1996 and superseded ISO 10218:2011 (#53) (`2752a53`)
+- **tf-tree-spec** pair (ros2) — added the single-parent invariant, the `map→odom` (never `map→base_link`) publication rule, the `/tf_static` TRANSIENT_LOCAL depth-1 per-publisher trap, rate-plus-staleness columns, and the camera optical-frame split. Distro baseline inherited from `urdf-model-spec` (#49) (#52) (`c006688`)
+
+#### docs
+
+- **STATUS.md** — daily regeneration through Thursday; 38/38 paired, 11 fresh 🟢 / 27 stale 🟡 at week start
+- **docs/AUTONOMOUS_LOG.md** — daily journal entries Mon–Thu (no Fri/Sat/Sun entries exist)
+
+#### chore
+
+- **plan** — W35 seeded Monday with the themed reviewer-description slot plus the two thinnest import-baseline builders; domain-spread rule waived for #51 only; new issues #51–#53 (`3053df0`); see [docs/weekly/WEEK-2026-W35.md](docs/weekly/WEEK-2026-W35.md)
+- **scripts/audit_reviewer_impl.py** — new audit showing the placeholder-generator defect affects 16 reviewers, not the 4 on record (6 implemented / 16 stub / 16 no generator); reviewer descriptions deliberately claim no check counts or dashboards as a result (`097d8b4`)
+
 ### Week 2026-W34 (2026-08-17 → 2026-08-21)
 
 **Second consecutive 3-of-3 week.** All three W34 targets (#48, #49, #50) landed on their scheduled days, and every one was an *import-baseline* pair — a skill that had never had a POLISH pass since the 2026-05-03 import. Three clusters (v&v, ros2, ai-ml) that were untouched a week ago now each have an anchored pair.

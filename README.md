@@ -139,7 +139,7 @@ Every box has a builder skill AND a matching reviewer skill.
 | `iso13849-plr-builder` + reviewer | ISO 13849-1 |
 | `iec62061-sil-builder` + reviewer | IEC 62061 |
 | `iso10218-compliance-matrix-builder` + reviewer | ISO 10218-1/-2:2025 |
-| `ansi-r1506-compliance-matrix-builder` + reviewer | ANSI/RIA R15.06-2012 R2017 |
+| `ansi-r1506-compliance-matrix-builder` + reviewer | ANSI/A3 R15.06-2025 |
 | `declaration-of-conformity-builder` + reviewer | EU Machinery Reg 2023/1230 |
 
 ### Cobot (4 pairs)
@@ -206,7 +206,7 @@ Every box has a builder skill AND a matching reviewer skill.
 
 ## Standards covered
 
-ISO 12100:2010 · ISO 13849-1:2023 · IEC 62061:2021 · ISO 10218-1/-2:2025 · ISO/TS 15066:2016 · ISO 3691-4:2020 · ANSI/RIA R15.06-2012 R2017 · ANSI/RIA R15.08-1/-2/-3 · ISO 9283:1998 · OSHA 1910.147 · OSHA 1910.212 · EU Machinery Directive 2006/42/EC · EU Machinery Regulation 2023/1230 · IEC 62443 series · IEC 61508 · REP 105 / REP 103 · ROS 2 Humble / Iron / Jazzy · Mitchell et al. Model Cards · Gebru et al. Datasheets for Datasets · ISO/IEC 5469 (AI in safety systems) · VDA 5050
+ISO 12100:2010 · ISO 13849-1:2023 · IEC 62061:2021 · ISO 10218-1/-2:2025 · ISO/TS 15066:2016 · ISO 3691-4:2023 · ANSI/A3 R15.06-2025 · ANSI/RIA R15.08-1/-2/-3 · ANSI/ASSP Z490.1-2024 · ISO 9283:1998 · OSHA 1910.147 · OSHA 1910.212 · EU Machinery Directive 2006/42/EC · EU Machinery Regulation 2023/1230 · IEC 62443 series · IEC 61508 · REP 105 / REP 103 · ROS 2 Jazzy / Lyrical (Humble and Iron retired) · Mitchell et al. Model Cards · Gebru et al. Datasheets for Datasets · ISO/IEC 5469 (AI in safety systems) · VDA 5050
 
 ## Why
 

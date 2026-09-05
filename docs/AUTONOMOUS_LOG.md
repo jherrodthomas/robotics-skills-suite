@@ -1331,3 +1331,19 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - **Human, twelfth consecutive request: close #37–#56.** All 20 open issues describe delivered work.
 - **Human edit to the task file, fifth request:** `ISO 3691-4:2020` → `:2023`. README now says 2023; the task file is the last place in this project still saying 2020.
 - **Human: publish `v2026.08.W4`** after reviewing `RELEASES.md`.
+
+## 2026-09-05 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Cut `v2026.09.W1` — twelfth weekly snapshot, covering W36 (2026-08-31 → 2026-09-05); release notes appended to RELEASES.md, STATUS.md regenerated.
+**Files touched:** RELEASES.md, STATUS.md, docs/AUTONOMOUS_LOG.md; tag `v2026.09.W1`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (12 🟢 fresh, 26 🟡 stale, 0 🔴 orphan)
+**Open issues:** 20 (#37–#56, all describing shipped work)
+**Notes:** Seven commits this week, all three W36 targets landed pair-complete — fourth consecutive 3-of-3. Tag numbering restarts at W1 for September (previous tag was `v2026.08.W4`); the compare range therefore spans two weeks because **no `v2026.08.W5` tag exists** — the 2026-08-28 → 08-30 runs never executed, and W35's work was only recovered by Friday's backfill. That gap is the most important thing in this snapshot: the weekend runs are not reliably firing, and the failure was silent for a week. Two judgement calls: (1) I did not create a `v2026.08.W5` retro-tag, since back-dating a snapshot that was never reviewed would misrepresent the history — W35's commits are covered by this tag's range instead; (2) I escalated the placeholder-generator defect using the W35 audit's real numbers (6 implemented / 16 stub / 16 absent) rather than the stale "four pairs" figure carried on the defect list since v2026.08.W2. Per the hard rules no GitHub Release object was published — RELEASES.md is written and the tag is pushed, so the human clicks Publish after review.
+**Follow-ups:**
+- Human action: bulk-close #37–#56. PLAN rule (a) has now selected nothing for four consecutive planning runs.
+- Human action: verify the 7:30 scheduled task fires Fri/Sat/Sun — W35 lost three consecutive runs undetected.
+- Human decision needed: the placeholder-generator defect (32 of 38 reviewers stub or absent) cannot be fixed by POLISH passes. Needs a dedicated implementation week.
+- Candidate for a W37 slot: `scripts/audit_pair_balance.py` to detect inverted pairs (reviewer more substantive than builder) — all three W36 targets were inverted and none were detectable in advance.
+- Staleness debt: 26 builders 🟡; longest-standing at 125d (`robot-field-acceptance`, `wireless-coexistence-plan`, `zone-conduit-plan`, `perception-test-catalog` — all still at the 2026-05-03 import baseline).

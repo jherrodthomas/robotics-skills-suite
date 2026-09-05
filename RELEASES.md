@@ -1,5 +1,35 @@
 # Releases
 
+## v2026.09.W1 — 2026-09-05
+
+**Highlights:** Twelfth tagged weekly snapshot and the first September tag, covering the 2026-W36 working week (Mon 2026-08-31 → Sat 2026-09-05). **Fourth consecutive 3-of-3 week, zero carryover.** W36 selected its targets by *body thinness* rather than staleness, and the selection surfaced a structural pattern: every builder under ten body lines was an **inverted pair** — a reviewer more substantive than the builder it reviews. All three were taken (`nav2-config`, `iso9283-performance-test`, `operator-training-matrix`) and all three landed pair-complete. `nav2-config` produced the repo's first **wrong-edition** (rather than missing-edition) defect: the builder pinned Iron Irwini, end-of-life since November 2024, so the pair would have passed a configuration built on an unsupported distro. The `urdf → tf → nav2` sequence opened in W34 closed on Tuesday. Suite holds at 76 .skill files, 38/38 paired, zero orphans, examples coverage 76/76.
+
+**Note on the gap:** no `v2026.08.W5` tag exists. The 2026-08-28 → 08-30 DOCS/RELEASE/TRIAGE runs did not execute; W35's three landed polish commits were backfilled into CHANGELOG.md on 2026-09-04 and are covered by this tag's compare range.
+
+**Changes this week (2026-08-31 → 2026-09-05):**
+
+*plan:*
+- seed W36 with three inverted-pair targets across ros2, v&v and operational; issues #54–#56. Ships `scripts/audit_pair_editions.py`, extending the builder↔reviewer edition-agreement check from 5 compliance pairs to all 38 (result: 1 benign supersession note, 10 asymmetries, no false claims) (`3ea30de`)
+
+*polish:*
+- rebaseline `nav2-config` pair off EOL Iron onto Jazzy / Kilted / Lyrical, inherited from `urdf-model-spec` (#49) rather than re-derived; add the cross-distro deltas that silently break bringup (`enable_stamped_cmd_vel` Twist→TwistStamped at Kilted, `nav2_ros_common` / `nav2::LifecycleNode` at Lyrical), a byte-identical frame contract with `tf-tree-spec`, footprint-derived inflation, lifecycle ordering, and an explicit non-safety-rated boundary; closes the urdf→tf→nav2 chain (#54) (`b52ef25`)
+- rewrite `iso9283-performance-test` pair — thinnest builder in the repo, 6 body lines → 55. Defines AP vs RP vs path accuracy, states test cube / five poses / load / velocity / cycle conditions as numbers, requires measurement uncertainty stated relative to claimed tolerance (≤ 25 % as common practice referenced to ISO/TR 13309, *not* as a 9283 requirement), and draws boundaries against `robot-acceptance-protocol` and against any safety claim. ISO 9283:1998 confirmed current at iso.org (stage 90.60) (#55) (`e9cdbaa`, log fix-up `159b5c5`)
+- rewrite `operator-training-matrix` pair — last operational builder at import baseline, 7 body lines → 66. OSHA 1910.147(c)(7) authorized/affected/other status carried as an attribute separate from role; every row splits training *delivered* from competency *demonstrated* with an evidence type; retraining driven by the five (c)(7)(iii) conditions rather than a bare interval — the original builder had the interval and none of the conditions, the regulation is the reverse. **ANSI/ASSP Z490.1-2024** new to the suite (#56) (`d88845e`)
+
+*docs:*
+- August KPI report (`docs/monthly/2026-08.md`) — 29 commits, 27 skills touched, 4 releases; first month the 60+-day staleness curve bent (48 → 33). Records that the June/July `iso3691-4` "defect" was a false positive caused by a stale row in the task file — current edition is **ISO 3691-4:2023**, not :2020 (`0fbfb0d`)
+- W36 changelog, W35 backfill, and three stale README corrections (R15.06-2012 R2017 → ANSI/A3 R15.06-2025; ISO 3691-4:2020 → :2023; ROS 2 Humble/Iron → Jazzy/Lyrical) (`0f366be`)
+
+**Skills inventory:** 38 builders · 38 reviewers · 100% paired (76 .skill files). Freshness: 12 builders 🟢 touched ≤30d, 26 🟡 stale at 30+d, 0 orphans 🔴. Examples coverage: **76/76 (100%)**. Domain spread: ai-ml 3 · amr 4 · cell-design 4 · cobot 4 · compliance 5 · cybersecurity 3 · foundation 3 · operational 3 · ros2 5 · v&v 4.
+
+**Carried defects (human attention):**
+- **Placeholder-generator defect — fifth consecutive snapshot, and it is worse than recorded.** `scripts/audit_reviewer_impl.py` (shipped W35) measured the real scope: **6 reviewers implemented, 16 stub, 16 with no generator at all** — not the 4 pairs carried on this list since v2026.08.W2. Reviewer descriptions have been deliberately written to claim no check counts or dashboards as a consequence. Polish passes cannot resolve this; it needs a dedicated implementation week that only a human can authorize.
+- **Open-issue count is now fully broken as a signal.** Twenty issues open (#37–#56); all twenty describe work that has shipped. This task never closes issues by design, so PLAN priority rule (a) — "skills referenced by open issues" — has selected nothing for four consecutive planning runs. One human bulk-close of #37–#56 restores it.
+- **The weekend runs are unreliable.** W35 lost its Friday, Saturday and Sunday runs entirely and no one noticed until the following Friday's DOCS pass reconstructed the week from git. Worth checking whether the 7:30 scheduled task actually fires on weekends.
+- **Inverted pairs are a measurable defect class.** Three of three W36 targets were reviewers more substantive than their builders. Nothing currently audits for this; a `scripts/audit_pair_balance.py` would make the remaining cases selectable instead of discovered by accident.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.08.W4...v2026.09.W1
+
 ## v2026.08.W4 — 2026-08-22
 
 **Highlights:** Eleventh tagged weekly snapshot, covering the 2026-W34 working week (Mon 2026-08-17 → Sat 2026-08-22). **Second consecutive 3-of-3 week, zero carryover** — and the first week where all three targets were *import-baseline* pairs, skills untouched since the 2026-05-03 import. Three clusters that had never had a POLISH pass — v&v (`robot-hil-test-catalog`), ros2 (`urdf-model-spec`), ai-ml (`dataset-documentation`) — each now carry an edition-anchored, lockstep-reviewed pair. Friday's DOCS run cleared two long-standing structural debts in one pass: **examples coverage closed 42/76 → 76/76 (100%)**, retiring a follow-up that at the prior 2-per-week rate would not have cleared until 2027, and the STATUS generator became a committed script (`scripts/gen_status.py`) instead of being rebuilt in `/tmp` every run — the same two defects had been re-introduced and lost three separate times. Suite holds at 76 .skill files, 38/38 paired, zero orphans.

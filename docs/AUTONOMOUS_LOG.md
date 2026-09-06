@@ -1347,3 +1347,24 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - Human decision needed: the placeholder-generator defect (32 of 38 reviewers stub or absent) cannot be fixed by POLISH passes. Needs a dedicated implementation week.
 - Candidate for a W37 slot: `scripts/audit_pair_balance.py` to detect inverted pairs (reviewer more substantive than builder) — all three W36 targets were inverted and none were detectable in advance.
 - Staleness debt: 26 builders 🟡; longest-standing at 125d (`robot-field-acceptance`, `wireless-coexistence-plan`, `zone-conduit-plan`, `perception-test-catalog` — all still at the 2026-05-03 import baseline).
+
+## 2026-09-06 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Triaged all 20 open issues (label coverage complete, nothing changed), fired the 30-day stale sweep for the first time — four comments on #38–#41 — re-ran the pair-edition audit, and wrote `docs/triage/TRIAGE-2026-09-06.md`.
+**Files touched:** `docs/triage/TRIAGE-2026-09-06.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (11 🟢 fresh, 27 🟡 stale, 0 🔴 orphan)
+**Open issues:** 20 (#37–#56), all fully labelled, all describing delivered work
+**Notes:** Two findings worth the human's time. First, the stale-issue rule fired for the first time in this task's history — #38–#41 crossed 30 days at 35 — but only because the 2026-08-30 TRIAGE run never executed and so did not reset their clocks. The rule works by accident of scheduler failure, and the four comments I posted today have reset all four to 2026-10-06, restoring the blind spot the 08-23 run documented. I posted the task file's mandated line verbatim but appended a clarification, because "Closing in 7 days unless updated" promises an action the hard rules forbid; a bot that threatens a closure it cannot perform teaches the reader to skip its comments. Second, and more consequential: the `grep Z490.1-2016` guard that 09-03 asked this run to apply **hits, and the hit is a false positive** — `operator-training-matrix-checklist-reviewer` names Z490.1-2016 inside "…as the governing edition is a finding", i.e. as the thing to reject. `declaration-of-conformity`'s ANSI R15.06-2012 "pin" is the same shape. `audit_pair_editions.py` cannot tell a citation from a prohibition, and the failure direction is the bad one: it makes correct reviewers look stale, so a W37 asymmetry pass working from its output could delete the sentence that rejects the superseded edition. The audit needs a negative-context filter before that slot runs. Environment note: the run aborted on its first bash call because `/tmp/robotics-work` from an earlier run was root-owned and unremovable; worked in a timestamped directory instead. If that recurs, the fixed path in the task file is the cause.
+**Follow-ups:**
+- **Before the W37 asymmetry slot:** add a negative-context filter to `scripts/audit_pair_editions.py` (skip a year in a sentence containing *is a finding*, *must not*, *superseded*, *rather than*), then re-run. Do **not** auto-pin `declaration-of-conformity` or touch `operator-training-matrix` on the strength of the current output — both are correct as written.
+- Retire the 09-03 `grep Z490.1-2016` guard; it is unsafe as stated. Replace with the filtered audit.
+- W37 PLAN (Mon) candidates, order unchanged from 09-03: (1) `iso10218-compliance-matrix`; (2) the 10 edition asymmetries as one bounded themed slot, *after* the filter lands; (3) `ros2-system-architecture` (9) and `robot-field-acceptance` (9), the last two inverted pairs.
+- Structural debt unchanged: 77 reviewer `.py` files carry TODO/placeholder markers — needs a dedicated implementation week, not a POLISH pass.
+- Still carried: `scripts/repack_skill.sh` (`zip -qr -X -D`); `scripts/audit_pair_balance.py` for inverted-pair detection; reciprocal loops `operator-training-matrix`↔`loto-procedure`, `eoat-spec`→safety-io/iso13849, `robot-hil-test-catalog`; Lyrical directional-inflation parameter name (nav2).
+- **Human, thirteenth consecutive request: close #37–#56.** PLAN rule (a) has selected nothing seven weeks running.
+- **Human: decide the staleness metric** (`created_at` vs non-bot `updated_at`) and reconcile the mandated "Closing in 7 days" comment text with the no-close hard rule.
+- **Human: check the scheduler.** Today confirms 2026-08-30 TRIAGE never ran — no `TRIAGE-2026-08-30.md`.
+- **Human edit to the task file, sixth request:** `ISO 3691-4:2020` → `:2023`.
+- **Human: publish `v2026.08.W4` and `v2026.09.W1`** after reviewing `RELEASES.md`.

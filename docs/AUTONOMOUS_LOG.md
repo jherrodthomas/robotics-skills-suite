@@ -1384,3 +1384,20 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - Tue: #57 · Wed: #58 · Thu: #59. Edition-verification step fires for #57 and for every pair in #59.
 - W38 PLAN: run a reviewer-thinness ranking before selecting targets.
 - Polish logs are **append-only** — 159b5c5 recovered an entry an overwrite destroyed last week.
+
+## 2026-09-08 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `iso10218-compliance-matrix` pair (W37 target #57) — builder body rewritten to state the clause-row contract and the Part 1 / Part 2 duty split, both halves pinned to the 2025 editions, ANSI boundary drawn.
+**Files touched:** skills/iso10218-compliance-matrix-builder.skill · skills/iso10218-compliance-matrix-checklist-reviewer.skill · docs/skill-polish-log/iso10218-compliance-matrix-builder.md · STATUS.md · docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite) — verified via `audit_pair_editions.py` (ASYMMETRY 10 → 9, pair no longer listed), `gen_status.py`, and zip integrity check on both rebuilt archives (testzip clean).
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 23
+**Notes:** The two selectors that picked this pair — worst substance ratio, and the edition audit — agreed, and both were pointing at the same defect: the builder was boilerplate *and* unpinned. Rewriting the body and pinning the editions was one edit, not two. **The mandatory edition step earned its keep this week and contradicted the plan:** ISO 10218-1/-2:2025 and ANSI/A3 R15.06-2025 confirmed as stated, but the W37 table's claim that ISO/TS 15066:2016 is "still a TS and still current" is not safe — the TS is flagged to be revised as of 2025-06-26, its content is folded into the 2025 editions, and ISO/AWI 15066-1 is in development to replace it. The 2016 pin is still correct (no newer published edition), but both halves now say the TS is being superseded and that deferring a collaborative clause to it is a gap rather than a conformance route. The plan asserted the builder-side framing; the plan's own "do not assume the builder is right" instruction is what caught it. Two items from the 2026-06-02 polish log closed as a side effect: the phantom `references/` block and the generic Output structure section. **One thing for the human:** every script in this pair is a stub, and `audit_reviewer_impl.py` puts 32 of 38 reviewers in the same state — both SKILL.md files now carry an explicit `## Implementation status` section so the documented contract is not mistaken for working code, but the suite documents far more than it executes.
+**Follow-ups:**
+- Correct the standing reference table in the task file and W38 plan: ISO/TS 15066:2016 → "current edition, being superseded by ISO/AWI 15066-1", not "still current". This is now the *second* wrong year/status in that table (ISO 3691-4 is the other, and #59 addresses it Thursday).
+- `ansi-r1506-compliance-matrix` should record that R15.06-2025 carries a **Part 3 with no ISO counterpart** — verified this run, pair not touched.
+- Six-skill sweep for a leaked `/sessions/…/automotive-skills-suite/…` absolute path in placeholder script comments.
+- Reviewer description now sits 22 chars under the 1024 ceiling; do not extend without cutting.
+- Wednesday: #58 `ros2-system-architecture`. Check the distro baseline against what b52ef25 set when it retired Iron.
+- **Tenth request:** close #37–#56 by hand. Rule (a) is seven-for-seven dead.

@@ -1419,3 +1419,19 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - **Environment:** `/tmp/robotics-work` was removable this run, but `/tmp/x-*` scratch directories from prior runs are root-owned and cannot be deleted. Scratch extraction now uses timestamped directories. The sandbox persists between runs.
 - W38 candidates unchanged: `robot-field-acceptance` (last inverted pair, 9/14, 2026-05-03 baseline), `iec62061-sil` (20/36 ratio), `interlock-estop-architecture` (thin reviewer).
 - `ansi-r1506-compliance-matrix` should still record that R15.06-2025 carries a **Part 3 with no ISO counterpart** (carried from 2026-09-08).
+
+## 2026-09-16 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Rewrote the `robot-field-acceptance` pair — the last inverted pair and joint-oldest builder — from a metric list into an OEE/throughput method with a safety-conformity boundary; regenerated STATUS.md.
+**Files touched:** `skills/robot-field-acceptance-builder.skill`, `skills/robot-field-acceptance-checklist-reviewer.skill`, `docs/skill-polish-log/robot-field-acceptance-builder.md` (new), `STATUS.md`
+**Tests:** N/A (no test suite in this repo yet) — verification was `unzip -t` + round-trip read on both archives, description length check (887 / 840 of 1024), `gen_status.py`, `audit_pair_editions.py`, `audit_reviewer_impl.py`
+**Skill count:** 38 builders / 38 reviewers / 100% paired (11 🟢, 27 🟡, 0 🔴)
+**Open issues:** 0
+**Notes:** Two things the human should look at, neither of which this run can fix. (1) **The loop skipped six days.** The last commit before today was 2026-09-15 and the one before that 2026-09-08 — Wed 09-09 through Sun 09-14 produced nothing, which means W37's Thursday sweep, Friday DOCS, Saturday RELEASE and Sunday TRIAGE never ran, and **Monday 09-14 never ran either, so W38 has no plan file**. Today's target was taken from W37's stated W38 candidate list, which is why there was one to take. (2) **All 23 open issues were bulk-closed on 2026-09-11**, which finally answers nine consecutive plan requests — but it closed #59 along with them, and #59's edition-asymmetry sweep was never performed. 15 asymmetries across 8 pairs are still live in `audit_pair_editions.py` with no issue tracking them. On the pass itself: the rewrite introduced six standards citations where the pair previously had none, so the edition check was run even though v&v is not on the mandatory list, and it earned its keep twice — **ISO 13855 was retitled at the 2024 edition** (the old "protective equipment / approach speeds" title is what the draft carried and what most secondary sources still repeat), and **ISO/DIS 13849-2 is at enquiry stage** and will supersede the 2012 edition cited across this repo. Judgement call: the pair was silent on editions on *both* halves, which the asymmetry audit cannot see — symmetric silence reads as clean. That is a gap in the measure, not just in this pair.
+**Follow-ups:**
+- Next PLAN must cover **W38 retroactively or open W39 explicitly**, and should note the six-day gap rather than treating W37 as complete.
+- **Builder-thinness is exhausted** — this was the last inverted pair. Run the reviewer-thinness ranking W37 proposed as its successor.
+- Re-open the #59 asymmetry sweep as a new issue; it is untracked since the 09-11 bulk close.
+- Suite-wide **ISO 13849-2 supersession watch** (DIS at enquiry) and **ISO 13855 title check** (right year, possibly wrong name).
+- Consider teaching `audit_pair_editions.py` to flag **pairs where neither half pins anything** — currently invisible to it.

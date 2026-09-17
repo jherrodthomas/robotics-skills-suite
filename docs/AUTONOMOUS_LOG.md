@@ -1435,3 +1435,19 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - Re-open the #59 asymmetry sweep as a new issue; it is untracked since the 09-11 bulk close.
 - Suite-wide **ISO 13849-2 supersession watch** (DIS at enquiry) and **ISO 13855 title check** (right year, possibly wrong name).
 - Consider teaching `audit_pair_editions.py` to flag **pairs where neither half pins anything** — currently invisible to it.
+
+## 2026-09-17 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** First polish pass on the zone-conduit-plan pair — dated IEC 62443 editions, SL-T/SL-C/SL-A split, ZCR 3 partitioning rules, and both file manifests corrected to the actual archives.
+**Files touched:** `skills/zone-conduit-plan-builder.skill`, `skills/zone-conduit-plan-checklist-reviewer.skill`, `docs/skill-polish-log/zone-conduit-plan-builder.md` (new), `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite). Verified by `zipfile.testzip`, `yaml.safe_load` on both frontmatters, a manifest-vs-archive diff, `scripts/audit_reviewer_impl.py`, and `scripts/gen_status.py`.
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Target selection fell all the way through the priority list — zero open issues, zero orphan builders — so it landed on least-recently-touched. Three builders were tied at 2026-05-03 and none had ever been polished; picked zone-conduit because cybersecurity is a safety-critical domain and it was the only one of the three whose reviewer is tier A. That tier check mattered: the reviewer ships a real 27-check generator, so tightening its description strengthens a promise the code keeps rather than inflating one it doesn't. The substantive find was that ZCR 3.1-3.5 — the mandatory partitions, including safety-related systems in their own zone — appeared nowhere in the builder, which asked for zones as free-form input; a plan merging the safety PLC into the control zone would have passed the builder's own review prompts. Also split SL-T from SL-C and SL-A, which the skill had collapsed into a bare "SL". Two judgement calls: I fixed the manifests in place rather than creating the `references/` and `examples/` files they promised (creating content is a build, not a polish), and I labelled the three stub scripts as placeholders rather than deleting them, since the tier-A generator does not import them and removal is a refactor. One process note worth keeping: the reviewer description failed YAML parse on first write because `(9: zones defined…)` embedded `": "` in an unquoted scalar — a `.skill` is a zip, so a broken frontmatter does not show up in `git diff`. Frontmatter validation is now part of the verify step.
+**Follow-ups:**
+- No `WEEK-2026-W38.md` exists — Monday 2026-09-14 PLAN did not run (last weekly is W37, and there are no commits between 09-11 and 09-15). W38 has been running unplanned; next Monday's PLAN should note the gap.
+- 15 skills still advertise a phantom `references/` directory. One sweep, not 15 polish passes.
+- Tier-A reviewers should import their check table from `check_definitions.py` instead of inlining it; zone-conduit is the reference case.
+- Re-key zone-conduit's 27 checks to the ZCR requirement each implements.
+- `perception-test-catalog` and `wireless-coexistence-plan` remain untouched since 2026-05-03 with no polish log — natural next targets.

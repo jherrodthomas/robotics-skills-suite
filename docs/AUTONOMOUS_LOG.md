@@ -1451,3 +1451,19 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - Tier-A reviewers should import their check table from `check_definitions.py` instead of inlining it; zone-conduit is the reference case.
 - Re-key zone-conduit's 27 checks to the ZCR requirement each implements.
 - `perception-test-catalog` and `wireless-coexistence-plan` remain untouched since 2026-05-03 with no polish log — natural next targets.
+
+## 2026-09-18 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Added the W38 CHANGELOG section covering three polish passes and two standards fixes; dated the IEC 62443 family per part in the README and added the three standards `robot-field-acceptance` introduced this week; regenerated STATUS.md.
+**Files touched:** `CHANGELOG.md`, `README.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet). Verification was: `gen_status.py` re-run, example-README existence check across all six skills touched this week, and a grep of the two rewritten skill archives to confirm every edition written into the README is actually pinned in a shipped `.skill` rather than only in a polish log.
+**Skill count:** 38 builders / 38 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** The DOCS mode's two build steps were both no-ops and that is the finding, not an omission — all 76 skills already carry `examples/<skill>/README.md`, and no skill was added this week, so the README skill table needed no row. That left the README edition sweep as the only real doc work available, so I did it against the archives rather than the changelog: `zone-conduit-plan` now pins 62443-3-2:2020 / -3-3:2013 / -4-2:2019 where the README said "IEC 62443 series", and `robot-field-acceptance` introduced ISO 13855:2024, ISO 13849-2:2012 and IEC 60204-1:2016, none of which the README listed. I checked each against the shipped `.skill` before writing it down, because the reverse — a README asserting an edition no skill pins — is the same defect class the suite keeps finding inside the skills. Judgement call on scope: the ISO 13855 title error and the ISO 13849-2 supersession are both suite-wide and I recorded them as fix entries in the changelog without touching other skills, since editing 30-odd archives is a sweep, not a docs pass. The week's real problem is governance rather than content — three good passes landed but Monday's PLAN never ran, so none of them had a written definition of done beforehand, and the empty issue backlog means the task now has no external record of intent at all.
+**Follow-ups:**
+- **Monday 2026-09-21 PLAN must run and must open new issues.** The backlog is at zero after the 09-11 bulk close, so rule (a) has nothing to return and the plan file is currently the only record of intent.
+- Re-open the #59 edition-asymmetry sweep as a fresh issue — closed without the work being done.
+- Builder-thinness is exhausted; W39's PLAN needs to stand up the reviewer-thinness ranking as the successor selector.
+- Suite-wide sweeps queued and still untouched: ISO 13855 title check, ISO 13849-2 DIS watch, 15 skills advertising a phantom `references/` directory.
+- `perception-test-catalog` and `wireless-coexistence-plan` are the remaining never-polished 2026-05-03 builders.

@@ -206,7 +206,7 @@ Every box has a builder skill AND a matching reviewer skill.
 
 ## Standards covered
 
-ISO 12100:2010 · ISO 13849-1:2023 · IEC 62061:2021 · ISO 10218-1/-2:2025 · ISO/TS 15066:2016 · ISO 3691-4:2023 · ANSI/A3 R15.06-2025 · ANSI/RIA R15.08-1/-2/-3 · ANSI/ASSP Z490.1-2024 · ISO 9283:1998 · OSHA 1910.147 · OSHA 1910.212 · EU Machinery Directive 2006/42/EC · EU Machinery Regulation 2023/1230 · IEC 62443 series · IEC 61508 · REP 105 / REP 103 · ROS 2 Jazzy / Lyrical (Humble and Iron retired) · Mitchell et al. Model Cards · Gebru et al. Datasheets for Datasets · ISO/IEC 5469 (AI in safety systems) · VDA 5050
+ISO 12100:2010 · ISO 13849-1:2023 · IEC 62061:2021 · ISO 10218-1/-2:2025 · ISO/TS 15066:2016 · ISO 3691-4:2023 · ANSI/A3 R15.06-2025 · ANSI/RIA R15.08-1/-2/-3 · ANSI/ASSP Z490.1-2024 · ISO 9283:1998 · ISO 13849-2:2012 (ISO/DIS 13849-2 at enquiry) · ISO 13855:2024 · IEC 60204-1:2016 · OSHA 1910.147 · OSHA 1910.212 · EU Machinery Directive 2006/42/EC · EU Machinery Regulation 2023/1230 · IEC 62443-3-2:2020 / -3-3:2013 / -4-2:2019 · IEC 61508 · REP 105 / REP 103 · ROS 2 Jazzy / Lyrical (Humble and Iron retired) · Mitchell et al. Model Cards · Gebru et al. Datasheets for Datasets · ISO/IEC 5469 (AI in safety systems) · VDA 5050
 
 ## Why
 

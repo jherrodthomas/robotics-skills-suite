@@ -6,6 +6,37 @@ The format groups commits by week of the year. Within each week, entries are buc
 
 ## [Unreleased]
 
+### Week 2026-W38 (2026-09-14 → 2026-09-18)
+
+**Three POLISH passes landed with no plan behind them.** The Monday PLAN run did not execute — there is no `docs/weekly/WEEK-2026-W38.md` and no `auto(plan)` commit on 2026-09-14 — so Tue/Wed/Thu ran on the priority rules directly, taking W37's carryover (#58), the pair W37 had already named the W38 lead, and then the joint-oldest builder. The three targets are still domain-spread (ros2 / v&v / cybersecurity) and all three closed, but the week has no definition-of-done record written before the work, which is the point of the PLAN slot.
+
+Two structural things ended this week. **Builder body-thinness is exhausted as a selector** — `robot-field-acceptance` was the last inverted pair, so from W39 the selector has to change. And **the open-issue backlog is empty**: #37–#59 were bulk-closed 2026-09-11, which closed #59 (the edition-asymmetry sweep) *without the work being done*. Rule (a) has now returned nothing for seven consecutive weeks and currently has nothing it could return.
+
+#### polish
+
+- **ros2-system-architecture-builder** + **ros2-system-architecture-checklist-reviewer** (ros2) — W37 carryover #58, the second-thinnest builder in the suite and selected three weeks running without being taken. Builder rewritten from a nine-line glossary of tab names into a method: decomposition by failure domain and rate domain with consequence-of-absence required per node; a QoS data-class table carrying the compatibility, `transient_local` late-joiner and history-depth rules; executors and callback groups including the synchronous-service reentrancy deadlock; lifecycle justification and bringup-as-dependency-graph; namespace and remapping conventions; faults and degraded modes with named detectors. Distro table brought into lockstep with `nav2-config` (Lyrical / Kilted / Jazzy / Humble, Iron EOL) including Kilted's do-not-ship verdict, with the baseline declared **inherited from `urdf-model-spec`, URDF wins on conflict** rather than a second precedence rule being invented. **A safety boundary was added to both halves** — the reviewer now rates any ROS 2 mechanism presented as a risk reduction measure as its highest-severity NO, which is the defect the old pair was silent on. Reviewer rewritten as nine numbered check groups with FC/LC/PC/NO/NA (#58) (`2048716`)
+- **robot-field-acceptance-builder** + **robot-field-acceptance-checklist-reviewer** (v&v) — the **last inverted pair**, selected by both available measures at once: joint-oldest builder (2026-05-03, 136 days) and thinnest remaining at 9 body lines against 14. The builder named metrics without defining any — "Overall Equipment Effectiveness OEE" as a bullet — so it now carries an OEE table giving each factor its definition and the denominator that must be declared, with **ideal cycle time required to come from demonstrated rather than quoted performance** (taking the quoted cycle turns a commercial promise into a measured machine loss) and starved/blocked time captured as its own state from the first interval, since it is the largest source of disputed availability at handover and cannot be reconstructed afterwards. Safety functions re-verified at production payload and speed with stopping distance re-measured on any payload/speed/tooling change; operator defeats named as an expected output of the phase; anomaly log separating containment from correction. **Boundary added to both halves**: no safety conformity is granted here — that is the integrator's declaration under ISO 10218-2:2025, not a commercial acceptance document. Reviewer rewritten as eight numbered check groups, with its highest-severity NO reserved for a design-level safety defect closed as a field anomaly at sign-off (`dcf516f`)
+- **zone-conduit-plan-builder** + **zone-conduit-plan-checklist-reviewer** (cybersecurity) — least-recently-touched builder, safety-critical domain, so the mandatory edition step fired and found both halves saying a bare "IEC 62443" for a family spanning a dozen parts. Now dated per part: partitioning is **IEC 62443-3-2:2020** (ZCR 1–7), the SL1–SL4 scale and FR1–FR7 are **IEC 62443-3-3:2013**, component capability is **IEC 62443-4-2:2019**. **SL-T split from SL-C and SL-A** — the builder had said only "Security Level per Zone — assigned SL1-SL4", and collapsing the three invites the failure where a target/achieved gap is closed by quietly lowering the target instead of being raised as a finding. **ZCR 3.1–3.5 partitioning stated as five checkable conditions**: without them a plan that merges the safety PLC into the control zone passed the builder's own prompts. Both file manifests corrected against actual archive contents — this pair was one of 16 carrying the phantom-`references/` defect from 2026-08-25 (`7ac735d`)
+
+#### fix
+
+- **ISO 13855 title correction** (v&v, via `robot-field-acceptance`) — the standard was **retitled at the 2024 edition** to "Positioning of safeguards with respect to the approach of the human body". The 2010/2002 title is what most secondary sources still repeat and what the first draft of the rewrite carried. Caught by verifying rather than assuming. **Any skill in this repo citing 13855:2024 under the old title has a right year on a wrong name** — suite-wide check outstanding (`dcf516f`)
+- **ISO 13849-2 supersession watch** (v&v, via `robot-field-acceptance`) — ISO 13849-2:2012 is current (confirmed 2018), but **ISO/DIS 13849-2 is at enquiry stage** and will supersede it. Both halves of the pair now say so; every other 13849-2 citation in the repo does not (`dcf516f`)
+
+#### docs
+
+- **README.md** — "Standards covered" dated the IEC 62443 family per part (`IEC 62443 series` → `-3-2:2020 / -3-3:2013 / -4-2:2019`) to match what `zone-conduit-plan` now pins, and added ISO 13849-2:2012 (with the DIS noted), ISO 13855:2024 and IEC 60204-1:2016, all newly cited by `robot-field-acceptance` this week. No new skills, so the skill table is unchanged at 38 pairs
+- **CHANGELOG.md** — add W38 section
+- **STATUS.md** — daily regeneration; 38/38 builders paired (100%), 0 orphans, 11 fresh 🟢 / 27 stale 🟡
+- **examples/** — all 76 skills already carry a README stub; none needed creating this week
+- **docs/skill-polish-log/** — new logs for `ros2-system-architecture-builder`, `robot-field-acceptance-builder` and `zone-conduit-plan-builder`; all three appended, none overwritten (the W37 failure mode)
+- **docs/AUTONOMOUS_LOG.md** — daily journal entries for the W38 run
+
+#### chore
+
+- **plan** — **no PLAN commit this week.** The 2026-09-14 run did not execute; no `WEEK-2026-W38.md` exists. First missed PLAN slot since W35's missed DOCS slot, and the second missed slot this quarter
+- **implementation-status disclosure** — `## Implementation status` sections added to all six halves touched this week. `audit_reviewer_impl.py` now reports **6 tier A / 16 tier B / 16 tier C** across the suite; the sections exist so a documented contract is not mistaken for working code
+
 ### Week 2026-W36 (2026-08-31 → 2026-09-04)
 
 **Fourth consecutive 3-of-3 week.** All three W36 targets (#54, #55, #56) landed on their scheduled days. This week's targets were chosen by *body thinness* rather than staleness — every builder under 10 body lines turned out to be an *inverted pair* (reviewer more substantive than the builder it reviews), and the three thinnest were taken. The `urdf → tf → nav2` sequence opened in W34 closed on Tuesday.

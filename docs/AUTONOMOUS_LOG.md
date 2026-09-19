@@ -1467,3 +1467,18 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - Builder-thinness is exhausted; W39's PLAN needs to stand up the reviewer-thinness ranking as the successor selector.
 - Suite-wide sweeps queued and still untouched: ISO 13855 title check, ISO 13849-2 DIS watch, 15 skills advertising a phantom `references/` directory.
 - `perception-test-catalog` and `wireless-coexistence-plan` are the remaining never-polished 2026-05-03 builders.
+
+## 2026-09-19 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Cut `v2026.09.W3` for ISO week 2026-W38 (4 commits), re-ran all three committed audits at snapshot time, closed out the ISO 13855 title sweep, regenerated STATUS.md.
+**Files touched:** `RELEASES.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`; tag `v2026.09.W3`
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired (76 .skill files); freshness 10 🟢 / 28 🟡 / 0 🔴
+**Open issues:** 0
+**Notes:** Tag naming followed the "ISO week within the current month" rule, so W36→W1, W37→W2, W38→W3 — this is `v2026.09.W3` and `v2026.09.W2` is a genuine gap, not a skip in numbering; W37 ran Mon/Tue then lost Fri/Sat/Sun. Corrected a drifting count in the notes: this is the twelfth *tag*, while `v2026.09.W1` called itself the twelfth *snapshot* — skipped Saturdays were being counted. Rather than re-quoting last week's audit figures I re-ran `audit_reviewer_impl.py`, `audit_pair_editions.py` and the phantom-`references/` count against the working tree, which is how the one real delta showed up: `zone-conduit-plan` moved tier C → A, the only tier change in three weeks. I also ran the ISO 13855 title sweep that Friday's DOCS pass left outstanding — read-only, four skills cite 13855, three state a title, all three are the 2024 title, zero carry the pre-2024 one — so that flag is retired rather than carried a seventh time. The judgement call worth flagging: rule (a) has stopped being "broken" and is now simply empty at 0 open issues, and with thinness exhausted the PLAN run has one selector left. I did not file issues to fix that, because RELEASE runs do not create issues and rewriting the selection rules is a task-file change, not a release action.
+**Follow-ups:**
+- W39 PLAN has only staleness + domain rotation as selectors; needs either a new axis or a standing practice of filing debt as issues (~24 filable items exist: 32 non-A reviewers, 9 edition asymmetries, 15 phantom manifests)
+- No `WEEK-2026-W38.md` — Monday's PLAN slot did not fire. Three missed slots in four weeks (W35 Fri–Sun, W37 Fri–Sun, W38 Mon); first weekday miss. Worth verifying the 7:30 schedule actually fires
+- `v2026.09.W2` remains uncut; W37's two commits are covered by this tag's compare range but never got a DOCS pass
+- Placeholder-generator defect at sixth consecutive snapshot (6 A / 16 B / 16 C) — still needs a human-authorized implementation week

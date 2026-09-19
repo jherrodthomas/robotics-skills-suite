@@ -1,5 +1,51 @@
 # Releases
 
+## v2026.09.W3 — 2026-09-19
+
+**Highlights:** Weekly snapshot for ISO week **2026-W38** (Mon 2026-09-14 → Sat 2026-09-19). Three POLISH passes landed and all three closed pair-complete — `ros2-system-architecture`, `robot-field-acceptance`, `zone-conduit-plan` — but **the week ran without a plan**: the Monday PLAN slot did not execute, so no `docs/weekly/WEEK-2026-W38.md` exists and no definition-of-done was recorded before the work. The more consequential news is that **two target selectors died this week**. Builder body-thinness is exhausted — `robot-field-acceptance` was the last inverted pair (reviewer more substantive than its builder) — and the open-issue backlog is now *empty*: this run queried the API and got **0 open issues** after the 2026-09-11 bulk close of #37–#59, which also closed #59 (the edition-asymmetry sweep) without the work being done. From W39 the PLAN run has neither priority rule (a) nor thinness to select on; staleness and domain rotation are all that remain. Suite holds at 76 .skill files, 38/38 paired, zero orphans, examples coverage 76/76.
+
+**Tag-count correction:** this is the **twelfth tag** in the series. `v2026.09.W1` described itself as the twelfth snapshot; it was the eleventh tag. The drift comes from counting skipped Saturdays as snapshots.
+
+**Note on the gap:** no `v2026.09.W2` tag exists. W37 (2026-09-07 → 09-12) produced two commits — the PLAN seed (`0b66a11`) and one polish pass (`4db26d8`) — but its Friday, Saturday and Sunday runs did not fire, so the week was never tagged and never got a DOCS pass; W37's work is covered by this tag's compare range. This is the **second missed Saturday in four weeks** (W35, W37).
+
+**Changes this week (2026-09-14 → 2026-09-19):**
+
+*polish:*
+- **ros2-system-architecture** pair (ros2) — W37 carryover, second-thinnest builder in the suite and named three weeks running without being taken. Builder rewritten from a nine-line glossary of tab names into a method: decomposition by failure domain and rate domain with consequence-of-absence required per node; a QoS data-class table carrying compatibility, `transient_local` late-joiner and history-depth rules; executors and callback groups including the synchronous-service reentrancy deadlock; lifecycle justification and bringup-as-dependency-graph; faults and degraded modes with named detectors. Distro table brought into lockstep with `nav2-config` and declared **inherited from `urdf-model-spec`, URDF wins on conflict**, rather than inventing a second precedence rule. **Safety boundary added to both halves** — the reviewer now rates any ROS 2 mechanism presented as a risk reduction measure as its highest-severity NO, the defect the old pair was silent on (`2048716`)
+- **robot-field-acceptance** pair (v&v) — the **last inverted pair**, selected by both available measures at once (joint-oldest builder at 136 days, thinnest remaining at 9 body lines against 14). The builder named metrics without defining any; it now carries an OEE table giving each factor its definition and required denominator, with **ideal cycle time required to come from demonstrated rather than quoted performance**, and starved/blocked time captured as its own state from the first interval since it is the largest source of disputed availability at handover and cannot be reconstructed afterwards. **Boundary added to both halves:** no safety conformity is granted here — that is the integrator's declaration under ISO 10218-2:2025 (`dcf516f`)
+- **zone-conduit-plan** pair (cybersecurity) — least-recently-touched builder in a safety-critical domain, so the mandatory edition step fired and found both halves saying a bare "IEC 62443" for a family spanning a dozen parts. Now dated per part: partitioning **IEC 62443-3-2:2020** (ZCR 1–7), SL1–SL4 and FR1–FR7 **IEC 62443-3-3:2013**, component capability **IEC 62443-4-2:2019**. **SL-T split from SL-C and SL-A** — collapsing the three invites the failure where a target/achieved gap is closed by quietly lowering the target. ZCR 3.1–3.5 stated as five checkable conditions (`7ac735d`)
+
+*fix:*
+- **ISO 13855 retitled at the 2024 edition** — "Positioning of safeguards with respect to the approach of the human body". The 2010/2002 title is what most secondary sources still repeat and what the first draft of the `robot-field-acceptance` rewrite carried. Caught by verifying rather than assuming (`dcf516f`)
+- **ISO 13849-2 supersession watch** — :2012 is current (confirmed 2018) but ISO/DIS 13849-2 is at enquiry stage. Both halves of the `robot-field-acceptance` pair now say so; other 13849-2 citations in the repo do not (`dcf516f`)
+
+*docs:*
+- **README.md** — IEC 62443 family dated per part to match what `zone-conduit-plan` now pins; ISO 13849-2:2012 (DIS noted), ISO 13855:2024 and IEC 60204-1:2016 added. Skill table unchanged at 38 pairs (`e8e512c`)
+- **CHANGELOG.md** — W38 section (`e8e512c`)
+- **STATUS.md** — regenerated every run via `scripts/gen_status.py`
+- **docs/skill-polish-log/** — three logs appended (not overwritten — the W37 failure mode)
+
+**Skills inventory:** 38 builders · 38 reviewers · **100% paired** (76 .skill files). Freshness: **10 builders 🟢** touched ≤30d, **28 🟡** stale at 30+d, **0 orphans 🔴**. Examples coverage: **76/76 (100%)**. Domain spread: ai-ml 3 · amr 4 · cell-design 4 · cobot 4 · compliance 5 · cybersecurity 3 · foundation 3 · operational 3 · ros2 5 · v&v 4.
+
+**Audits re-run at snapshot time** (all three committed scripts, measured this run rather than quoted from last week):
+
+| Audit | Result | Δ since v2026.09.W1 |
+| --- | --- | --- |
+| `audit_reviewer_impl.py` | 6 tier A · 16 tier B · 16 tier C | `zone-conduit-plan` C → A (only tier change in three weeks) |
+| `audit_pair_editions.py` | 38 pairs · 2 mismatch · 9 asymmetry | mismatches 1 → 2 (both documented supersessions, not defects); asymmetries 10 → 9 |
+| phantom `references/` in SKILL.md | 15 reviewers | 16 → 15 (`zone-conduit-plan` manifest corrected) |
+
+**Resolved this week — removed from the carried list:**
+- **ISO 13855 title sweep is clean.** W38's DOCS pass flagged "any skill citing 13855:2024 under the old title has a right year on a wrong name — suite-wide check outstanding". Run this snapshot: **4 skills cite ISO 13855; 3 state a title and all 3 use the 2024 title; 1 cites the year only. Zero carry the pre-2024 title.** The flag was precautionary and the sweep closes it. No action needed.
+
+**Carried defects (human attention):**
+- **Placeholder-generator defect — sixth consecutive snapshot.** 6 reviewers implemented, 16 stub, 16 with no generator at all. One tier moved in three weeks, and only because a polish pass happened to land on it. At that rate the 32 non-A reviewers clear in 2028. This cannot be fixed by POLISH passes; it needs a dedicated implementation week that only a human can authorize. Reviewer descriptions remain deliberately silent on check counts and dashboards as a consequence.
+- **Rule (a) is not broken any more — it is dead.** Open issues: **0**. For four weeks this list said "one human bulk-close restores the signal"; the bulk-close happened on 2026-09-11 and the result is that priority rule (a) now returns nothing because there is nothing to return. The PLAN run needs either a standing practice of filing issues for known debt (the placeholder tiers, the 9 edition asymmetries, the 15 phantom manifests are ~24 filable items) or rule (a) should be retired from the task file.
+- **Selector exhaustion.** Thinness is spent — no inverted pairs remain. W39 PLAN has only staleness and domain rotation, and staleness alone rotates the same 28 🟡 builders indefinitely without ever asking whether a pass is *warranted*. A `scripts/audit_pair_balance.py` (proposed at v2026.09.W1, not built) or issue-backed debt would restore a second axis.
+- **Scheduled-run reliability, now affecting weekdays.** W35 lost Fri/Sat/Sun, W37 lost Fri/Sat/Sun, W38 lost **Monday**. Three missed slots in four weeks and the first weekday miss. Worth checking whether the 7:30 task is actually firing, rather than continuing to reconstruct weeks from git after the fact.
+
+**Compare:** https://github.com/jherrodthomas/robotics-skills-suite/compare/v2026.09.W1...v2026.09.W3
+
 ## v2026.09.W1 — 2026-09-05
 
 **Highlights:** Twelfth tagged weekly snapshot and the first September tag, covering the 2026-W36 working week (Mon 2026-08-31 → Sat 2026-09-05). **Fourth consecutive 3-of-3 week, zero carryover.** W36 selected its targets by *body thinness* rather than staleness, and the selection surfaced a structural pattern: every builder under ten body lines was an **inverted pair** — a reviewer more substantive than the builder it reviews. All three were taken (`nav2-config`, `iso9283-performance-test`, `operator-training-matrix`) and all three landed pair-complete. `nav2-config` produced the repo's first **wrong-edition** (rather than missing-edition) defect: the builder pinned Iron Irwini, end-of-life since November 2024, so the pair would have passed a configuration built on an unsupported distro. The `urdf → tf → nav2` sequence opened in W34 closed on Tuesday. Suite holds at 76 .skill files, 38/38 paired, zero orphans, examples coverage 76/76.

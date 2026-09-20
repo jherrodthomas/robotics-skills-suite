@@ -1482,3 +1482,19 @@ Two things I deliberately did not guess. The ISO 9409-1 designation grammar is w
 - No `WEEK-2026-W38.md` — Monday's PLAN slot did not fire. Three missed slots in four weeks (W35 Fri–Sun, W37 Fri–Sun, W38 Mon); first weekday miss. Worth verifying the 7:30 schedule actually fires
 - `v2026.09.W2` remains uncut; W37's two commits are covered by this tag's compare range but never got a DOCS pass
 - Placeholder-generator defect at sixth consecutive snapshot (6 A / 16 B / 16 C) — still needs a human-authorized implementation week
+
+## 2026-09-20 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Board found empty (0 open issues) — ran repository-level triage via the audit scripts instead and filed docs/triage/TRIAGE-2026-09-20.md
+**Files touched:** STATUS.md, docs/triage/TRIAGE-2026-09-20.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 38 builders / 38 reviewers / 100% paired by filename — but only 6/38 reviewers are implemented
+**Open issues:** 0
+**Notes:** Nothing to label this run — all fifteen weekly-target issues (#45–#59) were closed by hand on 2026-09-11 and none have opened since, so zero labels were applied and zero issues were flagged as ambiguous. Rather than commit an empty triage, I ran both audit scripts and triaged the repo itself. Two findings stand out. First, `audit_reviewer_impl.py` reports only 6 of 38 reviewers are tier A (real generator, real checks); 16 are stub generators and 16 have no generator at all, and 15 SKILL.md files cite a `references/` path that is not in the archive. STATUS.md's headline "38/38 paired (100%)" is true by filename but nominal for 32 pairs — that gap is the repo's largest debt and it appears nowhere on the board. Second, `audit_pair_editions.py` now reports 18 findings across 11 pairs, including 2 true MISMATCHes; W37 issue #59 claimed to target 16 asymmetries across 8 pairs and was closed 09-11, so the count went up rather than down. I did not re-run that sweep or reopen the issue — flagged for a human instead, since I cannot tell whether the sweep failed or the audit widened. Also noticed two consecutive missing runs: no journal entry for 2026-09-13 (TRIAGE) or 2026-09-14 (PLAN), and no WEEK-2026-W38.md, which means the three POLISH runs that week ran on the least-recently-touched fallback rather than planned targets. I deliberately did not backfill a W38 plan for a week already worked. No issues created — PLAN mode owns that, and tomorrow is a PLAN day.
+**Follow-ups:**
+- Tomorrow (2026-09-21, PLAN): open W39 and refill the empty board; shortlist in §4 of the triage report.
+- Human: check why 2026-09-13 and 2026-09-14 runs did not fire.
+- Human: decide whether the 18 edition findings mean the W37 sweep failed or the audit widened.
+- Consider adding a reviewer-implementation column to STATUS.md so tier B/C debt is visible.
+- Human: `bug`/`skill-bug` and `documentation`/`docs` are duplicate labels — delete or keep?

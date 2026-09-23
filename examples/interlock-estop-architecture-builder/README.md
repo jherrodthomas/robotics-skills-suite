@@ -1,6 +1,6 @@
 # Example — `interlock-estop-architecture-builder.skill`
 
-**What this skill produces:** A safeguarding interlock and emergency-stop architecture workbook for a robot cell — guard-interlock device list, E-stop circuit topology, stop categories (IEC 60204-1 Stop 0/1/2), reset/restart logic, and the muting/override register — anchored on `ISO 14119:2013` (interlocking devices), `ISO 13850:2015` (emergency stop), and `IEC 60204-1:2016` (electrical equipment of machines).
+**What this skill produces:** A safeguarding interlock and emergency-stop architecture workbook for a robot cell — guard-interlock device list, E-stop circuit topology, stop categories (IEC 60204-1 Stop 0/1/2), reset/restart logic, and the muting/override register — anchored on `ISO 14119:2024` (interlocking devices; 2013 edition withdrawn), `ISO 13850:2015` (emergency stop), and `IEC 60204-1:2016+AMD1:2021` (electrical equipment of machines).
 
 **Typical input shape:** JSON object naming the cell, each access point / guard, the interlock device type per point (coded/non-coded, RFID, guard-locking), the E-stop actuators and their grouping, and the target PL/Cat or SIL per safety function.
 

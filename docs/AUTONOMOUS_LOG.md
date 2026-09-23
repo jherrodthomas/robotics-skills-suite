@@ -1566,3 +1566,21 @@ future edits" block mandatory rather than optional.
 - `robot-cell-scope` MISMATCH: verify by reading, do not auto-"fix" a correct supersession note into an error.
 - Still unanswered from prior runs: **verify the 7:30 schedule actually fires** (three missed weekends + one missed weekday in four weeks); #63's implementation decision; the duplicate `bug`/`skill-bug` and `documentation`/`docs` labels; the two standing task-file corrections (ISO 3691-4 is **2023** not 2020 — fifth request; ISO/TS 15066:2016 is being superseded by ISO/AWI 15066-1 — fourth request).
 - Carried forward untouched: worked numeric `S = (K×T) + DDS + Z` example in the builder's Light Curtains tab.
+
+## 2026-09-23 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `interlock-estop-architecture` pair (W39 Wednesday target, issue #61) — reviewer went from six topic bullets to five rated check groups, and a withdrawn standard edition (ISO 14119:2013) was replaced with 2024 in both halves.
+**Files touched:** `skills/interlock-estop-architecture-builder.skill`, `skills/interlock-estop-architecture-checklist-reviewer.skill`, `examples/interlock-estop-architecture-builder/README.md`, `docs/skill-polish-log/interlock-estop-architecture-builder.md`, `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet) — checked instead with `yaml.safe_load` on both halves, `audit_pair_editions.py` (ASYMMETRY 8 → 7, MISMATCH 2 → 2), `audit_reviewer_impl.py` (phantom generators 0), `gen_status.py`
+**Skill count:** 38 builders / 38 reviewers / 100% paired by filename (6 tier A, 16 tier B, 16 tier C by implementation)
+**Open issues:** 5 (#61 worked today and left open with a comment; closing is for the human)
+
+**Notes:** Selection: strict rule (3) (least recently touched) would have picked `perception-test-catalog`, which is Thursday's planned target. I followed the W39 plan (#61), as recent runs have done, so Thursday's slot stays valid. **The most important finding is an edition error that the repo had already signed off on.** The 06-17 polish entry recorded ISO 14119:2013 as "OK (+Amd 1:2024)". In fact ISO 14119:2024 is a new 3rd edition (published 2024-09-10), and ISO lists 2013 as withdrawn. So this safety-critical builder has pinned a withdrawn standard for three months behind a green verification line. **#61 also contained an edition error:** it asked to verify "IEC 60204-1:2018", but that is the EN adoption. The IEC edition is 2016+AMD1:2021. That's the second week in a row where the plan's edition claims needed correcting, which fits the "don't assume the builder is right" lesson. It also shows the plan can be wrong the same way. The content work followed #61's definition of done point for point, and I added ISO 14118:2017, because preventing unexpected start-up is half of what an interlock document exists for. The first reviewer draft's "supersedes ISO 14119:2013" briefly created a new MISMATCH (2 → 3), the same false-positive shape as #64, and rewording cleared it.
+
+**Follow-ups:**
+- **Thursday (#62) `perception-test-catalog`**: ai-ml domain, so the edition step does not fire. Tier-A reviewer, 140d stale builder.
+- **Human:** #61's definition of done is met, so please review and close it. Also consider closing #60 (done 09-22).
+- **Process:** when a polish log marks an edition "OK", it should name the source it checked. The 06-17 miss was an unsourced "OK". Earlier entries marked "carried from prior verified passes" deserve the same suspicion, and W40 PLAN could schedule a one-off re-verification sweep of every "OK" row in safety-critical logs.
+- W39 plan claimed Tue+Wed would close 7 of 9 asymmetries. The actual result is 9 → 7 across both days (pairs, not lines, as flagged 09-22).
+- Still unanswered from prior runs: verify the 7:30 schedule actually fires; #63 implementation decision; duplicate `bug`/`skill-bug` and `documentation`/`docs` labels; standing task-file corrections (ISO 3691-4 is **2023**, not 2020, and ISO/TS 15066:2016 is being superseded by ISO/AWI 15066-1). New for the task file's own edition list: add **ISO 14119:2024** and **IEC 60204-1:2016+AMD1:2021**.

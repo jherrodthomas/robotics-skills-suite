@@ -1584,3 +1584,36 @@ future edits" block mandatory rather than optional.
 - **Process:** when a polish log marks an edition "OK", it should name the source it checked. The 06-17 miss was an unsourced "OK". Earlier entries marked "carried from prior verified passes" deserve the same suspicion, and W40 PLAN could schedule a one-off re-verification sweep of every "OK" row in safety-critical logs.
 - W39 plan claimed Tue+Wed would close 7 of 9 asymmetries. The actual result is 9 → 7 across both days (pairs, not lines, as flagged 09-22).
 - Still unanswered from prior runs: verify the 7:30 schedule actually fires; #63 implementation decision; duplicate `bug`/`skill-bug` and `documentation`/`docs` labels; standing task-file corrections (ISO 3691-4 is **2023**, not 2020, and ISO/TS 15066:2016 is being superseded by ISO/AWI 15066-1). New for the task file's own edition list: add **ISO 14119:2024** and **IEC 60204-1:2016+AMD1:2021**.
+
+## 2026-09-24 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished the `perception-test-catalog` pair (W39 Thursday target, issue #62). The builder now has a requirements table R1–R10 with a row contract, and the reviewer's 28 checks are re-keyed to those requirements, with 5 manual checks added and a false auto-rating claim removed.
+**Files touched:** `skills/perception-test-catalog-builder.skill`, `skills/perception-test-catalog-checklist-reviewer.skill`, `examples/perception-test-catalog-builder/README.md`, `docs/skill-polish-log/perception-test-catalog-builder.md` (new), `STATUS.md`, `docs/AUTONOMOUS_LOG.md`
+**Tests:** N/A (no test suite in this repo yet). Checked instead with `yaml.safe_load` on both halves (descriptions 861 / 790 chars), `audit_pair_editions.py` (MISMATCH 2 / ASYMMETRY 7, unchanged), `audit_reviewer_impl.py` (phantom `references/` 15 → 14), `gen_status.py`. The Clopper-Pearson worked numbers were computed rather than asserted.
+**Skill count:** 38 builders / 38 reviewers / 100% paired by filename (6 tier A, 16 tier B, 16 tier C, but see Notes on what tier A means)
+**Open issues:** 5 (#62 worked today and left open, since POLISH does not authorize issue writes)
+
+**Notes:** #62's definition of done is met point for point:
+- ODD as dimensions with ranges.
+- One test case per row.
+- Nominal / degraded / adversarial defined, including soiling and reflective / low-texture surfaces.
+- Thresholds as rates with a one-sided 95 % Clopper-Pearson bound and *n*. 0/300 or ≤1/474 meets recall ≥ 0.99. 1/460 does not, which the first draft got wrong until I computed it.
+- FN and FP thresholds kept separate, with FN-on-people linked to a hazard ID.
+- Model-card, dataset-documentation and PL/SIL boundaries stated.
+- Check table keyed to R-IDs.
+
+The builder also carried **automotive leftovers** ("highway", "road markings", hard-coded snow/ice). I documented these under "Implementation status" rather than editing the generator, because making the rows input-driven is a build.
+
+**The finding the human should read:** the plan chose this pair because its reviewer was "tier A, a promise the code actually keeps". **It is not.** `generate_checklist.py` loads the source workbook, never reads it, and writes "—" into every Assessment cell. The description's "auto-fills FC, LC, PC, NO, or NA" was false, and so was the 7-tab claim (the generator writes 5). I then checked all 6 tier-A reviewers and found **they are one template, and none inspects the source**. `audit_reviewer_impl.py` measures "has a ≥3 kB check table", not "rates anything". That means the honest count is **0 of 38 reviewers auto-rate**, and #63 is larger than filed. I did not change the audit script's tiers, because redefining the selector W40 is meant to adopt deserves a deliberate decision. The proposed split is in the polish log.
+
+Voluntary edition check on the one new citation: ISO/IEC TR 5469:2024, 1st ed., Jan 2024 (iso.org), cited as informative only.
+
+**Follow-ups:**
+- **Human, #63:** add this finding. "Tier A" = check-table template, and 0/38 reviewers rate the source. The STATUS.md implementation column now matters more, since "6 implemented" also overstates.
+- **W40 PLAN:** before adopting tier C → B → A as the selector, split A into A-template / A-rating (6 → 0). Otherwise the selector ranks by a distinction that is weaker than it looks.
+- The other five tier-A reviewer descriptions (dataset-documentation, iec62443-risk-assessment, model-card, ot-asset-inventory, zone-conduit-plan) likely make the same false auto-fill claim. Correct them when each comes up.
+- **Human:** #60, #61 and now #62 have their definitions of done met, so please review and close them.
+- Friday DOCS: W39 changelog should list all three polishes. The W39 targets are complete 3/3.
+- Still unanswered from prior runs: verify that the 7:30 schedule fires (this week ran Mon–Thu on time); the duplicate `bug`/`skill-bug` and `documentation`/`docs` labels; task-file corrections (ISO 3691-4 is **2023**; ISO/TS 15066:2016 is being superseded by ISO/AWI 15066-1; add ISO 14119:2024 and IEC 60204-1:2016+AMD1:2021).
+- Environment note: `/tmp/robotics-work` was left by another sandbox user and could not be removed, so this run cloned to `/tmp/robotics-work-2`. The task file may want a unique work dir per run.

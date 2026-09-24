@@ -1,6 +1,6 @@
 # Example — `perception-test-catalog-builder.skill`
 
-**What this skill produces:** A 11-tab audit-ready xlsx workbook. Generate an audit-ready ML Perception Test Catalog workbook for robot perception systems including camera and lidar and radar pipelines covering scenario taxonomy, edge cases, weather and lighting variations, occlusion scenarios, adversarial tests, false positive and false negative cases, and acceptance metrics with per-scenario expected accuracy thresholds.
+**What this skill produces:** An 11-tab xlsx Perception Test Catalog in which each row is one test case bound to an ODD condition and classed nominal / degraded / adversarial, with a pass threshold stated as a rate with a confidence bound and sample size, and separate false-negative / false-positive thresholds (builder requirements R1–R10). _Updated 2026-09-24: the shipped generator does not yet implement the row contract — see the skill's "Implementation status" section._
 
 **Typical input shape:** Project and item data supplied in chat or as a JSON/xlsx handoff from the upstream skill in the chain (see the `## Related skills` section of the skill body).
 

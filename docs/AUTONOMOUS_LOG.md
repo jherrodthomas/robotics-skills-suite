@@ -1617,3 +1617,11 @@ Voluntary edition check on the one new citation: ISO/IEC TR 5469:2024, 1st ed., 
 - Friday DOCS: W39 changelog should list all three polishes. The W39 targets are complete 3/3.
 - Still unanswered from prior runs: verify that the 7:30 schedule fires (this week ran Mon–Thu on time); the duplicate `bug`/`skill-bug` and `documentation`/`docs` labels; task-file corrections (ISO 3691-4 is **2023**; ISO/TS 15066:2016 is being superseded by ISO/AWI 15066-1; add ISO 14119:2024 and IEC 60204-1:2016+AMD1:2021).
 - Environment note: `/tmp/robotics-work` was left by another sandbox user and could not be removed, so this run cloned to `/tmp/robotics-work-2`. The task file may want a unique work dir per run.
+
+## 2026-10-01 (autonomous run, MONTHLY-KPI)
+
+**Action:** Generated docs/monthly/2026-09.md
+**Velocity:** 21 commits, 20 skills touched (10 pairs); releases v2026.09.W1, v2026.09.W3 (W2 and W4 lost to two 6-day gaps, 09-09→09-14 and 09-25→09-30)
+**Coverage:** paired 38/38 (100%), examples/ 38/38 (100%), but non-README example artifacts 0/38 and source-rating reviewers 0/38
+**Standards-edition findings:** 7 (4 × ISO 3691-4:2020 in fleet-manager-architecture + operating-envelope, still open from August; 1 × bare IEC 62443 in iec62443-risk-assessment reviewer; 2 × unpinned IEC 62443-2-1 in ot-asset-inventory)
+**Notes:** First two-month-flat domain flag tripped (`cobot`: 0 commits in Aug and Sep). The 09-11 bulk close cleared 23 issues, but `#59` was closed without the work and re-filed as `#64`, and the loop has made no commits since 09-24. Find that cause before W41.
